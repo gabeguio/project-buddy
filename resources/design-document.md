@@ -6,7 +6,7 @@
 
 ## 1. Problem Statement
 
-_Explain clearly what problem you are trying to solve._
+_Explain._
 
 ## 2. Top Questions to Resolve in Review
 
