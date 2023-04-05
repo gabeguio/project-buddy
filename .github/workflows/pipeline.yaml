@@ -9,10 +9,10 @@ on:
 env:
 
   # STUDENTS: Set these environment variables 
-  API_BASE_URL: TODO-REPLACE
-  COGNITO_DOMAIN: TODO-REPLACE
-  COGNITO_REDIRECT_SIGNIN: TODO-REPLACE
-  COGNITO_REDIRECT_SIGNOUT: TODO-REPLACE
+  API_BASE_URL: https://7sjkq1q83m.execute-api.us-east-2.amazonaws.com/Prod/
+  COGNITO_DOMAIN: music-playlist-service-javascript.auth.us-east-2.amazoncognito.com
+  COGNITO_REDIRECT_SIGNIN: https://d2c0edlydhu9ha.cloudfront.net
+  COGNITO_REDIRECT_SIGNOUT: https://d2c0edlydhu9ha.cloudfront.net
 
   COGNITO_USER_POOL_ID: ${{ secrets.COGNITO_USER_POOL_ID }}
   COGNITO_USER_POOL_CLIENT_ID: ${{ secrets.COGNITO_USER_POOL_CLIENT_ID }}
