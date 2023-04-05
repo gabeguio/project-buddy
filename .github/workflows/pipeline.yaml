@@ -9,11 +9,11 @@ on:
 env:
 
   # STUDENTS: Set these environment variables 
-  API_BASE_URL:  https://rdr2hrae12.execute-api.us-east-2.amazonaws.com/Prod/
-  COGNITO_DOMAIN: unit5-individual-mikosd-musicplaylistservice.auth.us-east-2.amazoncognito.com
-  COGNITO_REDIRECT_SIGNIN: TODO-REPLACE
-  COGNITO_REDIRECT_SIGNOUT: TODO-REPLACE
-
+  API_BASE_URL: https://7sjkq1q83m.execute-api.us-east-2.amazonaws.com/Prod/
+  COGNITO_DOMAIN: music-playlist-service-javascript.auth.us-east-2.amazoncognito.com
+  COGNITO_REDIRECT_SIGNIN: https://d2c0edlydhu9ha.cloudfront.net
+  COGNITO_REDIRECT_SIGNOUT: https://d2c0edlydhu9ha.cloudfront.net
+  
   COGNITO_USER_POOL_ID: ${{ secrets.COGNITO_USER_POOL_ID }}
   COGNITO_USER_POOL_CLIENT_ID: ${{ secrets.COGNITO_USER_POOL_CLIENT_ID }}
 
@@ -25,9 +25,9 @@ env:
   SAM_TEMPLATE: template.yaml
 
   STACK_NAME: music-playlist-service
-  PIPELINE_EXECUTION_ROLE: arn:aws:iam::223594270925:role/aws-sam-cli-managed-ServiceS-PipelineExecutionRole-66NOZVNZQQWQ
-  CLOUDFORMATION_EXECUTION_ROLE: arn:aws:iam::223594270925:role/aws-sam-cli-managed-Servi-CloudFormationExecutionR-19G3RVVA8ZRZ8
-  ARTIFACTS_BUCKET: aws-sam-cli-managed-servicestage-artifactsbucket-1mcpme45h6o0j
+  PIPELINE_EXECUTION_ROLE: arn:aws:iam::223594270925:role/aws-sam-cli-managed-ServiceS-PipelineExecutionRole-1WYJWCOMZ9WVL
+  CLOUDFORMATION_EXECUTION_ROLE: arn:aws:iam::223594270925:role/aws-sam-cli-managed-Servi-CloudFormationExecutionR-DWYDG9MS6E3S
+  ARTIFACTS_BUCKET: aws-sam-cli-managed-servicestage-artifactsbucket-xhucrkge56pj
   REGION: us-east-2
 
 jobs:
