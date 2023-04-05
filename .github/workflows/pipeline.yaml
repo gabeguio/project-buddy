@@ -13,7 +13,7 @@ env:
   COGNITO_DOMAIN: music-playlist-service-javascript.auth.us-east-2.amazoncognito.com
   COGNITO_REDIRECT_SIGNIN: https://d2c0edlydhu9ha.cloudfront.net
   COGNITO_REDIRECT_SIGNOUT: https://d2c0edlydhu9ha.cloudfront.net
-
+  
   COGNITO_USER_POOL_ID: ${{ secrets.COGNITO_USER_POOL_ID }}
   COGNITO_USER_POOL_CLIENT_ID: ${{ secrets.COGNITO_USER_POOL_CLIENT_ID }}
 
