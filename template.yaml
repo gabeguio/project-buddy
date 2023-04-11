@@ -351,17 +351,21 @@ Resources:
   # DynamoDB Configuration
   #-----------------------------------------------------
   
-  PlaylistsTable:
+  TicketsTable:
     Type: AWS::DynamoDB::Table
     Properties:
       AttributeDefinitions:
-        - AttributeName: "id"
+        - AttributeName: "projectId"
+          AttributeType: "S"
+        - AttributeName: "ticketId"
           AttributeType: "S"
       KeySchema:
-        - AttributeName: "id"
+        - AttributeName: "projectId"
           KeyType: "HASH"
+        - AttributeName: "ticketId"
+          KeyType: "RANGE"
       BillingMode: "PAY_PER_REQUEST"
-      TableName: "playlists"
+      TableName: "tickets"
 
   AlbumTracksTable:
     Type: AWS::DynamoDB::Table
