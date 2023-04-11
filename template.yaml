@@ -8,7 +8,7 @@ Parameters:
   CognitoDomain:
     Type: String
     Description: A name for the cognito Domain
-    Default: "music-playlist-service-terrenceatkinson"
+    Default: "ticket-management-service-team-javascript"
 
   S3Bucket:
     Type: String
