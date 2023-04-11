@@ -1,146 +1,138 @@
-# Design Document
+# v2-design-document
 
-## Instructions
+# ***Design Document***
 
-## Group 3 - Midstone Design
+## ***Instructions***
 
-## 1. Problem Statement
+## ***Group 3 - Midstone Design***
 
+## ***1. Problem Statement***
 
-_Reviewing and creating tasks for a software project._
+*Tasks for a software project.*
 
+## ***2. Top Questions to Resolve in Review***
 
-## 2. Top Questions to Resolve in Review
+*Important questions:*
 
-_List the most important questions you have about your design, or things that you are still debating internally that you might like help to work through._
+1. *Is the ERD well-designed, specifically regarding cardinality?*
+2. *What is the API design and implementation in the code?*
+3. *What are the general front end questions?*
 
-1. ERD is well-designed, specifically regarding cardinality.
-2. API design and implementation in the code.
-3. General front end questions.
+## ***3. Use Cases***
 
-## 3. Use Cases
+*Customer use cases:*
 
-_This is where we work backwards from the customer and define what our customers would like to do (and why). You may also include use cases for yourselves (as developers), or for the organization providing the product to customers._
+- *U1. As a user, I want to be able to get a project, to review information about its title and description.*
+- *U2. As a user, I want to be able to create a project with a title and description to begin adding tasks.*
+- *U3. As a user, I want to be able to delete a project, because the project was created by mistake.*
+- *U4. As a user, I want to be able to update a project, to change the name or description of a project.*
+- *U5. As a user, I want to be able to update a project, to mark it as complete.*
 
-U1. As a user, I want to be able to create tasks and add them to a project.
+*Task use cases:*
 
-U2. As a user, I want to be able to delete tasks from a project.
+- *U1. As a user, I want to be able to get a task from a project, to review information about its title, description, and status.*
+- *U2. As a user, I want to be able to create a task for a project, with title and description.*
+- *U3. As a user, I want to be able to delete tasks from a project, because they were made by mistake.*
+- *U4. As a user, I want to be able to update tasks from a project, marking it as “complete” to show what work has been done.*
 
-U3. As a user, I want to review a list of tasks on a project to overview the work on a project.
+*Querying Tasks and Projects*
 
-U4. As a user, I would like to mark a task as complete (in relation to its project) to show what work has been done.
+- *U1. As a user, I want to be able to review a list of projects.*
+- *U2. As a user, I want to review a list of tasks on a project to overview the work on a project.*
 
-U5. As a user, I want to be able to create and/or delete a project.
+## ***4. Project Scope***
 
-U6. As a user, I want to be able to edit a project.
+*Clarify which parts of the problem you intend to solve.*
 
-U7. As a user, I want to be able to review a list of projects.
+### ***4.1. In Scope***
 
-## 4. Project Scope
+*Which parts of the problem defined in Sections 1 and 2 will you solve with this design?*
 
-_Clarify which parts of the problem you intend to solve. It helps reviewers know what questions to ask to make sure you are solving for what you say and stops discussions from getting sidetracked by aspects you do not intend to handle in your design._
+- *CRUD functionality for a user to perform operations on tasks and projects.*
 
-### 4.1. In Scope
+*The functionality described above should be what your design is focused on.*
 
-_Which parts of the problem defined in Sections 1 and 2 will you solve with this design? This should include the base functionality of your product. What pieces are required for your product to work?_
+### ***4.2. Out of Scope***
 
-- CRUD functionality for a user to perform operations on tasks and projects.
+*Based on your problem description in Sections 1 and 2, are there any aspects you are not planning to solve?*
 
+- *Implementing roles for users because our main focus is to allow any user to have access to CRUD functionality for projects and tasks.*
+- *Ability to prioritize tasks.*
+- *Creating specific users.*
 
-_The functionality described above should be what your design is focused on. You do not need to include the design for any out of scope features or expansions._
+*The functionality here does not need to be accounted for in your design.*
 
-### 4.2. Out of Scope
+# ***5. Proposed Architecture Overview***
 
-_Based on your problem description in Sections 1 and 2, are there any aspects you are not planning to solve? Do potential expansions or related problems occur to you that you want to explicitly say you are not worrying about now? Feel free to put anything here that you think your team can't accomplish in the unit, but would love to do with more time._
+*Describe broadly how you are proposing to solve for the requirements you described in Section 2.*
 
-- Implementing roles for users because our main focus is to allow any user to have access to CRUD functionality for projects and tasks.
-- Ability to prioritize tasks.
-- Creating specific users.
+*To satisfy our requirements, we will need to design (possibly) two DynamoDB tables that will contain Projects created by our users and tasks that will be added to the projects. Each project will be identified by its projectId (partition Key). Each task will be identified by its taskId (partition Key) and a projectId (sort key). This dual-table design will allow us to query tasks for a specific project in an easily developed model. Our API will essentially have a GET, POST and DELETE method for projects and tasks. Measures will be taken so that when a project is deleted, we are also deleting the tasks from its respective table and vice versa. Request objects will be created that will hold the parameters for each method.*
 
-_The functionality here does not need to be accounted for in your design._
+# ***6. API***
 
-# 5. Proposed Architecture Overview
+### ***6.1. Public Models***
 
-_Describe broadly how you are proposing to solve for the requirements you described in Section 2. This may include class diagram(s) showing what components you are planning to build. You should argue why this architecture (organization of components) is reasonable. That is, why it represents a good data flow and a good separation of concerns. Where applicable, argue why this architecture satisfies the stated requirements._
-    
-> To satisfy our requirements, we will need to design (possibly) two DynamoDB tables that will contain Projects created by our users and tasks that will be added to the projects. Each project will be identified by its projectId (partition Key). Each task will be identified by its taskId (partition Key) and a projectId (sort key). This dual-table design will allow us to query tasks for a specific project in an easily developed model. Our API will essentially have a GET, POST and DELETE method for projects and tasks. Measures will be taken so that when a project is deleted, we are also deleting the tasks from its respective table and vice versa. Request objects will be created that will hold the parameters for each method.
+*Define the data models your service will expose in its responses via your -Model package.*
 
-# 6. API
+### ***6.2. Get Project/Tasks Endpoint***
 
-### 6.1. Public Models
+*Describe the behavior of the first endpoint you will build into your service API.*
 
-_Define the data models your service will expose in its responses via your *`-Model`* package. These will be equivalent to the *`PlaylistModel`* and *`SongModel`* from the Unit 3 project._
+*(You should have a separate section for each of the endpoints you are expecting to build...)*
 
-```
-// ProjectModel
+- *Accepts GET requests to /projects/:projectId and/or /tasks/:taskId*
+- *Accepts project ID and returns the corresponding ProjectModel.*
+    - *If the given project ID is not found, will throw a ProjectNotFoundException.*
+    - *If the given task ID is not found, wil throw a TaskNotFoundException.*
 
-String projectId(Hash Key);
-String name;
-String description;
-String status(ENUM);
-```
-```
-// TaskModel
+### ***6.3 Create Project and/or Create Task***
 
-String projectId(Hash Key);
-String taskId(Range Key);
-String description;
-String status(ENUM);
-```
+*(repeat, but you can use shorthand here, indicating what is different, likely primarily the data in/out and error conditions. If the sequence diagram is nearly identical, you can say in a few words how it is the same/different from the first endpoint)*
 
-### 6.2. _Get Project/Tasks Endpoint_
+- *Accepts POST requests to /projects and/or /tasks.*
+- *Accepts data to create a new project or a new task with a provided name and description. Returns the new project/task, including a unique projectId/taskId assigned by the task management service.*
+- *For security concerns, we will validate the provided project/task name does not contain any invalid characters: " ' \*
+    - *If the project/task name contains any of the invalid characters, will throw an InvalidAttributeValueException.*
 
-_Describe the behavior of the first endpoint you will build into your service API. This should include what data it requires, what data it returns, and how it will handle any known failure cases. You should also include a sequence diagram showing how a user interaction goes from user to website to service to database, and back. This first endpoint can serve as a template for subsequent endpoints. (If there is a significant difference on a subsequent endpoint, review that with your team before building it!)_
+### ***6.4 Update Project/Task Endpoint***
 
-_(You should have a separate section for each of the endpoints you are expecting to build...)_
-* Accepts `GET` requests to `/projects/:projectId` and/or `/tasks/:taskId`
-* Accepts project ID and returns the corresponding ProjectModel.
-  * If the given project ID is not found, will throw a `ProjectNotFoundException`.
-  * If the given task ID is not found, wil throw a `TaskNotFoundException`.
+- *Accepts PUT requests to /projects/:projectId and /tasks/:taskId.*
+- *Accepts data to update a project/task including a projectId/taskId, an updated project/task name and updated status. Returns the updated project or task.*
+    - *If the project/task is not found, will throw a ProjectNotFoundException or TaskNotFoundException.*
+- *For security concerns, we will validate the provided project/task name does not contain invalid characters: " ' \*
+    - *If the project/task name contains invalid characters, will throw an InvalidAttributeValueException.*
 
-### 6.3 _Create Project and/or Create Task_
+### ***6.5 Delete Project/Task***
 
-_(repeat, but you can use shorthand here, indicating what is different, likely primarily the data in/out and error conditions. If the sequence diagram is nearly identical, you can say in a few words how it is the same/different from the first endpoint)_
-* Accepts `POST` requests to `/projects` and/or `/tasks`.
-* Accepts data to create a new project or a new task with a provided name and description. Returns the new project/task, including a unique projectId/taskId assigned by the task management service.
-* For security concerns, we will validate the provided project/task name does not
-  contain any invalid characters: `" ' \`
-    * If the project/task name contains any of the invalid characters, will throw an `InvalidAttributeValueException`.
+- *Accepts DELETE requests to /projects/:projectId and /tasks/:taskId.*
+- *Accepts a projectId or taskId.*
+    - *If the project or task is not found, will throw a ProjectNotFoundException or TaskNotFoundException.*
 
-### 6.4 Update Project/Task Endpoint
-* Accepts `PUT` requests to `/projects/:projectId` and `/tasks/:taskId`.
-* Accepts data to update a project/task including a projectId/taskId, an updated project/task name and updated status. Returns the updated project or task.
-    * If the project/task is not found, will throw a `ProjectNotFoundException` or `TaskNotFoundException`.
-* For security concerns, we will validate the provided project/task name does not
-  contain invalid characters: `" ' \`
-    * If the project/task name contains invalid characters, will throw an
-      `InvalidAttributeValueException`.
+# ***7. Tables***
 
-### 6.5 Delete Project/Task
-* Accepts `DELETE` requests to `/projects/:projectId` and `/tasks/:taskId`.
-* Accepts a projectId or taskId.
-  * If the project or task is not found, will throw a `ProjectNotFoundException` or `TaskNotFoundException`.
+*Define the DynamoDB tables you will need for the data your service will use.*
 
+### ***7.1 Projects***
 
-# 7. Tables
+| Field | Type |
+| --- | --- |
+| projectId | String (Hash Key) |
+| name | String |
+| description | String |
+| status | String |
 
-_Define the DynamoDB tables you will need for the data your service will use. It may be helpful to first think of what objects your service will need, then translate that to a table structure, like with the *`Playlist` POJO* versus the `playlists` table in the Unit 3 project._
-### 7.1 Projects
-```
-projectId // partition key, string
-name // string
-description // string
-status // string
-```
-### 7.2 Tasks
-```
-taskId // paritition key, string
-projectId // sort key, string
-description // string
-status // string
-name // string
-```
+### ***7.2 Tasks***
 
-# 8. Pages
+| Field | Type |
+| --- | --- |
+| projectId | String (Hash Key) |
+| taskId | String (Range Key) |
+| name | String |
+| description | String |
+| status | String |
 
-_Include mock-ups of the web pages you expect to build. These can be as sophisticated as mockups/wireframes using drawing software, or as simple as hand-drawn pictures that represent the key customer-facing components of the pages. It should be clear what the interactions will be on the page, especially where customers enter and submit data. You may want to accompany the mockups with some description of behaviors of the page (e.g. “When customer submits the submit-dog-photo button, the customer is sent to the doggie detail page”)_
+# ***8. Pages***
+
+*Include mock-ups of the web pages you expect to build.*
+
+![untitled_720.jpg](v2-design-document%204202480f787143fbbfe957f51481b4b3/untitled_720.jpg)
