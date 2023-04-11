@@ -93,7 +93,7 @@ In this scenario you will run both the backend and frontend locally on your lapt
        > **TIP:** You only need to do this once - _unless_ you add/change Javascript dependencies.
    - Run the local server: `npm run run-local`
 
-After doing all of this, you will have a server running on port `8000` - you can access it by going to [http://localhost:8000](http://localhost:8000) in your browser. Create a playlist, add some songs to it (see [data.json](./data/data.json) for sample ASIN and track numbers you can use).
+After doing all of this, you will have a server running on port `8000` - you can access it by going to [http://localhost:8000](http://localhost:8000) in your browser. Create a playlist, add some songs to it (see [data.json](./data/musicdata.json) for sample ASIN and track numbers you can use).
 
 To stop either the local backend (the `sam local...` command) or local frontend (the `npm run...`) command, simply press `Ctrl-C` in the terminal where the process is running.
 
