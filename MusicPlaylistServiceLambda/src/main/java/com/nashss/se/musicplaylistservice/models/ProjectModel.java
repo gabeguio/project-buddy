@@ -6,12 +6,12 @@ import com.nashss.se.musicplaylistservice.ProjectStatus.ProjectStatus;
 
 public class ProjectModel {
 
-    private String projectId;
-    private String title;
-    private String description;
-    private ProjectStatus status;
+    private final String projectId;
+    private final String title;
+    private final String description;
+    private final String status;
 
-    private ProjectModel(String projectId, String title, String description, ProjectStatus status) {
+    private ProjectModel(String projectId, String title, String description, String status) {
         this.projectId = projectId;
         this.title = title;
         this.description = description;
@@ -22,33 +22,21 @@ public class ProjectModel {
         return projectId;
     }
 
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
-    }
 
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
-    public ProjectStatus getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(ProjectStatus status) {
-        this.status = status;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -73,7 +61,7 @@ public class ProjectModel {
         private String projectId;
         private String title;
         private String description;
-        private ProjectStatus status;
+        private String status;
 
         public Builder withProjectId(String projectId) {
             this.projectId = projectId;
@@ -90,7 +78,7 @@ public class ProjectModel {
             return this;
         }
 
-        public Builder withStatus(ProjectStatus projectStatus) {
+        public Builder withStatus(String projectStatus) {
             this.status = projectStatus;
             return this;
         }

@@ -13,7 +13,7 @@ public class Project {
     private String projectId;
     private String title;
     private String description;
-    private ProjectStatus status;
+    private String status;
 
     @DynamoDBHashKey(attributeName = "projectId")
     public String getProjectId() {
@@ -43,11 +43,11 @@ public class Project {
     }
 
     @DynamoDBAttribute(attributeName = "status")
-    public ProjectStatus getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(ProjectStatus status) {this.status = status;}
+    public void setStatus(String status) {this.status = status;}
 
     @Override
     public boolean equals(Object o) {
