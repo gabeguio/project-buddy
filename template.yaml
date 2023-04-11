@@ -351,33 +351,33 @@ Resources:
   # DynamoDB Configuration
   #-----------------------------------------------------
   
-  PlaylistsTable:
+  TicketsTable:
     Type: AWS::DynamoDB::Table
     Properties:
       AttributeDefinitions:
-        - AttributeName: "id"
+        - AttributeName: "projectId"
+          AttributeType: "S"
+        - AttributeName: "ticketId"
           AttributeType: "S"
       KeySchema:
-        - AttributeName: "id"
+        - AttributeName: "projectId"
           KeyType: "HASH"
-      BillingMode: "PAY_PER_REQUEST"
-      TableName: "playlists"
-
-  AlbumTracksTable:
-    Type: AWS::DynamoDB::Table
-    Properties:
-      AttributeDefinitions:
-        - AttributeName: "asin"
-          AttributeType: "S"
-        - AttributeName: "track_number"
-          AttributeType: "N"
-      KeySchema:
-        - AttributeName: "asin"
-          KeyType: "HASH"
-        - AttributeName: "track_number"
+        - AttributeName: "ticketId"
           KeyType: "RANGE"
       BillingMode: "PAY_PER_REQUEST"
-      TableName: "album_tracks"
+      TableName: "tickets"
+
+  ProjectsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      AttributeDefinitions:
+        - AttributeName: "projectId"
+          AttributeType: "S"
+      KeySchema:
+        - AttributeName: "projectId"
+          KeyType: "HASH"
+      BillingMode: "PAY_PER_REQUEST"
+      TableName: "projects"
 
 #-----------------------------------------------------
 # The outputs defined below will be printed
