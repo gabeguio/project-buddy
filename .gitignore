@@ -22,3 +22,6 @@ node_modules
 
 .env*
 bin
+!/package.json
+!/package-lock.json
+!/.gitignore

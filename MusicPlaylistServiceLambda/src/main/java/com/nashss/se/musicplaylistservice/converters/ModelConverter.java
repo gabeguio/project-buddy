@@ -25,13 +25,13 @@ public class ModelConverter {
         }
 
         return PlaylistModel.builder()
-                .withId(playlist.getId())
-                .withName(playlist.getName())
-                .withCustomerId(playlist.getCustomerId())
-                .withCustomerName(playlist.getCustomerName())
-                .withSongCount(playlist.getSongCount())
-                .withTags(tags)
-                .build();
+            .withId(playlist.getId())
+            .withName(playlist.getName())
+            .withCustomerId(playlist.getCustomerId())
+            .withCustomerName(playlist.getCustomerName())
+            .withSongCount(playlist.getSongCount())
+            .withTags(tags)
+            .build();
     }
 
     /**
@@ -42,11 +42,11 @@ public class ModelConverter {
      */
     public SongModel toSongModel(AlbumTrack albumTrack) {
         return SongModel.builder()
-                .withAsin(albumTrack.getAsin())
-                .withTrackNumber(albumTrack.getTrackNumber())
-                .withAlbum(albumTrack.getAlbumName())
-                .withTitle(albumTrack.getSongTitle())
-                .build();
+            .withAsin(albumTrack.getAsin())
+            .withTrackNumber(albumTrack.getTrackNumber())
+            .withAlbum(albumTrack.getAlbumName())
+            .withTitle(albumTrack.getSongTitle())
+            .build();
     }
 
     /**

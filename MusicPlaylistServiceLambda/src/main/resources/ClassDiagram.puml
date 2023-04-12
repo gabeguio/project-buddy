@@ -42,6 +42,15 @@ class TicketDao {
 
 }
 
+class ModelConverter {
++toProjectModel(Project project)
++toTicketModel(Ticket ticket
+}
+
+ModelConverter *-- Project
+ModelConverter *-- ProjectModel
+ModelConverter *-- Ticket
+ModelConverter *-- TicketModel
 
 
 
