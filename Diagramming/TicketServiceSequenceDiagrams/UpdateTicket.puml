@@ -1,0 +1,79 @@
+@startuml
+actor "Client" as client
+participant "API Gateway/Lambda" as apiGateway
+participant "UpdateTicketActivity" as updateTicketActivity
+participant "TicketDao" as ticketDao
+database "DynamoDB" as dynamoDB
+
+title Update Ticket
+
+client -> apiGateway : HTTP Request
+activate apiGateway
+
+apiGateway -> updateTicketActivity : "UpdateTicketActivity"
+activate updateTicketActivity
+
+updateTicketActivity -> updateTicketActivity : validate task title from request
+
+alt if task title contains invalid characters
+updateTicketActivity -> apiGateway : throws InvalidAttributeValueException
+apiGateway --> client: return 400 response
+
+else else continue
+end
+
+updateTicketActivity -> updateTicketActivity : validate task description from request
+
+alt if task description contains invalid characters
+updateTicketActivity -> apiGateway : throws InvalidAttributeValueException
+apiGateway --> client: return 400 response
+
+else else continue
+end
+
+updateTicketActivity -> ticketDao : getTicket(projectId, ticketId)
+activate ticketDao
+
+ticketDao -> dynamoDB : look up ticket by project id and ticket id
+activate dynamoDB
+
+alt if ticket does not exist
+dynamoDB --> ticketDao : return with no item database
+ticketDao --> updateTicketActivity: throws TicketNotFoundException
+updateTicketActivity --> apiGateway: propagate TicketNotFoundException
+apiGateway --> client: return 400 response
+
+else else continue
+end
+
+dynamoDB --> ticketDao: return ticket data
+deactivate dynamoDB
+
+ticketDao --> updateTicketActivity : return Ticket Object
+deactivate ticketDao
+
+updateTicketActivity -> updateTicketActivity: update Ticket
+
+updateTicketActivity -> ticketDao : saveTicket(Ticket)
+activate ticketDao
+
+ticketDao -> dynamoDB : store ticket in dynamoDB
+activate dynamoDB
+
+dynamoDB --> ticketDao : return 200 response
+deactivate dynamoDB
+
+updateTicketActivity -> updateTicketActivity: create TicketModel
+
+updateTicketActivity -> updateTicketActivity: set TicketModel with saved Ticket Object Data
+
+updateTicketActivity -> updateTicketActivity: Create UpdateTicketResponse
+updateTicketActivity -> updateTicketActivity: Set TicketModel field in UpdateTicketResponse
+
+updateTicketActivity --> apiGateway : return UpdateTicketResponse
+deactivate updateTicketActivity
+
+apiGateway --> client : return 200 response with UpdateTicketResponse data
+deactivate apiGateway
+
+@enduml
