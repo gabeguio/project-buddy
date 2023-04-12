@@ -350,9 +350,9 @@ Resources:
   GetProjectLambda:
     Type: AWS::ServerLess::Function
     Properties:
-      Role: !GetAtt AccessRole.Arn
+        Role: !GetAtt AccessRole.Arn
         CodeUri: MusicPlaylistServiceLambda
-        Handler: com.nashss.se.musicplaylistservice.lambda.GetPlaylistLambda::handleRequest
+        Handler: com.nashss.se.musicplaylistservice.lambda.GetProjectLambda::handleRequest
         Runtime: java11
         Architectures:
           - x86_64
@@ -364,7 +364,7 @@ Resources:
           MusicPlaylistService:
             Type: Api
             Properties:
-              Path: /playlists/{id}
+              Path: /projects/{id}
               Method: get
               Auth:
                 Authorizer: 'NONE'
