@@ -23,7 +23,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Implementation of the CreatePlaylistActivity for the MusicPlaylistService's CreatePlaylist API.
+ * Implementation of the CreateProjectActivity for CreateProject API.
  * <p>
  * This API allows the customer to create a new playlist with no songs.
  */
@@ -42,16 +42,16 @@ public class CreateProjectActivity {
     }
 
     /**
-     * This method handles the incoming request by persisting a new playlist
-     * with the provided playlist name and customer ID from the request.
+     * This method handles the incoming request by persisting a new project
+     * with the provided project ID from the request.
      * <p>
-     * It then returns the newly created playlist.
+     * It then returns the newly created project
      * <p>
-     * If the provided playlist name or customer ID has invalid characters, throws an
+     * If the provided project ID has invalid characters, throws an
      * InvalidAttributeValueException
      *
      * @param createProjectRequest    request object containing the projectId associated with it
-     * @return createPlaylistResult result object containing the API defined {@link PlaylistModel}
+     * @return createProjectResult result object containing the API defined {@link ProjectModel}
      */
     public CreateProjectResult handleRequest(final CreateProjectRequest createProjectRequest) {
         log.info("Received CreateProjectRequest {}", createProjectRequest);

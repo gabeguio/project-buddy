@@ -15,8 +15,8 @@ public class CreateProjectResult {
 
     @Override
     public String toString() {
-        return "CreatePlaylistResult{" +
-                "playlist=" + project +
+        return "CreateProjectResult{" +
+                "project=" + project +
                 '}';
     }
 
