@@ -59,6 +59,11 @@ public class CreateProjectActivity {
             throw new InvalidAttributeValueException("Project Title [" + createProjectRequest.getTitle() +
                     "] contains illegal characters");
         }
+        
+        if (!MusicPlaylistServiceUtils.isValidString(createProjectRequest.getDescription())) {
+            throw new InvalidAttributeValueException("Project Description [" + createProjectRequest.getDescription() +
+                    "] contains illegal characters");
+        }
 
         String status = null;
         if (createProjectRequest.getStatus() != null) {
