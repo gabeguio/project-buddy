@@ -217,3 +217,42 @@ paths:
                           type: string
                         trackNumber:
                           type: integer
+
+
+  /projects/{projectId}/tickets/{ticketId}:
+    get:
+      summary: receive a ticket by its ticketId
+      operationId: getTicket
+      parameters:
+        - name: projectId
+          in: path
+          description: id of the project to retrieve tickets from
+          required: true
+          schema:
+            type: string
+        - name: ticketId
+          in: path
+          description: id of the ticket to receive
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: a TaskModel
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  projectId:
+                    type: string
+                  ticketId:
+                    type: string
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  status:
+                    type: string
+        "404":
+          description: Ticket with the specified "ticketId" was not found
