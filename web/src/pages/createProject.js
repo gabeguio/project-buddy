@@ -6,7 +6,7 @@ import DataStore from '../util/DataStore';
 /**
  * Logic needed for the create playlist page of the website.
  */
-class CreatePlaylist extends BindingClass {
+class CreateProject extends BindingClass {
     constructor() {
         super();
         this.bindClassMethods(['mount', 'submit', 'redirectToViewPlaylist'], this);
@@ -41,31 +41,32 @@ class CreatePlaylist extends BindingClass {
         const origButtonText = createButton.innerText;
         createButton.innerText = 'Loading...';
 
-        const playlistName = document.getElementById('playlist-name').value;
-        const tagsText = document.getElementById('tags').value;
+        const projectId = document.getElementById('project-id').value;
+        const projectTitle = document.getElementById('project-title').value;
+        const ticketsText = document.getElementById('tickets').value;
 
-        let tags;
-        if (tagsText.length < 1) {
-            tags = null;
+        let tickets;
+        if (ticketsText.length < 1) {
+            tickets = null;
         } else {
-            tags = tagsText.split(/\s*,\s*/);
+            tickets = ticketsText.split(/\s*,\s*/);
         }
 
-        const playlist = await this.client.createPlaylist(playlistName, tags, (error) => {
+        const project = await this.client.createProject(projectId, tickets, (error) => {
             createButton.innerText = origButtonText;
             errorMessageDisplay.innerText = `Error: ${error.message}`;
             errorMessageDisplay.classList.remove('hidden');
         });
-        this.dataStore.set('playlist', playlist);
+        this.dataStore.set('project', project);
     }
 
     /**
      * When the playlist is updated in the datastore, redirect to the view playlist page.
      */
-    redirectToViewPlaylist() {
-        const playlist = this.dataStore.get('playlist');
-        if (playlist != null) {
-            window.location.href = `/playlist.html?id=${playlist.id}`;
+    redirectToViewProject() {
+        const project = this.dataStore.get('project');
+        if (project != null) {
+            window.location.href = `/project.html?id=${project.id}`;
         }
     }
 }
@@ -74,8 +75,8 @@ class CreatePlaylist extends BindingClass {
  * Main method to run when the page contents have loaded.
  */
 const main = async () => {
-    const createPlaylist = new CreatePlaylist();
-    createPlaylist.mount();
+    const createProject = new CreateProject();
+    createProject.mount();
 };
 
 window.addEventListener('DOMContentLoaded', main);
