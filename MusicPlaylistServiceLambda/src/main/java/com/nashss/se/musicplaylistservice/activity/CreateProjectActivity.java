@@ -1,12 +1,18 @@
 package com.nashss.se.musicplaylistservice.activity;
 
 import com.nashss.se.musicplaylistservice.activity.requests.CreatePlaylistRequest;
+import com.nashss.se.musicplaylistservice.activity.requests.CreateProjectRequest;
 import com.nashss.se.musicplaylistservice.activity.results.CreatePlaylistResult;
+import com.nashss.se.musicplaylistservice.activity.results.CreateProjectResult;
 import com.nashss.se.musicplaylistservice.converters.ModelConverter;
+import com.nashss.se.musicplaylistservice.converters.ProjectModelConverter;
 import com.nashss.se.musicplaylistservice.dynamodb.PlaylistDao;
+import com.nashss.se.musicplaylistservice.dynamodb.ProjectDao;
 import com.nashss.se.musicplaylistservice.dynamodb.models.Playlist;
+import com.nashss.se.musicplaylistservice.dynamodb.models.Project;
 import com.nashss.se.musicplaylistservice.exceptions.InvalidAttributeValueException;
 import com.nashss.se.musicplaylistservice.models.PlaylistModel;
+import com.nashss.se.musicplaylistservice.models.ProjectModel;
 import com.nashss.se.projectresources.music.playlist.servic.util.MusicPlaylistServiceUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,16 +29,16 @@ import java.util.Set;
  */
 public class CreateProjectActivity {
     private final Logger log = LogManager.getLogger();
-    private final PlaylistDao playlistDao;
+    private final ProjectDao projectDao;
 
     /**
-     * Instantiates a new CreatePlaylistActivity object.
+     * Instantiates a new CreateProjectActivity object.
      *
-     * @param playlistDao PlaylistDao to access the playlists table.
+     * @param projectDao ProjectDao to access the projects table.
      */
     @Inject
-    public CreateProjectActivity(PlaylistDao playlistDao) {
-        this.playlistDao = playlistDao;
+    public CreateProjectActivity( ProjectDao projectDao) {
+        this.projectDao = projectDao;
     }
 
     /**
@@ -44,42 +50,38 @@ public class CreateProjectActivity {
      * If the provided playlist name or customer ID has invalid characters, throws an
      * InvalidAttributeValueException
      *
-     * @param createPlaylistRequest request object containing the playlist name and customer ID
-     *                              associated with it
+     * @param createProjectRequest    request object containing the projectId associated with it
      * @return createPlaylistResult result object containing the API defined {@link PlaylistModel}
      */
-    public CreatePlaylistResult handleRequest(final CreatePlaylistRequest createPlaylistRequest) {
-        log.info("Received CreatePlaylistRequest {}", createPlaylistRequest);
+    public CreateProjectResult handleRequest(final CreateProjectRequest createProjectRequest) {
+        log.info("Received CreateProjectRequest {}", createProjectRequest);
 
-        if (!MusicPlaylistServiceUtils.isValidString(createPlaylistRequest.getName())) {
-            throw new InvalidAttributeValueException("Playlist name [" + createPlaylistRequest.getName() +
+        if (!MusicPlaylistServiceUtils.isValidString(createProjectRequest.getProjectId())) {
+            throw new InvalidAttributeValueException("Project ID [" + createProjectRequest.getProjectId() +
                     "] contains illegal characters");
         }
 
-        if (!MusicPlaylistServiceUtils.isValidString(createPlaylistRequest.getCustomerId())) {
-            throw new InvalidAttributeValueException("Playlist customer ID [" + createPlaylistRequest.getCustomerId() +
+        if (!MusicPlaylistServiceUtils.isValidString(createProjectRequest.getTitle())) {
+            throw new InvalidAttributeValueException("Project Title [" + createProjectRequest.getTitle() +
                     "] contains illegal characters");
         }
 
-        Set<String> playlistTags = null;
-        if (createPlaylistRequest.getTags() != null) {
-            playlistTags = new HashSet<>(createPlaylistRequest.getTags());
+        String status = null;
+        if (createProjectRequest.getStatus() != null) {
+            status = createProjectRequest.getStatus();
         }
 
-        Playlist newPlaylist = new Playlist();
-        newPlaylist.setId(MusicPlaylistServiceUtils.generatePlaylistId());
-        newPlaylist.setName(createPlaylistRequest.getName());
-        newPlaylist.setCustomerId(createPlaylistRequest.getCustomerId());
-        newPlaylist.setCustomerName(createPlaylistRequest.getCustomerName());
-        newPlaylist.setSongCount(0);
-        newPlaylist.setTags(playlistTags);
-        newPlaylist.setSongList(new ArrayList<>());
+        Project newProject = new Project();
+        newProject.setProjectId(MusicPlaylistServiceUtils.generatePlaylistId());
+        newProject.setTitle(createProjectRequest.getTitle());
+        newProject.setDescription(createProjectRequest.getDescription());
+        newProject.setStatus(status);
 
-        playlistDao.savePlaylist(newPlaylist);
+        projectDao.saveProject(newProject);
 
-        PlaylistModel playlistModel = new ModelConverter().toPlaylistModel(newPlaylist);
-        return CreatePlaylistResult.builder()
-                .withPlaylist(playlistModel)
+        ProjectModel projectModel = new ProjectModelConverter().toProjectModel(newProject);
+        return CreateProjectResult.builder()
+                .withProject(projectModel)
                 .build();
     }
 }
