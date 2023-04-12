@@ -7,43 +7,43 @@ import java.util.List;
 
 import static com.nashss.se.musicplaylistservice.utils.CollectionUtils.copyToList;
 
-@JsonDeserialize(builder = CreatePlaylistRequest.Builder.class)
-public class CreatePlaylistRequest {
-    private final String name;
-    private final String customerId;
-    private final String customerName;
-    private final List<String> tags;
+@JsonDeserialize(builder = CreateProjectRequest.Builder.class)
+public class CreateProjectRequest {
+    private final String projectId;
+    private final String title;
+    private final String description;
+    private final String status;
 
-    private CreatePlaylistRequest(String name, String customerId, String customerName, List<String> tags) {
-        this.name = name;
-        this.customerId = customerId;
-        this.customerName = customerName;
-        this.tags = tags;
+    private CreateProjectRequest(String projectId, String title, String description, String status) {
+        this.projectId = projectId;
+        this.title = title;
+        this.description = description;
+        this.status = status;
     }
 
-    public String getName() {
-        return name;
+    public String getProjectId() {
+        return projectId;
     }
 
-    public String getCustomerId() {
-        return customerId;
+    public String getTitle() {
+        return title;
     }
 
-    public String getCustomerName() {
-        return customerName;
+    public String getDescription() {
+        return description;
     }
 
-    public List<String> getTags() {
-        return copyToList(tags);
+    public String getStatus() {
+        return status;
     }
 
     @Override
     public String toString() {
-        return "CreatePlaylistRequest{" +
-                "name='" + name + '\'' +
-                ", customerId='" + customerId + '\'' +
-                ", customerName='" + customerName + '\'' +
-                ", tags=" + tags +
+        return "CreateProjectRequest{" +
+                "projectId='" + projectId + '\'' +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", status=" + status +
                 '}';
     }
 
@@ -54,33 +54,33 @@ public class CreatePlaylistRequest {
 
     @JsonPOJOBuilder
     public static class Builder {
-        private String name;
-        private String customerId;
-        private String customerName;
-        private List<String> tags;
+        private String projectId;
+        private String title;
+        private String description;
+        private String status;
 
-        public Builder withName(String name) {
-            this.name = name;
+        public Builder withProjectId(String projectId) {
+            this.projectId = projectId;
             return this;
         }
 
-        public Builder withCustomerId(String customerId) {
-            this.customerId = customerId;
+        public Builder withTitle(String title) {
+            this.title = title;
             return this;
         }
 
-        public Builder withCustomerName(String customerName) {
-            this.customerName = customerName;
+        public Builder withDescription(String description) {
+            this.description = description;
             return this;
         }
 
-        public Builder withTags(List<String> tags) {
-            this.tags = copyToList(tags);
+        public Builder withStatus(String status) {
+            this.status = status;
             return this;
         }
 
-        public CreatePlaylistRequest build() {
-            return new CreatePlaylistRequest(name, customerId, customerName, tags);
+        public CreateProjectRequest build() {
+            return new CreateProjectRequest(projectId, title, description, status);
         }
     }
 }

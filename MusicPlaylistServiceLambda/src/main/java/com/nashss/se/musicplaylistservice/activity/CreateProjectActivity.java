@@ -7,23 +7,21 @@ import com.nashss.se.musicplaylistservice.dynamodb.PlaylistDao;
 import com.nashss.se.musicplaylistservice.dynamodb.models.Playlist;
 import com.nashss.se.musicplaylistservice.exceptions.InvalidAttributeValueException;
 import com.nashss.se.musicplaylistservice.models.PlaylistModel;
-
 import com.nashss.se.projectresources.music.playlist.servic.util.MusicPlaylistServiceUtils;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
-import javax.inject.Inject;
 
 /**
  * Implementation of the CreatePlaylistActivity for the MusicPlaylistService's CreatePlaylist API.
  * <p>
  * This API allows the customer to create a new playlist with no songs.
  */
-public class CreatePlaylistActivity {
+public class CreateProjectActivity {
     private final Logger log = LogManager.getLogger();
     private final PlaylistDao playlistDao;
 
@@ -33,7 +31,7 @@ public class CreatePlaylistActivity {
      * @param playlistDao PlaylistDao to access the playlists table.
      */
     @Inject
-    public CreatePlaylistActivity(PlaylistDao playlistDao) {
+    public CreateProjectActivity(PlaylistDao playlistDao) {
         this.playlistDao = playlistDao;
     }
 

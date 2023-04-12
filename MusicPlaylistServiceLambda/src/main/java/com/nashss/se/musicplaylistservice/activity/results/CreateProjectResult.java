@@ -1,22 +1,22 @@
 package com.nashss.se.musicplaylistservice.activity.results;
 
-import com.nashss.se.musicplaylistservice.models.PlaylistModel;
+import com.nashss.se.musicplaylistservice.models.ProjectModel;
 
-public class CreatePlaylistResult {
-    private final PlaylistModel playlist;
+public class CreateProjectResult {
+    private final ProjectModel project;
 
-    private CreatePlaylistResult(PlaylistModel playlist) {
-        this.playlist = playlist;
+    private CreateProjectResult(ProjectModel project) {
+        this.project = project;
     }
 
-    public PlaylistModel getPlaylist() {
-        return playlist;
+    public ProjectModel getProject() {
+        return project;
     }
 
     @Override
     public String toString() {
         return "CreatePlaylistResult{" +
-                "playlist=" + playlist +
+                "playlist=" + project +
                 '}';
     }
 
@@ -26,15 +26,15 @@ public class CreatePlaylistResult {
     }
 
     public static class Builder {
-        private PlaylistModel playlist;
+        private ProjectModel project;
 
-        public Builder withPlaylist(PlaylistModel playlist) {
-            this.playlist = playlist;
+        public Builder withProject(ProjectModel project) {
+            this.project = project;
             return this;
         }
 
-        public CreatePlaylistResult build() {
-            return new CreatePlaylistResult(playlist);
+        public CreateProjectResult build() {
+            return new CreateProjectResult(project);
         }
     }
 }
