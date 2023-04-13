@@ -364,7 +364,7 @@ Resources:
         MusicPlaylistService:
           Type: Api
           Properties:
-            Path: /project/{id}
+            Path: /projects/{id}
             Method: delete
 
   #-----------------------------------------------------
