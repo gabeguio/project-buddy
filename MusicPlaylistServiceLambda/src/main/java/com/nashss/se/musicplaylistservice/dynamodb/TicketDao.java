@@ -16,8 +16,7 @@ public class TicketDao {
         return ticket;
     }
 
-    public Ticket saveTicket(Ticket ticket) {
+    public void saveTicket(Ticket ticket) {
         this.dynamoDBMapper.save(ticket);
-        return ticket;
     }
 }
