@@ -9,20 +9,14 @@ import static com.nashss.se.musicplaylistservice.utils.CollectionUtils.copyToLis
 
 @JsonDeserialize(builder = CreateProjectRequest.Builder.class)
 public class CreateProjectRequest {
-    private final String projectId;
     private final String title;
     private final String description;
     private final String status;
 
-    private CreateProjectRequest(String projectId, String title, String description, String status) {
-        this.projectId = projectId;
+    private CreateProjectRequest(String title, String description, String status) {
         this.title = title;
         this.description = description;
         this.status = status;
-    }
-
-    public String getProjectId() {
-        return projectId;
     }
 
     public String getTitle() {
@@ -39,8 +33,7 @@ public class CreateProjectRequest {
 
     @Override
     public String toString() {
-        return "CreateProjectRequest{" +
-                "projectId='" + projectId + '\'' +
+        return "CreateProjectRequest{" + '\'' +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", status=" + status +
@@ -54,15 +47,9 @@ public class CreateProjectRequest {
 
     @JsonPOJOBuilder
     public static class Builder {
-        private String projectId;
         private String title;
         private String description;
         private String status;
-
-        public Builder withProjectId(String projectId) {
-            this.projectId = projectId;
-            return this;
-        }
 
         public Builder withTitle(String title) {
             this.title = title;
@@ -80,7 +67,7 @@ public class CreateProjectRequest {
         }
 
         public CreateProjectRequest build() {
-            return new CreateProjectRequest(projectId, title, description, status);
+            return new CreateProjectRequest(title, description, status);
         }
     }
 }

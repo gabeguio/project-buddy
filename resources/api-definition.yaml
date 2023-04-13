@@ -14,7 +14,43 @@ tags:
   - name: Songs
     description: View and add songs to playlists
 
+  - name: Projects
+    description: Create, view, and update projects
+
 paths:
+  /projects:
+    post:
+      tags:
+        - Projects
+      summary: Create a new project (CreateProjectLambda)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                description:
+                  type: string
+                status:
+                  type: string
+      responses:
+        "200":
+          description: A project object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  projectId:
+                    type: string
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  status:
+                    type: string
 
   /playlists:
     post:

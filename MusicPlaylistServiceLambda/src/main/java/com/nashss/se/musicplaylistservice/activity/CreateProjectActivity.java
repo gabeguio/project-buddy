@@ -13,6 +13,7 @@ import com.nashss.se.musicplaylistservice.dynamodb.models.Project;
 import com.nashss.se.musicplaylistservice.exceptions.InvalidAttributeValueException;
 import com.nashss.se.musicplaylistservice.models.PlaylistModel;
 import com.nashss.se.musicplaylistservice.models.ProjectModel;
+import com.nashss.se.musicplaylistservice.utils.TicketManagementServiceUtils;
 import com.nashss.se.projectresources.music.playlist.servic.util.MusicPlaylistServiceUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -56,13 +57,18 @@ public class CreateProjectActivity {
     public CreateProjectResult handleRequest(final CreateProjectRequest createProjectRequest) {
         log.info("Received CreateProjectRequest {}", createProjectRequest);
 
-        if (!MusicPlaylistServiceUtils.isValidString(createProjectRequest.getProjectId())) {
+        if (!TicketManagementServiceUtils.isValidString(createProjectRequest.getProjectId())) {
             throw new InvalidAttributeValueException("Project ID [" + createProjectRequest.getProjectId() +
                     "] contains illegal characters");
         }
 
-        if (!MusicPlaylistServiceUtils.isValidString(createProjectRequest.getTitle())) {
+        if (!TicketManagementServiceUtils.isValidString(createProjectRequest.getTitle())) {
             throw new InvalidAttributeValueException("Project Title [" + createProjectRequest.getTitle() +
+                    "] contains illegal characters");
+        }
+
+        if (!TicketManagementServiceUtils.isValidString(createProjectRequest.getDescription())) {
+            throw new InvalidAttributeValueException("Project Title [" + createProjectRequest.getDescription() +
                     "] contains illegal characters");
         }
 
@@ -72,8 +78,9 @@ public class CreateProjectActivity {
         }
 
         Project newProject = new Project();
-        newProject.setProjectId(MusicPlaylistServiceUtils.generatePlaylistId());
         newProject.setTitle(createProjectRequest.getTitle());
+        newProject.setProjectId(TicketManagementServiceUtils.generateProjectId()
+                .concat(newProject.getTitle().trim()));
         newProject.setDescription(createProjectRequest.getDescription());
         newProject.setStatus(status);
 

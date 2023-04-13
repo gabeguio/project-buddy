@@ -364,7 +364,7 @@ Resources:
         MusicPlaylistService:
           Type: Api
           Properties:
-            Path: /projects/{projectId}
+            Path: /projects
             Method: post
   #-----------------------------------------------------
   # DynamoDB Configuration
