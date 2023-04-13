@@ -19,6 +19,5 @@ public class DeleteProjectActivity {
         log.info("Received request to delete project with id {}", id);
         Project project = projectDao.getProject(id);
         projectDao.deleteProject(project);
-        System.out.println("Project successfully deleted");
     }
 }
