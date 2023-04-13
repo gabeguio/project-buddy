@@ -17,7 +17,6 @@ public class CreateProjectLambda
                 CreateProjectRequest unauthenticatedRequest = input.fromBody(CreateProjectRequest.class);
                 return input.fromUserClaims(claims ->
                         CreateProjectRequest.builder()
-                                .withProjectId(unauthenticatedRequest.getProjectId())
                                 .withTitle(unauthenticatedRequest.getTitle())
                                 .withDescription(unauthenticatedRequest.getDescription())
                                 .withStatus(unauthenticatedRequest.getStatus())
