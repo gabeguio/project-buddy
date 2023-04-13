@@ -217,3 +217,34 @@ paths:
                           type: string
                         trackNumber:
                           type: integer
+
+  /projects/{id}:
+    get:
+      tags:
+        - Projects
+      summary: Get an existing project (GetProjectLambda)
+      parameters:
+        - name: projectId
+          in: path
+          description: ID of project to retrieve
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: ProjectResponse
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  projectId:
+                    type: string
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  status:
+                    type: string
+        "500":
+          description: "Invalid input parameters"
