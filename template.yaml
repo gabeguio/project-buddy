@@ -364,7 +364,7 @@ Resources:
         MusicPlaylistService:
           Type: Api
           Properties:
-            Path: /tickets
+            Path: /projects/{projectid}/tickets
             Method: post
 
   #-----------------------------------------------------
