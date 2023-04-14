@@ -366,6 +366,7 @@ Resources:
           Properties:
             Path: /projects
             Method: post
+            
   #-----------------------------------------------------
   # DynamoDB Configuration
   #-----------------------------------------------------
