@@ -55,6 +55,52 @@ paths:
                   status:
                     type: string
 
+  /projects/{projectid}/tickets:
+    post:
+      tags:
+        - Tickets
+      summary: Create a new Tickets (CreateTicketsLambda)
+      operationId: createTicket
+      parameters:
+        - name: projectid
+          in: path
+          description: project for new ticket
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                description:
+                  type: string
+                status:
+                  type: string
+      responses:
+        "200":
+          description: A ticket object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  projectId:
+                    type: string
+                  tickedId:
+                    type: string
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  status:
+                    type: string
+        "500":
+          description: "Invalid input parameters"
+
   /playlists:
     post:
       tags:

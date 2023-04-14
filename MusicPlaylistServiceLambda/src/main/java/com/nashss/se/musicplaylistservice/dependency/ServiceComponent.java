@@ -10,7 +10,10 @@ import com.nashss.se.musicplaylistservice.activity.GetTicketActivity;
 import com.nashss.se.musicplaylistservice.activity.SearchPlaylistsActivity;
 import com.nashss.se.musicplaylistservice.activity.UpdatePlaylistActivity;
 
+
+import com.nashss.se.musicplaylistservice.activity.requests.CreateTicketRequest;
 import com.nashss.se.musicplaylistservice.activity.requests.CreateProjectRequest;
+
 import dagger.Component;
 
 import javax.inject.Inject;
@@ -58,6 +61,11 @@ public interface ServiceComponent {
      * @return UpdatePlaylistActivity
      */
     UpdatePlaylistActivity provideUpdatePlaylistActivity();
+
+
+    CreateTicketActivity provideCreateTicketActivity();
+    
+    GetTicketActivity provideGetTicketActivity();
 
     CreateProjectActivity provideCreateProjectActivity();
     

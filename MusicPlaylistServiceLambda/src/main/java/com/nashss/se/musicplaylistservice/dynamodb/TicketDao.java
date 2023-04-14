@@ -5,8 +5,11 @@ import javax.inject.Inject;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.nashss.se.musicplaylistservice.dynamodb.models.Ticket;
 
+import javax.inject.Inject;
+
 public class TicketDao {
     private final DynamoDBMapper dynamoDBMapper;
+
     @Inject
     public TicketDao(DynamoDBMapper dynamoDBMapper) {
         this.dynamoDBMapper = dynamoDBMapper;
@@ -18,8 +21,7 @@ public class TicketDao {
         return ticket;
     }
 
-    public Ticket saveTicket(Ticket ticket) {
+    public void saveTicket(Ticket ticket) {
         this.dynamoDBMapper.save(ticket);
-        return ticket;
     }
 }
