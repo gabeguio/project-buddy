@@ -347,12 +347,12 @@ Resources:
             Path: /playlists/{id}/songs
             Method: post
 
-  GetTicketLambda:
+  CreateProjectLambda:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
       CodeUri: MusicPlaylistServiceLambda
-      Handler: com.nashss.se.musicplaylistservice.lambda.GetTicketLambda::handleRequest
+      Handler: com.nashss.se.musicplaylistservice.lambda.CreateProjectLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -364,10 +364,9 @@ Resources:
         MusicPlaylistService:
           Type: Api
           Properties:
-            Path: /projects/{projectid}/tickets/{ticketid}
-            Method: get
-
-
+            Path: /projects
+            Method: post
+            
   #-----------------------------------------------------
   # DynamoDB Configuration
   #-----------------------------------------------------
