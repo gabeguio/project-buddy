@@ -222,7 +222,7 @@ paths:
     delete:
       tags:
         - Projects
-      summary: Get an existing project (DeleteProjectActivity)
+      summary: Delete an existing project (DeleteProjectActivity)
       parameters:
         - name: projectId
           in: path
@@ -238,18 +238,14 @@ paths:
               schema:
                 type: object
                 properties:
-                  id:
+                  projectId:
                     type: string
-                  name:
+                  title:
                     type: string
-                  customerId:
+                  description:
                     type: string
-                  songCount:
-                    type: integer
-                  tags:
-                    type: array
-                    items:
-                      type: string
+                  status:
+                    type: string
         "500":
           description: "Invalid input parameters"
 
