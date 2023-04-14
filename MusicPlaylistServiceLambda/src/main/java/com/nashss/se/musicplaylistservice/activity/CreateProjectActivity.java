@@ -52,11 +52,6 @@ public class CreateProjectActivity {
         log.info("Received CreateProjectRequest {}", createProjectRequest);
 
         if (!TicketManagementServiceUtils.isValidString(createProjectRequest.getTitle())) {
-            throw new InvalidAttributeValueException("Project Title [" + createProjectRequest.getTitle() +
-                    "] contains illegal characters");
-        }
-
-        if (!TicketManagementServiceUtils.isValidString(createProjectRequest.getDescription())) {
             throw new InvalidAttributeValueException("Project Title [" + createProjectRequest.getDescription() +
                     "] contains illegal characters");
         }
