@@ -13,12 +13,14 @@ import com.nashss.se.musicplaylistservice.models.ProjectModel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.inject.Inject;
+
 public class DeleteProjectActivity {
 
     private final Logger log = LogManager.getLogger();
     private final ProjectDao projectDao;
 
-
+    @Inject
     public DeleteProjectActivity(ProjectDao projectDao) {
         this.projectDao = projectDao;
     }
