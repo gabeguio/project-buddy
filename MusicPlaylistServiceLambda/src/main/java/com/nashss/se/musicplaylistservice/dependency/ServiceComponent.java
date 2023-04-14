@@ -4,11 +4,13 @@ import com.nashss.se.musicplaylistservice.activity.AddSongToPlaylistActivity;
 import com.nashss.se.musicplaylistservice.activity.CreatePlaylistActivity;
 import com.nashss.se.musicplaylistservice.activity.GetPlaylistActivity;
 import com.nashss.se.musicplaylistservice.activity.GetPlaylistSongsActivity;
+import com.nashss.se.musicplaylistservice.activity.GetTicketActivity;
 import com.nashss.se.musicplaylistservice.activity.SearchPlaylistsActivity;
 import com.nashss.se.musicplaylistservice.activity.UpdatePlaylistActivity;
 
 import dagger.Component;
 
+import javax.inject.Inject;
 import javax.inject.Singleton;
 
 /**
@@ -53,5 +55,7 @@ public interface ServiceComponent {
      * @return UpdatePlaylistActivity
      */
     UpdatePlaylistActivity provideUpdatePlaylistActivity();
+
+    GetTicketActivity provideGetTicketActivity();
 
 }
