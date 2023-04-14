@@ -55,23 +55,12 @@ public class CreateProjectActivity {
             throw new InvalidAttributeValueException("Project Title [" + createProjectRequest.getDescription() +
                     "] contains illegal characters");
         }
-        
-        if (!TicketManagementServiceUtils.isValidString(createProjectRequest.getDescription())) {
-            throw new InvalidAttributeValueException("Project Description [" + createProjectRequest.getDescription() +
-                    "] contains illegal characters");
-        }
-
-        String status = null;
-        if (createProjectRequest.getStatus() != null) {
-            status = createProjectRequest.getStatus();
-        }
 
         Project newProject = new Project();
         newProject.setTitle(createProjectRequest.getTitle());
-        newProject.setProjectId(TicketManagementServiceUtils.generateProjectId()
-                .concat(newProject.getTitle().trim()));
+        newProject.setProjectId(TicketManagementServiceUtils.generateProjectId(createProjectRequest.getTitle()));
         newProject.setDescription(createProjectRequest.getDescription());
-        newProject.setStatus(status);
+        newProject.setStatus(createProjectRequest.getStatus());
 
         projectDao.saveProject(newProject);
 
