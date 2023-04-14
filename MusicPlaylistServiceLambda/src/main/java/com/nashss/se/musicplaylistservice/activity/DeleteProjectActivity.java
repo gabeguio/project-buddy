@@ -1,5 +1,8 @@
 package com.nashss.se.musicplaylistservice.activity;
 
+import com.amazonaws.regions.Regions;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.nashss.se.musicplaylistservice.dynamodb.DynamoDbClientProvider;
 import com.nashss.se.musicplaylistservice.dynamodb.ProjectDao;
 import com.nashss.se.musicplaylistservice.dynamodb.models.Project;
 import org.apache.logging.log4j.LogManager;
