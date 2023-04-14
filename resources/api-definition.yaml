@@ -303,6 +303,15 @@ paths:
                         trackNumber:
                           type: integer
 
+  /projects/{id}:
+    get:
+      tags:
+        - Projects
+      summary: Get an existing project (GetProjectLambda)
+      parameters:
+        - name: projectId
+          in: path
+          description: ID of project to retrieve
 
   /projects/{projectid}/tickets/{ticketid}:
     get:
@@ -323,7 +332,7 @@ paths:
             type: string
       responses:
         "200":
-          description: a TaskModel
+          description: ProjectResponse
           content:
             application/json:
               schema:
@@ -339,5 +348,7 @@ paths:
                     type: string
                   status:
                     type: string
+        "500":
+          description: "Invalid input parameters"
         "404":
           description: Ticket with the specified "ticketId" was not found
