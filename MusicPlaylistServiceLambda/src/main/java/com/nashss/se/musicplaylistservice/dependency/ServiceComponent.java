@@ -74,7 +74,6 @@ public interface ServiceComponent {
     GetTicketActivity provideGetTicketActivity();
 
     CreateProjectActivity provideCreateProjectActivity();
-    
-    GetTicketActivity provideGetTicketActivity();
+
     
 }
