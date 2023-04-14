@@ -30,9 +30,9 @@ public class GetTicketActivityTest {
         // GIVEN
         String ticketId = "expectedId";
         String projectId = "expectedName";
-        String expectedTitle = "expectedCustomerId";
-        String expectedDescription = "yeah";
-        String expectedStatus = "status";
+        String expectedTitle = "expectedTitle";
+        String expectedDescription = "expectedDescription";
+        String expectedStatus = "expectedStatus";
 
         Ticket ticket = new Ticket();
         ticket.setTicketId(ticketId);
