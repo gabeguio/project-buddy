@@ -249,3 +249,39 @@ paths:
         "500":
           description: "Invalid input parameters"
 
+  /projects/{id}/tickets/{id}:
+    delete:
+      tags:
+        - Tickets
+      summary: Delete an existing project (DeleteTicketActivity)
+      parameters:
+        - name: projectId
+          in: path
+          description: ID of project to delete its associated task
+          required: true
+          schema:
+            type: string
+        - name: ticketId
+          in: path
+          description: Id of the specific ticket that will be deleted in the project.
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: ProjectResponse
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  projectId:
+                    type: string
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  status:
+                    type: string
+        "500":
+          description: "Invalid input parameters"
