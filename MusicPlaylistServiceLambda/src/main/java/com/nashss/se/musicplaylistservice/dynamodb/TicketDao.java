@@ -20,4 +20,8 @@ public class TicketDao {
         this.dynamoDBMapper.save(ticket);
         return ticket;
     }
+
+    public void deleteTicket(Ticket ticket){
+        this.dynamoDBMapper.delete(ticket);
+    }
 }
