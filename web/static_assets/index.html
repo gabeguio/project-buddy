@@ -7,26 +7,57 @@
 </head>
 
 <body class="background">
-    <header class="header" id="header"></header>
-    <div class="card">
-        <h2>Search Playlists</h2>
-        <form class="card-content" id="search-playlists-form">
-            <p class="form-field">
-                <label>Search by name or tag</label>
-                <input type="text" class="validated-field" id="search-criteria" placeholder="smooth-jamz" autofocus>
-                <sub>Search is case-sensitive and tags must match exactly.</sub>
-            </p>
-        </form>
-        <p class="button-group">
-            <a href="#" class="button" id="search-btn">Search</a>
-            <a href="createPlaylist.html" class="button">New Playlist</a>
+<header class="header" id="header"></header>
+<div class="card">
+    <h2>Projects</h2>
+    <table border="1px" class="projects">
+        <th>Tickets</th>
+        <th>Status</th>
+        <th>Actions</th>
+        <script>
+            var table = [["Design home page","In Progress", "Edit Ticket"],["Create project page","In Progress", "Edit Ticket"]]
+                for(x = 2;x>0;x--){
+                    document.write("<tr>");
+                    for(y=3; y>0;y--){
+                        document.write("<td>"+y+"</td>);
+                    }
+                    document.write("</tr>");
+                }
+        </script>
+        <tr>
+            <td>Design home page</td>
+            <td>In Progress</td>
+            <td><a href="#" class="button">Edit Ticket</a> <a href="#" class="button">Edit Ticket</a> <a href="#" class="button">Edit Ticket</a></td>
+        </tr>
+        <tr>
+            <td>Design home page</td>
+            <td>In Progress</td>
+            <td><a href="#" class="button">Edit Ticket</a></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <form class="card-content" id="search-playlists-form">
+        <p class="form-field">
+            <label>Search by ProjectId</label>
+            <input type="text" class="validated-field" id="search-criteria" placeholder="smooth-jamz" autofocus>
+            <sub>Search is case-sensitive and tags must match exactly.</sub>
         </p>
+    </form>
+    <p class="button-group">
+        <a href="#" class="button" id="search-btn">Search</a>
+        <a href="createPlaylist.html" class="button">New Playlist</a>
+    </p>
+</div>
+<div class="card hidden" id='search-results-container'>
+    <h3>Results for <span id="search-criteria-display"></span></h3>
+    <div id="search-results-display">
     </div>
-    <div class="card hidden" id='search-results-container'>
-        <h3>Results for <span id="search-criteria-display"></span></h3>
-        <div id="search-results-display">
-        </div>
-    </div>
+</div>
 </body>
 
 </html>
