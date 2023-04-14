@@ -73,8 +73,7 @@ public class CreateProjectActivity {
 
         Project newProject = new Project();
         newProject.setTitle(createProjectRequest.getTitle());
-        newProject.setProjectId(TicketManagementServiceUtils.generateProjectId()
-                .concat(newProject.getTitle().trim()));
+        newProject.setProjectId(TicketManagementServiceUtils.generateProjectId(createProjectRequest.getTitle()));
         newProject.setDescription(createProjectRequest.getDescription());
         newProject.setStatus(status);
 

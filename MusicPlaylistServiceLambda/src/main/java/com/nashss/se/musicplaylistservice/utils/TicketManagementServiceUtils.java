@@ -7,7 +7,6 @@ import java.util.regex.Pattern;
 
 public class TicketManagementServiceUtils {
     private static final Pattern INVALID_CHARACTER_PATTERN = Pattern.compile("[\"'\\\\]");
-    static final int PLAYLIST_ID_LENGTH = 5;
 
     private TicketManagementServiceUtils() {
     }
@@ -20,8 +19,16 @@ public class TicketManagementServiceUtils {
         }
     }
 
-    public static String generateProjectId() {
-        return RandomStringUtils.randomAlphanumeric(6);
+    public static String generateTicketId() {
+        return RandomStringUtils.randomAlphanumeric(12);
+    }
+
+    public static String generateProjectId(String projecTitle) {
+        return RandomStringUtils.randomAlphanumeric(6) + "-" + transformProjectTitle(projecTitle);
+    }
+
+    private static String transformProjectTitle(String projectTitle) {
+        return projectTitle.replace(' ', '-');
     }
 }
 
