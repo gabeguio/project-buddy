@@ -14,6 +14,10 @@ tags:
   - name: Songs
     description: View and add songs to playlists
 
+  - name: Tickets
+    description: view, add, and update tickets
+
+
 paths:
 
   /playlists:
@@ -219,18 +223,18 @@ paths:
                           type: integer
 
 
-  /projects/{projectId}/tickets/{ticketId}:
+  /projects/{projectid}/tickets/{ticketid}:
     get:
       summary: receive a ticket by its ticketId
       operationId: getTicket
       parameters:
-        - name: projectId
+        - name: projectid
           in: path
           description: id of the project to retrieve tickets from
           required: true
           schema:
             type: string
-        - name: ticketId
+        - name: ticketid
           in: path
           description: id of the ticket to receive
           required: true

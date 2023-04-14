@@ -36,13 +36,10 @@ public class GetTicketRequest {
         private String projectId;
         private String ticketId;
 
-        public GetTicketRequest.Builder withId(String projectId) {
+        public GetTicketRequest.Builder withId(String projectId, String ticketId) {
            this.projectId = projectId;
+           this.ticketId = ticketId;
            return this;
-        }
-        public GetTicketRequest.Builder withTicketId (String ticketId) {
-            this.ticketId = ticketId;
-            return this;
         }
 
         public GetTicketRequest build() {

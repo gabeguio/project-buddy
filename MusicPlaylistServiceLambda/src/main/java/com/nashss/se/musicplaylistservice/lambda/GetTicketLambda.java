@@ -22,8 +22,7 @@ public class GetTicketLambda
         return super.runActivity(
             () -> input.fromPath(path ->
                 GetTicketRequest.builder()
-                    .withId(path.get("projectId"))
-                    .withTicketId(path.get("ticketId"))
+                    .withId(path.get("projectid"), path.get("ticketid"))
                     .build()),
             (request, serviceComponent) ->
                 serviceComponent.provideGetTicketActivity().handleRequest(request)
