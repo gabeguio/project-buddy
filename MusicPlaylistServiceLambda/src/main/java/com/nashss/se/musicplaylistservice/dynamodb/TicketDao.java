@@ -1,5 +1,7 @@
 package com.nashss.se.musicplaylistservice.dynamodb;
 
+import javax.inject.Inject;
+
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.nashss.se.musicplaylistservice.dynamodb.models.Ticket;
 
