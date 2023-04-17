@@ -26,10 +26,10 @@ public class GetTicketActivityTest {
     }
 
     @Test
-    public void handleRequest_savedPlaylistFound_returnsPlaylistModelInResult() {
+    public void handleRequest_savedTicketFound_returnsTicketModelInResult() {
         // GIVEN
         String ticketId = "expectedId";
-        String projectId = "expectedName";
+        String projectId = "expectedId";
         String expectedTitle = "expectedTitle";
         String expectedDescription = "expectedDescription";
         String expectedStatus = "expectedStatus";

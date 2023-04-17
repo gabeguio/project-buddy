@@ -5,6 +5,7 @@ import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.nashss.se.musicplaylistservice.activity.*;
 import com.nashss.se.musicplaylistservice.activity.AddSongToPlaylistActivity;
 import com.nashss.se.musicplaylistservice.activity.CreatePlaylistActivity;
+import com.nashss.se.musicplaylistservice.activity.GetAllTicketsActivity;
 import com.nashss.se.musicplaylistservice.activity.GetPlaylistActivity;
 import com.nashss.se.musicplaylistservice.activity.GetPlaylistSongsActivity;
 import com.nashss.se.musicplaylistservice.activity.GetTicketActivity;
@@ -73,7 +74,7 @@ public interface ServiceComponent {
     
     GetTicketActivity provideGetTicketActivity();
 
-    CreateProjectActivity provideCreateProjectActivity();
+    GetAllTicketsActivity provideGetAllTicketsActivity();
 
-    
+    CreateProjectActivity provideCreateProjectActivity();
 }
