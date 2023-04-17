@@ -1,5 +1,8 @@
 package com.nashss.se.musicplaylistservice.converters;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.nashss.se.musicplaylistservice.dynamodb.models.Project;
 import com.nashss.se.musicplaylistservice.dynamodb.models.Ticket;
 import com.nashss.se.musicplaylistservice.models.ProjectModel;
@@ -40,6 +43,16 @@ public class ProjectModelConverter{
                 .withStatus(ticket.getStatus())
                 .build();
         }
+
+    public List<TicketModel> toTicketModelList(List<Ticket> tickets) {
+        List<TicketModel> ticketModels = new ArrayList<>();
+
+        for (Ticket ticket : tickets) {
+            ticketModels.add(toTicketModel(ticket));
+        }
+
+        return ticketModels;
+    }
 
 
     }
