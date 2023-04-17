@@ -5,6 +5,7 @@ import javax.inject.Singleton;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.nashss.se.musicplaylistservice.dynamodb.models.Project;
+import com.nashss.se.musicplaylistservice.exceptions.ProjectNotFoundException;
 import com.nashss.se.musicplaylistservice.metrics.MetricsPublisher;
 
 @Singleton
@@ -17,8 +18,11 @@ public class ProjectDao {
     }
 
     public Project getProject(String projectId) {
-        Project project = dynamoDBMapper.load(Project.class, projectId);
 
+        Project project = dynamoDBMapper.load(Project.class, projectId);
+        if(project == null){
+            throw new ProjectNotFoundException();
+        }
         return project;
 
     }
