@@ -49,5 +49,5 @@ public interface ServiceComponent {
      */
     UpdatePlaylistActivity provideUpdatePlaylistActivity();
 
-    DeleteProjectActivity provideDeleteTicketActivity();
+    DeleteTicketActivity provideDeleteTicketActivity();
 }
