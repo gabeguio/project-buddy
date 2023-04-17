@@ -25,9 +25,6 @@ public class DeleteTicketActivity {
         Ticket ticket = new Ticket();
         ticket.setTicketId(request.getTicketId());
         ticket.setProjectId(request.getProjectId());
-        ticket.setDescription(request.getDescription());
-        ticket.setStatus(request.getStatus());
-        ticket.setTitle(request.getTitle());
 
         ticketDao.deleteTicket(ticket);
         TicketModel ticketModel = new ProjectModelConverter().toTicketModel(ticket);

@@ -384,7 +384,7 @@ Resources:
         MusicPlaylistService:
           Type: Api
           Properties:
-            Path: /tickets
+            Path: /tickets/{ticketId}
             Method: delete
 
   #-----------------------------------------------------

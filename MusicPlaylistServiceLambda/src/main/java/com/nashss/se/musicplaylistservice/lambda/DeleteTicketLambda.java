@@ -18,9 +18,6 @@ public class DeleteTicketLambda extends LambdaActivityRunner<DeleteTicketRequest
                             DeleteTicketRequest.builder()
                                     .withProjectId(unauthenticatedRequest.getProjectId())
                                     .withTicketId(unauthenticatedRequest.getTicketId())
-                                    .withStatus(unauthenticatedRequest.getStatus())
-                                    .withDescription(unauthenticatedRequest.getDescription())
-                                    .withTitle(unauthenticatedRequest.getTitle())
                                     .build());
                 },
                 (request, serviceComponent) ->
