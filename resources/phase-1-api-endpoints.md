@@ -55,7 +55,7 @@ Tasks
 | Responses | • 200 TaskModel • 404 TaskNotFoundException |
 - U2. As a user, I want to be able to create a task for a project, with title, description.
 
-| URL | /tasks/                                                                                              |
+| URL |  /projects/{projectid}/tickets                                                                                           |
 | --- |------------------------------------------------------------------------------------------------------|
 | Method | POST                                                                                                 |
 | Parameters |                                                                                                      |

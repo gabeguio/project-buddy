@@ -17,9 +17,7 @@ public class GetPlaylistRequest {
 
     @Override
     public String toString() {
-        return "GetPlaylistRequest{" +
-                "id='" + id + '\'' +
-                '}';
+        return "GetPlaylistRequest{" + "id='" + id + '\'' + '}';
     }
 
     //CHECKSTYLE:OFF:Builder
