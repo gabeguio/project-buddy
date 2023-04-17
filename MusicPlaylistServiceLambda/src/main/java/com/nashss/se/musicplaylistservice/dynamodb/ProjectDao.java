@@ -27,5 +27,7 @@ public class ProjectDao {
         this.dynamoDBMapper.save(project);
         return project;
     }
-
+    public void deleteProject(Project project){
+        this.dynamoDBMapper.delete(project);
+    }
 }
