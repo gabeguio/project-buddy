@@ -33,8 +33,8 @@ public class DeleteTicketResult {
         return this;
     }
 
-    public DeleteTicketResult build(){
+    public DeleteTicketResult build() {
         return new DeleteTicketResult(ticket);
-    }
+        }
     }
 }

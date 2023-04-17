@@ -5,10 +5,10 @@ import com.amazonaws.services.dynamodbv2.model.Delete;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 
-@JsonDeserialize(builder = DeleteTicketRequest.class)
+@JsonDeserialize(builder = DeleteTicketRequest.Builder.class)
 public class DeleteTicketRequest {
     private final String projectId;
-    private  final String ticketId;
+    private final String ticketId;
 
     private DeleteTicketRequest(String projectId, String ticketId){
             this.projectId = projectId;
@@ -26,7 +26,7 @@ public class DeleteTicketRequest {
 
     @Override
     public String toString(){
-        return "DeleteTicketRequest{" + "id='" + ticketId + '\'' +
+        return "DeleteTicketRequest{" + "ticketId='" + ticketId + '\'' +
                 ", projectId='" + projectId + '\'' + '}';
 
     }
