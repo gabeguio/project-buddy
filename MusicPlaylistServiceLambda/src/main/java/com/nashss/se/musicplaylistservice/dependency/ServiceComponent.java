@@ -2,6 +2,7 @@ package com.nashss.se.musicplaylistservice.dependency;
 
 import com.nashss.se.musicplaylistservice.activity.AddSongToPlaylistActivity;
 import com.nashss.se.musicplaylistservice.activity.CreatePlaylistActivity;
+import com.nashss.se.musicplaylistservice.activity.GetAllTicketsActivity;
 import com.nashss.se.musicplaylistservice.activity.GetPlaylistActivity;
 import com.nashss.se.musicplaylistservice.activity.GetPlaylistSongsActivity;
 import com.nashss.se.musicplaylistservice.activity.GetTicketActivity;
@@ -57,5 +58,7 @@ public interface ServiceComponent {
     UpdatePlaylistActivity provideUpdatePlaylistActivity();
 
     GetTicketActivity provideGetTicketActivity();
+
+    GetAllTicketsActivity provideGetAllTicketsActivity();
 
 }

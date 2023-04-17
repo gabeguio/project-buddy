@@ -1,5 +1,9 @@
 package com.nashss.se.musicplaylistservice.activity.requests;
 
+import java.util.List;
+
+import com.nashss.se.musicplaylistservice.dynamodb.models.Ticket;
+
 public class GetPlaylistRequest {
     private final String id;
 
@@ -24,15 +28,16 @@ public class GetPlaylistRequest {
     }
 
     public static class Builder {
-        private String id;
+        private String projectId;
+        private List<Ticket> tickets;
 
-        public Builder withId(String id) {
-            this.id = id;
+        public Builder withId(String projectId) {
+            this.projectId = projectId;
             return this;
         }
 
         public GetPlaylistRequest build() {
-            return new GetPlaylistRequest(id);
+            return new GetPlaylistRequest(projectId);
         }
     }
 }
