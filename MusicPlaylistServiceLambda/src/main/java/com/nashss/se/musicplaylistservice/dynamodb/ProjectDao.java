@@ -28,7 +28,4 @@ public class ProjectDao {
         return project;
     }
 
-    public void deleteProject(Project project){
-        dynamoDBMapper.delete(project);
-    }
 }
