@@ -364,7 +364,7 @@ Resources:
         MusicPlaylistService:
           Type: Api
           Properties:
-            Path: /projects/{id}
+            Path: /projects
             Method: delete
 
   DeleteTicketLambda:
@@ -384,7 +384,7 @@ Resources:
         MusicPlaylistService:
           Type: Api
           Properties:
-            Path: /projects/{id}/tickets/{id}
+            Path: /tickets
             Method: delete
 
   #-----------------------------------------------------
