@@ -347,12 +347,12 @@ Resources:
             Path: /playlists/{id}/songs
             Method: post
 
-  DeleteProjectLambda:
+  DeleteTicketLambda:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
       CodeUri: MusicPlaylistServiceLambda
-      Handler: com.nashss.se.musicplaylistservice.lambda.DeleteProjectLambda::handleRequest
+      Handler: com.nashss.se.musicplaylistservice.lambda.DeleteTicketLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -364,12 +364,8 @@ Resources:
         MusicPlaylistService:
           Type: Api
           Properties:
-            Path: /projects/{id}
+            Path: /tickets
             Method: delete
-            Path: /projects/{projectId}
-            Method: get
-            Auth:
-              Authorizer: 'NONE'
 
   CreateProjectLambda:
     Type: AWS::Serverless::Function
@@ -450,7 +446,7 @@ Resources:
           Properties:
             Path: /tickets
             Method: post
-
+            
   #-----------------------------------------------------
   # DynamoDB Configuration
   #-----------------------------------------------------

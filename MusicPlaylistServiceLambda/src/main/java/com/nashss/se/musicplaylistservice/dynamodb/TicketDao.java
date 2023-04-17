@@ -15,6 +15,8 @@ import com.nashss.se.musicplaylistservice.exceptions.TicketNotFoundException;
 
 import javax.inject.Inject;
 
+import javax.inject.Inject;
+
 public class TicketDao {
     private final DynamoDBMapper dynamoDBMapper;
 
@@ -60,5 +62,9 @@ public class TicketDao {
         }
 
         return ticketList;
+    }
+
+    public void deleteTicket(Ticket ticket){
+        this.dynamoDBMapper.delete(ticket);
     }
 }

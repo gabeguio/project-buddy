@@ -68,6 +68,8 @@ public interface ServiceComponent {
      */
     UpdatePlaylistActivity provideUpdatePlaylistActivity();
 
+    DeleteTicketActivity provideDeleteTicketActivity();
+
     DeleteProjectActivity provideDeleteProjectActivity();
     
     GetProjectActivity provideGetProjectActivity();
