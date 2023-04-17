@@ -18,7 +18,7 @@ public class GetProjectLambda extends LambdaActivityRunner<GetProjectRequest, Ge
     public LambdaResponse handleRequest(LambdaRequest<GetProjectRequest> input, Context context){
         log.info("handleRequest");
         return super.runActivity(
-                () -> input.fromPath(path -> GetProjectRequest.builder().withId(path.get("id")).build()),
+                () -> input.fromPath(path -> GetProjectRequest.builder().withId(path.get("projectId")).build()),
                         (request, serviceComponent) ->
                                 serviceComponent.provideGetProjectActivity().handleRequest(request)
 
