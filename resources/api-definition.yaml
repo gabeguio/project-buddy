@@ -14,7 +14,92 @@ tags:
   - name: Songs
     description: View and add songs to playlists
 
+  - name: Projects
+    description: Create, view, and update projects
+    
+  - name: Tickets
+    description: view, add, and update tickets
+
 paths:
+  /projects:
+    post:
+      tags:
+        - Projects
+      summary: Create a new project (CreateProjectLambda)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                description:
+                  type: string
+                status:
+                  type: string
+      responses:
+        "200":
+          description: A project object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  projectId:
+                    type: string
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  status:
+                    type: string
+
+  /projects/{projectid}/tickets:
+    post:
+      tags:
+        - Tickets
+      summary: Create a new Tickets (CreateTicketsLambda)
+      operationId: createTicket
+      parameters:
+        - name: projectid
+          in: path
+          description: project for new ticket
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                description:
+                  type: string
+                status:
+                  type: string
+      responses:
+        "200":
+          description: A ticket object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  projectId:
+                    type: string
+                  tickedId:
+                    type: string
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  status:
+                    type: string
+        "500":
+          description: "Invalid input parameters"
 
   /playlists:
     post:
@@ -217,3 +302,53 @@ paths:
                           type: string
                         trackNumber:
                           type: integer
+
+  /projects/{id}:
+    get:
+      tags:
+        - Projects
+      summary: Get an existing project (GetProjectLambda)
+      parameters:
+        - name: projectId
+          in: path
+          description: ID of project to retrieve
+
+  /projects/{projectid}/tickets/{ticketid}:
+    get:
+      summary: receive a ticket by its ticketId
+      operationId: getTicket
+      parameters:
+        - name: projectid
+          in: path
+          description: id of the project to retrieve tickets from
+          required: true
+          schema:
+            type: string
+        - name: ticketid
+          in: path
+          description: id of the ticket to receive
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: ProjectResponse
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  projectId:
+                    type: string
+                  ticketId:
+                    type: string
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  status:
+                    type: string
+        "500":
+          description: "Invalid input parameters"
+        "404":
+          description: Ticket with the specified "ticketId" was not found
