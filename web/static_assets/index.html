@@ -2,55 +2,26 @@
 <html>
 
 <head>
-    <script type="text/javascript" src="assets/searchPlaylists.js"></script>
+    <script type="text/javascript" src="assets/loadProjects.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
-<body class="background">
+<body class="background" onload="CreateTable();">
 <header class="header" id="header"></header>
 <div class="card">
     <h2>Projects</h2>
-    <table border="1px" class="projects">
-        <th>Tickets</th>
-        <th>Status</th>
-        <th>Actions</th>
-        <script>
-            var table = [["Design home page","In Progress", "Edit Ticket"],["Create project page","In Progress", "Edit Ticket"]]
-                for(x = 2;x>0;x--){
-                    document.write("<tr>");
-                    for(y=3; y>0;y--){
-                        document.write("<td>"+y+"</td>);
-                    }
-                    document.write("</tr>");
-                }
-        </script>
-        <tr>
-            <td>Design home page</td>
-            <td>In Progress</td>
-            <td><a href="#" class="button">Edit Ticket</a> <a href="#" class="button">Edit Ticket</a> <a href="#" class="button">Edit Ticket</a></td>
-        </tr>
-        <tr>
-            <td>Design home page</td>
-            <td>In Progress</td>
-            <td><a href="#" class="button">Edit Ticket</a></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
+    <div id="container"></div>
 
     <form class="card-content" id="search-playlists-form">
         <p class="form-field">
-            <label>Search by ProjectId</label>
-            <input type="text" class="validated-field" id="search-criteria" placeholder="smooth-jamz" autofocus>
+            <label>Search by Projects</label>
+            <input type="text" class="validated-field" id="search-criteria" placeholder="u6733v-UniqueProjectID" autofocus>
             <sub>Search is case-sensitive and tags must match exactly.</sub>
         </p>
     </form>
     <p class="button-group">
         <a href="#" class="button" id="search-btn">Search</a>
-        <a href="createPlaylist.html" class="button">New Playlist</a>
+        <a href="createProject.html" class="button">New Project</a>
     </p>
 </div>
 <div class="card hidden" id='search-results-container'>
@@ -59,5 +30,49 @@
     </div>
 </div>
 </body>
+<script>
+    function CreateTable() {
 
+        // CREATE DYNAMIC TABLE.
+        var table = document.createElement('table');
+
+        // SET THE TABLE ID AND OTHER ATTRIBUTES
+        table.setAttribute('id', 'ticketTable');
+        table.setAttribute('border', '2px');
+        table.setAttribute('class', 'card');
+
+        var arrHead = new Array();
+        arrHead = ['TicketTitle', 'Status', 'Description', 'Actions'];
+
+        var arrValue = new Array();
+
+        arrValue.push(['Design Home Page', 'In Progress', 'Do HTML, JS, and some styling','<a href="viewTicket.html" class="button">View Ticket</a> <a href="editTicket.html" class="button">Edit Ticket</a> <a href="deleteTicket.html" class="button">Delete Ticket</a>']);
+        arrValue.push(['Implement API endpoint', 'Complete', 'Do backend java, update yaml, curl requests', '<a href="viewTicket.html" class="button">View Ticket</a> <a href="editTicket.html" class="button">Edit Ticket</a> <a href="deleteTicket.html" class="button">Delete Ticket</a>']);
+        arrValue.push(['Another task here', 'Not started', 'Not even a title,and you expect a description??', '<a href="viewTicket.html" class="button">View Ticket</a> <a href="editTicket.html" class="button">Edit Ticket</a> <a href="#deleteTicket.html" class="button">Delete Ticket</a>']);
+
+        var tr = table.insertRow(-1);
+
+        // TABLE HEADER.
+        for (var h = 0; h < arrHead.length; h++) {
+            var th = document.createElement('th');
+            th.innerHTML = arrHead[h];
+            tr.appendChild(th);
+        }
+
+        for (var c = 0; c <= arrValue.length - 1; c++) {
+            tr = table.insertRow(-1);
+
+            // TABLE DEFINITION.
+            for (var j = 0; j < arrHead.length; j++) {
+                var td = document.createElement('td');
+                td = tr.insertCell(-1);
+                // ADD VALUES TO EACH CELL.
+                td.innerHTML = arrValue[c][j];
+            }
+        }
+        //ADD THE NEW TABLE TO THE BODY.
+        document.body.appendChild(table);
+    }
+
+</script>
 </html>

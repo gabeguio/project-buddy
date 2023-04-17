@@ -1,75 +1,70 @@
-import MusicPlaylistClient from '../api/musicPlaylistClient';
 import Header from '../components/header';
 import BindingClass from "../util/bindingClass";
+import DataStore from "../util/DataStore";
+
+class LoadProjects{
+
+    function CreateTable() {
+
+        // CREATE DYNAMIC TABLE.
+//        var table = document.createElement('table');
+
+        // SET THE TABLE ID.
+        // WE WOULD NEED THE ID TO TRAVERSE AND EXTRACT DATA FROM THE TABLE.
+        table.setAttribute('id', 'ticketTable');
+        table.setAttribute('border', '2px');
 
 
-class LoadProjects extends BindingClass{
-    constructor() {
-            super();
-            this.bindClassMethods(['clientLoaded', 'mount', 'getHTMLForLoadedProjects',
-            'viewTicket', 'editTicket', 'markTicketAsComplete', 'deleteTicket'], this);
-            this.dataStore = new DataStore();
-            this.dataStore.addChangeListener(this.addPlaylistToPage);
-            this.dataStore.addChangeListener(this.addSongsToPage);
-            this.header = new Header(this.dataStore);
-            console.log("loadproject constructor");
-    }
+        var arrHead = new Array();
+        arrHead = ['ProjectName', 'Status', 'Description'];
 
+        var arrValue = new Array();
 
-    async clientLoaded() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const projectId = urlParams.get('projectId');
-        document.getElementById('project-title').innerText = "Loading Project ...";
-        const playlist = await this.client.getPlaylist(projectId);
-        this.dataStore.set('project', project);
-        document.getElementById('tickets').innerText = "(loading tickets...)";
-        const songs = await this.client.getProjectTasks(projectId);
-        this.dataStore.set('tasks', tasks);
-    }
+        arrValue.push(['Design Home Page', 'In Progress', '<a href="#" class="button">View Ticket</a> <a href="#" class="button">Edit Ticket</a> <a href="#" class="button">Delete Ticket</a>']);
+        arrValue.push(['Implement API endpoint', 'Complete', '<a href="#" class="button">View Ticket</a> <a href="#" class="button">Edit Ticket</a> <a href="#" class="button">Delete Ticket</a>']);
+        arrValue.push(['Another task here', 'Not started', '<a href="#" class="button">View Ticket</a> <a href="#" class="button">Edit Ticket</a> <a href="#" class="button">Delete Ticket</a>']);
 
+        var tr = table.insertRow(-1);
 
-    mount() {
-        document.getElementById('add-tasks').addEventListener('click', this.addTasks);
-
-        this.header.addHeaderToPage();
-
-        this.client = new MusicPlaylistClient();
-        this.clientLoaded();
-    }
-
-    /**
-     * When the playlist is updated in the datastore, update the playlist metadata on the page.
-     */
-    addProjectToPage() {
-        const project = this.dataStore.get('project');
-        if (project == null) {
-            return;
+        for (var h = 0; h < arrHead.length; h++) {
+            var th = document.createElement('th');              // TABLE HEADER.
+            th.innerHTML = arrHead[h];
+            tr.appendChild(th);
         }
 
-        document.getElementById('project-id').innerText = playlist.name;
-        document.getElementById('playlist-owner').innerText = playlist.customerName;
+        for (var c = 0; c <= arrValue.length - 1; c++) {
+            tr = table.insertRow(-1);
 
-
-
-    getHTMLForSearchResults(searchResults) {
+            for (var j = 0; j < arrHead.length; j++) {
+                var td = document.createElement('td');          // TABLE DEFINITION.
+                td = tr.insertCell(-1);
+                td.innerHTML = arrValue[c][j];                  // ADD VALUES TO EACH CELL.
+            }
+        }
+    }
+    function GetHTMLForResults(results) {
         if (searchResults.length === 0) {
             return '<h4>No results found</h4>';
         }
 
-        let html = '<table><tr><th>Name</th><th>Song Count</th><th>Tags</th></tr>';
+        let html = '<table><tr><th>Name</th><th>Ticket Count</th><th>Tickets</th></tr>';
         for (const res of searchResults) {
             html += `
+            <th>Tickets</th>
+            <th>Status</th>
+            <th>Actions</th>
             <tr>
                 <td>
-                    <a href="playlist.html?id=${res.id}">${res.name}</a>
+                    <a href="projects.html?id=${res.id}">${res.projectTitle}</a>
                 </td>
-                <td>${res.songCount}</td>
-                <td>${res.tags?.join(', ')}</td>
+                <td>${res.ticketCount}</td>
+                <td><a href="#" class="button">Edit Ticket</a> <a href="#" class="button">Edit Ticket</a> <a href="#" class="button">Edit Ticket</a></td>
             </tr>`;
         }
         html += '</table>';
 
         return html;
     }
+
 
 }
