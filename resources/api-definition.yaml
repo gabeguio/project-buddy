@@ -304,6 +304,14 @@ paths:
                           type: integer
 
   /projects/{id}:
+    delete:
+      tags:
+        - Projects
+      summary: Delete an existing project (DeleteProjectActivity)
+      parameters:
+        - name: projectId
+          in: path
+          description: ID of project to delete
     get:
       tags:
         - Projects

@@ -1,5 +1,9 @@
 package com.nashss.se.musicplaylistservice.dependency;
 
+import com.amazonaws.services.lambda.runtime.RequestHandler;
+import com.nashss.se.musicplaylistservice.activity.*;
+
+import com.nashss.se.musicplaylistservice.activity.requests.DeleteProjectRequest;
 import com.nashss.se.musicplaylistservice.activity.*;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.nashss.se.musicplaylistservice.activity.*;
@@ -64,10 +68,8 @@ public interface ServiceComponent {
      */
     UpdatePlaylistActivity provideUpdatePlaylistActivity();
 
-    /**
-     * Provides relevant activity.
-     * @return GetProjectActivity.
-     */
+    DeleteProjectActivity provideDeleteProjectActivity();
+    
     GetProjectActivity provideGetProjectActivity();
 
     CreateTicketActivity provideCreateTicketActivity();
