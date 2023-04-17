@@ -364,7 +364,7 @@ Resources:
         MusicPlaylistService:
           Type: Api
           Properties:
-            Path: /projects/{id}
+            Path: /projects/{projectId}
             Method: get
             Auth:
               Authorizer: 'NONE'
@@ -406,7 +406,7 @@ Resources:
         MusicPlaylistService:
           Type: Api
           Properties:
-            Path: /projects/{projectid}/tickets/{ticketid}
+            Path: /projects/{projectId}/tickets/{ticketId}
             Method: get
 
   CreateTicketLambda:
@@ -426,7 +426,7 @@ Resources:
         MusicPlaylistService:
           Type: Api
           Properties:
-            Path: /projects/{projectid}/tickets
+            Path: /tickets
             Method: post
 
   #-----------------------------------------------------
