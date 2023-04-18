@@ -1,12 +1,20 @@
 package com.nashss.se.musicplaylistservice.dynamodb;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.nashss.se.musicplaylistservice.dynamodb.models.Project;
 import com.nashss.se.musicplaylistservice.dynamodb.models.Ticket;
+import com.nashss.se.musicplaylistservice.test.helper.ProjectTestHelper;
+import com.nashss.se.musicplaylistservice.test.helper.TicketTestHelper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
@@ -44,5 +52,25 @@ public class TicketDaoTest {
                         ticket,
                         result)
         );
+    }
+
+    @Test
+    public void getAllTickets_callsMapper() {
+        // GIVEN
+        String projectId = "projectId";
+
+        List<Ticket> ticketList = new ArrayList<>();
+        ticketList.add(TicketTestHelper.generateTicket());
+
+        ticketDao = mock(TicketDao.class);
+
+        when(ticketDao.getAllTicketsForProjectId(projectId)).thenReturn(ticketList);
+
+        // WHEN
+        List<Ticket> result = ticketDao.getAllTicketsForProjectId(projectId);
+
+        // THEN
+        verify(ticketDao).getAllTicketsForProjectId(projectId);
+        assertEquals(ticketList, result);
     }
 }
