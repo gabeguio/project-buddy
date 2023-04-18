@@ -406,6 +406,9 @@ Resources:
           Properties:
             Path: /projects/{projectId}/tickets/{ticketId}
             Method: get
+            Auth:
+              Authorizer: 'NONE'
+
 
   GetAllTicketsForProjectLambda:
     Type: AWS::Serverless::Function
@@ -464,7 +467,7 @@ Resources:
         MusicPlaylistService:
           Type: Api
           Properties:
-            Path: /projects/{id}
+            Path: /projects/{projectId}
             Method: get
             Auth:
               Authorizer: 'NONE'
@@ -486,7 +489,7 @@ Resources:
         MusicPlaylistService:
           Type: Api
           Properties:
-            Path: /projects/
+            Path: /projects
             Method: get
 
   DeleteProjectLambda:
@@ -506,7 +509,7 @@ Resources:
         MusicPlaylistService:
           Type: Api
           Properties:
-            Path: /projects/
+            Path: /projects
             Method: delete
 
   UpdateProjectStatusLambda:
