@@ -3,7 +3,7 @@ package com.nashss.se.musicplaylistservice.dependency;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.nashss.se.musicplaylistservice.activity.*;
 
-import com.nashss.se.musicplaylistservice.activity.requests.DeleteProjectRequest;
+import com.nashss.se.musicplaylistservice.activity.requests.*;
 import com.nashss.se.musicplaylistservice.activity.*;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.nashss.se.musicplaylistservice.activity.*;
@@ -17,10 +17,6 @@ import com.nashss.se.musicplaylistservice.activity.SearchPlaylistsActivity;
 import com.nashss.se.musicplaylistservice.activity.UpdatePlaylistActivity;
 
 
-import com.nashss.se.musicplaylistservice.activity.requests.CreateTicketRequest;
-import com.nashss.se.musicplaylistservice.activity.requests.CreateProjectRequest;
-
-import com.nashss.se.musicplaylistservice.activity.requests.UpdateProjectStatusRequest;
 import dagger.Component;
 
 import javax.inject.Inject;
@@ -87,4 +83,5 @@ public interface ServiceComponent {
 
     UpdateProjectStatusActivity provideUpdateProjectStatusActivity();
 
+    UpdateProjectDetailsActivity provideUpdateProjectDetailsActivity();
 }
