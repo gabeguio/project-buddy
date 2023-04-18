@@ -23,8 +23,8 @@ public class TicketManagementServiceUtils {
         return RandomStringUtils.randomAlphanumeric(12);
     }
 
-    public static String generateProjectId(String projecTitle) {
-        return RandomStringUtils.randomAlphanumeric(6) + "-" + transformProjectTitle(projecTitle);
+    public static String generateProjectId(String projectTitle) {
+        return RandomStringUtils.randomAlphanumeric(6) + "-" + transformProjectTitle(projectTitle);
     }
 
     private static String transformProjectTitle(String projectTitle) {
