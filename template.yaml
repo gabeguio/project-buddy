@@ -491,6 +491,8 @@ Resources:
           Properties:
             Path: /projects
             Method: get
+            Auth:
+              Authorizer: 'NONE'
 
   DeleteProjectLambda:
     Type: AWS::Serverless::Function
@@ -569,7 +571,7 @@ Resources:
         MusicPlaylistService:
           Type: Api
           Properties:
-            Path: /projects/{id}
+            Path: /projects/{projectId}
             Method: put
 
   #-----------------------------------------------------

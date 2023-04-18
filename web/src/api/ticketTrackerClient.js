@@ -15,7 +15,7 @@ export default class TicketTrackerClient extends BindingClass {
     constructor(props = {}) {
         super();
 
-        const methodsToBind = ['clientLoaded', 'getIdentity', 'login', 'logout', 'getProject', 'getTicket', 'getAllTicketsByProject', 'createProject', 'createTicket', 'deleteTicket', 'deleteProject'];
+        const methodsToBind = ['clientLoaded', 'getIdentity', 'login', 'logout', 'getProject', 'getTicket', 'getAllTicketsByProject', 'createProject', 'createTicket', 'deleteTicket', 'deleteProject', 'getAllProjects'];
         this.bindClassMethods(methodsToBind, this);
 
         this.authenticator = new Authenticator();;
@@ -74,7 +74,7 @@ export default class TicketTrackerClient extends BindingClass {
     async getAllProjects(errorCallback) {
         try {
             const response = await this.axiosClient.get(`/projects`);
-            return response.data.projectlist;
+            return response.data.projectList;
         } catch (error) {
             this.handleError(error, errorCallback)
         }

@@ -46,14 +46,14 @@ class LoadProjects extends BindingClass {
      * Once the client is loaded, get the playlist metadata and song list.
      */
     async clientLoaded() {
-        const urlParams = new URLSearchParams(window.location.search);
         //const projectId = urlParams.get('projectId');
         //document.getElementById('project-title').innerText = "Loading Project ...";
-        //const project = await this.client.getProject(projectId);
+        const projects = await this.client.getAllProjects();
         //this.dataStore.set('project', project);
         //document.getElementById('tickets').innerText = "(loading tickets...)";
         //const tickets = await this.client.getProjectTickets(projectId);
         //this.dataStore.set('tickets', tickets);
+        console.log("projects", projects);
     }
 
     /**
