@@ -15,7 +15,7 @@ export default class TicketTrackerClient extends BindingClass {
     constructor(props = {}) {
         super();
 
-        const methodsToBind = ['clientLoaded', 'getIdentity', 'login', 'logout', 'getProject', 'getTicket', 'getAllTicketsByProject', 'createProject', 'createTicket'];
+        const methodsToBind = ['clientLoaded', 'getIdentity', 'login', 'logout', 'getProject', 'getTicket', 'getAllTicketsByProject', 'createProject', 'createTicket', 'deleteTicket', 'deleteProject'];
         this.bindClassMethods(methodsToBind, this);
 
         this.authenticator = new Authenticator();;
@@ -170,6 +170,52 @@ export default class TicketTrackerClient extends BindingClass {
             this.handleError(error, errorCallback)
         }
     }
+
+    /**
+     * Deletes a ticket owned by any user.
+     * @param projectId The project that has the ticket
+     * @param tickedId The ticket that will be delete from the specified project.
+     * @param errorCallback (Optional) A function to execute if the call fails.
+     * @returns The ticket that has been delete.
+     */
+    async deleteTicket(projectId, tickedId, errorCallback) {
+        try {
+            const token = await this.getTokenOrThrow("Only authenticated users can delete a ticket.");
+            const response = await this.axiosClient.delete(`tickets`, {
+                projectId: projectId,
+                ticketId: tickedId,
+            }, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            return response.data.ticket;
+        } catch (error) {
+            this.handleError(error, errorCallback)
+        }
+    }
+
+        /**
+     * Deletes a project owned by any user, and all the tickets associated with that project
+     * @param projectId The project that will be deleted.
+     * @param errorCallback (Optional) A function to execute if the call fails.
+     * @returns The ticket that has been delete.
+     */
+        async deleteProject(projectId, errorCallback) {
+            try {
+                const token = await this.getTokenOrThrow("Only authenticated users can delete a project.");
+                const response = await this.axiosClient.delete(`projects`, {
+                    projectId: projectId,
+                }, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+                return response.data.ticket;
+            } catch (error) {
+                this.handleError(error, errorCallback)
+            }
+        }
 
     /**
      * Helper method to log the error and run any error functions.
