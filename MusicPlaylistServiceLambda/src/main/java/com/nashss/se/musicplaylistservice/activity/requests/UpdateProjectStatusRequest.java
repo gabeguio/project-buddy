@@ -40,7 +40,7 @@ public class UpdateProjectStatusRequest {
             return this;
         }
 
-        public Builder withProjectId(){
+        public Builder withProjectId(String projectId){
             this.projectId = projectId;
             return this;
         }
