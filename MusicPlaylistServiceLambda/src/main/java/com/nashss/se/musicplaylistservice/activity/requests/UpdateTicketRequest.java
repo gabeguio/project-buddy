@@ -79,25 +79,25 @@ public class UpdateTicketRequest {
 
         }
 
-        public Builder withticketId(String ticketId) {
+        public Builder withTicketId(String ticketId) {
             this.ticketId = ticketId;
             return this;
 
         }
 
-        public Builder withtitle(String title) {
+        public Builder withTitle(String title) {
             this.title = title;
             return this;
 
         }
 
-        public Builder withdescription(String description) {
+        public Builder withDescription(String description) {
             this.description = description;
             return this;
 
         }
 
-        public Builder withstatus(String status) {
+        public Builder withStatus(String status) {
             this.status = status;
             return this;
         }

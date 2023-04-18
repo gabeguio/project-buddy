@@ -17,10 +17,10 @@ public class UpdateTicketLambda
                     return input.fromUserClaims(claims ->
                             UpdateTicketRequest.builder()
                                     .withProjectId(unauthenticatedRequest.getProjectId())
-                                    .withticketId(unauthenticatedRequest.getTicketId())
-                                    .withtitle(unauthenticatedRequest.getTitle())
-                                    .withdescription(unauthenticatedRequest.getDescription())
-                                    .withstatus(unauthenticatedRequest.getStatus())
+                                    .withTicketId(unauthenticatedRequest.getTicketId())
+                                    .withTitle(unauthenticatedRequest.getTitle())
+                                    .withDescription(unauthenticatedRequest.getDescription())
+                                    .withStatus(unauthenticatedRequest.getStatus())
                                     .build());
                 },
                 (request, serviceComponent) ->
