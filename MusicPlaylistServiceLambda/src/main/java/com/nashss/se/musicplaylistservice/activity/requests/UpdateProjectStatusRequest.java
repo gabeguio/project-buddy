@@ -1,8 +1,9 @@
 package com.nashss.se.musicplaylistservice.activity.requests;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import org.apache.commons.lang3.builder.Builder;
-
+@JsonDeserialize(builder = UpdateProjectStatusRequest.Builder.class)
 public class UpdateProjectStatusRequest {
 
     private final String status;
