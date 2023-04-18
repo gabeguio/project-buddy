@@ -5,11 +5,10 @@ import com.nashss.se.musicplaylistservice.activity.results.UpdateProjectStatusRe
 import com.nashss.se.musicplaylistservice.converters.ProjectModelConverter;
 import com.nashss.se.musicplaylistservice.dynamodb.ProjectDao;
 import com.nashss.se.musicplaylistservice.dynamodb.models.Project;
-import com.nashss.se.musicplaylistservice.exceptions.InvalidAttributeException;
-import com.nashss.se.musicplaylistservice.exceptions.ProjectNotFoundException;
+
 import com.nashss.se.musicplaylistservice.metrics.MetricsPublisher;
 import com.nashss.se.musicplaylistservice.metrics.MetricsConstants;
-import com.nashss.se.musicplaylistservice.utils.TicketManagementServiceUtils;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -34,10 +33,7 @@ public class UpdateProjectStatusActivity {
         log.info("Received UpdateProjectStatusRequest{}", updateProjectStatusRequest);
 
         Project project = projectDao.getProject(updateProjectStatusRequest.getProjectId());
-//        if(!TicketManagementServiceUtils.isValidString(updateProjectStatusRequest.getProjectId())){
-//            publishExceptionMetrics(true, false);
-//            throw new InvalidAttributeException("Project ID [" + updateProjectStatusRequest.getProjectId() + "] contains illegal characters")
-//        }
+
         project.setStatus(updateProjectStatusRequest.getStatus());
         project = projectDao.saveProject(project);
         return UpdateProjectStatusResult.builder()
