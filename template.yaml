@@ -529,15 +529,15 @@ Resources:
         MusicPlaylistService:
           Type: Api
           Properties:
-            Path: /projects/{projectId}
+            Path: /projectstatus/{projectId}
             Method: put
 
-  UpdateTicketLambda:
+  UpdateTicketStatusLambda:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
       CodeUri: MusicPlaylistServiceLambda
-      Handler: com.nashss.se.musicplaylistservice.lambda.UpdateTicketLambda::handleRequest
+      Handler: com.nashss.se.musicplaylistservice.lambda.UpdateTicketStatusLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -549,7 +549,7 @@ Resources:
         MusicPlaylistService:
           Type: Api
           Properties:
-            Path: /projects/{projectId}/tickets/{ticketId}
+            Path: /projects/{projectId}/ticketstatus/{ticketId}
             Method: put
 
   #-----------------------------------------------------
