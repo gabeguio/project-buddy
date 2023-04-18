@@ -23,7 +23,7 @@ public class UpdateProjectDetailsActivityTest {
     }
 
     @Test
-    public void testHandleRequest() {
+    public void handleRequest_goodRequest_updatesProjectDetails() {
         // Mocking the ProjectDao to return a project with ID "123"
         Project project = new Project();
         project.setProjectId("123");
