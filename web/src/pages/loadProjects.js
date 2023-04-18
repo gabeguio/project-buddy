@@ -1,48 +1,24 @@
+import MusicPlaylistClient from '../api/musicPlaylistClient';
 import Header from '../components/header';
 import BindingClass from "../util/bindingClass";
 import DataStore from "../util/DataStore";
 
-class LoadProjects{
-
-    function CreateTable() {
-
-        // CREATE DYNAMIC TABLE.
-//        var table = document.createElement('table');
-
-        // SET THE TABLE ID.
-        // WE WOULD NEED THE ID TO TRAVERSE AND EXTRACT DATA FROM THE TABLE.
-        table.setAttribute('id', 'ticketTable');
-        table.setAttribute('border', '2px');
-
-
-        var arrHead = new Array();
-        arrHead = ['ProjectName', 'Status', 'Description'];
-
-        var arrValue = new Array();
-
-        arrValue.push(['Design Home Page', 'In Progress', '<a href="#" class="button">View Ticket</a> <a href="#" class="button">Edit Ticket</a> <a href="#" class="button">Delete Ticket</a>']);
-        arrValue.push(['Implement API endpoint', 'Complete', '<a href="#" class="button">View Ticket</a> <a href="#" class="button">Edit Ticket</a> <a href="#" class="button">Delete Ticket</a>']);
-        arrValue.push(['Another task here', 'Not started', '<a href="#" class="button">View Ticket</a> <a href="#" class="button">Edit Ticket</a> <a href="#" class="button">Delete Ticket</a>']);
-
-        var tr = table.insertRow(-1);
-
-        for (var h = 0; h < arrHead.length; h++) {
-            var th = document.createElement('th');              // TABLE HEADER.
-            th.innerHTML = arrHead[h];
-            tr.appendChild(th);
-        }
-
-        for (var c = 0; c <= arrValue.length - 1; c++) {
-            tr = table.insertRow(-1);
-
-            for (var j = 0; j < arrHead.length; j++) {
-                var td = document.createElement('td');          // TABLE DEFINITION.
-                td = tr.insertCell(-1);
-                td.innerHTML = arrValue[c][j];                  // ADD VALUES TO EACH CELL.
-            }
-        }
+/**
+ * Logic needed for the view playlist page of the website.
+ */
+class LoadProjects extends BindingClass {
+    constructor() {
+        super();
+        this.bindClassMethods(['clientLoaded', 'mount', 'addProjectsToPage', 'addTicketsToPage', 'addTicket', 'createTable'], this);
+        this.dataStore = new DataStore();
+        this.dataStore.addChangeListener(this.addProjectsToPage);
+        this.dataStore.addChangeListener(this.addTicketsToPage);
+        this.header = new Header(this.dataStore);
+        console.log("viewproject constructor");
     }
-    function GetHTMLForResults(results) {
+
+    createTable(searchResults){
+
         if (searchResults.length === 0) {
             return '<h4>No results found</h4>';
         }
@@ -66,5 +42,123 @@ class LoadProjects{
         return html;
     }
 
+    /**
+     * Once the client is loaded, get the playlist metadata and song list.
+     */
+    async clientLoaded() {
+        const urlParams = new URLSearchParams(window.location.search);
+        //const projectId = urlParams.get('projectId');
+        //document.getElementById('project-title').innerText = "Loading Project ...";
+        //const project = await this.client.getProject(projectId);
+        //this.dataStore.set('project', project);
+        //document.getElementById('tickets').innerText = "(loading tickets...)";
+        //const tickets = await this.client.getProjectTickets(projectId);
+        //this.dataStore.set('tickets', tickets);
+    }
+
+    /**
+     * Add the header to the page and load the MusicPlaylistClient.
+     */
+    mount() {
+        //document.getElementById('add-ticket').addEventListener('click', this.addTicket);
+
+        this.header.addHeaderToPage();
+
+        this.client = new MusicPlaylistClient();
+        this.clientLoaded();
+    }
+
+    /**
+     * When the playlist is updated in the datastore, update the playlist metadata on the page.
+     */
+    addProjectsToPage() {
+        const project = this.dataStore.get('project');
+        if (project == null) {
+            return;
+        }
+
+        //document.getElementById('project-title').innerText = project.title;
+        //document.getElementById('project-description').innerText = project.description;
+
+        let ticketHtml = '';
+        let ticketTag;
+        for (ticketTag of project.tickets) {
+            tagHtml += '<div class="tag">' + tag + '</div>';
+        }
+        var searchResults = new Array();
+        searchResults.push(['Design Home Page', 'In Progress', '<a href="#" class="button">View Ticket</a> <a href="#" class="button">Edit Ticket</a> <a href="#" class="button">Delete Ticket</a>']);
+        searchResults.push(['Implement API endpoint', 'Complete', '<a href="#" class="button">View Ticket</a> <a href="#" class="button">Edit Ticket</a> <a href="#" class="button">Delete Ticket</a>']);
+        searchResults.push(['Another task here', 'Not started', '<a href="#" class="button">View Ticket</a> <a href="#" class="button">Edit Ticket</a> <a href="#" class="button">Delete Ticket</a>']);
+
+
+        document.getElementById('projects').innerHTML = createTable(searchResults);
+    }
+
+    /**
+     * When the songs are updated in the datastore, update the list of songs on the page.
+     */
+    addTicketsToPage() {
+        const tickets = this.dataStore.get('tickets')
+
+        if (tickets == null) {
+            return;
+        }
+
+        let ticketHtml = '';
+        let ticket;
+        for (ticket of tickets) {
+            ticketHtml += `
+                <li class="ticket">
+                    <span class="title">${ticket.title}</span>
+                    <span class="status">${ticket.description}</span>
+                    <span class="description">${ticket.description}</span>
+                    <span class="actionButtons">${ticket.description}</span>
+                </li>
+            `;
+        }
+        document.getElementById('tickets').innerHTML = ticketHtml;
+    }
+
+    /**
+     * Method to run when the add song playlist submit button is pressed. Call the MusicPlaylistService to add a song to the
+     * playlist.
+     */
+    async addTicket() {
+
+        const errorMessageDisplay = document.getElementById('error-message');
+        errorMessageDisplay.innerText = ``;
+        errorMessageDisplay.classList.add('hidden');
+
+        const project = this.dataStore.get('project');
+        if (project == null) {
+            return;
+        }
+
+        document.getElementById('add-ticket').innerText = 'Adding...';
+        const description = document.getElementById('ticket-description').value;
+        const status = document.getElementById('ticket-status').value;
+        const projectId = project.id;
+        const ticketId = ticket.id;
+
+        const ticketList = await this.client.addTicketToProject(playlistId, ticketId, description, status, (error) => {
+            errorMessageDisplay.innerText = `Error: ${error.message}`;
+            errorMessageDisplay.classList.remove('hidden');
+        });
+
+        this.dataStore.set('tickets', ticketList);
+
+        document.getElementById('add-ticket').innerText = 'Add Ticket';
+        document.getElementById("add-ticket-form").reset();
+    }
 
 }
+
+/**
+ * Main method to run when the page contents have loaded.
+ */
+const main = async () => {
+    const loadProjects = new LoadProjects();
+    loadProjects.mount();
+};
+
+window.addEventListener('DOMContentLoaded', main);
