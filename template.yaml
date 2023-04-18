@@ -488,8 +488,6 @@ Resources:
           Properties:
             Path: /projects/
             Method: delete
-            Auth:
-              Authorizer: 'NONE'
 
   #-----------------------------------------------------
   # DynamoDB Configuration
