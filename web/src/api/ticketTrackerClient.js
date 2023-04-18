@@ -71,6 +71,30 @@ export default class TicketTrackerClient extends BindingClass {
         return await this.authenticator.getUserToken();
     }
 
+    async getAllProjects(errorCallback) {
+        try {
+            const response = await this.axiosClient.get(`/projects`);
+            return response.data.projectlist;
+        } catch (error) {
+            this.handleError(error, errorCallback)
+        }
+    }
+
+    /**
+     * Get the tickets on a given project by the project's identifier.
+     * @param projectId Unique identifier for a playlist
+     * @param errorCallback (Optional) A function to execute if the call fails.
+     * @returns The list of songs on a playlist.
+     */
+        async getAllTicketsByProject(projectId, errorCallback) {
+            try {
+                const response = await this.axiosClient.get(`/projects/${projectId}/tickets`);
+                return response.data.ticketList;
+            } catch (error) {
+                this.handleError(error, errorCallback)
+            }
+        }
+
     /**
      * Gets the project for the given ID.
      * @param projectId Unique identifier for a project
@@ -97,21 +121,6 @@ export default class TicketTrackerClient extends BindingClass {
         try {
             const response = await this.axiosClient.get(`projects/${projectId}/tickets/${ticketId}`);
             return response.data.ticket;
-        } catch (error) {
-            this.handleError(error, errorCallback)
-        }
-    }
-
-    /**
-     * Get the tickets on a given project by the project's identifier.
-     * @param projectId Unique identifier for a playlist
-     * @param errorCallback (Optional) A function to execute if the call fails.
-     * @returns The list of songs on a playlist.
-     */
-    async getAllTicketsByProject(projectId, errorCallback) {
-        try {
-            const response = await this.axiosClient.get(`/projects/${projectId}/tickets`);
-            return response.data.ticketList;
         } catch (error) {
             this.handleError(error, errorCallback)
         }
