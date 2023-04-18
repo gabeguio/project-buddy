@@ -81,4 +81,6 @@ public interface ServiceComponent {
     GetAllTicketsActivity provideGetAllTicketsActivity();
 
     CreateProjectActivity provideCreateProjectActivity();
+
+    GetAllProjectsActivity provideGetAllProjectsActivity();
 }

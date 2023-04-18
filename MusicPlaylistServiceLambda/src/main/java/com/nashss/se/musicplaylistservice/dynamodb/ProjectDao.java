@@ -3,7 +3,12 @@ package com.nashss.se.musicplaylistservice.dynamodb;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+import java.util.List;
+
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
+import com.amazonaws.services.dynamodbv2.model.ScanRequest;
+import com.amazonaws.services.dynamodbv2.model.ScanResult;
 import com.nashss.se.musicplaylistservice.dynamodb.models.Project;
 import com.nashss.se.musicplaylistservice.exceptions.ProjectNotFoundException;
 import com.nashss.se.musicplaylistservice.metrics.MetricsPublisher;
@@ -33,5 +38,12 @@ public class ProjectDao {
     }
     public void deleteProject(Project project){
         this.dynamoDBMapper.delete(project);
+    }
+
+
+    public List<Project> getAllProjects() {
+        DynamoDBScanExpression scanExpression = new DynamoDBScanExpression();
+
+        return dynamoDBMapper.scan(Project.class, scanExpression);
     }
 }

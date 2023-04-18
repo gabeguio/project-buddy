@@ -47,7 +47,7 @@ public class GetAllTicketsActivity {
      * @return getAllTicketsResult result object containing the ticketModel list of API defined {@link TicketModel}s
      */
     public GetAllTicketsResult handleRequest(final GetAllTicketsRequest getAllTicketsRequest) {
-        log.info("Received GetPlaylistSongsRequest {}", getAllTicketsRequest);
+        log.info("Received GetAllTicketsRequest {}", getAllTicketsRequest);
         ProjectModelConverter projectModelConverter = new ProjectModelConverter();
 
         List<Ticket> tickets = ticketDao.getAllTicketsForProjectId(getAllTicketsRequest.getProjectId());
