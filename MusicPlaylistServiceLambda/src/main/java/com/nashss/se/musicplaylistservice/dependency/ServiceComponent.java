@@ -20,6 +20,7 @@ import com.nashss.se.musicplaylistservice.activity.UpdatePlaylistActivity;
 import com.nashss.se.musicplaylistservice.activity.requests.CreateTicketRequest;
 import com.nashss.se.musicplaylistservice.activity.requests.CreateProjectRequest;
 
+import com.nashss.se.musicplaylistservice.activity.requests.UpdateTicketRequest;
 import dagger.Component;
 
 import javax.inject.Inject;
@@ -81,4 +82,6 @@ public interface ServiceComponent {
     GetAllTicketsActivity provideGetAllTicketsActivity();
 
     CreateProjectActivity provideCreateProjectActivity();
+
+    UpdateTicketActivity provideUpdateTicketActivity();
 }

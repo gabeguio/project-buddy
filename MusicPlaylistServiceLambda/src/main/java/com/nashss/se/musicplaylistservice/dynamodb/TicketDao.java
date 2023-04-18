@@ -39,8 +39,9 @@ public class TicketDao {
         return ticket;
     }
 
-    public void saveTicket(Ticket ticket) {
+    public Ticket saveTicket(Ticket ticket) {
         this.dynamoDBMapper.save(ticket);
+        return ticket;
     }
 
     public List<Ticket> getAllTicketsForProjectId(String projectId) {
