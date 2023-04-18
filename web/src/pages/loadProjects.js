@@ -1,4 +1,4 @@
-import MusicPlaylistClient from '../api/musicPlaylistClient';
+import TicketTrackerClient from '../api/ticketTrackerClient';
 import Header from '../components/header';
 import BindingClass from "../util/bindingClass";
 import DataStore from "../util/DataStore";
@@ -57,14 +57,13 @@ class LoadProjects extends BindingClass {
     }
 
     /**
-     * Add the header to the page and load the MusicPlaylistClient.
+     * Add the header to the page and load the TicketTrackerClient.
      */
     mount() {
         //document.getElementById('add-ticket').addEventListener('click', this.addTicket);
-
         this.header.addHeaderToPage();
 
-        this.client = new MusicPlaylistClient();
+        this.client = new TicketTrackerClient();
         this.clientLoaded();
     }
 
@@ -72,8 +71,8 @@ class LoadProjects extends BindingClass {
      * When the playlist is updated in the datastore, update the playlist metadata on the page.
      */
     addProjectsToPage() {
-        const project = this.dataStore.get('project');
-        if (project == null) {
+        const projects = this.dataStore.get('projects');
+        if (projects == null) {
             return;
         }
 
@@ -82,7 +81,7 @@ class LoadProjects extends BindingClass {
 
         let ticketHtml = '';
         let ticketTag;
-        for (ticketTag of project.tickets) {
+        for (ticketTag of projects.tickets) {
             tagHtml += '<div class="tag">' + tag + '</div>';
         }
         var searchResults = new Array();
@@ -120,8 +119,8 @@ class LoadProjects extends BindingClass {
     }
 
     /**
-     * Method to run when the add song playlist submit button is pressed. Call the MusicPlaylistService to add a song to the
-     * playlist.
+     * Method to run when the add song playlist submit button is pressed. Call the TicketTrackerService to add a ticket to the
+     * project.
      */
     async addTicket() {
 
@@ -140,7 +139,7 @@ class LoadProjects extends BindingClass {
         const projectId = project.id;
         const ticketId = ticket.id;
 
-        const ticketList = await this.client.addTicketToProject(playlistId, ticketId, description, status, (error) => {
+        const ticketList = await this.client.createTicketToProject(projectId, ticketId, description, status, (error) => {
             errorMessageDisplay.innerText = `Error: ${error.message}`;
             errorMessageDisplay.classList.remove('hidden');
         });
