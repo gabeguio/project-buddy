@@ -54,6 +54,16 @@ public class ProjectModelConverter{
         return ticketModels;
     }
 
+    public List<ProjectModel> toProjectModelList(List<Project> projects) {
+        List<ProjectModel> projectModels = new ArrayList<>();
+
+        for (Project project : projects) {
+            projectModels.add(toProjectModel(project));
+        }
+
+        return projectModels;
+    }
+
 
     }
 

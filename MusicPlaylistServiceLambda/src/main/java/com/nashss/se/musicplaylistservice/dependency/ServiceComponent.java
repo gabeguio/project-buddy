@@ -83,5 +83,8 @@ public interface ServiceComponent {
 
     CreateProjectActivity provideCreateProjectActivity();
 
+    GetAllProjectsActivity provideGetAllProjectsActivity();
+
     UpdateProjectStatusActivity provideUpdateProjectStatusActivity();
+
 }
