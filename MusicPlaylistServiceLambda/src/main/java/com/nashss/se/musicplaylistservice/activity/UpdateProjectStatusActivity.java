@@ -41,11 +41,4 @@ public class UpdateProjectStatusActivity {
                         .toProjectModel(project))
                 .build();
     }
-    private void publishExceptionMetrics(final boolean isInvalidAttributeValue,
-                                         final boolean isInvalidAttributeChange) {
-        metricsPublisher.addCount(MetricsConstants.UPDATEPLAYLIST_INVALIDATTRIBUTEVALUE_COUNT,
-                isInvalidAttributeValue ? 1 : 0);
-        metricsPublisher.addCount(MetricsConstants.UPDATEPLAYLIST_INVALIDATTRIBUTECHANGE_COUNT,
-                isInvalidAttributeChange ? 1 : 0);
-    }
 }
