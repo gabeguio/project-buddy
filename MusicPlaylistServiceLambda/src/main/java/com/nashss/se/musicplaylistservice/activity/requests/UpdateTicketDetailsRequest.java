@@ -3,8 +3,8 @@ package com.nashss.se.musicplaylistservice.activity.requests;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 
-@JsonDeserialize(builder = UpdateTicketRequest.Builder.class)
-public class UpdateTicketRequest {
+@JsonDeserialize(builder = UpdateTicketDetailsRequest.Builder.class)
+public class UpdateTicketDetailsRequest {
 
     private final String projectId;
 
@@ -16,7 +16,7 @@ public class UpdateTicketRequest {
 
     private final String status;
 
-    public UpdateTicketRequest(String projectId, String ticketId, String title, String description, String status) {
+    public UpdateTicketDetailsRequest(String projectId, String ticketId, String title, String description, String status) {
         this.projectId = projectId;
         this.ticketId = ticketId;
         this.title = title;
@@ -102,8 +102,8 @@ public class UpdateTicketRequest {
             return this;
         }
 
-        public UpdateTicketRequest build() {
-            return new UpdateTicketRequest(projectId, ticketId, title, description, status);
+        public UpdateTicketDetailsRequest build() {
+            return new UpdateTicketDetailsRequest(projectId, ticketId, title, description, status);
         }
     }
 }

@@ -2,11 +2,11 @@ package com.nashss.se.musicplaylistservice.activity.results;
 
 import com.nashss.se.musicplaylistservice.models.TicketModel;
 
-public class UpdateTicketResult {
+public class UpdateTicketDetailsResult {
 
     private final TicketModel ticketModel;
 
-    private UpdateTicketResult(TicketModel ticketModel) {
+    private UpdateTicketDetailsResult(TicketModel ticketModel) {
         this.ticketModel = ticketModel;
     }
 
@@ -35,8 +35,8 @@ public class UpdateTicketResult {
             return this;
         }
 
-        public UpdateTicketResult build() {
-            return new UpdateTicketResult(ticketModel);
+        public UpdateTicketDetailsResult build() {
+            return new UpdateTicketDetailsResult(ticketModel);
         }
     }
 }
