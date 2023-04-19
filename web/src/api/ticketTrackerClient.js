@@ -15,7 +15,8 @@ export default class TicketTrackerClient extends BindingClass {
     constructor(props = {}) {
         super();
 
-        const methodsToBind = ['clientLoaded', 'getIdentity', 'login', 'logout', 'getProject', 'getTicket', 'getAllTicketsByProject', 'createProject', 'createTicket', 'deleteTicket', 'deleteProject', 'getAllProjects'];
+        const methodsToBind = ['clientLoaded', 'getIdentity', 'login', 'logout', 'getProject', 'getTicket',
+        'getAllTicketsByProject', 'createProject', 'createTicket', 'deleteTicket', 'deleteProject', 'getAllProjects'];
         this.bindClassMethods(methodsToBind, this);
 
         this.authenticator = new Authenticator();;

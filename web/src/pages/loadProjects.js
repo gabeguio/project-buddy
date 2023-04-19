@@ -14,26 +14,25 @@ class LoadProjects extends BindingClass {
         this.dataStore.addChangeListener(this.addProjectsToPage);
         this.dataStore.addChangeListener(this.addTicketsToPage);
         this.header = new Header(this.dataStore);
-        console.log("viewproject constructor");
+        console.log("load-project constructor");
     }
 
-    createTable(searchResults){
-
-        if (searchResults.length === 0) {
+    createTable(projects){
+        if (projects.length === 0) {
             return '<h4>No results found</h4>';
         }
 
         let html = '<table><tr><th>Name</th><th>Ticket Count</th><th>Tickets</th></tr>';
-        for (const res of searchResults) {
+        for (const res of projects) {
             html += `
             <th>Tickets</th>
             <th>Status</th>
             <th>Actions</th>
             <tr>
                 <td>
-                    <a href="projects.html?id=${res.id}">${res.projectTitle}</a>
+                    <a href="projects.html?id=${res.projectId}">${res.projectId}</a>
                 </td>
-                <td>${res.ticketCount}</td>
+                <td>${res.title}</td>
                 <td><a href="#" class="button">Edit Ticket</a> <a href="#" class="button">Edit Ticket</a> <a href="#" class="button">Edit Ticket</a></td>
             </tr>`;
         }
@@ -49,7 +48,7 @@ class LoadProjects extends BindingClass {
         //const projectId = urlParams.get('projectId');
         //document.getElementById('project-title').innerText = "Loading Project ...";
         const projects = await this.client.getAllProjects();
-        //this.dataStore.set('project', project);
+        this.dataStore.set('projects', projects);
         //document.getElementById('tickets').innerText = "(loading tickets...)";
         //const tickets = await this.client.getProjectTickets(projectId);
         //this.dataStore.set('tickets', tickets);
@@ -80,17 +79,12 @@ class LoadProjects extends BindingClass {
         //document.getElementById('project-description').innerText = project.description;
 
         let ticketHtml = '';
-        let ticketTag;
-        for (ticketTag of projects.tickets) {
-            tagHtml += '<div class="tag">' + tag + '</div>';
+        let projectId;
+        for (projectId of projects) {
+            ticketHtml += '<div class="projects">' + projectId + '</div>';
         }
-        var searchResults = new Array();
-        searchResults.push(['Design Home Page', 'In Progress', '<a href="#" class="button">View Ticket</a> <a href="#" class="button">Edit Ticket</a> <a href="#" class="button">Delete Ticket</a>']);
-        searchResults.push(['Implement API endpoint', 'Complete', '<a href="#" class="button">View Ticket</a> <a href="#" class="button">Edit Ticket</a> <a href="#" class="button">Delete Ticket</a>']);
-        searchResults.push(['Another task here', 'Not started', '<a href="#" class="button">View Ticket</a> <a href="#" class="button">Edit Ticket</a> <a href="#" class="button">Delete Ticket</a>']);
 
-
-        document.getElementById('projects').innerHTML = createTable(searchResults);
+        document.getElementById('projects').innerHTML = this.createTable(projects);
     }
 
     /**
@@ -123,21 +117,20 @@ class LoadProjects extends BindingClass {
      * project.
      */
     async addTicket() {
-
         const errorMessageDisplay = document.getElementById('error-message');
         errorMessageDisplay.innerText = ``;
         errorMessageDisplay.classList.add('hidden');
 
-        const project = this.dataStore.get('project');
-        if (project == null) {
+        const projects = this.dataStore.get('projects');
+        if (projects == null) {
             return;
         }
 
         document.getElementById('add-ticket').innerText = 'Adding...';
         const description = document.getElementById('ticket-description').value;
         const status = document.getElementById('ticket-status').value;
-        const projectId = project.id;
-        const ticketId = ticket.id;
+        const projectId = projects.id;
+        //const ticketId = ticket.id;
 
         const ticketList = await this.client.createTicketToProject(projectId, ticketId, description, status, (error) => {
             errorMessageDisplay.innerText = `Error: ${error.message}`;
@@ -149,7 +142,6 @@ class LoadProjects extends BindingClass {
         document.getElementById('add-ticket').innerText = 'Add Ticket';
         document.getElementById("add-ticket-form").reset();
     }
-
 }
 
 /**
