@@ -10,14 +10,14 @@ class ViewProject extends BindingClass {
         this.dataStore.addChangeListener(this.redirectToViewPlaylist);
         this.header = new Header(this.dataStore);
     }
-}
 
-mount() {
-    document.getElementById('create').addEventListener('click', this.submit);
+    mount() {
+        document.getElementById('create').addEventListener('click', this.submit);
 
-    this.header.addHeaderToPage();
+        this.header.addHeaderToPage();
 
-    this.client = new MusicPlaylistClient();
+        this.client = new MusicPlaylistClient();
+    }
 }
 
 const main = async () => {
