@@ -7,25 +7,21 @@
 </head>
 
 <body class="background">
-<header class="header" id="header"></header>
+<header class="header" id="header"><form class="card-content" id="search-playlists-form">
+
+</form></header>
 <div class="card">
-    <h2>Projects</h2>
+    <h2>Ticket Management System</h2>
     <div id="container"></div>
 
-    <form class="card-content" id="search-playlists-form">
-        <p class="form-field">
-            <label>Search by Projects</label>
-            <input type="text" class="validated-field" id="search-criteria" placeholder="u6733v-UniqueProjectID" autofocus>
-            <sub>Search is case-sensitive must match exactly.</sub>
-        </p>
-    </form>
+
     <p class="button-group">
         <a href="#" class="button" id="search-btn">Search</a>
         <a href="createProject.html" class="button">New Project</a>
     </p>
 </div>
 <div id='search-results-container'>
-    <h3>Results for <span id="search-criteria-display"></span></h3>
+    <h3>Current Projects<span id="search-criteria-display"></span></h3>
     <div id="projects">
     </div>
 </div>

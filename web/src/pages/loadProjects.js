@@ -22,18 +22,15 @@ class LoadProjects extends BindingClass {
             return '<h4>No results found</h4>';
         }
 
-        let html = '<table><tr><th>Name</th><th>Ticket Count</th><th>Tickets</th></tr>';
+        let html = '<table><tr><th>Project Title</th><th>Status</th><th>Actions</th></tr>';
         for (const res of projects) {
             html += `
-            <th>Tickets</th>
-            <th>Status</th>
-            <th>Actions</th>
             <tr>
                 <td>
-                    <a href="projects.html?id=${res.projectId}">${res.projectId}</a>
+                    <a href="projects.html?id=${res.projectId}">${res.title}</a>
                 </td>
-                <td>${res.title}</td>
-                <td><a href="#" class="button">Edit Ticket</a> <a href="#" class="button">Edit Ticket</a> <a href="#" class="button">Edit Ticket</a></td>
+                <td>${res.status}</td>
+                <td><a href="#" class="view-button">View Tickets</a> <a href="#" class="editProjects-button">Edit Projects</a> <a href="#" class="editStatus-button">Edit Status</a><a href="#" class="delete-button">Delete Project</a></td>
             </tr>`;
         }
         html += '</table>';

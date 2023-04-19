@@ -12,9 +12,8 @@ html {
 body {
   font-size: 1.8rem;
   line-height: 1.618;
-  max-width: 38em;
+  max-width: 80em;
   margin: auto;
-  color: #4a4a4a;
   background-color: #f9f9f9;
   padding: 13px;
 }
@@ -77,6 +76,9 @@ small, sub, sup {
 hr {
   border-color: #1d7484;
 }
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 
 a {
   text-decoration: none;
@@ -85,6 +87,7 @@ a {
 a:visited {
   color: #144f5a;
 }
+
 a:hover {
   color: #982c61;
   border-bottom: 2px solid #4a4a4a;
@@ -151,13 +154,15 @@ pre > code {
 /* Tables */
 table {
   text-align: justify;
-  width: 100%;
+  width: auto;
   border-collapse: collapse;
+  background-color: #CDCECD;
 }
 
 td, th {
   padding: 0.5em;
   border-bottom: 1px solid #f1f1f1;
+  font-weight: bold;
 }
 
 /* Buttons, forms and input */
@@ -172,15 +177,15 @@ textarea {
   width: 100%;
 }
 
-.button, button, input[type=submit], input[type=reset], input[type=button] {
+.button, button, input[type=submit], input[type=reset], input[type=button], .view-button, .editProjects-button, .editStatus-button, .delete-button{
   display: inline-block;
-  padding: 5px 10px;
+  padding: 8px 16px;
   text-align: center;
+  text-color: #FFFFFF;
   text-decoration: none;
   white-space: nowrap;
-  background-color: #1d7484;
-  color: #f9f9f9;
-  border-radius: 1px;
+  background-color: #344FA7;
+  border-radius: 8px;
   border: 1px solid #1d7484;
   cursor: pointer;
   box-sizing: border-box;
@@ -194,6 +199,19 @@ textarea {
   border-color: #982c61;
   color: #f9f9f9;
   outline: 0;
+}
+
+.view-button{
+  background-color: #F5DE72
+}
+.editProjects-button{
+  background-color: #E7975E
+}
+.editStatus-button{
+  background-color: #9BD56C
+}
+.delete-button{
+  background-color: #E1675F
 }
 
 textarea, select, input {
