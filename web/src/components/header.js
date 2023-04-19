@@ -1,4 +1,4 @@
-import MusicPlaylistClient from '../api/musicPlaylistClient';
+import TicketTrackerClient from '../api/ticketTrackerClient';
 import BindingClass from "../util/bindingClass";
 /**
  * The header component for the website.
@@ -13,7 +13,7 @@ export default class Header extends BindingClass {
         ];
         this.bindClassMethods(methodsToBind, this);
 
-        this.client = new MusicPlaylistClient();
+        this.client = new TicketTrackerClient();
     }
 
     /**
@@ -31,10 +31,10 @@ export default class Header extends BindingClass {
     }
 
     createSiteTitle() {
-        const homeButton = document.createElement('a');
+        const homeButton = document.createElement('button');
         homeButton.classList.add('header_home');
         homeButton.href = 'index.html';
-        homeButton.innerText = 'Playlists';
+        homeButton.innerText = 'Projects';
 
         const siteTitle = document.createElement('div');
         siteTitle.classList.add('site-title');
