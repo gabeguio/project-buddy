@@ -8,7 +8,7 @@
 
 <body class="background">
 <header class="header" id="header"></header>
-<div class="card">
+<div class="createProject-card">
     <h2>Create Project</h2>
     <form class="card-content" id="create-project-form">
         <p class="hidden error" id="error-message"> </p>
@@ -18,9 +18,17 @@
                    autofocus>
         </p>
         <p class="form-field">
-            <label>Tasks</label>
-            <input type="text" id="tags" class="tags" placeholder="task1,task2"
-                   data-tip="Must be a comma separated list of tasks">
+            <label for="project-status">
+                <select name="project-status" id="project-status">
+                    <option value="backlog">Backlog</option>
+                    <option value="inProgress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                </select>
+            </label>
+        </p>
+        <p class="form-field">
+            <label>Description</label>
+            <input type="text" id="project-description" class="project-description" placeholder="Goals for your project">
         </p>
         <p>
             <a href="#" class="button" id="create">Create Project</a>

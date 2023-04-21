@@ -26,12 +26,18 @@ export default class Header extends BindingClass {
         const userInfo = this.createUserInfoForHeader(currentUser);
 
         const header = document.getElementById('header');
-        header.appendChild(siteTitle);
-        header.appendChild(userInfo);
+        const navbar = document.createElement('ul');
+        const titleItem = document.createElement('li');
+        const userItem = document.createElement('li');
+        header.appendChild(navbar);
+        navbar.appendChild(titleItem);
+        navbar.appendChild(userItem);
+        titleItem.appendChild(siteTitle);
+        userItem.appendChild(userInfo);
     }
 
     createSiteTitle() {
-        const homeButton = document.createElement('button');
+        const homeButton = document.createElement('a');
         homeButton.classList.add('header_home');
         homeButton.href = 'index.html';
         homeButton.innerText = 'Home';
@@ -45,7 +51,7 @@ export default class Header extends BindingClass {
 
     createUserInfoForHeader(currentUser) {
         const userInfo = document.createElement('div');
-        userInfo.classList.add('user');
+        userInfo.classList.add('userInfo');
 
         const childContent = currentUser
             ? this.createLogoutButton(currentUser)
