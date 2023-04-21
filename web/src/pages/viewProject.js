@@ -71,17 +71,15 @@ class ViewProject extends BindingClass {
                         <input type="text" value="${project.status}" id="projectStatus"></input>
                     </td>
                     <td>
-                        <input type="text" value="${project.description}" id="projectDescription"></input>
+                        <input type="text" class="projectDescription" value="${project.description}" id="projectDescription"></input>
                     </td>
                     <td>
                         <a href="#" class="view-button">View Tickets</a>
-                        <a href="#" class="editProjects-button">Edit Projects</a>
-                        <a href="#" class="editStatus-button">Edit Status</a>
                         <a href="#" class="delete-button">Delete Project</a>
                     </td>
                 </tr>
             </table>
-                <button id="saveProject">save</button>
+                <button id="saveProject">Save Changes</button>
         </form>`;
 
         return html;

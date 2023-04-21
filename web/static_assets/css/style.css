@@ -161,12 +161,19 @@ table {
   width: auto;
   border-collapse: collapse;
   background-color: #CDCECD;
+  margin-bottom: 1em;
 }
 
 td, th {
   padding: 0.5em;
   border-bottom: 1px solid #f1f1f1;
   font-weight: bold;
+}
+
+input {
+  height: 40px;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 /* Buttons, forms and input */
