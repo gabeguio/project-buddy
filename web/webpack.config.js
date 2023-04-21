@@ -24,6 +24,7 @@ module.exports = {
   },
   entry: {
     createProject: path.resolve(__dirname, 'src', 'pages', 'createProject.js'),
+    createTicket: path.resolve(__dirname, 'src', 'pages', 'createTicket.js'),
     loadProjects: path.resolve(__dirname, 'src', 'pages', 'loadProjects.js'),
     viewPlaylist: path.resolve(__dirname, 'src', 'pages', 'viewPlaylist.js'),
     viewProject: path.resolve(__dirname, 'src', 'pages', 'viewProject.js'),

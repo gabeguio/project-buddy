@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="assets/createTicket.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body class="background">
+<header class="header" id="header"></header>
+<div class="createProject-card">
+    <h2>Create Ticket</h2>
+    <form class="card-content" id="create-project-form">
+        <p class="hidden error" id="error-message"> </p>
+        <p class="form-field">
+            <label>Ticket Title</label>
+            <input type="text" required class="validated-field" id="ticket-title" placeholder="Ticket title"
+                   autofocus>
+        </p>
+        <p class="form-field">
+            <label for="ticket-status">
+                <select name="ticket-status" id="ticket-status">
+                    <option value="backlog">Backlog</option>
+                    <option value="inProgress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                </select>
+            </label>
+        </p>
+        <p class="form-field">
+            <label>Description</label>
+            <input type="text" id="ticket-description" class="ticket-description" placeholder="Goals for your ticket">
+        </p>
+        <p>
+            <a href="#" class="button" id="create">Create Project</a>
+        </p>
+    </form>
+</div>
+</body>
+
+</html>
