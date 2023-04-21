@@ -409,7 +409,6 @@ Resources:
             Auth:
               Authorizer: 'NONE'
 
-
   GetAllTicketsForProjectLambda:
     Type: AWS::Serverless::Function
     Properties:
@@ -572,6 +571,26 @@ Resources:
           Type: Api
           Properties:
             Path: /projects/{projectId}
+            Method: put
+
+  UpdateTicketDetailsLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Role: !GetAtt AccessRole.Arn
+      CodeUri: MusicPlaylistServiceLambda
+      Handler: com.nashss.se.musicplaylistservice.lambda.UpdateTicketDetailsLambda::handleRequest
+      Runtime: java11
+      Architectures:
+        - x86_64
+      MemorySize: 512
+      Environment:
+        Variables:
+          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+      Events:
+        MusicPlaylistService:
+          Type: Api
+          Properties:
+            Path: /projects/{projectId}/tickets/{ticketId}
             Method: put
 
   #-----------------------------------------------------

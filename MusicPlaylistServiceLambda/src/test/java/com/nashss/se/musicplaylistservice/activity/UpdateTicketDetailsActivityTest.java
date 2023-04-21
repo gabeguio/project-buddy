@@ -1,7 +1,7 @@
 package com.nashss.se.musicplaylistservice.activity;
 
-import com.nashss.se.musicplaylistservice.activity.requests.UpdateTicketRequest;
-import com.nashss.se.musicplaylistservice.activity.results.UpdateTicketResult;
+import com.nashss.se.musicplaylistservice.activity.requests.UpdateTicketDetailsRequest;
+import com.nashss.se.musicplaylistservice.activity.results.UpdateTicketDetailsResult;
 import com.nashss.se.musicplaylistservice.dynamodb.TicketDao;
 import com.nashss.se.musicplaylistservice.dynamodb.models.Ticket;
 import com.nashss.se.musicplaylistservice.exceptions.InvalidAttributeValueException;
@@ -15,16 +15,16 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.openMocks;
 
-public class UpdateTicketActivityTest {
+public class UpdateTicketDetailsActivityTest {
     @Mock
     private TicketDao ticketDao;
 
-    private UpdateTicketActivity updateTicketActivity;
+    private UpdateTicketDetailsActivity updateTicketDetailsActivity;
 
     @BeforeEach
     public void setUp() {
         openMocks(this);
-        updateTicketActivity = new UpdateTicketActivity(ticketDao);
+        updateTicketDetailsActivity = new UpdateTicketDetailsActivity(ticketDao);
     }
 
     @Test
@@ -36,7 +36,7 @@ public class UpdateTicketActivityTest {
         String ticketDescription = "ticketDescription";
         String ticketStatus = "ticketStatus";
 
-        UpdateTicketRequest request = UpdateTicketRequest.builder()
+        UpdateTicketDetailsRequest request = UpdateTicketDetailsRequest.builder()
                 .withTicketId(ticketId)
                 .withProjectId(projectId)
                 .withTitle(ticketTitle)
@@ -55,7 +55,7 @@ public class UpdateTicketActivityTest {
         when(ticketDao.saveTicket(startingTicket)).thenReturn(startingTicket);
 
         // WHEN
-        UpdateTicketResult result = updateTicketActivity.handleRequest(request);
+        UpdateTicketDetailsResult result = updateTicketDetailsActivity.handleRequest(request);
 
         // THEN
         assertEquals(projectId, result.getTicketModel().getProjectId());
@@ -73,7 +73,7 @@ public class UpdateTicketActivityTest {
         String ticketDescription = "ticketDescription";
         String ticketStatus = "ticketStatus";
 
-        UpdateTicketRequest request = UpdateTicketRequest.builder()
+        UpdateTicketDetailsRequest request = UpdateTicketDetailsRequest.builder()
                 .withTicketId(ticketId)
                 .withProjectId(projectId)
                 .withTitle("'/badTicketTitle/'")
@@ -82,7 +82,7 @@ public class UpdateTicketActivityTest {
                 .build();
 
         // WHEN + THEN
-        assertThrows(InvalidAttributeValueException.class, () -> updateTicketActivity.handleRequest(request));
+        assertThrows(InvalidAttributeValueException.class, () -> updateTicketDetailsActivity.handleRequest(request));
     }
 
 
