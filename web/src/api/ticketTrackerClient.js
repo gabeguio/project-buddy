@@ -306,13 +306,13 @@ export default class TicketTrackerClient extends BindingClass {
         try {
             const token = await this.getTokenOrThrow("Only authenticated users can delete a ticket.");
             const response = await this.axiosClient.delete(`tickets`, {
-                projectId: projectId,
-                ticketId: tickedId,
-            }, {
                 headers: {
                     Authorization: `Bearer ${token}`
-                }
-            });
+                }, data:
+            {
+                projectId: projectId,
+                ticketId: tickedId,
+            }});
             return response.data.ticket;
         } catch (error) {
             this.handleError(error, errorCallback)
