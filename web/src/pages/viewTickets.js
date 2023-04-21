@@ -22,8 +22,8 @@ class ViewTickets extends BindingClass {
     }
 
     mount() {
-        this.header.addHeaderToPage();
         this.client = new TicketTrackerClient();
+        this.header.addHeaderToPage();
         this.clientLoaded();
     }
 
@@ -63,6 +63,12 @@ class ViewTickets extends BindingClass {
                     </td>
                     <td>
                         <a href="" class="delete-button">Delete Ticket</a>
+                    </td>
+                    <td>
+                        <a href="" class="editProjects-button">Edit Ticket</a>
+                    </td>
+                     <td>
+                        <a href="" class="view-button">View Ticket</a>
                     </td>
                 </tr>`;
 
