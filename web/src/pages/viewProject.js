@@ -14,7 +14,7 @@ class ViewProject extends BindingClass {
     }
 
     async updateProject(event) {
-        // event.preventDefault();
+        event.preventDefault();
         const urlParams = new URLSearchParams(window.location.search);
         const projectId = urlParams.get('projectId');
         const projectTitle = document.getElementById('projectTitle').value;
@@ -22,10 +22,8 @@ class ViewProject extends BindingClass {
         const projectDescription = document.getElementById('projectDescription').value;
         const project = await this.client.updateProjectDetails(projectId, projectTitle, projectStatus, projectDescription);
         this.dataStore.set('project', project);
-        // Capture the return of your project Details or use a getProject call to refresh the page with the updated information.
-        console.log("We are saving a project.", projectTitle, projectStatus, projectDescription);
+        alert(projectTitle + " has been updated.")
     }
-
 
     async clientLoaded() {
         const urlParams = new URLSearchParams(window.location.search);
@@ -94,9 +92,6 @@ class ViewProject extends BindingClass {
         if (project == null) {
             return;
         }
-
-        let projectHtml;
-        projectHtml += '<div class="project">' + project.projectId + '</div>';
 
         document.getElementById('viewProjectTable').innerHTML = this.createTable(project);
         document.getElementById('saveProject').addEventListener('click', this.updateProject);
