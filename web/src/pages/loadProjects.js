@@ -14,7 +14,7 @@ class LoadProjects extends BindingClass {
         this.dataStore.addChangeListener(this.addProjectsToPage);
         this.dataStore.addChangeListener(this.addTicketsToPage);
         this.header = new Header(this.dataStore);
-        console.log("load-project constructor");
+        console.log("load-ticket constructor");
     }
 
     createTable(projects){
@@ -30,7 +30,7 @@ class LoadProjects extends BindingClass {
                     <a href=viewProject.html?projectId=${res.projectId}>${res.title}</a>
                 </td>
                 <td>${res.status}</td>
-                <td><a href="#" class="view-button">View Tickets</a> <a href="#" class="editProjects-button">Edit Projects</a> <a href="#" class="editStatus-button">Edit Status</a><a href="#" class="delete-button">Delete Project</a></td>
+                <td><a href="viewTickets.html?projectId=${res.projectId}" class="view-button">View Tickets</a> <a href="#" class="editProjects-button">Edit Projects</a> <a href="#" class="editStatus-button">Edit Status</a><a href="#" class="delete-button">Delete Project</a></td>
             </tr>`;
         }
         html += '</table>';
