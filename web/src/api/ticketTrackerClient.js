@@ -195,14 +195,14 @@ export default class TicketTrackerClient extends BindingClass {
      * @param errorCallback (Optional) A function to execute if the call fails.
      * @returns The project that has been updated.
      */
-    async updateProjectDetails(projectId, title, description, status, errorCallback) {
+    async updateProjectDetails(projectId, title, status, description, errorCallback) {
         try {
             const token = await this.getTokenOrThrow("Only authenticated users can update a project.");
             const response = await this.axiosClient.put(`/projects/${projectId}`, {
                 projectId: projectId,
                 title: title,
-                description: description,
                 status: status,
+                description: description,
             }, {
                 headers: {
                     Authorization: `Bearer ${token}`
