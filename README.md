@@ -40,7 +40,7 @@ Your team has been provided with a website, hosted by [CloudFront](https://aws.a
 
 Unlike our unit projects in the past, this project will have two code bases.
 
-[One code base](./MusicPlaylistServiceLambda) will be for your Lambda service code, similar to what we’ve seen previously. This will contain code that designs and runs your service APIs, as well as packages to interact with and test your service.
+[One code base](./ProjectManagementServiceLambda) will be for your Lambda service code, similar to what we’ve seen previously. This will contain code that designs and runs your service APIs, as well as packages to interact with and test your service.
 
 The [second code base](./web) will contain code for your website:
 
@@ -66,7 +66,7 @@ To access your website, you'll need to build it first. The [next README](./READM
 
 ## How Your Website Works
 
-Creating each page of your website requires a surprising amount of interactions between different JavaScript files and between our frontend and our backend. Our view playlist page makes 3 separate calls to our MusicPlaylistService.
+Creating each page of your website requires a surprising amount of interactions between different JavaScript files and between our frontend and our backend. Our view playlist page makes 3 separate calls to our projectmanagementservice.
 
 Let’s look at one piece - adding the header to our page. This requires the full end to end flow of HTML to JS to backend service all the way back to updating our HTML.
 

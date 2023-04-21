@@ -1,14 +1,14 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
-  Music Playlist Service
+  Project Management Service
 
 Parameters:
 
   CognitoDomain:
     Type: String
     Description: A name for the cognito Domain
-    Default: "ticket-management-service-team-javascript"
+    Default: "project-management-service-team-javascript"
 
   S3Bucket:
     Type: String
@@ -221,138 +221,12 @@ Resources:
   # Lambda Functions Configuration
   #-----------------------------------------------------
 
-  GetPlaylistLambda:
-    Type: AWS::Serverless::Function
-    Properties:
-      Role: !GetAtt AccessRole.Arn
-      CodeUri: MusicPlaylistServiceLambda
-      Handler: com.nashss.se.musicplaylistservice.lambda.GetPlaylistLambda::handleRequest
-      Runtime: java11
-      Architectures:
-        - x86_64
-      MemorySize: 512
-      Environment:
-        Variables:
-          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
-      Events:
-        MusicPlaylistService:
-          Type: Api
-          Properties:
-            Path: /playlists/{id}
-            Method: get
-            Auth:
-              Authorizer: 'NONE'
-
-  SearchPlaylistsLambda:
-    Type: AWS::Serverless::Function
-    Properties:
-      Role: !GetAtt AccessRole.Arn
-      CodeUri: MusicPlaylistServiceLambda
-      Handler: com.nashss.se.musicplaylistservice.lambda.SearchPlaylistsLambda::handleRequest
-      Runtime: java11
-      Architectures:
-        - x86_64
-      MemorySize: 512
-      Environment:
-        Variables:
-          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
-      Events:
-        MusicPlaylistService:
-          Type: Api
-          Properties:
-            Path: /playlists/search
-            Method: get
-            Auth:
-              Authorizer: 'NONE'
-
-  GetPlaylistSongsLambda:
-    Type: AWS::Serverless::Function
-    Properties:
-      Role: !GetAtt AccessRole.Arn
-      CodeUri: MusicPlaylistServiceLambda
-      Handler: com.nashss.se.musicplaylistservice.lambda.GetPlaylistSongsLambda::handleRequest
-      Runtime: java11
-      Architectures:
-        - x86_64
-      MemorySize: 512
-      Environment:
-        Variables:
-          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
-      Events:
-        MusicPlaylistService:
-          Type: Api
-          Properties:
-            Path: /playlists/{id}/songs
-            Method: get
-            Auth:
-              Authorizer: 'NONE'
-
-  CreatePlaylistLambda:
-    Type: AWS::Serverless::Function
-    Properties:
-      Role: !GetAtt AccessRole.Arn
-      CodeUri: MusicPlaylistServiceLambda
-      Handler: com.nashss.se.musicplaylistservice.lambda.CreatePlaylistLambda::handleRequest
-      Runtime: java11
-      Architectures:
-        - x86_64
-      MemorySize: 512
-      Environment:
-        Variables:
-          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
-      Events:
-        MusicPlaylistService:
-          Type: Api
-          Properties:
-            Path: /playlists
-            Method: post
-
-  UpdatePlaylistLambda:
-    Type: AWS::Serverless::Function
-    Properties:
-      Role: !GetAtt AccessRole.Arn
-      CodeUri: MusicPlaylistServiceLambda
-      Handler: com.nashss.se.musicplaylistservice.lambda.UpdatePlaylistLambda::handleRequest
-      Runtime: java11
-      Architectures:
-        - x86_64
-      MemorySize: 512
-      Environment:
-        Variables:
-          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
-      Events:
-        MusicPlaylistService:
-          Type: Api
-          Properties:
-            Path: /playlists/{id}
-            Method: put
-
-  AddSongToPlaylistLambda:
-    Type: AWS::Serverless::Function
-    Properties:
-      Role: !GetAtt AccessRole.Arn
-      CodeUri: MusicPlaylistServiceLambda
-      Handler: com.nashss.se.musicplaylistservice.lambda.AddSongToPlaylistLambda::handleRequest
-      Runtime: java11
-      Architectures:
-        - x86_64
-      MemorySize: 512
-      Environment:
-        Variables:
-          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
-      Events:
-        MusicPlaylistService:
-          Type: Api
-          Properties:
-            Path: /playlists/{id}/songs
-            Method: post
-
   DeleteTicketLambda:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
-      CodeUri: MusicPlaylistServiceLambda
-      Handler: com.nashss.se.musicplaylistservice.lambda.DeleteTicketLambda::handleRequest
+      CodeUri: ProjectManagementServiceLambda
+      Handler: com.nashss.se.projectmanagementservice.lambda.DeleteTicketLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -361,7 +235,7 @@ Resources:
         Variables:
           JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
       Events:
-        MusicPlaylistService:
+        projectmanagementservice:
           Type: Api
           Properties:
             Path: /tickets
@@ -371,8 +245,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
-      CodeUri: MusicPlaylistServiceLambda
-      Handler: com.nashss.se.musicplaylistservice.lambda.CreateProjectLambda::handleRequest
+      CodeUri: ProjectManagementServiceLambda
+      Handler: com.nashss.se.projectmanagementservice.lambda.CreateProjectLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -381,7 +255,7 @@ Resources:
         Variables:
           JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
       Events:
-        MusicPlaylistService:
+        projectmanagementservice:
           Type: Api
           Properties:
             Path: /projects
@@ -391,8 +265,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
-      CodeUri: MusicPlaylistServiceLambda
-      Handler: com.nashss.se.musicplaylistservice.lambda.GetTicketLambda::handleRequest
+      CodeUri: ProjectManagementServiceLambda
+      Handler: com.nashss.se.projectmanagementservice.lambda.GetTicketLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -401,7 +275,7 @@ Resources:
         Variables:
           JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
       Events:
-        MusicPlaylistService:
+        projectmanagementservice:
           Type: Api
           Properties:
             Path: /projects/{projectId}/tickets/{ticketId}
@@ -413,8 +287,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
-      CodeUri: MusicPlaylistServiceLambda
-      Handler: com.nashss.se.musicplaylistservice.lambda.GetAllTicketsForProjectLambda::handleRequest
+      CodeUri: ProjectManagementServiceLambda
+      Handler: com.nashss.se.projectmanagementservice.lambda.GetAllTicketsForProjectLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -423,7 +297,7 @@ Resources:
         Variables:
           JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
       Events:
-        MusicPlaylistService:
+        projectmanagementservice:
           Type: Api
           Properties:
             Path: /projects/{projectId}/tickets
@@ -433,8 +307,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
-      CodeUri: MusicPlaylistServiceLambda
-      Handler: com.nashss.se.musicplaylistservice.lambda.CreateTicketLambda::handleRequest
+      CodeUri: ProjectManagementServiceLambda
+      Handler: com.nashss.se.projectmanagementservice.lambda.CreateTicketLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -443,7 +317,7 @@ Resources:
         Variables:
           JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
       Events:
-        MusicPlaylistService:
+        projectmanagementservice:
           Type: Api
           Properties:
             Path: /tickets
@@ -453,8 +327,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
-      CodeUri: MusicPlaylistServiceLambda
-      Handler: com.nashss.se.musicplaylistservice.lambda.GetProjectLambda::handleRequest
+      CodeUri: ProjectManagementServiceLambda
+      Handler: com.nashss.se.projectmanagementservice.lambda.GetProjectLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -463,7 +337,7 @@ Resources:
         Variables:
           JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
       Events:
-        MusicPlaylistService:
+        projectmanagementservice:
           Type: Api
           Properties:
             Path: /projects/{projectId}
@@ -475,8 +349,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
-      CodeUri: MusicPlaylistServiceLambda
-      Handler: com.nashss.se.musicplaylistservice.lambda.GetAllProjectsLambda::handleRequest
+      CodeUri: ProjectManagementServiceLambda
+      Handler: com.nashss.se.projectmanagementservice.lambda.GetAllProjectsLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -485,7 +359,7 @@ Resources:
         Variables:
           JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
       Events:
-        MusicPlaylistService:
+        projectmanagementservice:
           Type: Api
           Properties:
             Path: /projects
@@ -497,8 +371,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
-      CodeUri: MusicPlaylistServiceLambda
-      Handler: com.nashss.se.musicplaylistservice.lambda.DeleteProjectLambda::handleRequest
+      CodeUri: ProjectManagementServiceLambda
+      Handler: com.nashss.se.projectmanagementservice.lambda.DeleteProjectLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -507,7 +381,7 @@ Resources:
         Variables:
           JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
       Events:
-        MusicPlaylistService:
+        projectmanagementservice:
           Type: Api
           Properties:
             Path: /projects
@@ -517,8 +391,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
-      CodeUri: MusicPlaylistServiceLambda
-      Handler: com.nashss.se.musicplaylistservice.lambda.UpdateProjectStatusLambda::handleRequest
+      CodeUri: ProjectManagementServiceLambda
+      Handler: com.nashss.se.projectmanagementservice.lambda.UpdateProjectStatusLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -527,7 +401,7 @@ Resources:
         Variables:
           JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
       Events:
-        MusicPlaylistService:
+        projectmanagementservice:
           Type: Api
           Properties:
             Path: /projectstatus/{projectId}
@@ -537,8 +411,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
-      CodeUri: MusicPlaylistServiceLambda
-      Handler: com.nashss.se.musicplaylistservice.lambda.UpdateTicketStatusLambda::handleRequest
+      CodeUri: ProjectManagementServiceLambda
+      Handler: com.nashss.se.projectmanagementservice.lambda.UpdateTicketStatusLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -547,7 +421,7 @@ Resources:
         Variables:
           JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
       Events:
-        MusicPlaylistService:
+        projectmanagementservice:
           Type: Api
           Properties:
             Path: /projects/{projectId}/ticketstatus/{ticketId}
@@ -557,8 +431,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
-      CodeUri: MusicPlaylistServiceLambda
-      Handler: com.nashss.se.musicplaylistservice.lambda.UpdateProjectDetailsLambda::handleRequest
+      CodeUri: ProjectManagementServiceLambda
+      Handler: com.nashss.se.projectmanagementservice.lambda.UpdateProjectDetailsLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -567,7 +441,7 @@ Resources:
         Variables:
           JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
       Events:
-        MusicPlaylistService:
+        projectmanagementservice:
           Type: Api
           Properties:
             Path: /projects/{projectId}
@@ -577,8 +451,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
-      CodeUri: MusicPlaylistServiceLambda
-      Handler: com.nashss.se.musicplaylistservice.lambda.UpdateTicketDetailsLambda::handleRequest
+      CodeUri: ProjectManagementServiceLambda
+      Handler: com.nashss.se.projectmanagementservice.lambda.UpdateTicketDetailsLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -587,7 +461,7 @@ Resources:
         Variables:
           JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
       Events:
-        MusicPlaylistService:
+        projectmanagementservice:
           Type: Api
           Properties:
             Path: /projects/{projectId}/tickets/{ticketId}

@@ -27,7 +27,7 @@ class CreateProject extends BindingClass {
     }
 
     /**
-     * Method to run when the create playlist submit button is pressed. Call the MusicPlaylistService to create the
+     * Method to run when the create playlist submit button is pressed. Call the projectmanagementservice to create the
      * playlist.
      */
     async submit(evt) {
