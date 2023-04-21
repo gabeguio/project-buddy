@@ -14,7 +14,7 @@ class LoadProjects extends BindingClass {
         this.dataStore.addChangeListener(this.addProjectsToPage);
         this.dataStore.addChangeListener(this.addTicketsToPage);
         this.header = new Header(this.dataStore);
-        console.log("load-project constructor");
+        console.log("load-ticket constructor");
     }
 
     createTable(projects){
