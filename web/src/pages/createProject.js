@@ -1,4 +1,4 @@
-import MusicPlaylistClient from '../api/musicPlaylistClient';
+import TicketTrackerClient from '../api/ticketTrackerClient';
 import Header from '../components/header';
 import BindingClass from '../util/bindingClass';
 import DataStore from '../util/DataStore';
@@ -9,7 +9,7 @@ import DataStore from '../util/DataStore';
 class CreateProject extends BindingClass {
     constructor() {
         super();
-        this.bindClassMethods(['mount', 'submit', 'redirectToViewPlaylist'], this);
+        this.bindClassMethods(['mount', 'submit', 'redirectToViewProject'], this);
         this.dataStore = new DataStore();
         this.dataStore.addChangeListener(this.redirectToViewPlaylist);
         this.header = new Header(this.dataStore);
@@ -23,7 +23,7 @@ class CreateProject extends BindingClass {
 
         this.header.addHeaderToPage();
 
-        this.client = new MusicPlaylistClient();
+        this.client = new TicketTrackerClient();
     }
 
     /**
@@ -41,18 +41,11 @@ class CreateProject extends BindingClass {
         const origButtonText = createButton.innerText;
         createButton.innerText = 'Loading...';
 
-        const projectId = document.getElementById('project-id').value;
         const projectTitle = document.getElementById('project-title').value;
-        const ticketsText = document.getElementById('tickets').value;
+        const projectStatus = document.getElementById('project-status').value;
+        const projectDescription = document.getElementById('project-description').value;
 
-        let tickets;
-        if (ticketsText.length < 1) {
-            tickets = null;
-        } else {
-            tickets = ticketsText.split(/\s*,\s*/);
-        }
-
-        const project = await this.client.createProject(projectId, tickets, (error) => {
+        const project = await this.client.createProject(projectTitle, projectDescription, projectStatus, (error) => {
             createButton.innerText = origButtonText;
             errorMessageDisplay.innerText = `Error: ${error.message}`;
             errorMessageDisplay.classList.remove('hidden');
@@ -66,7 +59,7 @@ class CreateProject extends BindingClass {
     redirectToViewProject() {
         const project = this.dataStore.get('project');
         if (project != null) {
-            window.location.href = `/project.html?id=${project.id}`;
+            window.location.href = `/viewProject.html?id=${project.id}`;
         }
     }
 }

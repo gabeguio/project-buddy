@@ -9,7 +9,7 @@ import DataStore from "../util/DataStore";
 class LoadProjects extends BindingClass {
     constructor() {
         super();
-        this.bindClassMethods(['clientLoaded', 'mount', 'addProjectsToPage', 'addTicketsToPage', 'addTicket', 'createTable'], this);
+        this.bindClassMethods(['clientLoaded', 'mount', 'addProjectsToPage', 'createTable'], this);
         this.dataStore = new DataStore();
         this.dataStore.addChangeListener(this.addProjectsToPage);
         this.dataStore.addChangeListener(this.addTicketsToPage);
@@ -82,62 +82,6 @@ class LoadProjects extends BindingClass {
         }
 
         document.getElementById('projects').innerHTML = this.createTable(projects);
-    }
-
-    /**
-     * When the songs are updated in the datastore, update the list of songs on the page.
-     */
-    addTicketsToPage() {
-        const tickets = this.dataStore.get('tickets')
-
-        if (tickets == null) {
-            return;
-        }
-
-        let ticketHtml = '';
-        let ticket;
-        for (ticket of tickets) {
-            ticketHtml += `
-                <li class="ticket">
-                    <span class="title">${ticket.title}</span>
-                    <span class="status">${ticket.description}</span>
-                    <span class="description">${ticket.description}</span>
-                    <span class="actionButtons">${ticket.description}</span>
-                </li>
-            `;
-        }
-        document.getElementById('tickets').innerHTML = ticketHtml;
-    }
-
-    /**
-     * Method to run when the add song playlist submit button is pressed. Call the TicketTrackerService to add a ticket to the
-     * project.
-     */
-    async addTicket() {
-        const errorMessageDisplay = document.getElementById('error-message');
-        errorMessageDisplay.innerText = ``;
-        errorMessageDisplay.classList.add('hidden');
-
-        const projects = this.dataStore.get('projects');
-        if (projects == null) {
-            return;
-        }
-
-        document.getElementById('add-ticket').innerText = 'Adding...';
-        const description = document.getElementById('ticket-description').value;
-        const status = document.getElementById('ticket-status').value;
-        const projectId = projects.id;
-        //const ticketId = ticket.id;
-
-        const ticketList = await this.client.createTicketToProject(projectId, ticketId, description, status, (error) => {
-            errorMessageDisplay.innerText = `Error: ${error.message}`;
-            errorMessageDisplay.classList.remove('hidden');
-        });
-
-        this.dataStore.set('tickets', ticketList);
-
-        document.getElementById('add-ticket').innerText = 'Add Ticket';
-        document.getElementById("add-ticket-form").reset();
     }
 }
 

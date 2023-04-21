@@ -16,7 +16,7 @@ header {
 body {
   font-size: 1.8rem;
   line-height: 1.618;
-  max-width: 80em;
+  max-width: 100%;
   margin: auto;
   background-color: #f9f9f9;
   padding: 13px;
@@ -42,6 +42,10 @@ h1, h2, h3, h4, h5, h6 {
   word-wrap: break-word;
   -ms-word-break: break-all;
   word-break: break-word;
+}
+
+.header_home, .user_info{
+  font-size: 24px;
 }
 
 h1 {
@@ -88,19 +92,36 @@ a {
   text-decoration: none;
   color: #1d7484;
 }
-a:visited {
-  color: #144f5a;
-}
 
-a:hover {
-  color: #982c61;
-  border-bottom: 2px solid #4a4a4a;
-}
 
 ul {
-  padding-left: 1.4em;
-  margin-top: 0px;
-  margin-bottom: 2.5rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: right;
+}
+
+li:first-child{
+    float: left;
+    border-right: 1px solid #bbb;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
 }
 
 li {
@@ -188,7 +209,7 @@ textarea {
   width: 100%;
 }
 
-.button, button, input[type=submit], input[type=reset], input[type=button], .view-button, .editProjects-button, .editStatus-button, .delete-button{
+.button, .header_home, button, input[type=submit], input[type=reset], input[type=button], .view-button, .editProjects-button, .editStatus-button, .delete-button{
   display: inline-block;
   padding: 8px 16px;
   text-align: center;
@@ -202,7 +223,7 @@ textarea {
   box-sizing: border-box;
 }
 
-.view-button, .editProjects-button, .editStatus-button, .delete-button {
+.view-button, .editProjects-button, .editStatus-button, .delete-button{
   display: inline-block;
   padding: 8px 16px;
   text-align: center;
@@ -263,4 +284,9 @@ label, legend, fieldset {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
+}
+
+.createProject-card{
+    padding: 50px;
+    align: center;
 }
