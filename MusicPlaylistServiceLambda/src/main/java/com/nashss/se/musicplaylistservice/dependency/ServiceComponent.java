@@ -1,12 +1,7 @@
 package com.nashss.se.musicplaylistservice.dependency;
 
-import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.nashss.se.musicplaylistservice.activity.*;
 
-import com.nashss.se.musicplaylistservice.activity.requests.*;
-import com.nashss.se.musicplaylistservice.activity.*;
-import com.amazonaws.services.lambda.runtime.RequestHandler;
-import com.nashss.se.musicplaylistservice.activity.*;
 import com.nashss.se.musicplaylistservice.activity.AddSongToPlaylistActivity;
 import com.nashss.se.musicplaylistservice.activity.CreatePlaylistActivity;
 import com.nashss.se.musicplaylistservice.activity.GetAllTicketsActivity;
@@ -16,14 +11,8 @@ import com.nashss.se.musicplaylistservice.activity.GetTicketActivity;
 import com.nashss.se.musicplaylistservice.activity.SearchPlaylistsActivity;
 import com.nashss.se.musicplaylistservice.activity.UpdatePlaylistActivity;
 
-import com.nashss.se.musicplaylistservice.activity.requests.CreateTicketRequest;
-import com.nashss.se.musicplaylistservice.activity.requests.CreateProjectRequest;
-
-import com.nashss.se.musicplaylistservice.activity.requests.UpdateTicketRequest;
-import com.nashss.se.musicplaylistservice.activity.requests.UpdateProjectStatusRequest;
 import dagger.Component;
 
-import javax.inject.Inject;
 import javax.inject.Singleton;
 
 /**
@@ -83,7 +72,7 @@ public interface ServiceComponent {
 
     CreateProjectActivity provideCreateProjectActivity();
 
-    UpdateTicketActivity provideUpdateTicketActivity();
+    UpdateTicketDetailsActivity provideUpdateTicketActivity();
     
     GetAllProjectsActivity provideGetAllProjectsActivity();
     

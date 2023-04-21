@@ -16,7 +16,7 @@ export default class TicketTrackerClient extends BindingClass {
         super();
 
         const methodsToBind = ['clientLoaded', 'getIdentity', 'login', 'logout', 'getProject', 'getTicket',
-        'getAllTicketsByProject', 'createProject', 'createTicket', 'deleteTicket', 'deleteProject', 'getAllProjects'];
+        'getAllTicketsByProject', 'createProject', 'createTicket', 'deleteTicket', 'deleteProject', 'getAllProjects', 'updateProjectDetails', 'updateTicketDetails', 'updateProjectStatus', 'updateTicketStatus'];
         this.bindClassMethods(methodsToBind, this);
 
         this.authenticator = new Authenticator();;
@@ -72,6 +72,11 @@ export default class TicketTrackerClient extends BindingClass {
         return await this.authenticator.getUserToken();
     }
 
+    /**
+     * Get all the project in a given database.
+     * @param errorCallback (Optional) A function to execute if the call fails.
+     * @returns The list of projects in a database.
+     */
     async getAllProjects(errorCallback) {
         try {
             const response = await this.axiosClient.get(`/projects`);
@@ -83,9 +88,9 @@ export default class TicketTrackerClient extends BindingClass {
 
     /**
      * Get the tickets on a given project by the project's identifier.
-     * @param projectId Unique identifier for a playlist
+     * @param projectId Unique identifier for a project.
      * @param errorCallback (Optional) A function to execute if the call fails.
-     * @returns The list of songs on a playlist.
+     * @returns The list of tickets on a project.
      */
         async getAllTicketsByProject(projectId, errorCallback) {
             try {
@@ -182,6 +187,115 @@ export default class TicketTrackerClient extends BindingClass {
     }
 
     /**
+     * Update an existing project's details in the database.
+     * @param projectId The project that will updated details.
+     * @param title The title of the project to update.
+     * @param description the description of the project to update.
+     * @param status status to be updated to either back log or in progress or completed.
+     * @param errorCallback (Optional) A function to execute if the call fails.
+     * @returns The project that has been updated.
+     */
+    async updateProjectDetails(projectId, title, description, status, errorCallback) {
+        try {
+            const token = await this.getTokenOrThrow("Only authenticated users can update a project.");
+            const response = await this.axiosClient.put(`/projects/${projectId}`, {
+                projectId: projectId,
+                title: title,
+                description: description,
+                status: status,
+            }, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            return response.data.ticket;
+        } catch (error) {
+            this.handleError(error, errorCallback)
+        }
+    }
+    
+    /**
+     * Update an existing ticket's details on a project in the database.
+     * @param projectId The project that will have an updated ticket.
+     * @param ticketId The ticket that have updated details.
+     * @param title The title of the ticket to update.
+     * @param description the description of the ticket to update.
+     * @param status status to be updated to either back log or in progress or completed.
+     * @param errorCallback (Optional) A function to execute if the call fails.
+     * @returns The ticket that has been updated.
+     */
+    async updateTicketDetails(projectId, ticketId, title, description, status, errorCallback) {
+        try {
+            const token = await this.getTokenOrThrow("Only authenticated users can update a ticket.");
+            const response = await this.axiosClient.put(`/projects/${projectId}/tickets/${ticketId}`, {
+                projectId: projectId,
+                ticketId: ticketId,
+                title: title,
+                description: description,
+                status: status,
+            }, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            return response.data.project;
+        } catch (error) {
+            this.handleError(error, errorCallback)
+        }
+    }
+
+
+    /**
+     * Update an existing project status in the database.
+     * @param projectId The project that will have an updated status.
+     * @param status status to be updated to either back log or in progress or completed.
+     * @param errorCallback (Optional) A function to execute if the call fails.
+     * @returns The project that has been updated.
+     */
+    async updateProjectStatus(projectId, status, errorCallback) {
+        try {
+            const token = await this.getTokenOrThrow("Only authenticated users can update a project.");
+            const response = await this.axiosClient.put(`/projects/${projectId}`, {
+                projectId: projectId,
+                status: status,
+            }, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            return response.data.project;
+        } catch (error) {
+            this.handleError(error, errorCallback)
+        }
+    }
+
+        /**
+     * Update an existing ticket status in the database.
+     * @param projectId The project that will have an updated ticket.
+     * @param ticketId The ticket that will have an updated status.
+     * @param status status to be updated to either back log or in progress or completed.
+     * @param errorCallback (Optional) A function to execute if the call fails.
+     * @returns The project that has been updated.
+     */
+        async updateTicketStatus(projectId, ticketId, status, errorCallback) {
+            try {
+                const token = await this.getTokenOrThrow("Only authenticated users can update a ticket.");
+                const response = await this.axiosClient.post(`/projects/${projectId}/ticketstatus/${ticketId}`, {
+                    projectId: projectId,
+                    ticketId: ticketId,
+                    status: status,
+                }, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+                return response.data.ticket;
+            } catch (error) {
+                this.handleError(error, errorCallback)
+            }
+        }
+
+    /**
      * Deletes a ticket owned by any user.
      * @param projectId The project that has the ticket
      * @param tickedId The ticket that will be delete from the specified project.
@@ -205,7 +319,7 @@ export default class TicketTrackerClient extends BindingClass {
         }
     }
 
-        /**
+    /**
      * Deletes a project owned by any user, and all the tickets associated with that project
      * @param projectId The project that will be deleted.
      * @param errorCallback (Optional) A function to execute if the call fails.
