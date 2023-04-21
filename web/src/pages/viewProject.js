@@ -6,7 +6,7 @@ import DataStore from "../util/DataStore";
 class ViewProject extends BindingClass {
     constructor() {
         super();
-        this.bindClassMethods(['updateProject', 'getProjectForPage', 'getTicketsForPage', 'mount', 'createProjectTable',  'createTicketsTable', 'addProjectToPage', 'addTicketsToPage'], this)
+        this.bindClassMethods(['updateProject', 'getProjectForPage', 'getTicketsForPage', 'mount', 'createProjectTable',  'createTicketsTable', 'addProjectToPage', 'addTicketsToPage', 'deleteTicket'], this)
         this.dataStore = new DataStore();
         this.header = new Header(this.dataStore);
         this.dataStore.addChangeListener(this.addProjectToPage);
@@ -116,23 +116,30 @@ class ViewProject extends BindingClass {
                 </tr>`;
         
         for (const ticket of tickets) {
-        html += `
-                <tr>
-                    <td>
-                        <input readonly type="text" value="${ticket.title}" id="ticketTitle"></input>
-                    </td>
-                    <td>
-                        <input type="text" value="${ticket.status}" id="ticketStatus"></input>
-                    </td>
-                    <td>
-                        <input type="text" class="ticketDescription" value="${ticket.description}" id="ticketDescription"></input>
-                    </td>
-                    <td>
-                        <a href="" class="delete-button">Delete Ticket</a>
-                    </td>
-                </tr>`;
-
-        }
+            console.log("inside loop");
+            html += `
+                    <tr>
+                        <td>
+                            <input readonly type="text" value="${ticket.title}" id="ticketTitle"></input>
+                        </td>
+                        <td>
+                            <input type="text" value="${ticket.status}" id="ticketStatus"></input>
+                        </td>
+                        <td>
+                            <input type="text" class="ticketDescription" value="${ticket.description}" id="ticketDescription"></input>
+                        </td>
+                        <td>                    
+                            <button data-ticketId="${ticket.ticketId}" id="deleteTicket" class="delete-button">Delete Ticket</button>
+                        </td>
+                        <td>
+                            <a href="" class="editProjects-button">Edit Ticket</a>
+                        </td>
+                            <td>
+                            <a href="" class="view-button">View Ticket</a>
+                        </td>
+                    </tr>`;
+    
+            }
 
         html += `
         </table>
@@ -159,6 +166,22 @@ class ViewProject extends BindingClass {
         }
 
         document.getElementById('viewTicketsTable').innerHTML = this.createTicketsTable(tickets);
+        document.getElementById('deleteTicket').addEventListener('click', this.deleteTicket);
+    }
+
+
+ async deleteTicket(event) {
+        if(confirm("Are you sure you want to delete this ticket?")){
+            event.preventDefault();
+            const urlParams = new URLSearchParams(window.location.search);
+            console.log("getting event button", event.target.dataset.ticketid);
+            const projectId = urlParams.get('projectId');
+            const ticketId = event.target.dataset.ticketid;
+            await this.client.deleteTicket(projectId, ticketId);
+            alert(ticketId + " has been deleted.");
+            location.reload();
+        }
+        
     }
 }
 
