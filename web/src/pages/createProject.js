@@ -11,7 +11,7 @@ class CreateProject extends BindingClass {
         super();
         this.bindClassMethods(['mount', 'submit', 'redirectToViewProject'], this);
         this.dataStore = new DataStore();
-        this.dataStore.addChangeListener(this.redirectToViewPlaylist);
+        this.dataStore.addChangeListener(this.redirectToViewProject);
         this.header = new Header(this.dataStore);
     }
 
@@ -51,6 +51,7 @@ class CreateProject extends BindingClass {
             errorMessageDisplay.classList.remove('hidden');
         });
         this.dataStore.set('project', project);
+        console.log("hello");
     }
 
     /**
@@ -59,7 +60,7 @@ class CreateProject extends BindingClass {
     redirectToViewProject() {
         const project = this.dataStore.get('project');
         if (project != null) {
-            window.location.href = `/viewProject.html?id=${project.id}`;
+            window.location.href = `/viewProject.html?projectId=${project.projectId}`;
         }
     }
 }
