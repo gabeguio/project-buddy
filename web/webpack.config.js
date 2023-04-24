@@ -28,6 +28,8 @@ module.exports = {
     loadProjects: path.resolve(__dirname, 'src', 'pages', 'loadProjects.js'),
     viewPlaylist: path.resolve(__dirname, 'src', 'pages', 'viewPlaylist.js'),
     viewProject: path.resolve(__dirname, 'src', 'pages', 'viewProject.js'),
+    editProject: path.resolve(__dirname, 'src', 'pages', 'editProject.js'),
+    editTicket: path.resolve(__dirname, 'src', 'pages', 'editTicket.js'),
     searchPlaylists: path.resolve(__dirname, 'src', 'pages', 'searchPlaylists.js'),
     viewTickets: path.resolve(__dirname, 'src', 'pages', 'viewTickets.js'),
   },

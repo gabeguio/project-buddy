@@ -199,7 +199,7 @@ textarea {
   box-sizing: border-box;
 }
 
-.view-button, .editProjects-button, .editStatus-button, .delete-button{
+.view-button, .editProjects-button, .edit-button, .delete-button{
   display: inline-block;
   padding: 8px 16px;
   text-align: center;
@@ -230,7 +230,7 @@ textarea {
 .editProjects-button{
   background-color: #E7975E
 }
-.editStatus-button{
+.edit-button{
   background-color: #9BD56C
 }
 .delete-button{
