@@ -302,6 +302,8 @@ Resources:
           Properties:
             Path: /projects/{projectId}/tickets
             Method: get
+            Auth:
+              Authorizer: 'NONE'
 
   CreateTicketLambda:
     Type: AWS::Serverless::Function
