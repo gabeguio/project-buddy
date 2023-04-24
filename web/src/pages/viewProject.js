@@ -6,24 +6,12 @@ import DataStore from "../util/DataStore";
 class ViewProject extends BindingClass {
     constructor() {
         super();
-        this.bindClassMethods(['updateProject', 'getProjectForPage', 'getTicketsForPage', 'mount', 'createProjectTable',  'createTicketsTable', 'addProjectToPage', 'addTicketsToPage', 'deleteTicket'], this)
+        this.bindClassMethods(['getProjectForPage', 'getTicketsForPage', 'mount', 'createProjectTable',  'createTicketsTable', 'addProjectToPage', 'addTicketsToPage', 'deleteTicket'], this)
         this.dataStore = new DataStore();
         this.header = new Header(this.dataStore);
         this.dataStore.addChangeListener(this.addProjectToPage);
         this.dataStore.addChangeListener(this.addTicketsToPage);
     
-    }
-
-    async updateProject(event) {
-        event.preventDefault();
-        const urlParams = new URLSearchParams(window.location.search);
-        const projectId = urlParams.get('projectId');
-        const projectTitle = document.getElementById('projectTitle').value;
-        const projectStatus = document.getElementById('projectStatus').value;
-        const projectDescription = document.getElementById('projectDescription').value;
-        const project = await this.client.updateProjectDetails(projectId, projectTitle, projectStatus, projectDescription);
-        this.dataStore.set('project', project);
-        alert(projectTitle + " has been updated.")
     }
 
     async getProjectForPage() {
@@ -55,47 +43,48 @@ class ViewProject extends BindingClass {
         }
 
         let html = `
-        <form>
-            <table>
-                <tr>
-                    <th>
-                    Project Title
-                    </th>
-                    <th>
-                    Project Status
-                    </th>
-                    <th>
-                    Project Description
-                    </th>
-                    <th
-                    Actions
-                    </th>
-                </tr>`;
+        <table>
+            <tr>
+                <th>
+                Project Title
+                </th>
+                <th>
+                Project Status
+                </th>
+                <th>
+                Project Description
+                </th>
+                <th
+                Actions
+                </th>
+            </tr>`;
         
         html += `
                 <tr>
                     <td>
-                        <input readonly type="text" value="${project.title}" id="projectTitle"></input>
+                    ${project.title}
                     </td>
                     <td>
-                        <input type="text" value="${project.status}" id="projectStatus"></input>
+                    ${project.status}
                     </td>
                     <td>
-                        <input type="text" class="projectDescription" value="${project.description}" id="projectDescription"></input>
+                    ${project.description}
                     </td>
                     <td>
                         <a href="editProject.html?projectId=${project.projectId}" class="edit-button">Edit Project</a>
                         <a href="#" class="delete-button">Delete Project</a>
                     </td>
                 </tr>
-            </table>
-                <button id="saveProject">Save Changes</button>
-        </form>`;
+            </table>`;
 
         return html;
     }
 
     createTicketsTable(tickets) {
+        const project = this.dataStore.get('project');
+        if (project == null) {
+            return;
+        }
 
         let html = `
         <form>
@@ -116,34 +105,28 @@ class ViewProject extends BindingClass {
                 </tr>`;
         
         for (const ticket of tickets) {
-            console.log("inside loop");
             html += `
-                    <tr>
-                        <td>
-                            <input readonly type="text" value="${ticket.title}" id="ticketTitle"></input>
-                        </td>
-                        <td>
-                            <input type="text" value="${ticket.status}" id="ticketStatus"></input>
-                        </td>
-                        <td>
-                            <input type="text" class="ticketDescription" value="${ticket.description}" id="ticketDescription"></input>
-                        </td>
-                        <td>                    
-                            <button data-ticketId="${ticket.ticketId}" id="deleteTicket" class="delete-button">Delete Ticket</button>
-                        </td>
-                        <td>
-                            <a href="" class="editProjects-button">Edit Ticket</a>
-                        </td>
-                            <td>
-                            <a href="" class="view-button">View Ticket</a>
-                        </td>
-                    </tr>`;
-    
+                <tr>
+                    <td>
+                    ${ticket.title}
+                    </td>
+                    <td>
+                    ${ticket.status}
+                    </td>
+                    <td>
+                    ${ticket.description}
+                    </td>
+                    <td>
+                        <a href="editTicket.html/#/?projectId=${project.projectId}&ticketId=${ticket.ticketId}" class="edit-button">Edit Ticket</a>
+                    </td>
+                    <td>
+                        <button id="deleteTicket" class="delete-button">Delete Ticket</button>
+                    </td>
+                </tr>`;
             }
 
         html += `
-        </table>
-        <button id="saveProject">Save Changes</button>
+            </table>
         </form>`;
 
         return html;
@@ -156,7 +139,6 @@ class ViewProject extends BindingClass {
         }
 
         document.getElementById('viewProjectTable').innerHTML = this.createProjectTable(project);
-        document.getElementById('saveProject').addEventListener('click', this.updateProject);
     }
 
     addTicketsToPage() {

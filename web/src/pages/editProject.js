@@ -6,7 +6,7 @@ import DataStore from "../util/DataStore";
 class EditProject extends BindingClass {
     constructor() {
         super();
-        this.bindClassMethods(['updateProject', 'getProjectForPage', 'getTicketsForPage', 'mount', 'createProjectTable',  'createTicketsTable', 'addProjectToPage', 'addTicketsToPage'], this)
+        this.bindClassMethods(['mount', 'getProjectForPage', 'updateProject', 'createProjectForm', 'addProjectToPage',], this)
         this.dataStore = new DataStore();
         this.header = new Header(this.dataStore);
         this.dataStore.addChangeListener(this.addProjectToPage);
@@ -37,6 +37,8 @@ class EditProject extends BindingClass {
         const project = await this.client.updateProjectDetails(projectId, projectTitle, projectStatus, projectDescription);
         this.dataStore.set('project', project);
         alert(projectTitle + " has been updated.")
+        window.location.href = `/viewProject.html?projectId=${projectId}`;
+
     }
 
     createProjectForm(project) {
@@ -46,19 +48,19 @@ class EditProject extends BindingClass {
 
         let html = `
         <form>
-        <label for="Project Title" value="${project.title}" id="projectTitle">Project Title</label>
-        <input type="text">
-        <label required for="Project Status" value="${project.status}" id="projectStatus">Project Status</label>
-        <select name="Project Status">
+        <label for="Project Title" >Project Title</label>
+        <input type="text" id="projectTitle" value="${project.title}">
+        <label required for="Project Status">Project Status</label>
+        <select name="Project Status" id="projectStatus">
+            <option value="none" selected disabled hidden>Select an Option</option>
             <option value="BACK LOG">Back Log</option>
             <option value="IN PROGRESS">In Progress</option>
             <option value="COMPLETED">Completed</option>
         </select>
-        <label for="Project Description" value="${project.description}" id="projectDescription">Project Description</label>
-        <textarea rows="4" cols="50">
-        At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.
-        </textarea>
-        <button id="saveProject">Save Changes</button>`;
+        <label for="Project Description">Project Description</label>
+        <textarea rows="4" cols="50" id="projectDescription">${project.description}</textarea>
+        </form>
+        <button id="saveProject" href="viewProject.html?projectId=${project.projectId}">Save Changes</button>`;
 
         return html;
     }
@@ -69,8 +71,10 @@ class EditProject extends BindingClass {
             return;
         }
 
-        document.getElementById('editProjectTable').innerHTML = this.createProjectForm(project);
+        document.getElementById('editProjectForm').innerHTML = this.createProjectForm(project);
         document.getElementById('saveProject').addEventListener('click', this.updateProject);
+        
+
     }
 
 }
