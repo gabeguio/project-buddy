@@ -117,7 +117,7 @@ class ViewProject extends BindingClass {
                     ${ticket.description}
                     </td>
                     <td>
-                        <a href="editTicket.html/#/?projectId=${project.projectId}&ticketId=${ticket.ticketId}" class="edit-button">Edit Ticket</a>
+                        <a href="editTicket.html?projectId=${project.projectId}&ticketId=${ticket.ticketId}" class="edit-button">Edit Ticket</a>
                     </td>
                     <td>
                         <button id="deleteTicket" class="delete-button">Delete Ticket</button>
