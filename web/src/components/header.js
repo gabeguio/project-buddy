@@ -28,17 +28,23 @@ export default class Header extends BindingClass {
         const header = document.getElementById('header');
         const navbar = document.createElement('ul');
         const titleItem = document.createElement('li');
+//        const title = document.createElement('li');
+//        title.classList.add("title-banner");
+//        title.innerText = "Project Management System";
         const userItem = document.createElement('li');
         header.appendChild(navbar);
+
         navbar.appendChild(titleItem);
+
         navbar.appendChild(userItem);
         titleItem.appendChild(siteTitle);
+//         navbar.appendChild(title);
         userItem.appendChild(userInfo);
     }
 
     createSiteTitle() {
         const homeButton = document.createElement('a');
-        homeButton.classList.add('header_home');
+        homeButton.classList.add('button');
         homeButton.href = 'index.html';
         homeButton.innerText = 'Home';
 
