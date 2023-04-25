@@ -1,9 +1,3 @@
-/* Sakura.css v1.4.1
- * ================
- * Minimal css theme.
- * Project: https://github.com/oxalorg/sakura/
- */
-/* Body */
 html {
   font-size: 62.5%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
@@ -14,7 +8,7 @@ body {
   line-height: 1.618;
   max-width: 100%;
   margin: auto;
-  background-color: #323031;
+  background-color: #607787;
 
 }
 
@@ -25,11 +19,13 @@ header{
 .card-content{
   margin: auto;
   padding: 50px;
+  text-align: center;
 }
 
 .results-container{
   width: 80%;
   margin: auto;
+  padding: 50px;
 }
 
 .results_span{
@@ -55,16 +51,16 @@ h1, h2, h3, h4, h5, h6 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   font-weight: 700;
   margin-top: 3rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   overflow-wrap: break-word;
   word-wrap: break-word;
   -ms-word-break: break-all;
   word-break: break-word;
-  color: #ffffff;
+  color: #FFF;
 }
 
 .header_home, .user_info{
-  font-size: 24px;
+  font-size: 36px;
 }
 
 h1 {
@@ -100,12 +96,7 @@ small, sub, sup {
   font-size: 75%;
 }
 
-hr {
-  border-color: #1d7484;
-}
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
+
 
 a {
   text-decoration: none;
@@ -156,17 +147,27 @@ img {
 
 /* Tables */
 table {
+  margin: auto;
   text-align: auto;
-  width: 100%;
+  width: auto;
   border-collapse: collapse;
-  background-color: #CDCECD;
+  background-color: #9DACB2;
   margin-bottom: 1em;
+}
+
+hr {
+  border-color: #1d7484;
+}
+
+tr:nth-child(even) {
+  background-color: #BCD4DE;
 }
 
 td, th {
   padding: 0.5em;
   border-bottom: 1px solid #f1f1f1;
   font-weight: bold;
+  text-align: center;
 }
 
 input {
@@ -201,7 +202,8 @@ textarea {
   box-sizing: border-box;
 }
 
-.view-button, .editProjects-button, .edit-button, .delete-button{
+.view-button, .editProjects-button, .create-button, .edit-button, .delete-button{
+
   display: inline-block;
   padding: 8px 16px;
   text-align: center;
@@ -227,16 +229,35 @@ textarea {
 }
 
 .view-button{
-  background-color: #F5DE72
+  background-color: #626D58;
+  color: #FFF;
 }
 .editProjects-button{
-  background-color: #E7975E
+  background-color: #0C1B33;
+  color: #FFF;
 }
+
+.create-button{
+  background-color: #77966D;
+  color: #FFF;
+}
+
 .edit-button{
   background-color: #9BD56C
 }
+
 .delete-button{
-  background-color: #E1675F
+  background-color: #56282D;
+    color: #FFF;
+}
+
+.saveButton{
+  background-color: #344FA7;
+    color: #FFF;
+    margin: 1em;
+    width: 15%;
+    padding: 20px 0;
+    align-items: center;
 }
 
 textarea, select, input {

@@ -62,16 +62,17 @@ class ViewProject extends BindingClass {
         html += `
                 <tr>
                     <td>
-                    ${project.title}
+                        ${project.title}
                     </td>
                     <td>
-                    ${project.status}
+                        ${project.status}
                     </td>
                     <td>
-                    ${project.description}
+                        ${project.description}
                     </td>
                     <td>
                         <a href="editProject.html?projectId=${project.projectId}" class="edit-button">Edit Project</a>
+                        <a href="createTicket.html?projectId=${project.projectId}" class="create-button">Create Tickets</a>
                         <a href="#" class="delete-button">Delete Project</a>
                     </td>
                 </tr>
@@ -118,9 +119,7 @@ class ViewProject extends BindingClass {
                     </td>
                     <td>
                         <a href="editTicket.html?projectId=${project.projectId}&ticketId=${ticket.ticketId}" class="edit-button">Edit Ticket</a>
-                    </td>
-                    <td>
-                        <button id="deleteTicket" class="delete-button">Delete Ticket</button>
+                        <a href="#" class="delete-button">Delete Ticket</a>
                     </td>
                 </tr>`;
             }

@@ -52,10 +52,9 @@ class EditProject extends BindingClass {
         <input type="text" id="projectTitle" value="${project.title}">
         <label required for="Project Status">Project Status</label>
         <select name="Project Status" id="projectStatus">
-            <option value="none" selected disabled hidden>Select an Option</option>
-            <option value="BACK LOG">Back Log</option>
-            <option value="IN PROGRESS">In Progress</option>
-            <option value="COMPLETED">Completed</option>
+            <option value="Back Log">Back Log</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
         </select>
         <label for="Project Description">Project Description</label>
         <textarea rows="4" cols="50" id="projectDescription">${project.description}</textarea>

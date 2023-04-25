@@ -54,10 +54,9 @@ class EditTicket extends BindingClass {
         <input type="text" id="ticketTitle" value="${ticket.title}">
         <label>Ticket Status</label>
         <select name="Ticket Status" id="ticketStatus">
-            <option value="none" selected disabled hidden>Select an Option</option>
-            <option value="BACK LOG">Back Log</option>
-            <option value="IN PROGRESS">In Progress</option>
-            <option value="COMPLETED">Completed</option>
+            <option value="Back Log">Back Log</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
         </select>
         <label for="ticket Description">Ticket Description</label>
         <textarea rows="4" cols="50" id="ticketDescription">${ticket.description}</textarea>
