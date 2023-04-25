@@ -126,7 +126,7 @@ export default class TicketTrackerClient extends BindingClass {
     async getTicket(projectId, ticketId, errorCallback) {
         try {
             const response = await this.axiosClient.get(`projects/${projectId}/tickets/${ticketId}`);
-            return response.data.ticket;
+            return response.data.ticketModel;
         } catch (error) {
             this.handleError(error, errorCallback)
         }
@@ -224,15 +224,15 @@ export default class TicketTrackerClient extends BindingClass {
      * @param errorCallback (Optional) A function to execute if the call fails.
      * @returns The ticket that has been updated.
      */
-    async updateTicketDetails(projectId, ticketId, title, description, status, errorCallback) {
+    async updateTicketDetails(projectId, ticketId, title, status, description, errorCallback) {
         try {
             const token = await this.getTokenOrThrow("Only authenticated users can update a ticket.");
             const response = await this.axiosClient.put(`/projects/${projectId}/tickets/${ticketId}`, {
                 projectId: projectId,
                 ticketId: ticketId,
                 title: title,
-                description: description,
                 status: status,
+                description: description,
             }, {
                 headers: {
                     Authorization: `Bearer ${token}`

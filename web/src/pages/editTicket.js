@@ -6,7 +6,7 @@ import DataStore from "../util/DataStore";
 class EditTicket extends BindingClass {
     constructor() {
         super();
-        this.bindClassMethods(['mount', 'getTicketForPage', 'updateTicket', 'createTicketForm', 'addTicketToPage'], this)
+        this.bindClassMethods(['mount', 'getTicketForPage', 'updateTicket', 'createTicketForm', 'addTicketToPage',], this)
         this.dataStore = new DataStore();
         this.header = new Header(this.dataStore);
         this.dataStore.addChangeListener(this.addTicketToPage);
@@ -17,6 +17,7 @@ class EditTicket extends BindingClass {
         this.header.addHeaderToPage();
         this.client = new TicketTrackerClient();
         this.getTicketForPage();
+
     }
 
     async getTicketForPage() {
@@ -24,7 +25,7 @@ class EditTicket extends BindingClass {
         const projectId = urlParams.get('projectId');
         const ticketId = urlParams.get('ticketId');
         const ticket = await this.client.getTicket(projectId, ticketId);
-        this.dataStore.set('ticket', ticket);
+        this.dataStore.set('ticketModel', ticket);
         console.log("ticket is stored");
     }
     
@@ -44,10 +45,10 @@ class EditTicket extends BindingClass {
     }
 
     createTicketForm(ticket) {
-        if (ticket.length === 0) {
-            return '<h4>No results found</h4>';
-        }
-        console.log("before html");
+        // if (ticket.length === 0) {
+        //     return '<h4>No results found</h4>';
+        // }
+        // console.log(ticket.title, ticket.ticketStatus, ticket.description);
         let html = `
         <form>
         <label>Ticket Title</label>
@@ -68,11 +69,11 @@ class EditTicket extends BindingClass {
     }
 
     addTicketToPage() {
-        const ticket = this.dataStore.get('ticket');
-        if (ticket == null) {
-            return;
-        }
-
+        const ticket = this.dataStore.get('ticketModel');
+        // if (ticket == null) {
+        //     return;
+        // }
+        console.log("before createTicketForm");
         document.getElementById('editTicketForm').innerHTML = this.createTicketForm(ticket);
         document.getElementById('saveTicket').addEventListener('click', this.updateTicket);
 

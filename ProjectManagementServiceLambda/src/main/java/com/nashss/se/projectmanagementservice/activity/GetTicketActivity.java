@@ -27,8 +27,6 @@ public class GetTicketActivity {
         Ticket ticket = ticketDao.getTicket(projectId, ticketId);
         TicketModel ticketModel = new ProjectModelConverter().toTicketModel(ticket);
 
-        return GetTicketResult.builder()
-            .withTicket(ticketModel)
-            .build();
+        return GetTicketResult.builder().withTicket(ticketModel).build();
     }
 }

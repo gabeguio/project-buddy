@@ -44,7 +44,7 @@ public class GetTicketActivityTest {
         when(ticketDao.getTicket(ticketId, projectId)).thenReturn(ticket);
 
         GetTicketRequest ticketRequest = new GetTicketRequest.Builder()
-            .withId(ticketId, projectId)
+            .withTicketId(ticketId).withProjectId(projectId)
             .build();
 
         // WHEN

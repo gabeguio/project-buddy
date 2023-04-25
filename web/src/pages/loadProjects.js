@@ -29,8 +29,10 @@ class LoadProjects extends BindingClass {
                 <td>
                     <a href=viewProject.html?projectId=${res.projectId}>${res.title}</a>
                 </td>
-                <td>${res.status}</td>
-                <td><a href="viewTickets.html?projectId=${res.projectId}" class="view-button">View Tickets</a> <a href="#" class="editProjects-button">Edit Projects</a></td>
+                <td>
+                    ${res.status}
+                </td>
+                <td><a href="viewProject.html?projectId=${res.projectId}" class="view-button">View Project</a>
             </tr>`;
         }
         html += '</table>';
