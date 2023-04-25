@@ -48,7 +48,6 @@ class EditTicket extends BindingClass {
         // if (ticket.length === 0) {
         //     return '<h4>No results found</h4>';
         // }
-        // console.log(ticket.title, ticket.ticketStatus, ticket.description);
         let html = `
         <form>
         <label>Ticket Title</label>
@@ -73,7 +72,6 @@ class EditTicket extends BindingClass {
         // if (ticket == null) {
         //     return;
         // }
-        console.log("before createTicketForm");
         document.getElementById('editTicketForm').innerHTML = this.createTicketForm(ticket);
         document.getElementById('saveTicket').addEventListener('click', this.updateTicket);
 
