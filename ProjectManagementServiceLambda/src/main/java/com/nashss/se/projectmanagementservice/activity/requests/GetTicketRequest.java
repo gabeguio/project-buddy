@@ -34,10 +34,14 @@ public class GetTicketRequest {
         private String projectId;
         private String ticketId;
 
-        public GetTicketRequest.Builder withId(String projectId, String ticketId) {
+        public Builder withProjectId(String projectId) {
            this.projectId = projectId;
-           this.ticketId = ticketId;
            return this;
+        }
+
+        public Builder withTicketId(String ticketId) {
+            this.ticketId = ticketId;
+            return this;
         }
 
         public GetTicketRequest build() {

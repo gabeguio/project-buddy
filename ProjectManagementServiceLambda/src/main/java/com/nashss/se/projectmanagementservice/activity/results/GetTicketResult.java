@@ -4,20 +4,20 @@ import com.nashss.se.projectmanagementservice.models.TicketModel;
 
 
 public class GetTicketResult {
-    private final TicketModel ticketModel;
+    private final TicketModel ticket;
 
     private GetTicketResult(TicketModel ticketModel) {
-        this.ticketModel = ticketModel;
+        this.ticket = ticketModel;
     }
 
     public TicketModel getTicketModel() {
-        return ticketModel;
+        return ticket;
     }
 
     @Override
     public String toString() {
         return "GetTicketResult{" +
-            "ticketModel=" + ticketModel +
+            "ticketModel=" + ticket +
             '}';
     }
     //CHECKSTYLE:OFF:Builder
@@ -26,14 +26,15 @@ public class GetTicketResult {
     }
 
     public static class Builder {
-        private TicketModel ticketModel;
+        private TicketModel ticket;
 
-        public Builder withTicket(TicketModel ticketModel) {
-            this.ticketModel = ticketModel;
+        public Builder withTicket(TicketModel ticket) {
+            this.ticket = ticket;
             return this;
         }
 
-        public GetTicketResult build() {return new GetTicketResult(ticketModel); }
+        public GetTicketResult build() {
+            return new GetTicketResult(ticket); }
     }
 
 
