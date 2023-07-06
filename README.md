@@ -1,17 +1,12 @@
-# ReadME.md
-
 # Group Project at NSS
-
 ---
 
 ## Overview
-
 ---
 
 This project was a culmination of group work over two weeks to produce an MVP for a Project Management System. Our team was given three days of concept and endpoint design time followed by 10 days of build time, and one day of presentation preparation to accomplish the deliverables and have a functional cloud API architecture paired with a front-end web application.
 
 ## Tech Stack
-
 ---
 
 - Backend: Java, AWS Cloudfront, Cognito, Cloudformation, Lambda, DynamoDB
@@ -19,7 +14,6 @@ This project was a culmination of group work over two weeks to produce an MVP fo
 - CI/CD tools: AWS SAM, Docker, Git, GitHub, GitHub Actions, S3
 
 ## Project **Infrastructure**
-
 ---
 
 ![*Image 1: Architecture diagram for the Project Management System*](resources/readme-images/readme-pms-project-infrastructure.png)
@@ -34,7 +28,6 @@ The MVP was built with a server-client architecture utilizing cloud services pro
 - The database was provided by AWS DynamoDB with NoSQL structure.
 
 ## CI/CD Tools and Infrastructure
-
 ---
 
 ![*Image 2: CI/CD for the Project Management System*](resources/readme-images/readme-pms-cicd-infrastructure.png)
@@ -49,13 +42,11 @@ The deployment pipeline supported several developer environments for project dev
 4. Upon success, GitHub Actions would deploy our code to the respective Amazon S3 buckets.
 
 # **Project Organization and Execution**
-
 ---
 
 Our concept was to create a productivity tool for small operation teams. Users would make and view all projects in the database, create and manage projects, tickets to a project, update ticket status, and delete either an entire project or a single ticket. ***Project Management System*** was a tool that built upon itself, keeping its developers organized and productive halfway through production.
 
 ## Planning and Personal Contributions
-
 ---
 
 - I was tasked with creating front-end wireframes in [Canva](https://www.canva.com/) to outline the presentation layer and page interactivity. This proved useful for keeping us on task for the final installments of the presentation layer. A pdf containing all my contributions to the wireframes can be found here: [Project Management System's Wire Frames](https://drive.google.com/file/d/1WnZCehG-WkQJKHQcwqnskBvUF65jA_UB/view?usp=sharing).
@@ -71,7 +62,6 @@ Our concept was to create a productivity tool for small operation teams. Users w
 *Image 4: Wireframe for creating a single ticket for Project Management System*
 
 ## Results
-
 ---
 
 This project proved as a challenging experience for our group with invaluable lessons learned. We completed 9/10 use cases outlined by our project requirements.
@@ -93,7 +83,6 @@ This project proved as a challenging experience for our group with invaluable le
 1. Delete a project that is no longer needed or created by mistake.
 
 ## Retrospective - Lessons Learned
-
 ---
 
 1. Pushing partially completed tickets to production hurts version control and creates problems for integration and other in-progress tickets.
@@ -104,7 +93,6 @@ This project proved as a challenging experience for our group with invaluable le
 6. During stand-ups, reporting on the work you have done and plan to do helps raise morale and builds trust. Some days we skipped stand-up which may have sparked poor productivity and communication for that day.
 
 ## Final Pictures
-
 ---
 
 The project was demonstrated in front of prospecting employers and NSS classmates on Friday, May 05, 2023.
