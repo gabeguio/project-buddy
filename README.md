@@ -1,84 +1,134 @@
-# Unit 5 Project Intro
+# ReadME.md
 
-Welcome to the Unit 5 Project. This project is a starting point that you'll be making extensive changes to as you design and build your own application. The code provided here is a starting point meant to remind you of patterns that we've been using, as well as show you a few new patterns that you might find useful. This document has 2 main sections:
+# Group Project at NSS
 
-- Deliverables
-- Infrastructure
+---
 
-> **NOTE:** There's a lot to this project, so we've split out the more tactical "how to" guidance into a [separate README](./README-SETUP.md) that you'll want to review and follow the included instructions for after you read through this one.
+## Overview
 
-## Deliverables
+---
 
-These are the required deliverables/reviews that you and your team will need to create during the project. _The status of each of these will be tracked in the GitHub project that your team is using._
+This project was a culmination of group work over two weeks to produce an MVP for a Project Management System. Our team was given three days of concept and endpoint design time followed by 10 days of build time, and one day of presentation preparation to accomplish the deliverables and have a functional cloud API architecture paired with a front-end web application.
 
-### Team Deliverables
+## Tech Stack
 
-* **Design Document: Problem Statement** Your team’s technical design specification. Complete [this template](resources/design-document.md). This should explain the product you'll be creating and what problem it solves.
-* **Design Document: Peer Team Review** Another team will review your technical design to help improve it. Each team will review at least one other teams design.
-* **Design Document: Instructor Review** One of the instructors will review your technical design after you've create it and reviewed it with another team.
-* **Team Charter:** Statements of how your team will work to ensure constructive collaboration, fairness, that everyone is learning and contributing. Complete [this template](resources/team-charter.md).
-* **Working Product:** Your project, as a working website deployed to AWS.
-* **Team Reflection:** A final retrospective with a few questions to answer as a team to reflect on what you have accomplished and learned throughout the project. Complete [this template](resources/team-reflection.md).
+---
 
-### Individual Deliverables
+- Backend: Java, AWS Cloudfront, Cognito, Cloudformation, Lambda, DynamoDB
+- Frontend: JavaScript, HTML, CSS, WebPack, Node Package Manager
+- CI/CD tools: AWS SAM, Docker, Git, GitHub, GitHub Actions, S3
 
-* **Accomplishment Tracking:** You'll be keeping a log of your individual accomplishments and lessons learned throughout this project week-by-week. Keeping a high level record of your accomplishments throughout your career is useful for your career growth and promotion. Use [this template](resources/individual-accomplishments-template.md) as a starting point, but you can keep this log in whatever tool/location you'd like.
+## Project **Infrastructure**
 
-## Technical Learning Objectives
+---
 
-This project is very open-ended and you/your team will be doing a lot of creative thinking to decide what you want to build. That said, there are several technical learning objectives that each team must meet. You should review the [Technical Learning Objectives](./resources/technical-objectives.md) as you familiarize yourself with the project. As part of the team reflection/retrospective you'll fill out this document with your team to document how you met the different objectives.
+![*Image 1: Architecture diagram for the Project Management System*](resources/readme-images/readme-pms-project-infrastructure.png)
 
-## Project Starter Infrastructure
+*Image 1: Architecture diagram for the Project Management System*
 
-Your team has been provided with a website, hosted by [CloudFront](https://aws.amazon.com/cloudfront/), that talks to an Amazon API Gateway endpoint. (A web front-end is likely new for several of you, as your unit projects so far have been all service development.) The Amazon API Gateway connects to a Lambda service, which stores its data in DynamoDB, an architecture that we’ve used several times on unit projects so far. The starter code provided contains a website that uses the playlist service you created in Unit 3. Below, Image 1 describes the architecture of the starter project.
+The MVP was built with a server-client architecture utilizing cloud services provided by AWS. 
 
-![Image 1: The architecture of your starter project](resources/images/architecture_diagram.png)
+- User authentication/flow provided by Amazon Cognito.
+- The presentation layer was programmed using vanilla JavaScript, HTML, and CSS, stored in Amazon S3 buckets. Buckets were deployed using AWS CloudFront.
+- The middleware contains 10 RESTful APIs built with Amazon API Gateway and AWS Lambda.
+- The database was provided by AWS DynamoDB with NoSQL structure.
 
-*Image 1: Architecture diagram for the starter project*
+## CI/CD Tools and Infrastructure
 
-### Introduction to the Starter Code
+---
 
-Unlike our unit projects in the past, this project will have two code bases.
+![*Image 2: CI/CD for the Project Management System*](resources/readme-images/readme-pms-cicd-infrastructure.png)
 
-[One code base](./ProjectManagementServiceLambda) will be for your Lambda service code, similar to what we’ve seen previously. This will contain code that designs and runs your service APIs, as well as packages to interact with and test your service.
+*Image 2: CI/CD for the Project Management System*
 
-The [second code base](./web) will contain code for your website:
+The deployment pipeline supported several developer environments for project development, static code analysis, automated build runs, and automated testing.
 
-* HTML: The content of your web pages
-* CSS: The styling and formatting of your web pages
-* JavaScript: The code that runs when a user interacts with the web pages, some of which triggers the browser to send requests to the service
+1. After task assignment, SAM and Docker supported scalable local/cloud deployment environments for building, testing, and developing.
+2. Code was pushed using Git. GitHub hosted our remote repository for version control and managing code reviews. 
+3. When branches were pushed to production, the CI was triggered for GitHub Actions automating building and testing for production.
+4. Upon success, GitHub Actions would deploy our code to the respective Amazon S3 buckets.
 
-Often times these are separated into different repositories, but for simplicity’s sake we've kept them in the same repository for this project.
+# **Project Organization and Execution**
 
-_Both of these should be considered starting points/example code. You will end up removing/replacing all of it as you build your own project._
+---
 
-### Deploying
+Our concept was to create a productivity tool for small operation teams. Users would make and view all projects in the database, create and manage projects, tickets to a project, update ticket status, and delete either an entire project or a single ticket. ***Project Management System*** was a tool that built upon itself, keeping its developers organized and productive halfway through production.
 
-We'll be using GitHub Actions to deploy the code to AWS. One of the first tasks that you'll do as a team is to configure the repository for this. Once that's completed your code should build and deploy as described in the [next README](./README-SETUP.md).
+## Planning and Personal Contributions
 
-### AWS Resources
+---
 
-Each team has one AWS account they will share to deploy their website and service. This is where all of your changes will be merged together and visible. Your team's account will be named something like `SE_Unit_5_Group_TEAMNAME` and will be available for you to configure like you've done in previous units.
+- I was tasked with creating front-end wireframes in [Canva](https://www.canva.com/) to outline the presentation layer and page interactivity. This proved useful for keeping us on task for the final installments of the presentation layer. A pdf containing all my contributions to the wireframes can be found here: [Project Management System's Wire Frames](https://drive.google.com/file/d/1WnZCehG-WkQJKHQcwqnskBvUF65jA_UB/view?usp=sharing).
+- I led the final design efforts for the [API architecture](https://github.com/GabeGoesCoding/project-management-system/blob/main/resources/design-document.md#6-api), [Entity Relational Diagram Tables](https://github.com/GabeGoesCoding/project-management-system/blob/main/resources/design-document.md#6-api), and [User Stories](https://github.com/GabeGoesCoding/project-management-system/blob/main/resources/design-document.md#6-api).
+- I provided all sample data for testing and the final presentation which can be found [here](https://github.com/GabeGoesCoding/project-management-system/blob/main/data/ticketdata.json).
 
-### Your website!
+![*Image 3: Wireframe for landing page for Project Management System*](resources/readme-images/readme-pms-wireframe-landingpage.png)
 
-To access your website, you'll need to build it first. The [next README](./README-SETUP.md) has instructions on the different ways we'll be doing this.
+*Image 3: Wireframe for landing page for Project Management System*
 
-## How Your Website Works
+![*Image 4: Wireframe for creating a single ticket for Project Management System*](resources/readme-images/readme-pms-wireframe-createtickets.png)
 
-Creating each page of your website requires a surprising amount of interactions between different JavaScript files and between our frontend and our backend. Our view playlist page makes 3 separate calls to our projectmanagementservice.
+*Image 4: Wireframe for creating a single ticket for Project Management System*
 
-Let’s look at one piece - adding the header to our page. This requires the full end to end flow of HTML to JS to backend service all the way back to updating our HTML.
+## Results
 
-![Image 2: The end to end flow of HTML to JS to the backend service, and the return to HTML.](resources/images/sequence_diagram.png)
+---
 
-*Image 2: The end to end flow of HTML to JS to the backend service, and the return to HTML*
+This project proved as a challenging experience for our group with invaluable lessons learned. We completed 9/10 use cases outlined by our project requirements.
 
-Two important things to call out:
+**Use cases we successfully implemented…**
 
-1. To call our backend we are always going through our `MusicPlaylistClient`.
-2. The `DataStore` uses a different pattern than we’ve seen previously. It has two member variables - the state, which is a JavaScript object that should hold all of the data being used across a webpage, and a list of listeners. The listeners are methods in other objects. Anytime `set` or `setState` is called it loops through all of those methods and executes each one. So in each of those listeners the first thing we do is check to see if the data that they rely on is null. Then, if it’s not null, we update the html to reflect the new data. You can take a look at the `addPlaylistToPage()` method in `viewPlaylist.js` for an example of this.
+1. Create a project with a title, description, and status to begin adding tickets.
+2. Get a project to view the project’s title, description, or status for a brief overview.
+3. Update a project by title, description, and status to support continuous development.
+4. Create a ticket for a particular project with a title, description, and status.
+5. Get a ticket’s information for an overview of the ticket’s work before the ticket assignment.
+6. Delete a ticket from a particular project to permanently remove that ticket from the project.
+7. Update a ticket’s title, description, and status to support new changes.
+8. Get a list of projects in the system for easy navigation for all systems in the project.
+9. Get a list of tickets for a particular project to overview the work that’s backlogged, in progress, or completed.
 
-## Project Setup
+**Use cases we failed to implement…**
 
-This document has provided an overview of the project as a whole. For more specifics on how to configure the project and your GitHub repo/AWS account, continue by reading [README-SETUP.md](./README-SETUP.md).
+1. Delete a project that is no longer needed or created by mistake.
+
+## Retrospective - Lessons Learned
+
+---
+
+1. Pushing partially completed tickets to production hurts version control and creates problems for integration and other in-progress tickets.
+2. Creating new tickets in the middle of a sprint with poor descriptors creates confusion.
+3. Upfront planning and discussing specific implementations to avoid ambiguity and poor design help minimize tech debt.
+4. Finding balance and the adequate amount of time for preplanning, diagramming, and design. We spent an extra day planning which may have served us better for time spent building.
+5. Over-compartmentalizing about prior knowledge and avoiding new growth. It was stressful to learn JavaScript/HTML/CSS as a beginner, but we found that jumping right in and not hesitating was the best approach.
+6. During stand-ups, reporting on the work you have done and plan to do helps raise morale and builds trust. Some days we skipped stand-up which may have sparked poor productivity and communication for that day.
+
+## Final Pictures
+
+---
+
+The project was demonstrated in front of prospecting employers and NSS classmates on Friday, May 05, 2023.
+
+### View All Projects (Landing Page)
+
+![readme-pms-picture-viewallprojects.png](resources/readme-images/readme-pms-picture-viewallprojects.png)
+
+### Create Project
+
+![readme-pms-picture-createproject.png](resources/readme-images/readme-pms-picture-createproject.png)
+
+### View All tickets For A Project
+
+![readme-pms-picture-viewprojectdetails-and-viewtickets.png](resources/readme-images/readme-pms-picture-viewprojectdetails-and-viewtickets.png)
+
+### Create Ticket
+
+![readme-pms-picture-createticket.png](resources/readme-images/readme-pms-picture-createticket.png)
+
+### Edit Project Details
+
+![readme-pms-picture-editprojectdetails.png](resources/readme-images/readme-pms-picture-editprojectdetails.png)
+
+### Edit Ticket Details
+
+![readme-pms-picture-editticketdetails.png](resources/readme-images/readme-pms-picture-editticketdetails.png)
