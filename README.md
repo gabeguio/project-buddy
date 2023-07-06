@@ -43,7 +43,7 @@ Our concept was to create a productivity tool for small operation teams. Users w
 ## Planning and Personal Contributions
 
 - I was tasked with creating front-end wireframes in [Canva](https://www.canva.com/) to outline the presentation layer and page interactivity. This proved useful for keeping us on task for the final installments of the presentation layer. A pdf containing all my contributions to the wireframes can be found here: [Project Management System's Wire Frames](https://drive.google.com/file/d/1WnZCehG-WkQJKHQcwqnskBvUF65jA_UB/view?usp=sharing).
-- I led the final design efforts for the [API architecture](https://github.com/GabeGoesCoding/project-management-system/blob/main/resources/design-document.md#6-api), [Entity Relational Diagram Tables](https://github.com/GabeGoesCoding/project-management-system/blob/main/resources/design-document.md#6-api), and [User Stories](https://github.com/GabeGoesCoding/project-management-system/blob/main/resources/design-document.md#6-api).
+- I led the final design efforts for the [API architecture](https://github.com/GabeGoesCoding/project-management-system/blob/main/resources/design-document.md#5-api), [Entity Relational Diagram Tables](https://github.com/GabeGoesCoding/project-management-system/blob/main/resources/design-document.md#6-tables), and [User Stories](https://github.com/GabeGoesCoding/project-management-system/blob/main/resources/design-document.md#2-use-cases).
 - I provided all sample data for testing and the final presentation which can be found [here](https://github.com/GabeGoesCoding/project-management-system/blob/main/data/ticketdata.json).
 
 ![*Image 3: Wireframe for landing page for Project Management System*](resources/readme-images/readme-pms-wireframe-landingpage.png)
