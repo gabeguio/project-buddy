@@ -113,8 +113,8 @@ The project was demonstrated in front of prospecting employers and NSS classmate
 
 ## Resume Redirect Links
 
-* Check out my README while you're here.
+* Check out this README while you're here.
 
-* The website is currently unavailable due to AWS migration. Please check back later.
+### The website is currently unavailable due to AWS migration. Please check back later.
 
-* The Video Demonstration is unavailable. 
+### The Video Demonstration is unavailable. 
