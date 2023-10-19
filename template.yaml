@@ -1,14 +1,14 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
-  Project Management Service
+  Project Management System 
 
 Parameters:
 
   CognitoDomain:
     Type: String
     Description: A name for the cognito Domain
-    Default: "project-management-service-team-javascript"
+    Default: "project-management-system-domain"
 
   S3Bucket:
     Type: String
@@ -225,8 +225,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
-      CodeUri: ProjectManagementServiceLambda
-      Handler: com.nashss.se.projectmanagementservice.lambda.DeleteTicketLambda::handleRequest
+      CodeUri: service
+      Handler: com.service.lambda.DeleteTicketLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -245,8 +245,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
-      CodeUri: ProjectManagementServiceLambda
-      Handler: com.nashss.se.projectmanagementservice.lambda.CreateProjectLambda::handleRequest
+      CodeUri: service
+      Handler: com.service.lambda.CreateProjectLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -265,8 +265,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
-      CodeUri: ProjectManagementServiceLambda
-      Handler: com.nashss.se.projectmanagementservice.lambda.GetTicketLambda::handleRequest
+      CodeUri: service
+      Handler: com.service.lambda.GetTicketLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -287,8 +287,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
-      CodeUri: ProjectManagementServiceLambda
-      Handler: com.nashss.se.projectmanagementservice.lambda.GetAllTicketsForProjectLambda::handleRequest
+      CodeUri: service
+      Handler: com.service.lambda.GetAllTicketsForProjectLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -309,8 +309,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
-      CodeUri: ProjectManagementServiceLambda
-      Handler: com.nashss.se.projectmanagementservice.lambda.CreateTicketLambda::handleRequest
+      CodeUri: service
+      Handler: com.service.lambda.CreateTicketLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -329,8 +329,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
-      CodeUri: ProjectManagementServiceLambda
-      Handler: com.nashss.se.projectmanagementservice.lambda.GetProjectLambda::handleRequest
+      CodeUri: service
+      Handler: com.service.lambda.GetProjectLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -351,8 +351,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
-      CodeUri: ProjectManagementServiceLambda
-      Handler: com.nashss.se.projectmanagementservice.lambda.GetAllProjectsLambda::handleRequest
+      CodeUri: service
+      Handler: com.service.lambda.GetAllProjectsLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -373,8 +373,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
-      CodeUri: ProjectManagementServiceLambda
-      Handler: com.nashss.se.projectmanagementservice.lambda.DeleteProjectLambda::handleRequest
+      CodeUri: service
+      Handler: com.service.lambda.DeleteProjectLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -393,8 +393,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
-      CodeUri: ProjectManagementServiceLambda
-      Handler: com.nashss.se.projectmanagementservice.lambda.UpdateProjectStatusLambda::handleRequest
+      CodeUri: service
+      Handler: com.service.lambda.UpdateProjectStatusLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -413,8 +413,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
-      CodeUri: ProjectManagementServiceLambda
-      Handler: com.nashss.se.projectmanagementservice.lambda.UpdateTicketStatusLambda::handleRequest
+      CodeUri: service
+      Handler: com.service.lambda.UpdateTicketStatusLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -433,8 +433,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
-      CodeUri: ProjectManagementServiceLambda
-      Handler: com.nashss.se.projectmanagementservice.lambda.UpdateProjectDetailsLambda::handleRequest
+      CodeUri: service
+      Handler: com.service.lambda.UpdateProjectDetailsLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -453,8 +453,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
-      CodeUri: ProjectManagementServiceLambda
-      Handler: com.nashss.se.projectmanagementservice.lambda.UpdateTicketDetailsLambda::handleRequest
+      CodeUri: service
+      Handler: com.service.lambda.UpdateTicketDetailsLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
