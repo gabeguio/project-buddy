@@ -1,0 +1,79 @@
+@startuml
+
+entity Entity1 as "User" {
+  +UserID
+  +Username
+  +Email
+  +Password
+  +FirstName
+  +LastName
+  +Role
+  +Organization (for Clients)
+  +ProfilePicture
+}
+
+entity Entity2 as "Project" {
+  +ProjectID
+  +ProjectName
+  +Description
+  +StartDate
+  +EndDate
+  +Status
+  +Owner (UserID)
+}
+
+entity Entity3 as "Task" {
+  +TaskID
+  +TaskName
+  +Description
+  +Status
+  +DueDate
+  +AssignedTo (UserID)
+  +CreatedBy (UserID)
+}
+
+entity Entity4 as "Subtask" {
+  +SubtaskID
+  +SubtaskName
+  +Description
+  +Status
+  +DueDate
+  +ParentTask (TaskID)
+  +AssignedTo (UserID)
+  +CreatedBy (UserID)
+}
+
+entity Entity5 as "Comment" {
+  +CommentID
+  +Text
+  +CreatedAt
+  +CreatedBy (UserID)
+}
+
+entity Entity6 as "Notification" {
+  +NotificationID
+  +Type
+  +Content
+  +CreatedAt
+  +User (UserID)
+  +Seen
+}
+
+entity Entity7 as "Role" {
+  +RoleID
+  +RoleName
+  +Description
+  +Permissions
+}
+
+Entity1 --o{ Entity2 : Assigns
+Entity1 --o{ Entity3 : Creates
+Entity1 --o{ Entity4 : Creates
+Entity3 }--o{ Entity4 : Subtask of
+Entity2 --o{ Entity3 : Contains
+Entity3 --o{ Entity5 : Comments
+Entity1 --o{ Entity6 : Receives
+Entity1 }--o{ Entity7 : Has Roles
+Entity7 --o{ Entity1 : Belongs To
+
+@enduml
