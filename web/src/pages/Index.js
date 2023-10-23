@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import BindingClass from "../util/BindingClass";
 import DataStore from "../util/DataStore";
 
-class Lp extends BindingClass {
+class Index extends BindingClass {
   constructor() {
     super();
 
@@ -11,7 +11,7 @@ class Lp extends BindingClass {
 
     // Create a new datastore with an initial "empty" state.
     this.header = new Header(this.dataStore);
-    console.log("lp constructor");
+    console.log("Index constructor");
   }
 
   mount() {
@@ -26,8 +26,8 @@ class Lp extends BindingClass {
 }
 
 const main = async () => {
-  const lp = new Lp();
-  lp.mount();
+  const index = new Index();
+  index.mount();
 };
 
 window.addEventListener("DOMContentLoaded", main);
