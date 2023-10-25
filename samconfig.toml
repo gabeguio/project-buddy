@@ -2,7 +2,7 @@ version = 0.1
 [default]
 [default.deploy]
 [default.deploy.parameters]
-stack_name = "project-management-system"
+stack_name = "project-management-system-stack"
 region = "us-east-2"
 confirm_changeset = false
 capabilities = "CAPABILITY_IAM"

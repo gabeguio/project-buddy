@@ -23,7 +23,13 @@ class Index extends BindingClass {
 
     this.client = new ProjectClient();
   }
+
+  displayProjects() {
+    
+  }
 }
+
+
 
 const main = async () => {
   const index = new Index();
