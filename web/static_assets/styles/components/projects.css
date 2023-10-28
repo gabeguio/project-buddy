@@ -27,9 +27,10 @@
 
 .projects__project-wrapper {
   border: 1px solid red;
+  height: 100%;
 }
 
-.projects_project_description {
+.projects__project-description {
   display: none;
 }
 
@@ -56,8 +57,8 @@
     margin-top: 1.5rem;
     gap: 1.5rem;
   }
-  .projects_project_description {
-    display: inline;
+  .projects__project-description {
+    display: block;
   }
 }
 
