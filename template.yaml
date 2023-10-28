@@ -14,7 +14,7 @@ Parameters:
     Description: Parameter to specify the S3 Bucket to use for deployment
 
   FrontendDeployment:
-    Default: local
+    Default: remote
     Type: String
     AllowedValues:
       - local
