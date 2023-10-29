@@ -3,28 +3,32 @@ import Header from "../components/Header";
 import BindingClass from "../util/BindingClass";
 import DataStore from "../util/DataStore";
 import { renderProjects } from "../components/projectCard.js";
-import { sampleProjects } from "../data/sampleProjects.js";
 
 class Index extends BindingClass {
   constructor() {
     super();
 
-    this.bindClassMethods(["mount", "displayAllProjects"], this);
+    this.bindClassMethods(
+      ["mount", "displayAllProjects"],
+      this
+    );
 
     // Create a new datastore with an initial "empty" state.
+    this.dataStore = new DataStore();
     this.header = new Header(this.dataStore);
     console.log("Index constructor");
   }
 
   mount() {
- 
     this.header.createSiteNavBar();
     this.client = new ProjectClient();
     this.displayAllProjects();
   }
 
-  displayAllProjects() {
-    renderProjects(sampleProjects, ".projects__projects-container");
+  async displayAllProjects() {
+    const projects = await this.client.getProjects()
+    console.log(projects);
+    renderProjects(projects, ".projects__projects-container");
   }
 }
 

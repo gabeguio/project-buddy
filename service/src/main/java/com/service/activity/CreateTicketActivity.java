@@ -42,7 +42,7 @@ public class CreateTicketActivity {
         newTicket.setTicketId(TicketIdGenerator.generateTicketId());
         newTicket.setTitle(createTicketRequest.getTitle());
         newTicket.setDescription(createTicketRequest.getDescription());
-        newTicket.setStatus(createTicketRequest.getStatus());
+//        newTicket.setStatus(createTicketRequest.getStatus());
 
         ticketDao.saveTicket(newTicket);
 

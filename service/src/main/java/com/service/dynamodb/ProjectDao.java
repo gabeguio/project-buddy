@@ -38,7 +38,7 @@ public class ProjectDao {
     }
 
 
-    public List<Project> getAllProjects() {
+    public List<Project> getProjects() {
         DynamoDBScanExpression scanExpression = new DynamoDBScanExpression();
 
         return dynamoDBMapper.scan(Project.class, scanExpression);

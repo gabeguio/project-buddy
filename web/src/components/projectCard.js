@@ -13,7 +13,7 @@ function projectCardTemplate(project) {
         <div class="projects__project-wrapper_details">
           <h2 class="projects__project-title">${project.title}</h2>
           <h3 class="projects__project-attribute">
-            Tasks Complete: ${project.tasksComplete}/${project.totalTasks}
+            Tasks Complete: ${project.tasksCompleted}/${project.totalTasks}
           </h3>
           <h3 class="projects__project-attribute">
             Due Date: ${project.dueDate}

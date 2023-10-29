@@ -1,9 +1,9 @@
 package com.service.activity.requests;
 
-public class GetAllProjectsRequest {
+public class GetProjectsRequest {
 
 
-    private GetAllProjectsRequest() {}
+    private GetProjectsRequest() {}
 
 
     public static Builder builder() {
@@ -12,8 +12,8 @@ public class GetAllProjectsRequest {
 
     public static class Builder {
 
-        public GetAllProjectsRequest build() {
-            return new GetAllProjectsRequest();
+        public GetProjectsRequest build() {
+            return new GetProjectsRequest();
         }
     }
 }
