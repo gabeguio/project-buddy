@@ -56,7 +56,7 @@ public class CreateProjectActivity {
         newProject.setTitle(createProjectRequest.getTitle());
         newProject.setProjectId(ProjectManagementServiceUtils.generateProjectId(createProjectRequest.getTitle()));
         newProject.setDescription(createProjectRequest.getDescription());
-        newProject.setStatus(createProjectRequest.getStatus());
+//        newProject.setStatus(createProjectRequest.getStatus());
 
         projectDao.saveProject(newProject);
 

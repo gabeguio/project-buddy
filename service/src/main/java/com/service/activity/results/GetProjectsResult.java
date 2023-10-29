@@ -5,10 +5,10 @@ import java.util.List;
 
 import com.service.models.ProjectModel;
 
-public class GetAllProjectsResult {
+public class GetProjectsResult {
     private final List<ProjectModel> projectModels;
 
-    private GetAllProjectsResult(List<ProjectModel> projectModels) {
+    private GetProjectsResult(List<ProjectModel> projectModels) {
         this.projectModels = projectModels;
     }
 
@@ -36,8 +36,8 @@ public class GetAllProjectsResult {
             return this;
         }
 
-        public GetAllProjectsResult build() {
-            return new GetAllProjectsResult(projectList);
+        public GetProjectsResult build() {
+            return new GetProjectsResult(projectList);
         }
     }
 

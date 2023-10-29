@@ -27,7 +27,7 @@ public class DeleteProjectActivity {
         project.setProjectId(deleteProjectRequest.getProjectId());
         project.setDescription(deleteProjectRequest.getDescription());
         project.setTitle(deleteProjectRequest.getTitle());
-        project.setStatus(deleteProjectRequest.getStatus());
+//        project.setStatus(deleteProjectRequest.getStatus());
 
         projectDao.deleteProject(project);
         ProjectModel projectModel = new ProjectModelConverter().toProjectModel(project);

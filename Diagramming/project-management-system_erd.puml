@@ -13,13 +13,16 @@ entity Entity1 as "User" {
 }
 
 entity Entity2 as "Project" {
-  +ProjectID
-  +ProjectName
-  +Description
-  +StartDate
-  +EndDate
-  +Status
-  +Owner (UserID)
+  *projectId
+  ---
+  *owner: String (userId)
+  *dateCreated: Date
+  *title: String
+  description: String
+  dueDate: Date
+  tasksCompleted: Integer
+  totalTasks: Integer
+  topContributor: String (userId)
 }
 
 entity Entity3 as "Task" {

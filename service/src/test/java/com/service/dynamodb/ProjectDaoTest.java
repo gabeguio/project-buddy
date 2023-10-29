@@ -61,20 +61,20 @@ public class ProjectDaoTest {
     }
 
     @Test
-    public void getAllProjects_callsMapper() {
+    public void getProjects_callsMapper() {
         // GIVEN
         List<Project> projectList = new ArrayList<>();
         projectList.add(ProjectTestHelper.generateProject());
 
         projectDao = mock(ProjectDao.class);
 
-       when(projectDao.getAllProjects()).thenReturn(projectList);
+       when(projectDao.getProjects()).thenReturn(projectList);
 
         // WHEN
-        List<Project> result = projectDao.getAllProjects();
+        List<Project> result = projectDao.getProjects();
 
         // THEN
-        verify(projectDao).getAllProjects();
+        verify(projectDao).getProjects();
         assertEquals(projectList, result);
     }
 

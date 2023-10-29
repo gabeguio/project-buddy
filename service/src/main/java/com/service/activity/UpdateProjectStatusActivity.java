@@ -33,7 +33,7 @@ public class UpdateProjectStatusActivity {
 
         Project project = projectDao.getProject(updateProjectStatusRequest.getProjectId());
 
-        project.setStatus(updateProjectStatusRequest.getStatus());
+//        project.setStatus(updateProjectStatusRequest.getStatus());
         project = projectDao.saveProject(project);
         return UpdateProjectStatusResult.builder()
                 .withProject(new ProjectModelConverter()

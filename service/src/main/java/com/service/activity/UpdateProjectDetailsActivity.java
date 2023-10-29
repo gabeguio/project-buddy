@@ -25,7 +25,7 @@ public class UpdateProjectDetailsActivity {
 
         Project project = projectDao.getProject(updateProjectDetailsRequest.getProjectId());
 
-        project.setStatus(updateProjectDetailsRequest.getStatus());
+//        project.setStatus(updateProjectDetailsRequest.getStatus());
         project.setDescription(updateProjectDetailsRequest.getDescription());
         project.setTitle(updateProjectDetailsRequest.getTitle());
 

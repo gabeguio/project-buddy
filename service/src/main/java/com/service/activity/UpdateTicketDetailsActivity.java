@@ -40,7 +40,7 @@ public class UpdateTicketDetailsActivity {
 
         ticket.setTitle(updateTicketDetailsRequest.getTitle());
         ticket.setDescription(updateTicketDetailsRequest.getDescription());
-        ticket.setStatus(updateTicketDetailsRequest.getStatus());
+//        ticket.setStatus(updateTicketDetailsRequest.getStatus());
         ticket = ticketDao.saveTicket(ticket);
 
         return UpdateTicketDetailsResult.builder()

@@ -22,9 +22,14 @@ public class ProjectModelConverter{
 
             return ProjectModel.builder()
                 .withProjectId(project.getProjectId())
+                .withOwner(project.getOwner())
+                .withDateCreated(project.getDateCreated())
                 .withTitle(project.getTitle())
                 .withDescription(project.getDescription())
-                .withStatus(project.getStatus())
+                .withDueDate(project.getDueDate())
+                .withTasksCompleted(project.getTasksCompleted())
+                .withTotalTasks(project.getTotalTasks())
+                .withTopContributor(project.getTopContributor())
                 .build();
         }
 

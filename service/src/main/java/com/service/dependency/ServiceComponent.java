@@ -31,7 +31,7 @@ public interface ServiceComponent {
 
     UpdateTicketDetailsActivity provideUpdateTicketActivity();
     
-    GetAllProjectsActivity provideGetAllProjectsActivity();
+    GetProjectsActivity provideGetProjectsActivity();
     
     UpdateProjectStatusActivity provideUpdateProjectStatusActivity();
 

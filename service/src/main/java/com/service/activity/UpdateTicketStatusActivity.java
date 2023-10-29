@@ -28,7 +28,7 @@ public class UpdateTicketStatusActivity {
 
         Ticket ticket = ticketDao.getTicket(updateTicketStatusRequest.getProjectId(), updateTicketStatusRequest.getTicketId());
 
-        ticket.setStatus(updateTicketStatusRequest.getStatus());
+//        ticket.setStatus(updateTicketStatusRequest.getStatus());
         ticket = ticketDao.saveTicket(ticket);
 
         return UpdateTicketStatusResult.builder().withTicket(new ProjectModelConverter().toTicketModel(ticket))

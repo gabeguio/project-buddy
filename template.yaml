@@ -346,12 +346,12 @@ Resources:
             Auth:
               Authorizer: 'NONE'
 
-  GetAllProjectsLambda:
+  GetProjectsLambda:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
       CodeUri: service
-      Handler: com.service.lambda.GetAllProjectsLambda::handleRequest
+      Handler: com.service.lambda.GetProjectsLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -471,7 +471,19 @@ Resources:
   #-----------------------------------------------------
   # DynamoDB Configuration
   #-----------------------------------------------------
-  
+
+  ProjectsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      AttributeDefinitions:
+        - AttributeName: "projectId"
+          AttributeType: "S"
+      KeySchema:
+        - AttributeName: "projectId"
+          KeyType: "HASH"
+      BillingMode: "PAY_PER_REQUEST"
+      TableName: "projects"
+
   TicketsTable:
     Type: AWS::DynamoDB::Table
     Properties:
@@ -487,18 +499,6 @@ Resources:
           KeyType: "RANGE"
       BillingMode: "PAY_PER_REQUEST"
       TableName: "tickets"
-
-  ProjectsTable:
-    Type: AWS::DynamoDB::Table
-    Properties:
-      AttributeDefinitions:
-        - AttributeName: "projectId"
-          AttributeType: "S"
-      KeySchema:
-        - AttributeName: "projectId"
-          KeyType: "HASH"
-      BillingMode: "PAY_PER_REQUEST"
-      TableName: "projects"
 
 #-----------------------------------------------------
 # The outputs defined below will be printed
