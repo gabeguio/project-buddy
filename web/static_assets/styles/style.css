@@ -4,11 +4,11 @@
   --clr-gray400: #9ca3af;
   --clr-gray600: #4b5563;
   --clr-gray800: #1f2937;
-  --clr-orange: #ea580c;
-  --clr-violet: #7c3aed;
+  --clr-sky-blue: #0284c7;
+  --clr-blue: #2563eb;
 
-  /* orange rgb(234, 88, 12) */
-  /* violet rgb(124, 58, 237) */
+  /* sky-blue rgb(2, 132, 199) */
+  /* blue rgb(37, 99, 235) */
 
   /* sizes */
   --size-xxs: 0.5rem;
@@ -63,9 +63,9 @@ button {
 }
 
 a {
-  color: var(--clr-orange);
+  color: var(--clr-sky-blue);
 }
 
 strong {
-  color: var(--clr-violet);
+  color: var(--clr-blue);
 }
