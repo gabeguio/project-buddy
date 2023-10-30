@@ -51,6 +51,10 @@
   display: none;
 }
 
+.projects__project-link {
+  text-decoration: none;
+}
+
 /* xs */ 
 @media (min-width: 475px) {
   .projects__projects-container {
@@ -98,13 +102,13 @@
 /* xl */
 @media (min-width: 1280px) {
   .projects__project-title {
-    font-size: var(--size-4xl);
+    font-size: var(--size-5xl);
   }
   .projects__project-attribute {
-    font-size: var(--size-2xl);
+    font-size: var(--size-3xl);
   }
   .projects__project-description {
-    font-size: var(--size-lg);
+    font-size: var(--size-2xl);
     margin: 2rem 0;
   }
   .projects__projects-container {

@@ -11,21 +11,21 @@
   /* blue rgb(37, 99, 235) */
 
   /* sizes */
-  --size-xxs: 0.5rem;
-  --size-xs: 0.75rem;
-  --size-sm: 0.875rem;
-  --size-base: 1rem;
-  --size-lg: 1.125rem;
-  --size-xl: 1.25rem;
-  --size-2xl: 1.5rem;
-  --size-3xl: 1.875rem;
-  --size-4xl: 2.25rem;
-  --size-5xl: 3rem;
-  --size-6xl: 3.75rem;
-  --size-7xl: 4.5rem;
-  --size-8xl: 6rem;
-  --size-9xl: 8rem;
-  --size-10xl: 10rem;
+  --size-xxs: 0.5rem;   /* 8 */
+  --size-xs: 0.75rem;   /* 12 */
+  --size-sm: 0.875rem;  /* 14 */
+  --size-base: 1rem;    /* 16 */
+  --size-lg: 1.125rem;  /* 18 */
+  --size-xl: 1.25rem;   /* 20 */
+  --size-2xl: 1.5rem;   /* 24 */
+  --size-3xl: 1.875rem; /* 30 */
+  --size-4xl: 2.25rem;  /* 36 */
+  --size-5xl: 3rem;     /* 48 */
+  --size-6xl: 3.75rem;  /* 60 */
+  --size-7xl: 4.5rem;   /* 72 */
+  --size-8xl: 6rem;     /* 96 */
+  --size-9xl: 8rem;     /* 128 */
+  --size-10xl: 10rem;   /* 160 */
 }
 
 * {
