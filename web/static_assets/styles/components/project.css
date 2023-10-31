@@ -3,17 +3,15 @@
   display: inline-block;
   font-weight: 600;
   letter-spacing: -0.05em;
-  /* background-color: var(--clr-sky-blue); */
   color: var(--clr-light);
   padding: 0.5em 1em;
   border-radius: 6px;
-  /* box-shadow: 0 10px 20px rgba(2, 132, 199, 0.5),
-    0 6px 6px rgba(2, 132, 199, 0.5), 0 0 100px -10px var(--clr-sky-blue); */
+  transition-duration: 0.2s;
 }
 
 .project__btn-switch:hover {
   border: 2px solid var(--clr-sky-blue);
-  transition: transform 0.3s;
+  /* background-color: var(--clr-blue); */
 }
 
 .project__btn-switch_selected {
@@ -28,11 +26,6 @@
 .project__content {
   margin-top: 0.5rem;
   padding-left: 0.5rem;
-}
-
-.project__title {
-  font-size: var(--size-base);
-  color: var(--clr-sky-blue);
 }
 
 .project__title {
@@ -55,6 +48,7 @@
 .section__title {
 }
 
+/* To make the task toggle switch format correctly */
 .btn {
   font-size: 0.7rem;
 }
@@ -63,14 +57,68 @@
   width: 100%;
   overflow-x: auto;
   max-width: 100%;
-  border: 0.075rem solid var(--clr-gray600);
-  border-radius: 5px;
+  border: 1px solid var(--clr-gray800);
   margin: 0.5em 0;
-  padding: 0.5em;
   font-size: var(--size-xs);
 }
 
-/* table {
-  width: 100%;
+table {
+  width: 100%;  
+  table-layout: auto;
   border-collapse: collapse;
-} */
+}
+
+th {
+  text-align: left;
+  padding: 0.5rem;
+  background-color: var(--clr-gray800);
+}
+
+tr td {
+  background-color: var(--clr-gray600);
+  padding: 0.5rem;
+}
+
+tr {
+  border-bottom: 1px solid var(--clr-gray800);
+  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.member-table__pen {
+  display: block;
+  color: var(--clr-light);
+  width: var(--size-base);
+  height: var(--size-base);
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.member-table__pen:hover {
+  color: var(--clr-gray400);
+}
+
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+/* @media (min-width: 640px) {} */
+
+/* m */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+/* @media (min-width: 1024px) {} */
+
+/* xl */
+@media (min-width: 1280px) {
+  .members__table-container {
+    font-size: var(--size-xl);
+  }
+
+  .member-table__pen {
+    width: var(--size-xl);
+    height: var(--size-xl);
+  }
+}
+
+/* 2xl */
+/* @media (min-width: 1536px) {} */
