@@ -1,6 +1,7 @@
 function projectHeaderTemplate(project) {
   return `
         <h2 class="project__title">${project.title}</h2>
+        <hr class="project__hr" />
         <div class="project__switch-bar">
             <button class="project__btn-switch" id="btn-overview">Overview</button>
             <button class="project__btn-switch" id="btn-members">Members</button>
@@ -36,14 +37,12 @@ function addSwitchBarLogic() {
 }
 
 function renderProjectHeader(project) {
-  console.log("first");
   const projectHeaderElement = document.getElementById("project__header");
 
   if (projectHeaderElement) {
     projectHeaderElement.innerHTML = "";
 
     const projectHeaderContent = projectHeaderTemplate(project);
-    console.log("second");
     projectHeaderElement.innerHTML = projectHeaderContent;
     addSwitchBarLogic();
   }
