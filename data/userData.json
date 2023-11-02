@@ -1,0 +1,316 @@
+{
+  "users": [
+    {
+      "PutRequest": {
+        "Item": {
+          "userId": {
+            "S": "ABC123"
+          },
+          "Email": {
+            "S": "john@example.com"
+          },
+          "Password": {
+            "S": "PirateWise893"
+          },
+          "FirstName": {
+            "S": "John"
+          },
+          "LastName": {
+            "S": "Doe"
+          },
+          "Company": {
+            "S": "ABC Inc."
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "userId": {
+            "S": "ABC456"
+          },
+          "Email": {
+            "S": "alice@example.com"
+          },
+          "Password": {
+            "S": "SecurePass123"
+          },
+          "FirstName": {
+            "S": "Alice"
+          },
+          "LastName": {
+            "S": "Smith"
+          },
+          "Company": {
+            "S": "XYZ Corp."
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "userId": {
+            "S": "ABC789"
+          },
+          "Email": {
+            "S": "bob@example.com"
+          },
+          "Password": {
+            "S": "StrongPass567"
+          },
+          "FirstName": {
+            "S": "Bob"
+          },
+          "LastName": {
+            "S": "Johnson"
+          },
+          "Company": {
+            "S": "Design Co."
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "userId": {
+            "S": "DEF123"
+          },
+          "Email": {
+            "S": "eve@example.com"
+          },
+          "Password": {
+            "S": "SecretPass987"
+          },
+          "FirstName": {
+            "S": "Eve"
+          },
+          "LastName": {
+            "S": "Williams"
+          },
+          "Company": {
+            "S": "Marketing Ltd."
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "userId": {
+            "S": "DEF456"
+          },
+          "Email": {
+            "S": "chris@example.com"
+          },
+          "Password": {
+            "S": "SafePass456"
+          },
+          "FirstName": {
+            "S": "Chris"
+          },
+          "LastName": {
+            "S": "Brown"
+          },
+          "Company": {
+            "S": "Products Inc."
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "userId": {
+            "S": "DEF789"
+          },
+          "Email": {
+            "S": "sarah@example.com"
+          },
+          "Password": {
+            "S": "SecretKey123"
+          },
+          "FirstName": {
+            "S": "Sarah"
+          },
+          "LastName": {
+            "S": "Johnson"
+          },
+          "Company": {
+            "S": "Tech Solutions"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "userId": {
+            "S": "HIJ123"
+          },
+          "Email": {
+            "S": "michael@example.com"
+          },
+          "Password": {
+            "S": "Secure1234"
+          },
+          "FirstName": {
+            "S": "Michael"
+          },
+          "LastName": {
+            "S": "Smith"
+          },
+          "Company": {
+            "S": "Acme Corp."
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "userId": {
+            "S": "HIJ456"
+          },
+          "Email": {
+            "S": "grace@example.com"
+          },
+          "Password": {
+            "S": "StrongPassword"
+          },
+          "FirstName": {
+            "S": "Grace"
+          },
+          "LastName": {
+            "S": "Adams"
+          },
+          "Company": {
+            "S": "InnovateTech"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "userId": {
+            "S": "HIJ789"
+          },
+          "Email": {
+            "S": "dave@example.com"
+          },
+          "Password": {
+            "S": "Pass1234"
+          },
+          "FirstName": {
+            "S": "Dave"
+          },
+          "LastName": {
+            "S": "Williams"
+          },
+          "Company": {
+            "S": "Tech Innovations"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "userId": {
+            "S": "KLM123"
+          },
+          "Email": {
+            "S": "olivia@example.com"
+          },
+          "Password": {
+            "S": "OliviaPass"
+          },
+          "FirstName": {
+            "S": "Olivia"
+          },
+          "LastName": {
+            "S": "Moore"
+          },
+          "Company": {
+            "S": "Global Solutions"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "userId": {
+            "S": "Client123"
+          },
+          "Email": {
+            "S": "avery@example.com"
+          },
+          "Password": {
+            "S": "Pass1234"
+          },
+          "FirstName": {
+            "S": "Avery"
+          },
+          "LastName": {
+            "S": "Glass"
+          },
+          "Company": {
+            "S": "Financial Futures Inc."
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "userId": {
+            "S": "Client456"
+          },
+          "Email": {
+            "S": "daniel@example.com"
+          },
+          "Password": {
+            "S": "Pass1234"
+          },
+          "FirstName": {
+            "S": "Daniel"
+          },
+          "LastName": {
+            "S": "Wale"
+          },
+          "Company": {
+            "S": "Real Estate Global"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "userId": {
+            "S": "Client789"
+          },
+          "Email": {
+            "S": "marie@example.com"
+          },
+          "Password": {
+            "S": "Pass1234"
+          },
+          "FirstName": {
+            "S": "Marie"
+          },
+          "LastName": {
+            "S": "Candler"
+          },
+          "Company": {
+            "S": "Luxury Events LLC"
+          }
+        }
+      }
+    }
+  ]
+}

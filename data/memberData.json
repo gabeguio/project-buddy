@@ -1,0 +1,79 @@
+{
+  "members": [
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "ABC123"
+          },
+          "userId": {
+            "S": "ABC123"
+          },
+          "role": {
+            "S": "Project Manager"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "ABC123"
+          },
+          "userId": {
+            "S": "ABC456"
+          },
+          "role": {
+            "S": "Team Member"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "ABC123"
+          },
+          "userId": {
+            "S": "ABC789"
+          },
+          "role": {
+            "S": "Team Member"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "ABC123"
+          },
+          "userId": {
+            "S": "DEF123"
+          },
+          "role": {
+            "S": "Team Member"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "ABC123"
+          },
+          "userId": {
+            "S": "Client123"
+          },
+          "role": {
+            "S": "Client"
+          }
+        }
+      }
+    }
+  ]
+}
