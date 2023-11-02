@@ -2,7 +2,7 @@ import ProjectClient from "../api/ProjectClient";
 import Header from "../components/Header";
 import BindingClass from "../util/BindingClass";
 import DataStore from "../util/DataStore";
-import { renderProjects } from "../components/projectCard.js";
+import { renderProjects } from "../components/projectDetailsCard.js";
 
 class Index extends BindingClass {
   constructor() {

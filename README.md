@@ -1,3 +1,1 @@
 # Project Management System V2
-
-## Coming soon...

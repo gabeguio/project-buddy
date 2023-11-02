@@ -41,7 +41,7 @@ public class GetProjectActivity {
 
     public GetProjectResult handleRequest(final GetProjectRequest getProjectRequest){
         log.info("Received GetProjectRequest {}", getProjectRequest);
-        String requestedId = getProjectRequest.getId();
+        String requestedId = getProjectRequest.getProjectId();
         Project project = projectDao.getProject(requestedId);
         ProjectModel projectModel = new ProjectModelConverter().toProjectModel(project);
 

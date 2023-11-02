@@ -23,7 +23,8 @@ module.exports = {
     usedExports: true
   },
   entry: {
-    Index: path.resolve(__dirname, 'src', 'pages', 'Index.js')
+    Index: path.resolve(__dirname, 'src', 'pages', 'Index.js'),
+    project: path.resolve(__dirname, 'src', 'pages', 'project.js'),
     // createTicket: path.resolve(__dirname, 'src', 'pages', 'createTicket.js'),
     // loadProjects: path.resolve(__dirname, 'src', 'pages', 'loadProjects.js'),
     // viewProject: path.resolve(__dirname, 'src', 'pages', 'viewProject.js'),

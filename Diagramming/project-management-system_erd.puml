@@ -1,18 +1,17 @@
 @startuml
 
-entity Entity1 as "User" {
-  +UserID
+entity User as "User" {
+  *UserID
+  ---
   +Username
   +Email
   +Password
   +FirstName
   +LastName
-  +Role
-  +Organization (for Clients)
   +ProfilePicture
 }
 
-entity Entity2 as "Project" {
+entity Project as "Project" {
   *projectId
   ---
   *owner: String (userId)
@@ -21,11 +20,22 @@ entity Entity2 as "Project" {
   description: String
   dueDate: Date
   tasksCompleted: Integer
-  totalTasks: Integer
+  totalTask: Integer
   topContributor: String (userId)
 }
 
-entity Entity3 as "Task" {
+entity Member as "Member" {
+  *ProjectID
+  *UserID
+  ---
+  +FirstName
+  +LastName
+  +Role
+  +Company
+  +Email
+}
+
+entity Task as "Task" {
   +TaskID
   +TaskName
   +Description
@@ -35,48 +45,18 @@ entity Entity3 as "Task" {
   +CreatedBy (UserID)
 }
 
-entity Entity4 as "Subtask" {
-  +SubtaskID
-  +SubtaskName
-  +Description
-  +Status
-  +DueDate
-  +ParentTask (TaskID)
-  +AssignedTo (UserID)
-  +CreatedBy (UserID)
-}
-
-entity Entity5 as "Comment" {
-  +CommentID
-  +Text
-  +CreatedAt
-  +CreatedBy (UserID)
-}
-
-entity Entity6 as "Notification" {
-  +NotificationID
-  +Type
-  +Content
-  +CreatedAt
-  +User (UserID)
-  +Seen
-}
-
-entity Entity7 as "Role" {
+entity Role as "Role" {
   +RoleID
   +RoleName
   +Description
   +Permissions
 }
 
-Entity1 --o{ Entity2 : Assigns
-Entity1 --o{ Entity3 : Creates
-Entity1 --o{ Entity4 : Creates
-Entity3 }--o{ Entity4 : Subtask of
-Entity2 --o{ Entity3 : Contains
-Entity3 --o{ Entity5 : Comments
-Entity1 --o{ Entity6 : Receives
-Entity1 }--o{ Entity7 : Has Roles
-Entity7 --o{ Entity1 : Belongs To
+Member --o{ Project : Assigns
+Member --o{ Task : Creates
+Project --o{ Task : Contains
+Member }--o{ Role : Has Roles
+Role --o{ Member : Belongs To
+User --o{ Member : are Members
 
 @enduml

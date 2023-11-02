@@ -341,7 +341,7 @@ Resources:
         projectmanagementservice:
           Type: Api
           Properties:
-            Path: /projects/{projectId}
+            Path: /project/{projectId}
             Method: get
             Auth:
               Authorizer: 'NONE'

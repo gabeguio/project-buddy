@@ -17,7 +17,7 @@ public class GetProjectResult {
 
     @Override
     public String toString() {
-        return "GetProjectResult{" + "playlist=" + project + '}';
+        return "GetProjectResult{" + "project=" + project + '}';
     }
 
     public static Builder builder(){

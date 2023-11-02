@@ -128,7 +128,8 @@ export default class ProjectClient extends BindingClass {
    */
   async getProject(projectId, errorCallback) {
     try {
-      const response = await this.axiosClient.get(`projects/${projectId}`);
+      const response = await this.axiosClient.get(`project/${projectId}`);
+      console.log(response);
       return response.data.project;
     } catch (error) {
       this.handleError(error, errorCallback);
@@ -370,27 +371,27 @@ export default class ProjectClient extends BindingClass {
    * @param errorCallback (Optional) A function to execute if the call fails.
    * @returns The ticket that has been delete.
    */
-    async deleteProject(projectId, errorCallback) {
-      try {
-        const token = await this.getTokenOrThrow(
-          "Only authenticated users can delete a project."
-        );
-        const response = await this.axiosClient.delete(
-          `projects`,
-          {
-            projectId: projectId,
+  async deleteProject(projectId, errorCallback) {
+    try {
+      const token = await this.getTokenOrThrow(
+        "Only authenticated users can delete a project."
+      );
+      const response = await this.axiosClient.delete(
+        `projects`,
+        {
+          projectId: projectId,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
           },
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
-        return response.data.ticket;
-      } catch (error) {
-        this.handleError(error, errorCallback);
-      }
+        }
+      );
+      return response.data.ticket;
+    } catch (error) {
+      this.handleError(error, errorCallback);
     }
+  }
 
   /**
    * Deletes a ticket owned by any user.
