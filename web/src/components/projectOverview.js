@@ -1,7 +1,7 @@
 function projectOverview(project) {
     return `
         <h3 class="project__attribute">
-        Tasks Complete: ${project.tasksComplete}/${project.totalTasks}
+        Tasks Complete: ${project.tasksCompleted}/${project.totalTasks}
         </h3>
         <h3 class="project__attribute">
         Due Date: ${project.dueDate}

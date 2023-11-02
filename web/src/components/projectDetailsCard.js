@@ -9,7 +9,7 @@ function projectDetailsCardTemplate(project) {
         : project.description;
   
     return `
-      <a href=/project.html class="projects__project-link">
+      <a href=/project.html?projectId=${project.projectId} class="projects__project-link">
         <div class="projects__project-wrapper">
           <div href="" class="projects__project-wrapper_details">
             <h2 class="projects__project-title">${project.title}</h2>

@@ -2,19 +2,19 @@ package com.service.activity.requests;
 
 public class GetProjectRequest {
 
-    private final String id;
+    private final String projectId;
 
-    private GetProjectRequest(String id){
-        this.id = id;
+    private GetProjectRequest(String projectId){
+        this.projectId = projectId;
     }
 
-    public String getId(){
-        return id;
+    public String getProjectId(){
+        return projectId;
     }
 
     @Override
     public String toString(){
-        return "GetProjectRequest{" + "id=" + id + '\'' + '}';
+        return "GetProjectRequest{" + "projectId=" + projectId + '\'' + '}';
     }
 
     public static Builder builder(){
@@ -22,15 +22,15 @@ public class GetProjectRequest {
     }
 
     public static class Builder {
-        private String id;
+        private String projectId;
 
-        public Builder withId(String id) {
-            this.id = id;
+        public Builder withProjectId(String projectId) {
+            this.projectId = projectId;
             return this;
         }
 
         public GetProjectRequest build(){
-            return new GetProjectRequest(id);
+            return new GetProjectRequest(projectId);
         }
     }
 }

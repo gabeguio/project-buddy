@@ -25,9 +25,13 @@ class Project extends BindingClass {
     this.displayProject();
   }
 
-  displayProject() {
+  async displayProject() {
     // const project = await this.client.getProjectById()
-    const project = sampleProjects[2];
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectId = urlParams.get("projectId");
+    console.log(projectId);
+    const project = await this.client.getProject(projectId);
+    console.log(JSON.stringify(project));
 
     // NOTE: Content's of the project are rendered before the header to allow header toggle switch assignment for the projects contents
     renderProjectContentContainer(project, sampleMembers);
