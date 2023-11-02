@@ -1,0 +1,116 @@
+  .tasks__task-title {
+    font-size: var(--size-2xl);
+    color: var(--clr-light);
+  }
+  
+  .tasks__task-attribute {
+    color: var(--clr-gray400);
+    font-size: var(--size-base);
+    text-transform: capitalize;
+    margin-bottom: 0.25em 0;
+  }
+  
+  .tasks__task-description {
+    max-width: 60ch;
+    color: var(--clr-gray600);
+    font-size: var(--size-sm);
+    margin: 1rem 0;
+  }
+  
+  .tasks__tasks-container {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1rem;
+  }
+  
+  
+  .tasks__task-wrapper {
+    position: relative;
+    border: 0.075rem solid var(--clr-gray600);
+    border-radius: 5px;
+    padding: 0.5rem;
+  }
+  
+  .tasks__task-wrapper::after {
+    content: "";
+    /* background-color: rgb(234, 88, 12, 0.4); */
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: background-color 0.3s;
+  }
+  
+  .tasks__task-wrapper:hover::after {
+    background-color: rgb(2, 132, 199, 0.1);
+    cursor: pointer;
+  }
+  
+  /* xs */ 
+  @media (min-width: 475px) {
+    .tasks__tasks-container {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+  }
+  
+  /* sm */
+  @media (min-width: 640px) {
+    .tasks__task-title {
+      font-size: var(--size-3xl);
+    }
+    .tasks__task-attribute {
+      font-size: var(--size-lg);
+    }
+    .tasks__task-description {
+      font-size: var(--size-base);
+      margin: 1.5rem 0;
+    }
+    .tasks__tasks-container {
+      margin-top: 1.5rem;
+      gap: 1.5rem;
+    }
+    .tasks__task-description {
+      display: block;
+    }
+  }
+  
+  /* m */
+  /* @media (min-width: 768px) {} */
+  
+  /* lg */
+  @media (min-width: 1024px) {
+    .tasks__task-title {
+      font-size: var(--size-4xl);
+    }
+    .tasks__task-attribute {
+      font-size: var(--size-2xl);
+    }
+    .tasks__task-description {
+      font-size: var(--size-lg);
+    }
+  }
+  
+  /* xl */
+  @media (min-width: 1280px) {
+    .tasks__task-title {
+      font-size: var(--size-5xl);
+    }
+    .tasks__task-attribute {
+      font-size: var(--size-3xl);
+    }
+    .tasks__task-description {
+      font-size: var(--size-2xl);
+      margin: 2rem 0;
+    }
+    .tasks__tasks-container {
+      margin-top: 2rem;
+      gap: 2rem;
+    }
+  }
+  
+  /* 2xl */
+  /* @media (min-width: 1536px) {} */
+  

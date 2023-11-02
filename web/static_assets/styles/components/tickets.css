@@ -1,7 +1,0 @@
-/* xs */ 
-/* For tickets in columns of 4 */
-/* @media (min-width: 475px) {
-    .projects__projects-container {
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-  } */
