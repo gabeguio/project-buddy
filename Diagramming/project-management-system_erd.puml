@@ -1,14 +1,13 @@
 @startuml
 
 entity User as "User" {
-  *UserID
+  *userId
   ---
-  +Username
-  +Email
-  +Password
-  +FirstName
-  +LastName
-  +ProfilePicture
+  +firstName
+  +lastName
+  +company
+  +email
+
 }
 
 entity Project as "Project" {
@@ -25,14 +24,14 @@ entity Project as "Project" {
 }
 
 entity Member as "Member" {
-  *ProjectID
-  *UserID
+  *projectId
+  *userId
   ---
-  +FirstName
-  +LastName
-  +Role
-  +Company
-  +Email
+  +firstName
+  +lastName
+  +role
+  +company
+  +email
 }
 
 entity Task as "Task" {

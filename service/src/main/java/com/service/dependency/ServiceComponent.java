@@ -1,9 +1,11 @@
 package com.service.dependency;
 
+import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.service.activity.GetAllTicketsActivity;
 import com.service.activity.GetTicketActivity;
 
 import com.service.activity.*;
+import com.service.activity.requests.GetMembersByProjectIdRequest;
 import dagger.Component;
 
 import javax.inject.Singleton;
@@ -39,4 +41,5 @@ public interface ServiceComponent {
 
     UpdateTicketStatusActivity provideUpdateTicketStatusActivity();
 
+    GetMembersByProjectIdActivity provideGetMembersByProjectIdActivity();
 }
