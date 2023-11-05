@@ -30,12 +30,12 @@ public class MemberModelConverter {
     }
 
     public List<MemberModel> toMemberModelList(List<Member> Members) {
-        List<MemberModel> MemberModels = new ArrayList<>();
+        List<MemberModel> memberModelList = new ArrayList<>();
 
         for (Member Member : Members) {
-            MemberModels.add(toMemberModel(Member));
+            memberModelList.add(toMemberModel(Member));
         }
 
-        return MemberModels;
+        return memberModelList;
     }
 }

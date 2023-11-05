@@ -6,12 +6,6 @@
           "userId": {
             "S": "ABC123"
           },
-          "Email": {
-            "S": "john@example.com"
-          },
-          "Password": {
-            "S": "PirateWise893"
-          },
           "FirstName": {
             "S": "John"
           },
@@ -20,6 +14,9 @@
           },
           "Company": {
             "S": "ABC Inc."
+          },
+          "Email": {
+            "S": "john@example.com"
           }
         }
       }
@@ -30,12 +27,6 @@
           "userId": {
             "S": "ABC456"
           },
-          "Email": {
-            "S": "alice@example.com"
-          },
-          "Password": {
-            "S": "SecurePass123"
-          },
           "FirstName": {
             "S": "Alice"
           },
@@ -44,6 +35,9 @@
           },
           "Company": {
             "S": "XYZ Corp."
+          },
+          "Email": {
+            "S": "alice@example.com"
           }
         }
       }
@@ -54,12 +48,6 @@
           "userId": {
             "S": "ABC789"
           },
-          "Email": {
-            "S": "bob@example.com"
-          },
-          "Password": {
-            "S": "StrongPass567"
-          },
           "FirstName": {
             "S": "Bob"
           },
@@ -68,6 +56,9 @@
           },
           "Company": {
             "S": "Design Co."
+          },
+          "Email": {
+            "S": "bob@example.com"
           }
         }
       }
@@ -78,12 +69,6 @@
           "userId": {
             "S": "DEF123"
           },
-          "Email": {
-            "S": "eve@example.com"
-          },
-          "Password": {
-            "S": "SecretPass987"
-          },
           "FirstName": {
             "S": "Eve"
           },
@@ -92,6 +77,9 @@
           },
           "Company": {
             "S": "Marketing Ltd."
+          },
+          "Email": {
+            "S": "eve@example.com"
           }
         }
       }
@@ -102,12 +90,6 @@
           "userId": {
             "S": "DEF456"
           },
-          "Email": {
-            "S": "chris@example.com"
-          },
-          "Password": {
-            "S": "SafePass456"
-          },
           "FirstName": {
             "S": "Chris"
           },
@@ -116,6 +98,9 @@
           },
           "Company": {
             "S": "Products Inc."
+          },
+          "Email": {
+            "S": "chris@example.com"
           }
         }
       }
@@ -126,12 +111,6 @@
           "userId": {
             "S": "DEF789"
           },
-          "Email": {
-            "S": "sarah@example.com"
-          },
-          "Password": {
-            "S": "SecretKey123"
-          },
           "FirstName": {
             "S": "Sarah"
           },
@@ -140,6 +119,9 @@
           },
           "Company": {
             "S": "Tech Solutions"
+          },
+          "Email": {
+            "S": "sarah@example.com"
           }
         }
       }
@@ -150,12 +132,6 @@
           "userId": {
             "S": "HIJ123"
           },
-          "Email": {
-            "S": "michael@example.com"
-          },
-          "Password": {
-            "S": "Secure1234"
-          },
           "FirstName": {
             "S": "Michael"
           },
@@ -164,6 +140,9 @@
           },
           "Company": {
             "S": "Acme Corp."
+          },
+          "Email": {
+            "S": "michael@example.com"
           }
         }
       }
@@ -174,12 +153,6 @@
           "userId": {
             "S": "HIJ456"
           },
-          "Email": {
-            "S": "grace@example.com"
-          },
-          "Password": {
-            "S": "StrongPassword"
-          },
           "FirstName": {
             "S": "Grace"
           },
@@ -188,6 +161,9 @@
           },
           "Company": {
             "S": "InnovateTech"
+          },
+          "Email": {
+            "S": "grace@example.com"
           }
         }
       }
@@ -198,12 +174,6 @@
           "userId": {
             "S": "HIJ789"
           },
-          "Email": {
-            "S": "dave@example.com"
-          },
-          "Password": {
-            "S": "Pass1234"
-          },
           "FirstName": {
             "S": "Dave"
           },
@@ -212,6 +182,9 @@
           },
           "Company": {
             "S": "Tech Innovations"
+          },
+          "Email": {
+            "S": "dave@example.com"
           }
         }
       }
@@ -222,12 +195,6 @@
           "userId": {
             "S": "KLM123"
           },
-          "Email": {
-            "S": "olivia@example.com"
-          },
-          "Password": {
-            "S": "OliviaPass"
-          },
           "FirstName": {
             "S": "Olivia"
           },
@@ -236,6 +203,9 @@
           },
           "Company": {
             "S": "Global Solutions"
+          },
+          "Email": {
+            "S": "olivia@example.com"
           }
         }
       }
@@ -246,12 +216,6 @@
           "userId": {
             "S": "Client123"
           },
-          "Email": {
-            "S": "avery@example.com"
-          },
-          "Password": {
-            "S": "Pass1234"
-          },
           "FirstName": {
             "S": "Avery"
           },
@@ -260,6 +224,9 @@
           },
           "Company": {
             "S": "Financial Futures Inc."
+          },
+          "Email": {
+            "S": "avery@example.com"
           }
         }
       }
@@ -270,12 +237,6 @@
           "userId": {
             "S": "Client456"
           },
-          "Email": {
-            "S": "daniel@example.com"
-          },
-          "Password": {
-            "S": "Pass1234"
-          },
           "FirstName": {
             "S": "Daniel"
           },
@@ -284,6 +245,9 @@
           },
           "Company": {
             "S": "Real Estate Global"
+          },
+          "Email": {
+            "S": "daniel@example.com"
           }
         }
       }
@@ -293,9 +257,6 @@
         "Item": {
           "userId": {
             "S": "Client789"
-          },
-          "Email": {
-            "S": "marie@example.com"
           },
           "Password": {
             "S": "Pass1234"
@@ -308,6 +269,9 @@
           },
           "Company": {
             "S": "Luxury Events LLC"
+          },
+          "Email": {
+            "S": "marie@example.com"
           }
         }
       }

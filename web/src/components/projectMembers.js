@@ -18,7 +18,7 @@ function projectMembers(members) {
               .map(
                 (member) => `
                   <tr>
-                    <td>${member.name}</td>
+                    <td>${member.firstName} ${member.lastName}</td>
                     <td>${member.role}</td>
                     <td>${member.company}</td>
                     <td>${member.email}</td>
