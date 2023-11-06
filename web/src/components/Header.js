@@ -77,6 +77,7 @@ export default class Header extends BindingClass {
     headerNav.appendChild(headerNavMenu);
 
     const header = document.getElementById("header");
+    header.classList.add("container");
     header.appendChild(headerNav);
   }
 

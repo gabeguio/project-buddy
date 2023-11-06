@@ -43,70 +43,193 @@
 
     <!-- Tasks -->
     <section class="tasks container section">
-      <h2 class="section__title">Tasks</h2>
-      <button class="btn">To Do</button>
-      <button class="btn">In Progress</button>
-      <button class="btn">Under Review</button>
-      <button class="btn">Complete</button>
-      <div class="tasks__tasks-container">
-        <div class="tasks__task-wrapper">
-          <div href="" class="tasks__task-wrapper_details">
-            <h2 class="tasks__task-title">User Story 1</h2>
-            <h3 class="tasks__task-attribute">Date Create: 10.21.2023</h3>
-            <h3 class="tasks__task-attribute">Assigned to: Micheal Baylor</h3>
-          </div>
-          <div class="tasks__task-description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            adipisci laborum earum accusantium placeat neque veniam, accusamus
-            perspiciatis!
-          </div>
-        </div>
-        <div class="tasks__task-wrapper">
-          <div href="" class="tasks__task-wrapper_details">
-            <h2 class="tasks__task-title">User Story 1</h2>
-            <h3 class="tasks__task-attribute">Date Create: 10.21.2023</h3>
-            <h3 class="tasks__task-attribute">Assigned to: Micheal Baylor</h3>
-          </div>
-          <div class="tasks__task-description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            adipisci laborum earum accusantium placeat neque veniam, accusamus
-            perspiciatis!
-          </div>
-        </div>
-        <div class="tasks__task-wrapper">
-          <div href="" class="tasks__task-wrapper_details">
-            <h2 class="tasks__task-title">User Story 1</h2>
-            <h3 class="tasks__task-attribute">Date Create: 10.21.2023</h3>
-            <h3 class="tasks__task-attribute">Assigned to: Micheal Baylor</h3>
-          </div>
-          <div class="tasks__task-description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            adipisci laborum earum accusantium placeat neque veniam, accusamus
-            perspiciatis!
+
+      <div class="tasks__desktop-container">
+
+        <!-- To Do Column -->
+        <div class="tasks__desktop-column">
+          <h2 class="tasks__progress-status-title">To Do</h2>
+          <div class="tasks__task-wrapper">
+            <div href="" class="tasks__task-wrapper_details">
+              <h2 class="tasks__task-title">User Story 1</h2>
+              <p class="tasks__task-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio adipisci laborum earum accusantium placeat neque
+                veniam, accusamus perspiciatis!
+              </p>
+              <hr class="tasks__hr" />
+              <div class="tasks_attribute-container">
+                <div class="tasks__task-attribute-wrapper">
+                  <p class="task-attribute-wrapper__attribute">
+                    <button class="tasks__user">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
+                      </svg>  
+                    </button>   
+                  Micheal Baylor
+                  </p>
+                  <p class="task-attribute-wrapper__attribute">
+                    <button class="tasks__due-date">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path fill-rule="evenodd" d="M6.75 2.25A.75.75 0 017.5 3v1.5h9V3A.75.75 0 0118 3v1.5h.75a3 3 0 013 3v11.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V7.5a3 3 0 013-3H6V3a.75.75 0 01.75-.75zm13.5 9a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5z" clip-rule="evenodd" />
+                      </svg>
+                    </button>   
+                  Oct 31
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="tasks__task-wrapper">
-          <div href="" class="tasks__task-wrapper_details">
-            <h2 class="tasks__task-title">User Story 1</h2>
-            <h3 class="tasks__task-attribute">Date Create: 10.21.2023</h3>
-            <h3 class="tasks__task-attribute">Assigned to: Micheal Baylor</h3>
-          </div>
-          <div class="tasks__task-description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            adipisci laborum earum accusantium placeat neque veniam, accusamus
-            perspiciatis!
+
+        <!-- In Progress Column -->
+        <div class="tasks__desktop-column">
+          <h2 class="tasks__progress-status-title">In Progress</h2>
+          <div class="tasks__task-wrapper">
+            <div href="" class="tasks__task-wrapper_details">
+              <h2 class="tasks__task-title">User Story 1</h2>
+              <p class="tasks__task-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio adipisci laborum earum accusantium placeat neque
+                veniam, accusamus perspiciatis!
+              </p>
+              <hr class="tasks__hr" />
+              <div class="tasks_attribute-container">
+                <div class="tasks__task-attribute-wrapper">
+                  <p class="task-attribute-wrapper__attribute">
+                    <button class="tasks__user">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
+                      </svg>  
+                    </button>   
+                  Micheal Baylor
+                  </p>
+                  <p class="task-attribute-wrapper__attribute">
+                    <button class="tasks__due-date">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path fill-rule="evenodd" d="M6.75 2.25A.75.75 0 017.5 3v1.5h9V3A.75.75 0 0118 3v1.5h.75a3 3 0 013 3v11.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V7.5a3 3 0 013-3H6V3a.75.75 0 01.75-.75zm13.5 9a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5z" clip-rule="evenodd" />
+                      </svg>
+                    </button>   
+                  Oct 31
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="tasks__task-wrapper">
-          <div href="" class="tasks__task-wrapper_details">
-            <h2 class="tasks__task-title">User Story 1</h2>
-            <h3 class="tasks__task-attribute">Date Create: 10.21.2023</h3>
-            <h3 class="tasks__task-attribute">Assigned to: Micheal Baylor</h3>
+
+        <!-- Under Review Column -->
+        <div class="tasks__desktop-column">
+          <h2 class="tasks__progress-status-title">Under Review</h2>
+          <div class="tasks__task-wrapper">
+            <div href="" class="tasks__task-wrapper_details">
+              <h2 class="tasks__task-title">User Story 1</h2>
+              <p class="tasks__task-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio adipisci laborum earum accusantium placeat neque
+                veniam, accusamus perspiciatis!
+              </p>
+              <hr class="tasks__hr" />
+              <div class="tasks_attribute-container">
+                <div class="tasks__task-attribute-wrapper">
+                  <p class="task-attribute-wrapper__attribute">
+                    <button class="tasks__user">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
+                      </svg>  
+                    </button>   
+                  Micheal Baylor
+                  </p>
+                  <p class="task-attribute-wrapper__attribute">
+                    <button class="tasks__due-date">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path fill-rule="evenodd" d="M6.75 2.25A.75.75 0 017.5 3v1.5h9V3A.75.75 0 0118 3v1.5h.75a3 3 0 013 3v11.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V7.5a3 3 0 013-3H6V3a.75.75 0 01.75-.75zm13.5 9a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5z" clip-rule="evenodd" />
+                      </svg>
+                    </button>   
+                  Oct 31
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="tasks__task-description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            adipisci laborum earum accusantium placeat neque veniam, accusamus
-            perspiciatis!
+        </div>
+
+        <!-- Complete Column -->
+        <div class="tasks__desktop-column">
+          <h2 class="tasks__progress-status-title">TComplete</h2>
+          <div class="tasks__task-wrapper">
+            <div href="" class="tasks__task-wrapper_details">
+              <h2 class="tasks__task-title">User Story 1</h2>
+              <p class="tasks__task-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio adipisci laborum earum accusantium placeat neque
+                veniam, accusamus perspiciatis!
+              </p>
+              <hr class="tasks__hr" />
+              <div class="tasks_attribute-container">
+                <div class="tasks__task-attribute-wrapper">
+                  <p class="task-attribute-wrapper__attribute">
+                    <button class="tasks__user">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
+                      </svg>  
+                    </button>   
+                  Micheal Baylor
+                  </p>
+                  <p class="task-attribute-wrapper__attribute">
+                    <button class="tasks__due-date">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path fill-rule="evenodd" d="M6.75 2.25A.75.75 0 017.5 3v1.5h9V3A.75.75 0 0118 3v1.5h.75a3 3 0 013 3v11.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V7.5a3 3 0 013-3H6V3a.75.75 0 01.75-.75zm13.5 9a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5z" clip-rule="evenodd" />
+                      </svg>
+                    </button>   
+                  Oct 31
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="tasks__mobile-container">
+        <div class="tasks_toggle-switch-container">
+          <button class="tasks__toggle-status-btn tasks__toggle-status-btn_selected">To Do</button>
+          <button class="tasks__toggle-status-btn">In Progress</button>
+          <button class="tasks__toggle-status-btn">Under Review</button>
+          <button class="tasks__toggle-status-btn">Complete</button>
+        </div>
+        <div class="tasks__mobile-column">
+          <div class="tasks__task-wrapper">
+            <div href="" class="tasks__task-wrapper_details">
+              <h2 class="tasks__task-title">User Story 1</h2>
+              <p class="tasks__task-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio adipisci laborum earum accusantium placeat neque
+                veniam, accusamus perspiciatis!
+              </p>
+              <hr class="tasks__hr" />
+              <div class="tasks_attribute-container">
+                <div class="tasks__task-attribute-wrapper">
+                  <p class="task-attribute-wrapper__attribute">
+                    <button class="tasks__user">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
+                      </svg>  
+                    </button>   
+                  Micheal Baylor
+                  </p>
+                  <p class="task-attribute-wrapper__attribute">
+                    <button class="tasks__due-date">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path fill-rule="evenodd" d="M6.75 2.25A.75.75 0 017.5 3v1.5h9V3A.75.75 0 0118 3v1.5h.75a3 3 0 013 3v11.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V7.5a3 3 0 013-3H6V3a.75.75 0 01.75-.75zm13.5 9a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5z" clip-rule="evenodd" />
+                      </svg>
+                    </button>   
+                  Oct 31
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

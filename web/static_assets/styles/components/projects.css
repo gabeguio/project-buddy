@@ -2,6 +2,7 @@
   font-size: var(--size-2xl);
   color: var(--clr-light);
   text-transform: uppercase;
+  color: var(--clr-sky-blue);
 }
 
 .projects__project-attribute {
@@ -28,6 +29,9 @@
 
 .projects__project-wrapper {
   position: relative;
+  border: 0.075rem solid var(--clr-gray600);
+  border-radius: 5px;
+  padding: 0.5rem;
 }
 
 .projects__project-wrapper::after {
@@ -101,9 +105,6 @@
 
 /* xl */
 @media (min-width: 1280px) {
-  .projects__project-title {
-    font-size: var(--size-5xl);
-  }
   .projects__project-attribute {
     font-size: var(--size-3xl);
   }

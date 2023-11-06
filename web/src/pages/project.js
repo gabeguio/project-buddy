@@ -4,6 +4,9 @@ import BindingClass from "../util/BindingClass";
 import DataStore from "../util/DataStore";
 import { renderProjectHeader } from "../components/projectHeader";
 import { renderProjectContentContainer } from "../components/projectContainer";
+import { sampleTasks } from "../data/sampleTasks";
+import { sampleProjects } from "../data/sampleProjects";
+import { sampleMembers } from "../data/sampleMembers";
 
 class Project extends BindingClass {
   constructor() {
@@ -25,14 +28,15 @@ class Project extends BindingClass {
 
   async displayProject() {
     // const project = await this.client.getProjectById()
-    const urlParams = new URLSearchParams(window.location.search);
-    const projectId = urlParams.get("projectId");
-    const project = await this.client.getProject(projectId);
-    const members = await this.client.getMembers(projectId);
+    // const urlParams = new URLSearchParams(window.location.search);
+    // const projectId = urlParams.get("projectId");
+    // const project = await this.client.getProject(projectId);
+    // const members = await this.client.getMembers(projectId);
+    // const tasks = sampleTasks;
 
     // NOTE: Content's of the project are rendered before the header to allow header toggle switch assignment for the projects contents
-    renderProjectContentContainer(project, members);
-    renderProjectHeader(project);
+    renderProjectContentContainer(sampleProjects, sampleMembers, sampleTasks);
+    renderProjectHeader(sampleProjects[0]);
   }
 }
 
