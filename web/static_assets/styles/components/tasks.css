@@ -1,163 +1,251 @@
+.tasks_mobile-toggle-switch-container {
+  display: flex;
+  border-bottom: 4px solid var(--clr-sky-blue);
+  font-size: var(--size-xxs);
+}
+
+.tasks__mobile-toggle-status-btn {
+  flex: 1;
+  padding: 0.5rem 0;
+}
+
+.tasks__mobile-toggle-status-btn_selected {
+  background-color: var(--clr-sky-blue);
+  font-weight: 800;
+  border-radius: 6px;
+  -webkit-border-bottom-left-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  -moz-border-radius-bottomright: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.tasks__column-status-title_number {
+  display: block;
+  border-radius: 50%;
+  width: var(--size-base);
+  height: var(--size-base);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.5rem;
+  padding: 0;
+  background-color: var(--clr-gray400);
+  /* text-align: center; */
+  font-weight: 400;
+}
+
+.tasks__task-title {
+  font-size: var(--size-2xl);
+  color: var(--clr-light);
+}
+
+.tasks__task-description {
+  max-width: 60ch;
+  color: var(--clr-gray600);
+  font-size: var(--size-sm);
+}
+
+.tasks__task-attribute {
+  color: var(--clr-light);
+  font-size: var(--size-xs);
+  text-transform: capitalize;
+  margin-bottom: 0.25em 0;
+  display: inline;
+  padding-right: 0.5rem;
+}
+
+.tasks__desktop-container {
+  display: none;
+}
+
+.tasks__task-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tasks__task-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 0.075rem solid var(--clr-gray600);
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tasks__task-wrapper::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: background-color 0.3s;
+}
+
+.tasks__task-wrapper:hover::after {
+  background-color: rgb(2, 132, 199, 0.1);
+  cursor: pointer;
+}
+
+.task__edit {
+  height: var(--size-2xl);
+  width: var(--size-2xl);
+}
+
+.tasks__hr {
+  margin: 1rem 0;
+  border-color: var(--clr-gray600);
+}
+
+.tasks__user {
+  height: var(--size-sm);
+  width: var(--size-sm);
+}
+
+.tasks__due-date {
+  height: var(--size-sm);
+  width: var(--size-sm);
+}
+
+.tasks__progress {
+  height: var(--size-sm);
+  width: var(--size-sm);
+}
+
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+@media (min-width: 640px) {
+  .tasks_mobile-toggle-switch-container {
+    font-size: var(--size-base);
+  }
+  .tasks__mobile-toggle-status-btn {
+    padding: 1.5rem 0;
+  }
+  .tasks__mobile-toggle-status-btn_selected {
+    border-bottom: 6px solid var(--clr-sky-blue);
+  }
+  .tasks__task-title {
+    font-size: var(--size-3xl);
+  }
+  .tasks__task-attribute {
+    font-size: var(--size-lg);
+  }
+  .tasks__task-description {
+    font-size: var(--size-base);
+  }
+  .tasks__tasks-container {
+    margin-top: 1.5rem;
+  }
+  .task__edit {
+    height: var(--size-4xl);
+    width: var(--size-4xl);
+  }
+  .tasks__user {
+    height: var(--size-lg);
+    width: var(--size-lg);
+  }
+  .tasks__due-date {
+    height: var(--size-lg);
+    width: var(--size-lg);
+  }
+  .tasks__progress {
+    height: var(--size-lg);
+    width: var(--size-lg);
+  }
+  .tasks__column-status-title_number {
+    width: var(--size-2xl);
+    height: var(--size-2xl);
+  }
+  
+}
+
+/* m */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+@media (min-width: 1024px) {
+  .tasks__mobile-container {
+    display: none;
+  }
+  .tasks__desktop-container {
+    margin-top: 1rem;
+    display: flex;
+  }
+  .tasks__desktop-column {
+    flex: 1;
+  }
+  .tasks__task-wrapper {
+    margin: 1rem 1rem 0 0;
+  }
   .tasks__task-title {
     font-size: var(--size-2xl);
-    color: var(--clr-light);
   }
-  
-  .tasks__task-attribute {
-    color: var(--clr-gray400);
-    font-size: var(--size-base);
-    text-transform: capitalize;
-    margin-bottom: 0.25em 0;
-  }
-  
   .tasks__task-description {
-    max-width: 60ch;
-    color: var(--clr-gray600);
     font-size: var(--size-sm);
   }
-  
-  .tasks_toggle-switch-container {
-    display: flex;
-    border-radius: 5px;
+  .tasks__task-attribute {
+    font-size: var(--size-base);
   }
-
-  .tasks__toggle-status-btn {
-    font-size: var(--size-xs);
-    flex: 1;
-    padding: 1rem 0;
+  .task__edit {
+    height: var(--size-2xl);
+    width: var(--size-2xl);
   }
-
-  .tasks__toggle-status-btn_selected {
-    background-color: var(--clr-sky-blue);
-    border-radius: 5px;
-  }
-
-  .tasks__desktop-container {
-    display: none
-  }
-
-  .tasks__task-wrapper {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    border: 0.075rem solid var(--clr-gray600);
-    border-radius: 5px;
-    padding: 0.5rem;
-    margin-top: 1rem;
-  }
-
-  
-  /* .tasks__task-wrapper::after {
-    content: "";
-    background-color: rgb(234, 88, 12, 0.4);
-    width: 100%;
-    position: absolute;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    transition: background-color 0.3s;
-  }
-  
-  .tasks__task-wrapper:hover::after {
-    background-color: rgb(2, 132, 199, 0.1);
-    cursor: pointer;
-  }
-  */
-
-  .task-attribute-wrapper__attribute {
-    display: inline;
-    padding-right: 1rem;
-  }
-
-  .tasks__hr {
-    margin: 1rem 0;
-    border-color: var(--clr-gray600);
-  }
-  
   .tasks__user {
-    height: var(--size-sm);
-    width: var(--size-sm);
+    height: var(--size-xs);
+    width: var(--size-xs);
   }
-
   .tasks__due-date {
-    height: var(--size-sm);
-    width: var(--size-sm);
+    height: var(--size-xs);
+    width: var(--size-xs);
+  }
+  .tasks_task-attribute_progress {
+    display: none;
+  }
+  .tasks__column-status-title_number {
+    display: inline;
+    width: var(--size-5xl);
+    height: var(--size-5xl);
+    margin-left: 0.5rem;
+    padding: 0.5rem;
+  }
+}
+
+/* xl */
+@media (min-width: 1280px) {
+  .tasks__tasks-container {
+    margin-top: 2rem;
+  }
+  .tasks__task-wrapper {
+    margin: 1.5rem 1.5rem 0 0;
+  }
+  .tasks__task-title {
+    font-size: var(--size-3xl);
+  }
+  .tasks__task-description {
+    font-size: var(--size-lg);
+  }
+  .tasks__task-attribute {
+    font-size: var(--size-lg);
+  }
+  .task__edit {
+    height: var(--size-3xl);
+    width: var(--size-3xl);
+  }
+  .tasks__user {
+    height: var(--size-base);
+    width: var(--size-base);
+  }
+  .tasks__due-date {
+    height: var(--size-base);
+    width: var(--size-base);
   }
 
-  /* xs */ 
-  @media (min-width: 475px) {
-    .tasks__tasks-container {
-      /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-    }
-  }
-  
-  /* sm */
-  @media (min-width: 640px) {
-    .tasks__task-title {
-      font-size: var(--size-3xl);
-    }
-    .tasks__task-attribute {
-      font-size: var(--size-lg);
-    }
-    .tasks__task-description {
-      font-size: var(--size-base);
-    }
-    .tasks__tasks-container {
-      margin-top: 1.5rem;
-      gap: 1.5rem;
-    }
-  }
-  
-  /* m */
-  /* @media (min-width: 768px) {} */
-  
-  /* lg */
-  @media (min-width: 1024px) {
-    .tasks__task-title {
-      font-size: var(--size-3xl);
-    }
-    .tasks__task-attribute {
-      font-size: var(--size-xl);
-    }
-    .tasks__task-description {
-      font-size: var(--size-lg);
-    }
-    .tasks__mobile-container {
-      display: none;
-    }
-    .tasks__desktop-container {
-      margin-top: 1rem;
-      display: flex;
-    }
-    .tasks__desktop-column {
-      flex: 1;
-    }
-    .tasks__task-wrapper {
-      margin: 1rem 1rem 0 0;
-    }
-    .tasks__task-description {
-      display: block;
-    }
-  }
-  
-  /* xl */
-  @media (min-width: 1280px) {
-    .tasks__task-title {
-      font-size: var(--size-4xl);
-    }
-    .tasks__task-attribute {
-      font-size: var(--size-2xl);
-    }
-    .tasks__task-description {
-      font-size: var(--size-2xl);
-    }
-    .tasks__tasks-container {
-      margin-top: 2rem;
-      gap: 2rem;
-    }
-  }
-  
-  /* 2xl */
-  /* @media (min-width: 1536px) {} */
-  
+}
+
+/* 2xl */
+/* @media (min-width: 1536px) {} */
