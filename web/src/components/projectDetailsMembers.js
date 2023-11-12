@@ -1,5 +1,5 @@
 // Function to generate the member table from an array of member objects.
-function projectMembers(members) {
+function projectDetailsMembers(members) {
   return `
       <button class="btn">Add Member</button>
       <div class="members__table-container">
@@ -40,4 +40,4 @@ function projectMembers(members) {
     `;
 }
 
-export { projectMembers };
+export { projectDetailsMembers };

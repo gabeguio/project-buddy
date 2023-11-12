@@ -1,7 +1,7 @@
 const sampleProjects = [
     {
       title: "Project Management System",
-      tasksComplete: 6,
+      tasksCompleted: 6,
       totalTasks: 7,
       dueDate: "10.31.2023",
       owner: "Alan Waltz",
@@ -11,7 +11,7 @@ const sampleProjects = [
     },
     {
       title: "Task Tracking App",
-      tasksComplete: 15,
+      tasksCompleted: 15,
       totalTasks: 20,
       dueDate: "11.15.2023",
       owner: "Eva Martinez",
@@ -21,7 +21,7 @@ const sampleProjects = [
     },
     {
       title: "Budget Planning Tool",
-      tasksComplete: 8,
+      tasksCompleted: 8,
       totalTasks: 10,
       dueDate: "12.05.2023",
       owner: "John Smith",
@@ -31,7 +31,7 @@ const sampleProjects = [
     },
     {
       title: "Team Collaboration Platform",
-      tasksComplete: 30,
+      tasksCompleted: 30,
       totalTasks: 35,
       dueDate: "12.20.2023",
       owner: "David Lee",
@@ -41,7 +41,7 @@ const sampleProjects = [
     },
     {
       title: "Event Management System",
-      tasksComplete: 12,
+      tasksCompleted: 12,
       totalTasks: 15,
       dueDate: "01.10.2024",
       owner: "Sophie Turner",

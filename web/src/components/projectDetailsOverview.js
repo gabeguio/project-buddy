@@ -1,4 +1,4 @@
-function projectOverview(project) {
+function projectDetailsOverview(project) {
     return `
         <h3 class="project__attribute">
         Tasks Complete: ${project.tasksCompleted}/${project.totalTasks}
@@ -19,4 +19,4 @@ function projectOverview(project) {
       `;
   }
 
-  export { projectOverview };
+  export { projectDetailsOverview };

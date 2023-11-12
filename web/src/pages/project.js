@@ -2,9 +2,7 @@ import ProjectClient from "../api/ProjectClient";
 import Header from "../components/Header";
 import BindingClass from "../util/BindingClass";
 import DataStore from "../util/DataStore";
-import { renderProjectHeader } from "../components/projectHeader";
-import { renderProjectContentContainer } from "../components/projectContainer";
-import { sampleTasks } from "../data/sampleTasks";
+import { renderProject } from "../components/Project";
 import { sampleProjects } from "../data/sampleProjects";
 import { sampleMembers } from "../data/sampleMembers";
 
@@ -35,8 +33,7 @@ class Project extends BindingClass {
     // const tasks = sampleTasks;
 
     // NOTE: Content's of the project are rendered before the header to allow header toggle switch assignment for the projects contents
-    renderProjectContentContainer(sampleProjects, sampleMembers, sampleTasks);
-    renderProjectHeader(sampleProjects[0]);
+    renderProject(sampleProjects[0], sampleMembers);
   }
 }
 
