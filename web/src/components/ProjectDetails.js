@@ -1,5 +1,5 @@
-import { projectDetailsOverview } from "./projectDetailsOverview";
-import { projectDetailsMembers } from "./projectDetailsMembers";
+import { projectDetailsOverview } from "./ProjectDetailsOverview";
+import { projectDetailsMembers } from "./ProjectDetailsMembers";
 
 function projectDetailsContainerTemplate(project, members) {
   return `

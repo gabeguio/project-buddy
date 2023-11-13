@@ -34,16 +34,12 @@ function projectsCardTemplate(project) {
 
 function renderProjectsCards(projects) {
   const projectsContainer = document.querySelector(
-    "projects__projects-container"
+    ".projects__projects-container"
   );
   console.log(projectsContainer);
 
-  if (!projectsContainer) {
-    console.error(`Container element ${container} not found.`);
-    return;
-  }
-
   projects.forEach((project) => {
+    console.log(project)
     const projectCard = document.createElement("div");
     projectCard.innerHTML = projectsCardTemplate(project);
     projectsContainer.appendChild(projectCard);
