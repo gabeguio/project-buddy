@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import BindingClass from "../util/BindingClass";
 import DataStore from "../util/DataStore";
 import { sampleProjects } from "../data/sampleProjects";
-import { renderProjectsCards } from "../components/ProjectsCard";
+import { renderProjects } from "../components/Projects";
 
 class Index extends BindingClass {
   constructor() {
@@ -25,7 +25,7 @@ class Index extends BindingClass {
 
   async displayProjects() {
     // const projects = await this.client.getProjects()
-    renderProjectsCards(sampleProjects);
+    renderProjects(sampleProjects);
   }
 }
 

@@ -1,4 +1,4 @@
-function projectsCardTemplate(project) {
+function projectTemplate(project) {
   // Define the maximum description length (e.g., 117 characters)
   const maxDescriptionLength = 237;
 
@@ -32,7 +32,7 @@ function projectsCardTemplate(project) {
     `;
 }
 
-function renderProjectsCards(projects) {
+function renderProjects(projects) {
   const projectsContainer = document.querySelector(
     ".projects__projects-container"
   );
@@ -41,9 +41,9 @@ function renderProjectsCards(projects) {
   projects.forEach((project) => {
     console.log(project)
     const projectCard = document.createElement("div");
-    projectCard.innerHTML = projectsCardTemplate(project);
+    projectCard.innerHTML = projectTemplate(project);
     projectsContainer.appendChild(projectCard);
   });
 }
 
-export { renderProjectsCards };
+export { renderProjects };
