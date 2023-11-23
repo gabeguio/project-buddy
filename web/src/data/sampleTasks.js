@@ -39,7 +39,8 @@ const sampleTasks = [
     dateCreated: "10.31.2023",
     assignedTo: "Alan Waltz",
     status: "In Progress",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
     title: "User Story 7",
@@ -53,7 +54,7 @@ const sampleTasks = [
     dateCreated: "10.31.2023",
     assignedTo: "Alan Waltz",
     status: "Completed",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
   },
   {
     title: "User Story 9",
@@ -76,6 +77,6 @@ const sampleTasks = [
     status: "Under Review",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
-]
+];
 
 export { sampleTasks };

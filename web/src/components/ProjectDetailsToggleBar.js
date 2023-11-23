@@ -7,7 +7,7 @@ function projectDetailsToggleBarTemplate() {
     `;
 }
 
-function addToggleBarLogic() {
+function addProjectToggleBarLogic() {
   const overviewButton = document.getElementById("overview-btn");
   const membersButton = document.getElementById("members-btn");
   const overviewContent = document.getElementById("overview-content");
@@ -34,16 +34,4 @@ function addToggleBarLogic() {
   });
 }
 
-// function renderProjectHeader(project) {
-//   const projectHeaderElement = document.getElementById("project__header");
-
-//   if (projectHeaderElement) {
-//     projectHeaderElement.innerHTML = "";
-
-//     const projectHeaderContent = projectHeaderTemplate(project);
-//     projectHeaderElement.innerHTML = projectHeaderContent;
-//     addSwitchBarLogic();
-//   }
-// }
-
-export { projectDetailsToggleBarTemplate, addToggleBarLogic };
+export { projectDetailsToggleBarTemplate, addProjectToggleBarLogic };

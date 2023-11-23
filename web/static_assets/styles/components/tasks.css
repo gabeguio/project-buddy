@@ -1,4 +1,4 @@
-.tasks_mobile-toggle-switch-container {
+.tasks__mobile-toggle-switch-container {
   display: flex;
   border-bottom: 4px solid var(--clr-sky-blue);
   font-size: var(--size-xxs);
@@ -161,7 +161,6 @@
     width: var(--size-2xl);
     height: var(--size-2xl);
   }
-  
 }
 
 /* m */
@@ -244,7 +243,6 @@
     height: var(--size-base);
     width: var(--size-base);
   }
-
 }
 
 /* 2xl */

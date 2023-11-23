@@ -1,6 +1,6 @@
 import { projectDetailsContainerTemplate } from "./ProjectDetails";
 import { projectDetailsToggleBarTemplate } from "./ProjectDetailsToggleBar";
-import { addToggleBarLogic } from "./ProjectDetailsToggleBar";
+import { addProjectToggleBarLogic } from "./ProjectDetailsToggleBar";
 
 function projectTemplate(project, members) {
   return `
@@ -14,7 +14,7 @@ function projectTemplate(project, members) {
 function renderProject(project, members) {
   const container = document.getElementById("project__content-container");
   container.innerHTML = projectTemplate(project, members);
-  addToggleBarLogic();
+  addProjectToggleBarLogic();
 }
 
 export { renderProject };

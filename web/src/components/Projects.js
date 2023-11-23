@@ -36,10 +36,9 @@ function renderProjects(projects) {
   const projectsContainer = document.querySelector(
     ".projects__projects-container"
   );
-  console.log(projectsContainer);
 
   projects.forEach((project) => {
-    console.log(project)
+    console.log(project);
     const projectCard = document.createElement("div");
     projectCard.innerHTML = projectTemplate(project);
     projectsContainer.appendChild(projectCard);
