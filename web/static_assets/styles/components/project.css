@@ -1,109 +1,105 @@
-.project__details_toggle-bar {
-  margin-top: 0.5rem;
-  margin-left: 0.5rem;
-}
-
-.project__details_toggle-btn {
-  text-decoration: none;
-  display: inline-block;
+.project__title {
+  font-size: var(--size-xl);
   color: var(--clr-light);
-  padding: 0.5em 1em;
-  border-radius: 6px;
-  transition-duration: 0.2s;
-  font-size: var(--size-xs);
+  width: 100%;
 }
 
-.project__details_toggle-btn:hover {
-  border: 2px solid var(--clr-sky-blue);
-  /* background-color: var(--clr-blue); */
+.project__menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  gap: 2em;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
-.project__details_toggle-btn_selected {
-  border: 2px solid var(--clr-sky-blue);
-  transition: transform 0.3s;
+.project__btn {
+  font-size: var(--size-sm);
+  text-decoration: none;
+  color: var(--clr-light);
+  cursor: pointer;
 }
 
-.project__details {
-  border-left: 1px solid var(--clr-light);
+.project__btn:hover {
+  color: var(--clr-sky-blue);
+  transition: 0.3s;
+}
+
+.project__btn-selected {
+  color: var(--clr-sky-blue);
 }
 
 .project__details-container {
-  margin-top: 0.5rem;
-  padding-left: 0.5rem;
+  border-radius: 8px;
+  padding-bottom: 1rem;
+
 }
 
-.project__title {
-  font-size: var(--size-2xl);
-  color: var(--clr-sky-blue);
-  text-transform: uppercase;
+.project__details-title {
+  color: var(--clr-gray400);
+  background-color: var(--clr-gray800);
+  font-size: var(--size-base);
+  padding: 1rem 1rem;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
 }
 
 .project__attribute {
   color: var(--clr-gray400);
-  font-size: var(--size-base);
+  font-size: var(--size-sm);
   text-transform: capitalize;
   margin-bottom: 0.25em 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .project__description {
   max-width: 60ch;
   color: var(--clr-gray600);
-  font-size: var(--size-sm);
+  font-size: var(--size-base);
   margin: 1rem 0;
-}
-
-.project__details {
-  margin-top: 0.5rem;
-  padding-left: 0.5rem;
-}
-
-.btn {
-  font-size: var(--size-xs);
+  padding: 0 1rem;
 }
 
 .members__table-container {
   width: 100%;
   overflow-x: auto;
   max-width: 100%;
-  border: 1px solid var(--clr-gray800);
-  margin: 0.5rem 0;
-  /* font-size: var(--size-xs); */
-  font-size: 0.375rem;
+  color: var(--clr-gray600);
+  font-size: var(--size-sm);
+  margin-top: 0.5rem;
 }
 
 .members__table {
   width: 100%;
-  /* table-layout: auto; */
   border-collapse: collapse;
 }
 
 .members__table_header-row th {
-  text-align: left;
-  padding: 0.25rem;
   background-color: var(--clr-gray800);
+  color: var(--clr-gray400);
+  text-align: left;
+  padding: 0.5rem;
 }
 
 .members__table_body tr td {
-  background-color: var(--clr-gray600);
-  padding: 0.25rem;
-}
-
-.members__table_body tr {
-  border-bottom: 1px solid var(--clr-gray800);
-  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--clr-gray600);
+  padding: 0.5rem;
 }
 
 .members__table_pen {
   display: block;
-  color: var(--clr-light);
-  width: var(--size-xs);
-  height: var(--size-xs);
+  margin-right: auto;
+  margin-left: auto;
+  width: var(--size-sm);
+  height: var(--size-sm);
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .members__table_pen:hover {
-  color: var(--clr-gray400);
+  color: var(--clr-sky-blue);
 }
 
 /* xs */
@@ -111,35 +107,32 @@
 
 /* sm */
 @media (min-width: 640px) {
-  .project__details-container {
-    margin-top: 1.5rem;
-  }
   .project__title {
-    font-size: var(--size-3xl);
+    font-size: var(--size-2xl);
   }
-  .project__attribute {
+  .project__menu {
+    gap: 2.5em;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  .project__btn {
+    font-size: var(--size-base);
+  }
+  .project__details-title {
     font-size: var(--size-lg);
   }
+  .project__attribute {
+    font-size: var(--size-base);
+  }
   .project__description {
-    font-size: var(--size-base);
-    margin: 1.5rem 0;
-  }
-  .project_details {
-    margin-top: 1rem;
-    padding-left: 1rem;
-  }
-  .project__details_toggle-btn {
-    font-size: var(--size-base);
-  }
-  .btn {
-    font-size: var(--size-base);
+    font-size: var(--size-lg);
   }
   .members__table-container {
-    font-size: var(--size-xs);
+    font-size: var(--size-lg);
   }
   .members__table_pen {
-    width: var(--size-xs);
-    height: var(--size-xs);
+    width: var(--size-base);
+    height: var(--size-base);
   }
 }
 
@@ -148,49 +141,63 @@
 
 /* lg */
 @media (min-width: 1024px) {
-  .project__details_toggle-bar {
-    margin-top: 1rem;
-    margin-left: 1rem;
-  }
   .project__title {
-    font-size: var(--size-5xl);
-  }
-  .project__attribute {
     font-size: var(--size-3xl);
   }
+  .project__menu {
+    gap: 3em;
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+  .project__btn {
+    font-size: var(--size-lg);
+  }
+  .project__details-title {
+    font-size: var(--size-xl);
+  }
+  .project__attribute {
+    font-size: var(--size-lg);
+  }
   .project__description {
-    font-size: var(--size-2xl);
+    font-size: var(--size-xl);
+  }
+  .members__table-container {
+    font-size: var(--size-xl);
+  }
+  .members__table_pen {
+    width: var(--size-lg);
+    height: var(--size-lg);
   }
 }
 
 /* xl */
 @media (min-width: 1280px) {
-  .project__details_toggle-bar {
-    margin-top: 1.5rem;
-    margin-left: 1.5rem;
-  }
   .project__title {
-    font-size: var(--size-6xl);
-  }
-  .project__attribute {
     font-size: var(--size-4xl);
   }
-  .project__description {
-    font-size: var(--size-3xl);
-    margin: 2rem 0;
+  .project__menu {
+    gap: 4em;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
-  .project__details_toggle-btn {
+  .project__btn {
+    font-size: var(--size-xl);
+  }
+  .project__details-title {
     font-size: var(--size-2xl);
   }
-  .btn {
+  .project__attribute {
+    font-size: var(--size-xl);
+  }
+  .project__description {
     font-size: var(--size-2xl);
   }
   .members__table-container {
-    font-size: var(--size-base);
+    font-size: var(--size-2xl);
   }
   .members__table_pen {
-    width: var(--size-base);
-    height: var(--size-base);
+    width: var(--size-xl);
+    height: var(--size-xl);
   }
 }
 

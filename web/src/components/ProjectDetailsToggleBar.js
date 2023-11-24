@@ -1,36 +1,36 @@
 function projectDetailsToggleBarTemplate() {
   return `
-        <div class="project__details_toggle-bar">
-            <button class="project__details_toggle-btn" id="overview-btn">Overview</button>
-            <button class="project__details_toggle-btn" id="members-btn">Members</button>
+        <div class="project__menu">
+            <button class="project__btn" id="about-btn">About</button>
+            <button class="project__btn" id="members-btn">Members</button>
         </div>
     `;
 }
 
 function addProjectToggleBarLogic() {
-  const overviewButton = document.getElementById("overview-btn");
+  const aboutButton = document.getElementById("about-btn");
   const membersButton = document.getElementById("members-btn");
-  const overviewContent = document.getElementById("overview-content");
+  const aboutContent = document.getElementById("about-content");
   const membersContent = document.getElementById("members-content");
 
-  // Initially, show the "Overview" content.
-  overviewButton.classList.add("project__details_toggle-btn_selected");
+  // Initially, show the "about" content.
+  aboutButton.classList.add("project__btn-selected");
   membersContent.style.display = "none";
 
-  overviewButton.addEventListener("click", () => {
-    // Show the "Overview" content and hide the "Members" content.
-    overviewButton.classList.add("project__details_toggle-btn_selected");
-    membersButton.classList.remove("project__details_toggle-btn_selected");
-    overviewContent.style.display = "block";
+  aboutButton.addEventListener("click", () => {
+    // Show the "about" content and hide the "Members" content.
+    aboutButton.classList.add("project__btn-selected");
+    membersButton.classList.remove("project__btn-selected");
+    aboutContent.style.display = "block";
     membersContent.style.display = "none";
   });
 
   membersButton.addEventListener("click", () => {
-    // Show the "Members" content and hide the "Overview" content.
-    membersButton.classList.add("project__details_toggle-btn_selected");
-    overviewButton.classList.remove("project__details_toggle-btn_selected");
+    // Show the "Members" content and hide the "about" content.
+    membersButton.classList.add("project__btn-selected");
+    aboutButton.classList.remove("project__btn-selected");
     membersContent.style.display = "block";
-    overviewContent.style.display = "none";
+    aboutContent.style.display = "none";
   });
 }
 
