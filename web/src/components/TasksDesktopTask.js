@@ -1,4 +1,4 @@
-function tasksDesktopTaskTemplate(task) {
+function tasksDesktopTask(task) {
   const { title, dateCreated, assignedTo, status, description } = task;
 
   return `
@@ -73,4 +73,4 @@ function tasksDesktopTaskTemplate(task) {
     `;
 }
 
-export { tasksDesktopTaskTemplate };
+export { tasksDesktopTask };

@@ -1,17 +1,16 @@
-import { tasksDesktopTaskTemplate } from "./TasksDesktopTask";
+import { tasksDesktopTask } from "./TasksDesktopTask";
 
-function taskDesktopColumnTemplate(tasks) {
+function tasksDesktopColumn(tasks) {
   const tasksByStatus = sortTasksByStatus(tasks);
 
   let columnsHTML = "";
 
   tasksByStatus.forEach((tasks, status) => {
-    const tasksHTML = tasks.map(task => tasksDesktopTaskTemplate(task)).join("");
+    const tasksHTML = tasks.map(task => tasksDesktopTask(task)).join("");
 
     columnsHTML += `
         <div class="tasks__desktop-column">
-          <h2 class="tasks__column-status-title">${status}:
-            <span class="tasks__column-status-title_number">${tasks.length}</span>
+          <h2 class="tasks__column-title">${status}: <span class="tasks__total">${tasks.length}</span>
           </h2>
             ${tasksHTML}
         </div>
@@ -33,4 +32,4 @@ function sortTasksByStatus(tasks) {
   }, new Map());
 }
 
-export { taskDesktopColumnTemplate };
+export { tasksDesktopColumn };

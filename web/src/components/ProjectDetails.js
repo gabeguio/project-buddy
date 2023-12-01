@@ -1,17 +1,21 @@
 import { projectDetailsAbout } from "./ProjectDetailsAbout";
 import { projectDetailsMembers } from "./ProjectDetailsMembers";
+import { projectDetailsTasks } from "./ProjectDetailsTasks";
 
-function projectDetailsContainerTemplate(project, members) {
+function projectDetails(project, members, tasks) {
   return `
-    <div class="project__details-container">
-      <div class="project__details" id="about-content">
+    <div class="project__details">
+      <div id="about-content">
         ${projectDetailsAbout(project)}
       </div>
-      <div class="project__details" id="members-content">
+      <div id="tasks-content">
+        ${projectDetailsTasks(tasks)}
+      </div>
+      <div id="members-content">
         ${projectDetailsMembers(members)}
       </div>
     </div>
   `;
 }
 
-export { projectDetailsContainerTemplate };
+export { projectDetails };

@@ -1,5 +1,5 @@
 function projectDetailsAbout(project) {
-    return `
+  return `
         <h3 class="project__details-title">
             About
         </h3>
@@ -18,8 +18,7 @@ function projectDetailsAbout(project) {
         <p class="project__attribute">
             Top Contributor: ${project.topContributor}
         </p> 
-
       `;
-  }
+}
 
-  export { projectDetailsAbout };
+export { projectDetailsAbout };

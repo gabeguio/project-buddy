@@ -1,36 +1,37 @@
-function tasksMobileToggleSwitchTemplate(tasks) {
+function tasksMobileMenu(tasks) {
   const tasksByStatus = sortTasksByStatus(tasks);
 
   return `
-    <div class="tasks__mobile-toggle-switch-container">
-        <button class="tasks__mobile-toggle-status-btn" id="to-do-btn">
-            To Do
-            <span class="tasks__column-status-title_number">
+    <div class="tasks__mobile-menu">
+        <button class="tasks__mobile-btn" id="to-do-btn">
+            <p>To Do: 
+            <span class="tasks__total">
             ${tasksByStatus.get("To Do").length}
             </span>
+            </p>
         </button>
-        <button class="tasks__mobile-toggle-status-btn" id="in-progress-btn">
-            In Progress
-            <span class="tasks__column-status-title_number">
+        <button class="tasks__mobile-btn" id="in-progress-btn">
+            In Progress: 
+            <span class="tasks__total">
             ${tasksByStatus.get("In Progress").length}
             </span>
         </button>
-        <button class="tasks__mobile-toggle-status-btn" id="under-review-btn">
-            Under Review
-            <span class="tasks__column-status-title_number">
+        <button class="tasks__mobile-btn" id="under-review-btn">
+            Under Review: 
+            <span class="tasks__total">
             ${tasksByStatus.get("Under Review").length}
             </span>
         </button>
-        <button class="tasks__mobile-toggle-status-btn" id="completed-btn">
-            Complete
-            <span class="tasks__column-status-title_number">
+        <button class="tasks__mobile-btn" id="completed-btn">
+            Completed: 
+            <span class="tasks__total">
             ${tasksByStatus.get("Completed").length}
             </span>
         </button>
   </div>`;
 }
 
-function addTasksToggleBarLogic() {
+function configureTasksMobileMenu() {
   // Buttons
   const todoButton = document.getElementById("to-do-btn");
   const inProgressButton = document.getElementById("in-progress-btn");
@@ -44,7 +45,7 @@ function addTasksToggleBarLogic() {
   const completedContent = document.getElementById("completed-content");
 
   // Initially, show the "to-do-column" content
-  todoButton.classList.add("tasks__mobile-toggle-status-btn_selected");
+  todoButton.classList.add("tasks__mobile-btn_selected");
   inProgressContent.style.display = "none";
   underReviewContent.style.display = "none";
   completedContent.style.display = "none";
@@ -52,17 +53,17 @@ function addTasksToggleBarLogic() {
   // Show the "to-do" content and hide the "in-progress", "under-review", and "completed" content.
   todoButton.addEventListener("click", () => {
     // Toggle select for "to-do" button
-    todoButton.classList.add("tasks__mobile-toggle-status-btn_selected");
+    todoButton.classList.add("tasks__mobile-btn_selected");
 
     // Toggle unselect for "in-progress", "under-review", and "completed" buttons
     inProgressButton.classList.remove(
-      "tasks__mobile-toggle-status-btn_selected"
+      "tasks__mobile-btn_selected"
     );
     underReviewButton.classList.remove(
-      "tasks__mobile-toggle-status-btn_selected"
+      "tasks__mobile-btn_selected"
     );
     completedButton.classList.remove(
-      "tasks__mobile-toggle-status-btn_selected"
+      "tasks__mobile-btn_selected"
     );
 
     // Toggle display 'block' for all "to-do" content tasks
@@ -77,15 +78,15 @@ function addTasksToggleBarLogic() {
   // Show the "in-progress" content and hide the "to-do", "under-review", and "completed" content.
   inProgressButton.addEventListener("click", () => {
     // Toggle select for "in-progress" button
-    inProgressButton.classList.add("tasks__mobile-toggle-status-btn_selected");
+    inProgressButton.classList.add("tasks__mobile-btn_selected");
 
     // Toggle unselect for "to-do", "under-review", and "completed" buttons
-    todoButton.classList.remove("tasks__mobile-toggle-status-btn_selected");
+    todoButton.classList.remove("tasks__mobile-btn_selected");
     underReviewButton.classList.remove(
-      "tasks__mobile-toggle-status-btn_selected"
+      "tasks__mobile-btn_selected"
     );
     completedButton.classList.remove(
-      "tasks__mobile-toggle-status-btn_selected"
+      "tasks__mobile-btn_selected"
     );
 
     // Toggle display 'block' for all "in-progress" content tasks
@@ -100,15 +101,15 @@ function addTasksToggleBarLogic() {
   // Show the "under-review" content and hide the "to-do", "in-progress", and "completed" content.
   underReviewButton.addEventListener("click", () => {
     // Toggle select for "under-review" button
-    underReviewButton.classList.add("tasks__mobile-toggle-status-btn_selected");
+    underReviewButton.classList.add("tasks__mobile-btn_selected");
 
     // Toggle unselect for "to-do", "in-progress", and "completed" buttons
-    todoButton.classList.remove("tasks__mobile-toggle-status-btn_selected");
+    todoButton.classList.remove("tasks__mobile-btn_selected");
     inProgressButton.classList.remove(
-      "tasks__mobile-toggle-status-btn_selected"
+      "tasks__mobile-btn_selected"
     );
     completedButton.classList.remove(
-      "tasks__mobile-toggle-status-btn_selected"
+      "tasks__mobile-btn_selected"
     );
 
     // Toggle display 'block' for all "under-review" content tasks
@@ -123,15 +124,15 @@ function addTasksToggleBarLogic() {
   // Show the "completed" content and hide the "to-do", "in-progress", and "under-review" content.
   completedButton.addEventListener("click", () => {
     // Toggle select for "completed" button
-    completedButton.classList.add("tasks__mobile-toggle-status-btn_selected");
+    completedButton.classList.add("tasks__mobile-btn_selected");
 
     // Toggle unselect for "to-do", "in-progress", and "under-review" buttons
-    todoButton.classList.remove("tasks__mobile-toggle-status-btn_selected");
+    todoButton.classList.remove("tasks__mobile-btn_selected");
     inProgressButton.classList.remove(
-      "tasks__mobile-toggle-status-btn_selected"
+      "tasks__mobile-btn_selected"
     );
     underReviewButton.classList.remove(
-      "tasks__mobile-toggle-status-btn_selected"
+      "tasks__mobile-btn_selected"
     );
 
     // Toggle display 'block' for all "completed" content tasks
@@ -142,6 +143,10 @@ function addTasksToggleBarLogic() {
     inProgressContent.style.display = "none";
     underReviewContent.style.display = "none";
   });
+}
+
+function handleViewportChange() {
+  console.log("Viewport Changed!")
 }
 
 function sortTasksByStatus(tasks) {
@@ -156,4 +161,4 @@ function sortTasksByStatus(tasks) {
   }, new Map());
 }
 
-export { tasksMobileToggleSwitchTemplate, addTasksToggleBarLogic };
+export { tasksMobileMenu, configureTasksMobileMenu };

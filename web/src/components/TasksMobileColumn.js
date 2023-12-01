@@ -1,15 +1,15 @@
-import { tasksMobileTaskTemplate } from "./TasksMobileTask";
+import { tasksMobileTask } from "./TasksMobileTask";
 
-function taskMobileColumnTemplate(tasks) {
+function tasksMobileColumn(tasks) {
   const tasksByStatus = sortTasksByStatus(tasks);
 
   let columnsHTML = "";
 
   tasksByStatus.forEach((tasks, status) => {
     const tasksHTML = tasks
-      .map((task) => tasksMobileTaskTemplate(task))
+      .map((task) => tasksMobileTask(task))
       .join("");
-    const cssStatusId = formatStatusToBem(status);
+    const cssStatusId = cssFormat(status);
     columnsHTML += `
         <div class="tasks__mobile-column" id="${cssStatusId}-content">
             ${tasksHTML}
@@ -31,8 +31,8 @@ function sortTasksByStatus(tasks) {
   }, new Map());
 }
 
-function formatStatusToBem(status) {
+function cssFormat(status) {
   return status.replaceAll(" ", "-").toLocaleLowerCase();
 }
 
-export { taskMobileColumnTemplate };
+export { tasksMobileColumn };

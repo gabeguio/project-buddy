@@ -8,11 +8,11 @@ function projectDetailsMembers(members) {
         <table class="members__table">
           <thead>
             <tr class="members__table_header-row">
+              <th></th>
               <th>Name</th>
               <th>Role</th>
               <th>Company</th>
               <th>Email</th>
-              <th></th>
             </tr>
           </thead>
           <tbody class="members__table_body">
@@ -20,10 +20,6 @@ function projectDetailsMembers(members) {
               .map(
                 (member) => `
                   <tr>
-                    <td>${member.firstName} ${member.lastName}</td>
-                    <td>${member.role}</td>
-                    <td>${member.company}</td>
-                    <td>${member.email}</td>
                     <td>
                       <button
                         class="members__table_pen">
@@ -32,6 +28,10 @@ function projectDetailsMembers(members) {
                         </svg>
                       </button>
                     </td>
+                    <td>${member.firstName} ${member.lastName}</td>
+                    <td>${member.role}</td>
+                    <td>${member.company}</td>
+                    <td>${member.email}</td>
                   </tr>
                 `
               )

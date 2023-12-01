@@ -1,38 +1,25 @@
-.tasks__mobile-toggle-switch-container {
+.tasks__mobile-menu {
   display: flex;
-  border-bottom: 4px solid var(--clr-sky-blue);
-  font-size: var(--size-xxs);
+  flex-direction: column;
+  padding: 1rem;
+  background-color: var(--clr-gray800);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
-.tasks__mobile-toggle-status-btn {
+.tasks__mobile-btn {
   flex: 1;
-  padding: 0.5rem 0;
+  font-size: var(--size-sm);
+  font-weight: 700;
+  text-align: left;
 }
 
-.tasks__mobile-toggle-status-btn_selected {
-  background-color: var(--clr-sky-blue);
-  font-weight: 800;
-  border-radius: 6px;
-  -webkit-border-bottom-left-radius: 0px;
-  -webkit-border-bottom-right-radius: 0px;
-  -moz-border-radius-bottomleft: 0px;
-  -moz-border-radius-bottomright: 0px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
+.tasks__mobile-btn::hover {
+  color: var(--clr-gray800);
 }
 
-.tasks__column-status-title_number {
-  display: block;
-  border-radius: 50%;
-  width: var(--size-base);
-  height: var(--size-base);
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0.5rem;
-  padding: 0;
-  background-color: var(--clr-gray400);
-  /* text-align: center; */
-  font-weight: 400;
+.tasks__mobile-btn_selected {
+  border-bottom: 4px solid var(--clr-sky-blue);
 }
 
 .tasks__task-title {
@@ -123,10 +110,10 @@
   .tasks_mobile-toggle-switch-container {
     font-size: var(--size-base);
   }
-  .tasks__mobile-toggle-status-btn {
-    padding: 1.5rem 0;
+  .tasks__mobile-btn {
+    padding: 0.5rem 0;
   }
-  .tasks__mobile-toggle-status-btn_selected {
+  .tasks__mobile-btn_selected {
     border-bottom: 6px solid var(--clr-sky-blue);
   }
   .tasks__task-title {
@@ -157,10 +144,6 @@
     height: var(--size-lg);
     width: var(--size-lg);
   }
-  .tasks__column-status-title_number {
-    width: var(--size-2xl);
-    height: var(--size-2xl);
-  }
 }
 
 /* m */
@@ -168,6 +151,9 @@
 
 /* lg */
 @media (min-width: 1024px) {
+  .tasks_tasks-container {
+    padding: 1rem;
+  }
   .tasks__mobile-container {
     display: none;
   }
@@ -179,7 +165,7 @@
     flex: 1;
   }
   .tasks__task-wrapper {
-    margin: 1rem 1rem 0 0;
+    padding: 1rem;
   }
   .tasks__task-title {
     font-size: var(--size-2xl);
@@ -204,13 +190,6 @@
   }
   .tasks_task-attribute_progress {
     display: none;
-  }
-  .tasks__column-status-title_number {
-    display: inline;
-    width: var(--size-5xl);
-    height: var(--size-5xl);
-    margin-left: 0.5rem;
-    padding: 0.5rem;
   }
 }
 

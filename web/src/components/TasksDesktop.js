@@ -1,11 +1,11 @@
-import { taskDesktopColumnTemplate } from "./TasksDesktopColumn";
+import { tasksDesktopColumn } from "./TasksDesktopColumn";
 
-function tasksDesktopTemplate(tasks) {
+function tasksDesktop(tasks) {
   return `
     <div class="tasks__desktop-container">
-      ${taskDesktopColumnTemplate(tasks)}
+      ${tasksDesktopColumn(tasks)}
     </div>
     `;
 }
 
-export { tasksDesktopTemplate };
+export { tasksDesktop };

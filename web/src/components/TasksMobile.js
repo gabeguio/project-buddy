@@ -1,12 +1,12 @@
-import { tasksMobileToggleSwitchTemplate } from "./TasksMobileToggleSwitch";
-import { taskMobileColumnTemplate } from "./TasksMobileColumn";
+import { tasksMobileMenu } from "./TasksMobileMenu";
+import { tasksMobileColumn } from "./TasksMobileColumn";
 
-function tasksMobileTemplate(tasks) {
+function tasksMobile(tasks) {
   return `
   <div class="tasks__mobile-container">
-    ${tasksMobileToggleSwitchTemplate(tasks)}
-    ${taskMobileColumnTemplate(tasks)}
+    ${tasksMobileMenu(tasks)}
+    ${tasksMobileColumn(tasks)}
     </div>`;
 }
 
-export { tasksMobileTemplate };
+export { tasksMobile };

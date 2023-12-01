@@ -1,4 +1,4 @@
-function tasksMobileTaskTemplate(task) {
+function tasksMobileTask(task) {
   const { title, dateCreated, assignedTo, status, description } = task;
 
   return `
@@ -73,4 +73,4 @@ function tasksMobileTaskTemplate(task) {
       `;
 }
 
-export { tasksMobileTaskTemplate };
+export { tasksMobileTask };
