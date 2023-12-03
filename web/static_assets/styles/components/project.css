@@ -21,12 +21,12 @@
 }
 
 .project__btn:hover {
-  color: var(--clr-sky-blue);
+  color: var(--clr-blue);
   transition: 0.3s;
 }
 
 .project__btn-selected {
-  color: var(--clr-sky-blue);
+  color: var(--clr-blue);
 }
 
 .project__about-container {

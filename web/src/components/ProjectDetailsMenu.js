@@ -1,3 +1,5 @@
+//TODO: Convert buttons to a method that takes in the parameters of the selected button
+
 function projectDetailsMenu() {
   return `
         <div class="project__menu">

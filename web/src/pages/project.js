@@ -20,7 +20,7 @@ class Project extends BindingClass {
   }
 
   mount() {
-    this.header.createSiteNavBar();
+    this.header.header();
     this.client = new ProjectClient();
     this.displayProject();
   }

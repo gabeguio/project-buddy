@@ -41,7 +41,7 @@
     font-size: var(--size-xs);
     text-decoration: none;
     font-weight: 600;
-    color: var(--clr-slate600);
+    color: var(--clr-gray600);
     letter-spacing: -0.05em;
   }
 
@@ -51,13 +51,13 @@
   }
 
   .header__line {
-    border: 1px solid var(--clr-slate600);
+    border: 1px solid var(--clr-gray600);
     padding-top: 1.5em;
   }
 
   .header__sun {
     display: block;
-    color: var(--clr-slate600);
+    color: var(--clr-gray600);
     width: var(--size-base);
     height: var(--size-base);
   }

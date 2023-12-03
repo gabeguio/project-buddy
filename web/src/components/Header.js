@@ -9,7 +9,7 @@ export default class Header extends BindingClass {
     super();
 
     const methodsToBind = [
-      "createSiteNavBar",
+      "header",
       "createUserInfoForHeader",
       "createLoginButton",
       "createLoginButton",
@@ -20,77 +20,45 @@ export default class Header extends BindingClass {
     this.client = new ProjectClient();
   }
 
-  async createSiteNavBar() {
-    // Create home link for header's navigation menu
-    const homeLink = document.createElement("a");
-    homeLink.classList.add("header__link");
-    homeLink.href = "index.html";
-    homeLink.innerText = "Home";
-    const listItemHome = document.createElement("li");
-    listItemHome.appendChild(homeLink);
+  async header() {
+    let headerHTML = `
+    <nav>
+      <ul class="header__menu">
+        <li>
+          <a href="index.html" class="header__link">Home</a>
+        </li>
+        <li>
+          <a href="#" class="header__link">Profile</a>
+        </li>
+        <li class="header__line"></li>
+        <li>
+          <button class="header__sun" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+            </svg>
+          </button>
+        </li>
+        <li id="header__user"></li>
+      <ul>
+    </nav>
+  `;
 
-    // Create profile link for header's navigation menu
-    const profileLink = document.createElement("a");
-    profileLink.classList.add("header__link");
-    profileLink.href = "#";
-    profileLink.innerText = "Profile";
-    const listItemProfile = document.createElement("li");
-    listItemProfile.appendChild(profileLink);
+    // Add default header HTML
+    const headerElement = document.getElementById("header");
+    headerElement.innerHTML = headerHTML;
 
-    // Create list item line seperator
-    const listItemLineSeperator = document.createElement("li");
-    listItemLineSeperator.classList.add("header__line");
-
-    // Toggle button for header's navigation menu
-    const sunImageReference = document.createElement("path");
-    sunImageReference.setAttribute(
-      "d",
-      "M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"
-    );
-
-    const sunImage = document.createElement("svg");
-    sunImage.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-    sunImage.setAttribute("viewBox", "0 0 24 24");
-    sunImage.setAttribute("fill", "currentColor");
-
-    const sunButton = document.createElement("button");
-    sunButton.classList.add("header__sun");
-    sunButton.href = "#";
-    sunButton.innerText = "Profile";
-    const listItemToggleMode = document.createElement("li");
-    sunImage.appendChild(sunImageReference);
-    sunButton.appendChild(sunImage);
-    listItemToggleMode.appendChild(sunButton);
-
-    // Create user-info link for header's navigation menu
+    // Retrieve user information, if not user is logged in, then return 'Login'
     const currentUser = await this.client.getIdentity();
-    const listItemUserInfo = this.createUserInfoForHeader(currentUser);
-
-    const headerNav = document.createElement("nav");
-    const headerNavMenu = document.createElement("ul");
-    headerNavMenu.classList.add("header__menu");
-    headerNavMenu.appendChild(listItemHome);
-    headerNavMenu.appendChild(listItemProfile);
-    headerNavMenu.appendChild(listItemLineSeperator);
-    headerNavMenu.appendChild(listItemUserInfo);
-
-    headerNav.appendChild(headerNavMenu);
-
-    const header = document.getElementById("header");
-    header.classList.add("container");
-    header.appendChild(headerNav);
+    this.createUserInfoForHeader(currentUser);
   }
 
+  // If current user is not undefined, then create logout button by retrieving the name of the current user.
   createUserInfoForHeader(currentUser) {
-    const userInfo = document.createElement("li");
-
+    const userInfo = document.getElementById("header__user");
     const childContent = currentUser
       ? this.createLogoutButton(currentUser)
       : this.createLoginButton();
-
     userInfo.appendChild(childContent);
-
-    return userInfo;
   }
 
   createLoginButton() {
