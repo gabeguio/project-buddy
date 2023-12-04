@@ -5,7 +5,7 @@ function tasksMobileTask(task) {
       <div href="" class="tasks__task-wrapper">
           <div class="tasks__task-header">
               <h2 class="tasks__task-title">${title}</h2>
-              <button class="task__edit">
+              <button class="tasks__edit">
               <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -23,7 +23,7 @@ function tasksMobileTask(task) {
           <hr class="tasks__hr" />
           <div class="tasks__attribute-container">
               <p class="tasks__task-attribute">
-              <button class="tasks__user">
+              <button class="tasks__icon">
                   <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -39,7 +39,7 @@ function tasksMobileTask(task) {
               ${assignedTo}
               </p>
               <p class="tasks__task-attribute">
-              <button class="tasks__due-date">
+              <button class="tasks__icon">
                   <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -55,7 +55,7 @@ function tasksMobileTask(task) {
               ${dateCreated}
               </p>
               <p class="tasks__task-attribute tasks_task-attribute_progress">
-              <button class="tasks__progress">
+              <button class="tasks__icon">
                   <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"

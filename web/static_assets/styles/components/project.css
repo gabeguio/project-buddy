@@ -1,87 +1,62 @@
 .project__title {
-  font-size: var(--size-xl);
+  font-size: var(--size-lg);
   color: var(--clr-light);
   width: 100%;
+  font-weight: 400;
 }
 
+/* Project Menu */
 .project__menu {
   display: flex;
-  align-items: center;
-  list-style: none;
-  padding: 0;
-  gap: 2em;
-  padding: 1rem;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding: 1rem 1rem 0 1rem;
 }
 
+/* Project Details Buttons */
 .project__btn {
-  font-size: var(--size-sm);
-  text-decoration: none;
-  color: var(--clr-light);
+  font-size: var(--size-xs);
   cursor: pointer;
 }
-
 .project__btn:hover {
   color: var(--clr-blue);
   transition: 0.3s;
 }
-
 .project__btn-selected {
   color: var(--clr-blue);
 }
 
+/* Project Details About */
 .project__about-container {
   display: flex;
   flex-direction: column;
 }
-
-.project__details-container {
-  border-radius: 8px;
+.project__attributes {
+  list-style: none;
+  padding: 1rem;
+}
+.project__attributes > li {
+  max-width: 60ch;
+  color: var(--clr-gray600);
+  font-size: var(--size-base);
   padding-bottom: 1rem;
 }
-
-.project__details-title {
-  color: var(--clr-gray400);
-  background-color: var(--clr-gray800);
+.project__description {
+  max-width: 45ch;
+  color: var(--clr-gray600);
   font-size: var(--size-base);
   padding: 1rem;
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
 }
 
-.project__attribute {
-  max-width: 60ch;
-  color: var(--clr-gray600);
-  font-size: var(--size-base);
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.project__description {
-  max-width: 60ch;
-  color: var(--clr-gray600);
-  font-size: var(--size-base);
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-
-}
-
-#project__description-wrapper {
-  border-bottom: 1px solid var(--clr-gray400);
-}
-
+/* Member Table */
 .members__table-container {
   overflow-x: auto;
   width: 100%;
   max-width: 100%;
   padding: 1rem;
   color: var(--clr-gray600);
-  font-size: var(--size-sm);
+  font-size: var(--size-xs);
 }
-
 .members__table {
   width: 100%;
   border-collapse: collapse;
@@ -114,12 +89,9 @@
   margin-right: auto;
   margin-left: auto;
   color: var(--clr-gray400);
-  width: var(--size-sm);
-  height: var(--size-sm);
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  width: var(--size-xs);
+  height: var(--size-xs);
 }
-
 .members__table_pen:hover {
   color: var(--clr-gray800);
 }
@@ -130,31 +102,49 @@
 /* sm */
 @media (min-width: 640px) {
   .project__title {
-    font-size: var(--size-2xl);
+    font-size: var(--size-xl);
   }
+
   .project__menu {
-    gap: 2.5em;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    gap: 1.5rem;
+    padding: 1.5rem 1.5rem 0 1.5rem;
   }
+  
+  /* Project Details Buttons */
   .project__btn {
-    font-size: var(--size-base);
+    font-size: var(--size-sm);
   }
-  .project__details-title {
+  
+  /* Project Details About */
+  .project__attributes {
+    padding: 1rem;
+  }
+  .project__attributes > li {
     font-size: var(--size-lg);
-  }
-  .project__attribute {
-    font-size: var(--size-base);
+    padding-bottom: 1rem;
   }
   .project__description {
     font-size: var(--size-lg);
+    padding: 1.5rem;
   }
+  
+  /* Member Table */
   .members__table-container {
-    font-size: var(--size-lg);
+    padding: 1.5rem;
+    font-size: var(--size-sm);
+  }
+  .members__table_header-row th {
+    text-align: left;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .members__table_body tr td {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   .members__table_pen {
-    width: var(--size-base);
-    height: var(--size-base);
+    width: var(--size-sm);
+    height: var(--size-sm);
   }
 }
 
@@ -167,35 +157,50 @@
     font-size: var(--size-3xl);
   }
   .project__menu {
-    gap: 3em;
-    padding-top: 1.75rem;
-    padding-bottom: 1.75rem;
+    gap: 2rem;
+    padding: 2rem 2rem 0 2rem;
   }
+  
+  /* Project Details Buttons */
   .project__btn {
     font-size: var(--size-lg);
   }
+  
+  /* Project Details */
   .project__about-container {
     flex-direction: row;
   }
-  .project__details-title {
-    font-size: var(--size-xl);
+  
+  /* Project Details About */
+  .project__attributes {
+    padding: 1.5rem;
   }
-  .project__attribute {
-    font-size: var(--size-lg);
+  .project__attributes > li {
+    font-size: var(--size-2xl);
+    padding-bottom: 1.5rem;
   }
   .project__description {
-    font-size: var(--size-xl);
-    border-right: 1px solid var(--clr-gray400);
+    font-size: var(--size-2xl);
+    padding: 1.5em;
   }
-  #project__description-wrapper {
-    border-bottom: none;
-  }
+  
+  /* Member Table */
   .members__table-container {
-    font-size: var(--size-xl);
+    padding: 1.5rem;
+    font-size: var(--size-base);
+  }
+  .members__table_header-row th {
+    text-align: left;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .members__table_body tr td {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
   .members__table_pen {
-    width: var(--size-lg);
-    height: var(--size-lg);
+    width: var(--size-base);
+    height: var(--size-base);
   }
 }
 
@@ -204,29 +209,47 @@
   .project__title {
     font-size: var(--size-4xl);
   }
+
   .project__menu {
-    gap: 4em;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    gap: 2rem;
+    padding: 2rem 2rem 0 2rem;
   }
+  
+  /* Project Details Buttons */
   .project__btn {
     font-size: var(--size-xl);
   }
-  .project__details-title {
-    font-size: var(--size-2xl);
+  
+  /* Project Details About */
+  .project__attributes {
+    padding: 2rem;
   }
-  .project__attribute {
-    font-size: var(--size-xl);
+  .project__attributes > li {
+    font-size: var(--size-3xl);
+    padding-bottom: 2rem;
   }
   .project__description {
-    font-size: var(--size-2xl);
+    font-size: var(--size-3xl);
+    padding: 2rem;
   }
+  
+  /* Member Table */
   .members__table-container {
-    font-size: var(--size-2xl);
+    padding: 2rem;
+    font-size: var(--size-lg);
   }
+  .members__table_header-row th {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .members__table_body tr td {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
   .members__table_pen {
-    width: var(--size-xl);
-    height: var(--size-xl);
+    width: var(--size-lg);
+    height: var(--size-lg);
   }
 }
 

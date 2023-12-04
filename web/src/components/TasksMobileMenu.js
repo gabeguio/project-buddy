@@ -214,10 +214,6 @@ function configureTasksMobileMenu() {
   });
 }
 
-function handleViewportChange() {
-  console.log("Viewport Changed!")
-}
-
 function sortTasksByStatus(tasks) {
   return tasks.reduce((map, task) => {
     const { status } = task;

@@ -1,9 +1,6 @@
 // Function to generate the member table from an array of member objects.
 function projectDetailsMembers(members) {
   return `
-      <h3 class="project__details-title">
-        Members
-      </h3>
       <div class="members__table-container">
         <table class="members__table">
           <thead>
