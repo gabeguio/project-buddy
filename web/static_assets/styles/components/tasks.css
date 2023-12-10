@@ -12,11 +12,10 @@
   justify-content: space-between;
   padding: 0.5rem 1rem 0.5rem 1rem;
   font-size: var(--size-xs);
-  font-weight: 400;
   text-align: left;
 }
 .tasks__mobile-btn_selected {
-  background-color: var(--clr-gray600);
+  background-color: var(--clr-gray800);
   border-radius: 4px;
   transition: 0.6s;
 }
@@ -36,7 +35,10 @@
   gap: 1rem;
 }
 .tasks__column-title {
-  font-size: var(--size-xl);
+  font-size: var(--size-base);
+  background-color: var(--clr-gray800);
+  border-radius: 4px;
+  padding: var(--size-xs);
   font-weight: 400;
 }
 
@@ -58,7 +60,7 @@
   top: 0;
   left: 0;
   z-index: 1;
-  transition: background-color 0.3s;
+  transition: background-color 0.2s;
 }
 .tasks__task-wrapper:hover::after {
   background-color: rgb(2, 132, 199, 0.1);
@@ -73,6 +75,7 @@
 .tasks__task-title {
   font-size: var(--size-base);
   color: var(--clr-light);
+  font-weight: 400;
 }
 .tasks__task-description {
   max-width: 60ch;
@@ -89,6 +92,11 @@
 .tasks__edit {
   height: var(--size-lg);
   width: var(--size-lg);
+  z-index: 2;
+  transition: 0.3s;
+}
+.tasks__edit:hover {
+  color: var(--clr-gray600);
 }
 .tasks__hr {
   margin-top: var(--size-xs);
@@ -107,7 +115,8 @@
 @media (min-width: 640px) {
   /* Task Status Button */
   .tasks__mobile-btn {
-    font-size: var(--size-base);
+    font-size: var(--size-sm);
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
   }
   .tasks__mobile-check {
     height: var(--size-xl);
@@ -197,7 +206,6 @@
   }
   .tasks__column-title {
     font-size: var(--size-lg);
-    font-weight: 400;
   }
 
   /* Tasks Styling */
@@ -228,8 +236,7 @@
 /* 2xl */
 @media (min-width: 1536px) {
   .tasks__column-title {
-    font-size: var(--size-xl);
-    font-weight: 400;
+    font-size: var(--size-lg);
   }
 
   /* Tasks Styling */

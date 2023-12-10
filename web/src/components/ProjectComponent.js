@@ -5,7 +5,7 @@ import { configureTasksMobileMenu } from "./TasksMobileMenu";
 function projectComponent(project, members, tasks) {
   return `
     <h2 class="project__title">${project.title}</h2>
-    <hr class="projects__hr" />
+    <hr class="project__hr" />
     ${projectDetailsMenu()}
     ${projectDetails(project, members, tasks)}
 

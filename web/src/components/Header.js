@@ -38,7 +38,9 @@ export default class Header extends BindingClass {
             </svg>
           </button>
         </li>
-        <li id="header__user"></li>
+        <li>
+          <button class="btn header__link" id="header__user"></button>
+        </li>
       <ul>
     </nav>
   `;

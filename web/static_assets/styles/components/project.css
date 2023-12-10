@@ -1,51 +1,57 @@
 .project__title {
-  font-size: var(--size-lg);
-  color: var(--clr-light);
+  font-size: var(--size-base);
+  color: var(--clr-blue);
   width: 100%;
-  font-weight: 400;
+  font-weight: 700;
+}
+
+.project__hr {
+  border-color: var(--clr-gray600);
 }
 
 /* Project Menu */
 .project__menu {
+  align-items: center;
+  list-style: none;
   display: flex;
   justify-content: flex-start;
-  gap: 1rem;
+  gap: 0.8rem;
   padding: 1rem 1rem 0 1rem;
 }
+.project__menu-line {
+  border: 1px solid var(--clr-gray600);
+  padding-top: 1.5em;
+}
+.project__menu > li {
+  font-size: 0.67rem;
+}
 
-/* Project Details Buttons */
-.project__btn {
-  font-size: var(--size-xs);
-  cursor: pointer;
-}
-.project__btn:hover {
-  color: var(--clr-blue);
-  transition: 0.3s;
-}
-.project__btn-selected {
-  color: var(--clr-blue);
-}
 
 /* Project Details About */
 .project__about-container {
   display: flex;
   flex-direction: column;
 }
+.project__description {
+  max-width: 45ch;
+  color: var(--clr-gray600);
+  font-size: var(--size-sm);
+  padding: 1rem;
+}
 .project__attributes {
   list-style: none;
   padding: 1rem;
 }
 .project__attributes > li {
-  max-width: 60ch;
-  color: var(--clr-gray600);
-  font-size: var(--size-base);
-  padding-bottom: 1rem;
-}
-.project__description {
   max-width: 45ch;
   color: var(--clr-gray600);
-  font-size: var(--size-base);
-  padding: 1rem;
+  font-size: var(--size-xs);
+  padding-bottom: 1em;
+}
+.project__icon {
+  color: var(--clr-light);
+  height: var(--size-xs);
+  width: var(--size-xs);
 }
 
 /* Member Table */
@@ -88,12 +94,13 @@
   display: block;
   margin-right: auto;
   margin-left: auto;
-  color: var(--clr-gray400);
+  color: var(--clr-light);
   width: var(--size-xs);
   height: var(--size-xs);
+  transition: 0.3s;
 }
 .members__table_pen:hover {
-  color: var(--clr-gray800);
+  color: var(--clr-gray600);
 }
 
 /* xs */
@@ -102,7 +109,7 @@
 /* sm */
 @media (min-width: 640px) {
   .project__title {
-    font-size: var(--size-xl);
+    font-size: var(--size-lg);
   }
 
   .project__menu {
@@ -111,22 +118,27 @@
   }
   
   /* Project Details Buttons */
-  .project__btn {
+  .project__menu > li {
     font-size: var(--size-sm);
   }
   
   /* Project Details About */
+  .project__description {
+    font-size: var(--size-base);
+    padding: 1.5rem;
+  }
   .project__attributes {
     padding: 1rem;
   }
   .project__attributes > li {
-    font-size: var(--size-lg);
-    padding-bottom: 1rem;
+    font-size: var(--size-sm);
   }
-  .project__description {
-    font-size: var(--size-lg);
-    padding: 1.5rem;
+  .project__icon {
+    height: var(--size-sm);
+    width: var(--size-sm);
   }
+  
+
   
   /* Member Table */
   .members__table-container {
@@ -154,7 +166,7 @@
 /* lg */
 @media (min-width: 1024px) {
   .project__title {
-    font-size: var(--size-3xl);
+    font-size: var(--size-2xl);
   }
   .project__menu {
     gap: 2rem;
@@ -162,8 +174,8 @@
   }
   
   /* Project Details Buttons */
-  .project__btn {
-    font-size: var(--size-lg);
+  .project__menu > li {
+    font-size: var(--size-base);
   }
   
   /* Project Details */
@@ -172,17 +184,21 @@
   }
   
   /* Project Details About */
+  .project__description {
+    font-size: var(--size-xl);
+    padding: 1.5em;
+  }
   .project__attributes {
     padding: 1.5rem;
   }
   .project__attributes > li {
-    font-size: var(--size-2xl);
-    padding-bottom: 1.5rem;
+    font-size: var(--size-base);
   }
-  .project__description {
-    font-size: var(--size-2xl);
-    padding: 1.5em;
+  .project__icon {
+    height: var(--size-base);
+    width: var(--size-base);
   }
+  
   
   /* Member Table */
   .members__table-container {
@@ -207,7 +223,7 @@
 /* xl */
 @media (min-width: 1280px) {
   .project__title {
-    font-size: var(--size-4xl);
+    font-size: var(--size-2xl);
   }
 
   .project__menu {
@@ -216,21 +232,24 @@
   }
   
   /* Project Details Buttons */
-  .project__btn {
-    font-size: var(--size-xl);
+  .project__menu > li {
+    font-size: var(--size-lg);
   }
   
   /* Project Details About */
+  .project__description {
+    font-size: var(--size-xl);
+    padding: 2rem;
+  }
   .project__attributes {
     padding: 2rem;
   }
   .project__attributes > li {
-    font-size: var(--size-3xl);
-    padding-bottom: 2rem;
+    font-size: var(--size-lg);
   }
-  .project__description {
-    font-size: var(--size-3xl);
-    padding: 2rem;
+  .project__icon {
+    height: var(--size-lg);
+    width: var(--size-lg);
   }
   
   /* Member Table */
