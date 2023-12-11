@@ -44,7 +44,7 @@
   }
 
   .header__link:hover {
-    color: var(--clr-blue);
+    color: var(--clr-primary);
     transition: 0.3s;
   }
 

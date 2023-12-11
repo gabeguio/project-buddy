@@ -1,6 +1,6 @@
 .project__title {
   font-size: var(--size-base);
-  color: var(--clr-blue);
+  color: var(--clr-primary);
   width: 100%;
   font-weight: 700;
 }
@@ -78,6 +78,9 @@
 }
 
 .members__table_header-row th {
+  font-weight: 400;
+  color: var(--clr-light);
+  background-color: var(--clr-gray800);
   text-align: left;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -137,8 +140,11 @@
     height: var(--size-sm);
     width: var(--size-sm);
   }
-  
 
+  /* Project Details */
+  .project__about-container {
+    flex-direction: row;
+  }
   
   /* Member Table */
   .members__table-container {
@@ -178,10 +184,6 @@
     font-size: var(--size-base);
   }
   
-  /* Project Details */
-  .project__about-container {
-    flex-direction: row;
-  }
   
   /* Project Details About */
   .project__description {

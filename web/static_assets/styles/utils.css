@@ -21,35 +21,20 @@
   font-weight: 600;
   text-decoration: none;
   letter-spacing: -0.05em;
-  background-color: var(--clr-sky-blue);
+  background-color: var(--clr-secondary);
   color: #f1f5f9;
   padding: 0.5em 1em;
-  border-radius: 6px;;
-  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 6px;
+  transition: transform 0.3s;
 }
 
 .btn:hover {
   transform: translateY(-3px);
 }
 
-.edit-btn {
-  text-decoration: none;
-  display: inline-block;
-  font-weight: 600;
-  letter-spacing: -0.05em;
-  background-color: transparent;
-  border: 1px solid var(--clr-sky-blue);
-  color: var(--clr-sky-blue);
-  padding: 0.5em 1em;
-  border-radius: 6px;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.edit-btn:hover {
-  color: var(--clr-light);
-  background-color: var(--clr-sky-blue);
-  border-color: var(--clr-sky-blue);
+.btn:active {
+  transform: translateY(3px);
+  transition: transform 0.1s;
 }
 
 .project__btn {
@@ -57,11 +42,11 @@
   font-weight: 400;
 }
 .project__btn:hover {
-  color: var(--clr-blue);
+  color: var(--clr-primary);
   transition: 0.3s;
 }
 .project__btn-selected {
-  color: var(--clr-blue);
+  color: var(--clr-primary);
 }
 
 .container {

@@ -63,7 +63,7 @@
   transition: background-color 0.2s;
 }
 .tasks__task-wrapper:hover::after {
-  background-color: rgb(2, 132, 199, 0.1);
+  background-color: rgb(37, 99, 235, 0.1);
   cursor: pointer;
 }
 .tasks__task-header {

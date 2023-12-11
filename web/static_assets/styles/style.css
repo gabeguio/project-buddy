@@ -4,11 +4,11 @@
   --clr-gray400: #9ca3af;
   --clr-gray600: #4b5563;
   --clr-gray800: #1f2937;
-  --clr-sky-blue: #0284c7;
-  --clr-blue: #2563eb;
+  --clr-primary: #4f46e5;
+  --clr-secondary: #e11d48;
 
-  /* sky-blue rgb(2, 132, 199) */
-  /* blue rgb(37, 99, 235) */
+  /* primary - indigo rgb(37, 99, 235) */
+  /* secondary - rose rgb(225, 29, 72) */
 
   /* sizes */
   --size-xxs: 0.5rem;   /* 8 */
@@ -68,7 +68,7 @@ a {
 }
 
 strong {
-  color: var(--clr-blue);
+  color: var(--clr-primary);
 }
 
 /* Scrollbar */ 
@@ -81,6 +81,6 @@ body::-webkit-scrollbar-track {
 }
  
 body::-webkit-scrollbar-thumb {
-  background-color: var(--clr-sky-blue);
-  outline: 1px solid var(--clr-sky-blue);
+  background-color: var(--clr-secondary);
+  outline: 1px solid var(--clr-secondary);
 }

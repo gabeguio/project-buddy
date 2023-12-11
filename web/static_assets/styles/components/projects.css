@@ -30,7 +30,7 @@
   transition: background-color 0.3s;
 }
 .projects__wrapper:hover::after {
-  background-color: rgb(2, 132, 199, 0.1);
+  background-color:rgb(37, 99, 235, 0.1);
   cursor: pointer;
 }
 .projects__link {
@@ -40,7 +40,7 @@
 /* Projects Content */
 .projects__title {
   font-size: var(--size-base);
-  color: var(--clr-blue);
+  color: var(--clr-primary);
 }
 .projects__hr {
   border-color: var(--clr-gray600);
