@@ -3,7 +3,7 @@
   font-size: var(--size-lg);
   color: var(--clr-light);
   width: 100%;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 /* Projects Format */
@@ -41,6 +41,7 @@
 .projects__title {
   font-size: var(--size-base);
   color: var(--clr-primary);
+  font-weight: 600;
 }
 .projects__hr {
   border-color: var(--clr-gray600);

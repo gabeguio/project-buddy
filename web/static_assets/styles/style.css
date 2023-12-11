@@ -37,6 +37,14 @@ html {
   scroll-behavior: smooth;
 }
 
+.light-mode {
+  --clr-light: #0b0c0f;
+  --clr-dark: #f9fafb;
+  --clr-gray400: #1f2937;
+  --clr-gray600: #1f2937;
+  --clr-gray800: #1f2937;
+}
+
 body {
   font-family: 'Supreme', sans-serif;
   background-color: var(--clr-dark);

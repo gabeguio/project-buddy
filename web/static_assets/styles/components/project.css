@@ -2,13 +2,9 @@
   font-size: var(--size-base);
   color: var(--clr-primary);
   width: 100%;
-  font-weight: 700;
+  font-weight: 600;
+  border-bottom: 0.075rem solid var(--clr-gray600);
 }
-
-.project__hr {
-  border-color: var(--clr-gray600);
-}
-
 /* Project Menu */
 .project__menu {
   align-items: center;
@@ -19,7 +15,7 @@
   padding: 1rem 1rem 0 1rem;
 }
 .project__menu-line {
-  border: 1px solid var(--clr-gray600);
+  border: 1px solid var(--clr-gray800);
   padding-top: 1.5em;
 }
 .project__menu > li {
@@ -78,9 +74,8 @@
 }
 
 .members__table_header-row th {
-  font-weight: 400;
+  font-weight: 600;
   color: var(--clr-light);
-  background-color: var(--clr-gray800);
   text-align: left;
   padding-left: 1rem;
   padding-right: 1rem;

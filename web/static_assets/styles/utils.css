@@ -18,11 +18,11 @@
 
 .btn {
   display: inline-block;
-  font-weight: 600;
+  font-weight: 400;
   text-decoration: none;
   letter-spacing: -0.05em;
   background-color: var(--clr-secondary);
-  color: #f1f5f9;
+  color: #f9fafb;
   padding: 0.5em 1em;
   border-radius: 6px;
   transition: transform 0.3s;
@@ -38,15 +38,17 @@
 }
 
 .project__btn {
+  letter-spacing: -0.05em;
   cursor: pointer;
-  font-weight: 400;
+  font-weight: 600;
 }
 .project__btn:hover {
   color: var(--clr-primary);
-  transition: 0.3s;
+  transition: color 0.3s;
 }
 .project__btn-selected {
   color: var(--clr-primary);
+  letter-spacing: 0;
 }
 
 .container {
