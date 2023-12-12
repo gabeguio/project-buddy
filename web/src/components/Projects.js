@@ -1,7 +1,4 @@
 function projectTemplate(project) {
-  // Define the maximum description length (e.g., 117 characters)
-  const maxDescriptionLength = 237;
-
   const {
     projectId,
     title,
@@ -14,10 +11,15 @@ function projectTemplate(project) {
   } = project;
 
   // Truncate the description if it exceeds the maximum length
-  const truncatedDescription =
-    description.length > maxDescriptionLength
-      ? project.description.slice(0, maxDescriptionLength) + "..."
-      : project.description;
+  const maxDescriptionLength = 237;
+  let truncatedDescription;
+
+  if (description.length <= maxDescriptionLength) {
+    const remainingSpaces = " " * maxDescriptionLength - description.length;
+    truncatedDescription = description + remainingSpaces;
+  } else {
+    truncatedDescription = project.description.slice(0, maxDescriptionLength) + "..."
+  }
 
   return `
       <a href=/project.html?projectId=${projectId} class="projects__link">

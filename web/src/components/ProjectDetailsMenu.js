@@ -7,8 +7,8 @@ function projectDetailsMenu() {
           <li><button class="project__btn" id="tasks-btn">Tasks</button></li>
           <li><button class="project__btn" id="members-btn">Members</button></li>
           <li class="project__menu-line"></li>
-          <li><button class="btn" id="add-tasks-btn">+Task</button></li>
-          <li><button class="btn" id="add-members-btn">+Member</button></li>
+          <li><button class="btn coming-soon" id="add-tasks-btn">+Task</button></li>
+          <li><button class="btn coming-soon" id="add-members-btn">+Member</button></li>
         </ul>
     `;
 }

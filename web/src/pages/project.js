@@ -7,6 +7,7 @@ import { sampleProjects } from "../data/sampleProjects";
 import { sampleMembers } from "../data/sampleMembers";
 import { sampleTasks } from "../data/sampleTasks";
 
+
 class Project extends BindingClass {
   constructor() {
     super();
