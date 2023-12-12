@@ -1,16 +1,12 @@
 function tasksMobileTask(task) {
   const { title, dateCreated, assignedTo, status, description } = task;
 
-  const maxDescriptionLength = 300;
-  let truncatedDescription;
+  const maxDescriptionLength = 60;
 
-  if (description.length <= maxDescriptionLength) {
-    const remainingSpace = maxDescriptionLength - description.length;
-    const spaces = " ".repeat(remainingSpace);
-    truncatedDescription = description + spaces;
-  } else {
-    truncatedDescription = description.slice(0, maxDescriptionLength - 3) + "...";
-  }
+  const truncatedDescription =
+    description.length > maxDescriptionLength
+      ? description.slice(0, maxDescriptionLength) + "..."
+      : description;
 
   return `
       <div href="" class="tasks__task-wrapper coming-soon">

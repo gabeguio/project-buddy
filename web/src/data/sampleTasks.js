@@ -4,28 +4,28 @@ const sampleTasks = [
     dateCreated: "10.31.2023",
     assignedTo: "Alan Waltz",
     status: "To Do",
-    description: "As a user, I want to seamlessly navigate through the platform, ensuring a smooth experience."
+    description: "As a user, I want to seamlessly navigate through the platform, ensuring a smooth experience. As a user, I want to seamlessly navigate through the platform, ensuring a smooth experience. As a user, I want to seamlessly navigate through the platform, ensuring a smooth experience."
   },
   {
     title: "User Story 2",
     dateCreated: "10.31.2023",
     assignedTo: "Alan Waltz",
     status: "In Progress",
-    description: "To enhance user engagement, implement a feature allowing easy sharing of content across various social media platforms."
+    description: "To enhance user engagement, implement a feature allowing easy sharing of content across various social media platforms. ensuring a smooth experience. As a user, I want to seamlessly navigate through the platform, ensuring a smooth experience"
   },
   {
     title: "User Story 3",
     dateCreated: "10.31.2023",
     assignedTo: "Alan Waltz",
     status: "Under Review",
-    description: "Optimize the login process to minimize wait times and improve accessibility for all users."
+    description: "Optimize the login ensuring a smooth experience. As a user, I want to seamlessly navigate through the platform, ensuring a smooth experience process to minimize wait times and improve accessibility for all users."
   },
   {
     title: "User Story 4",
     dateCreated: "10.31.2023",
     assignedTo: "Alan Waltz",
     status: "Completed",
-    description: "Enable notifications for important updates, ensuring users stay informed without overwhelming them."
+    description: "Enable notifications for important updates, ensuring users stay informed without overwhelming them. ensuring a smooth experience. As a user, I want to seamlessly navigate through the platform, ensuring a smooth experience"
   },
   {
     title: "User Story 5",
