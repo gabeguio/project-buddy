@@ -27,7 +27,7 @@ export default class Header extends BindingClass {
     <nav>
       <ul class="header__menu">
         <li>
-          <a href="index.html" class="header__link">Home</a>
+          <a href="projects.html" class="header__link">Projects</a>
         </li>
         <li>
           <a href="#" class="header__link">Profile</a>

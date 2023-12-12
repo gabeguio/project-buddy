@@ -5,7 +5,7 @@ import DataStore from "../util/DataStore";
 import { sampleProjects } from "../data/sampleProjects";
 import { renderProjects } from "../components/Projects";
 
-class Index extends BindingClass {
+class Projects extends BindingClass {
   constructor() {
     super();
 
@@ -14,7 +14,7 @@ class Index extends BindingClass {
     // Create a new datastore with an initial "empty" state.
     this.dataStore = new DataStore();
     this.header = new Header(this.dataStore);
-    console.log("Index constructor");
+    console.log("Projects constructor");
   }
 
   mount() {
@@ -30,8 +30,8 @@ class Index extends BindingClass {
 }
 
 const main = async () => {
-  const index = new Index();
-  index.mount();
+  const projects = new Projects();
+  projects.mount();
 };
 
 window.addEventListener("DOMContentLoaded", main);

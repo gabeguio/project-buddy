@@ -23,14 +23,8 @@ module.exports = {
     usedExports: true
   },
   entry: {
-    Index: path.resolve(__dirname, 'src', 'pages', 'Index.js'),
     project: path.resolve(__dirname, 'src', 'pages', 'project.js'),
-    // createTicket: path.resolve(__dirname, 'src', 'pages', 'createTicket.js'),
-    // loadProjects: path.resolve(__dirname, 'src', 'pages', 'loadProjects.js'),
-    // viewProject: path.resolve(__dirname, 'src', 'pages', 'viewProject.js'),
-    // editProject: path.resolve(__dirname, 'src', 'pages', 'editProject.js'),
-    // editTicket: path.resolve(__dirname, 'src', 'pages', 'editTicket.js'),
-    // viewTickets: path.resolve(__dirname, 'src', 'pages', 'viewTickets.js'),
+    projects: path.resolve(__dirname, 'src', 'pages', 'projects.js'),
   },
   output: {
     path: path.resolve(__dirname, 'build', 'assets'),
