@@ -32,21 +32,21 @@
 }
 
 .mobile-nav__link:hover {
-    color: var(--clr-primary);
+  color: var(--clr-primary);
 }
 
 .mobile-nav__link-line {
-    border: 1px solid var(--clr-gray800);
-    padding-right: 1.5em;
+  border: 1px solid var(--clr-gray800);
+  padding-right: 1.5em;
 }
 
 .mobile-nav__sun {
-    display: block;
-    width: var(--size-xl);
-    height: var(--size-xl);
-    color: var(--clr-gray600);
+  display: block;
+  width: var(--size-xl);
+  height: var(--size-xl);
+  color: var(--clr-gray600);
 }
 
 .mobile-nav__btn {
-    font-size: var(--size-sm);
+  font-size: var(--size-sm);
 }

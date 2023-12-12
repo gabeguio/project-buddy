@@ -1,7 +1,7 @@
 import ProjectClient from "../api/ProjectClient";
 import BindingClass from "../util/BindingClass";
-import mobileNav from "../util/mobile-nav";
-import darkMode from "../util/dark-mode";
+import mobileNav from "../util/MobileNav";
+import darkMode from "../util/DarkMode";
 
 /**
  * The header component for the website.

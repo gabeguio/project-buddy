@@ -28,7 +28,6 @@
   margin-bottom: auto;
 }
 
-
 /* Tasks for Desktop */
 .tasks__desktop-container {
   display: none;
@@ -94,13 +93,14 @@
   padding-right: 0.5rem;
 }
 .tasks__edit {
+  color: var(--clr-light);
   height: var(--size-lg);
   width: var(--size-lg);
   z-index: 2;
   transition: 0.3s;
 }
 .tasks__edit:hover {
-  color: var(--clr-gray600);
+  color: var(--clr-secondary);
 }
 .tasks__hr {
   margin-top: var(--size-xs);

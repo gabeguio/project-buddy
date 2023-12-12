@@ -4,6 +4,7 @@
   color: var(--clr-light);
   width: 100%;
   font-weight: 600;
+  border-bottom: 0.075rem solid var(--clr-gray600);
 }
 
 /* Projects Format */
@@ -30,7 +31,7 @@
   transition: background-color 0.3s;
 }
 .projects__wrapper:hover::after {
-  background-color:rgb(37, 99, 235, 0.1);
+  background-color: rgb(37, 99, 235, 0.1);
   cursor: pointer;
 }
 .projects__link {
