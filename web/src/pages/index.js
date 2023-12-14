@@ -5,7 +5,7 @@ import DataStore from "../util/DataStore";
 import { sampleProjects } from "../data/sampleProjects";
 import { renderProjects } from "../components/Projects";
 
-class Projects extends BindingClass {
+class Index extends BindingClass {
   constructor() {
     super();
 
@@ -30,8 +30,8 @@ class Projects extends BindingClass {
 }
 
 const main = async () => {
-  const projects = new Projects();
-  projects.mount();
+  const index = new Index();
+  index.mount();
 };
 
 window.addEventListener("DOMContentLoaded", main);
