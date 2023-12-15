@@ -41,7 +41,7 @@ export default class Header extends BindingClass {
           </button>
         </li>
         <li>
-          <button class="btn" id="header__user"></button>
+          <button class="btn" id="header__user-desktop"></button>
         </li>
       </ul>
       <button class="header__bars">
@@ -66,11 +66,17 @@ export default class Header extends BindingClass {
 
   // If current user is not undefined, then create logout button by retrieving the name of the current user.
   createUserInfoForHeader(currentUser) {
-    const userInfo = document.getElementById("header__user");
-    const childContent = currentUser
+    const mobileDesktopInfo = document.getElementById("header__user-desktop");
+    const userDesktopInfo = currentUser
       ? this.createLogoutButton(currentUser)
       : this.createLoginButton();
-    userInfo.appendChild(childContent);
+      mobileDesktopInfo.appendChild(userDesktopInfo);
+
+    const mobileUserInfo = document.getElementById("header__user-mobile");
+    const userMobilepInfo = currentUser
+      ? this.createLogoutButton(currentUser)
+      : this.createLoginButton();
+      mobileUserInfo.appendChild(userMobilepInfo);
   }
 
   createLoginButton() {
