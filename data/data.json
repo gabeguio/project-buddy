@@ -51,7 +51,7 @@
             "S": "Project Buddy"
           },
           "projectDescription": {
-            "S": "Project Buddy is an innovative full-stack, mobile-first web application designed to streamline project management and collaboration. This platform empowers users by providing a comprehensive suite of tools to efficiently manage members and tasks within projects. Seamlessly integrating functionality and aesthetics, Project Buddy offers an intuitive user experience."
+            "S": "A mobile-first web application designed to streamline project management and collaboration. This platform empowers users by providing a comprehensive suite of tools to efficiently manage members and tasks within projects. Seamlessly integrating functionality and aesthetics, Project Buddy offers an intuitive user experience."
           },
           "totalTasksCompletedOnProject": {
             "N": "14"
