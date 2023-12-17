@@ -64,10 +64,6 @@
     height: var(--size-base);
   }
 
-  .header__resume {
-    font-size: var(--size-xs);
-  }
-
   .header__bars {
     display: none;
   }
@@ -82,10 +78,6 @@
   .header__sun {
     width: var(--size-xl);
     height: var(--size-xl);
-  }
-
-  .header__resume {
-    font-size: var(--size-sm);
   }
 }
 
