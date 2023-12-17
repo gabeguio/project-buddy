@@ -481,7 +481,7 @@
             "S": "task-5_Mobile-Navigation-Menu"
           },
           "taskDescription": {
-            "S": "For device screen widths that are large than 768 px remove the menu bars to open the mobile-nav container. The mobile-nav element opens and closes a mobile navigation menu upon toggle. Include navigation back to home, toggle for dark/light mode, and a user login/logout button."
+            "S": "For device screen widths that are larger than 768px remove the menu bars to open the mobile-nav container. The mobile-nav element opens and closes a mobile navigation menu upon toggle. Include navigation back to home, toggle for dark/light mode, and a user login/logout button."
           },
           "taskStatus": {
             "S": "Completed"
