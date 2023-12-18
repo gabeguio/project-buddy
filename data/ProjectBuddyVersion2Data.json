@@ -1,0 +1,268 @@
+{
+  "tasks": [
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "aB3Rt7"
+          },
+          "taskId": {
+            "S": "saiu34mn67"
+          },
+          "taskAssignedToMemberId": {
+            "S": "aB3cD9eF5g"
+          },
+          "dateTaskCreatedAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "dateTaskLastUpdatedAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "dateTaskDueAt": {
+            "S": "2023-01-01T00:00:00Z"
+          },
+          "taskTitle": {
+            "S": "task-6_View-Task_Page"
+          },
+          "taskDescription": {
+            "S": "From the Tasks section, each task should be clickable to take you to a page to view all the details of the task. A task details should include the project the tasks was created for, the date the task was created, the date the task was last updated, and optional information if the task is assigned to a member or a due date for the task. The page should also include an edit button to update the information on the task."
+          },
+          "taskStatus": {
+            "S": "In Progress"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "aB3Rt7"
+          },
+          "taskId": {
+            "S": "as9283kdj4"
+          },
+          "taskAssignedToMemberId": {
+            "S": "aB3cD9eF5g"
+          },
+          "dateTaskCreatedAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "dateTaskLastUpdatedAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "dateTaskDueAt": {
+            "S": "2023-01-01T00:00:00Z"
+          },
+          "taskTitle": {
+            "S": "task-6.1_View-Task_Get-Task-Request"
+          },
+          "taskDescription": {
+            "S": "Create a PUT Request that retrieves a task by projectId (HASH key) and taskId (RANGE key) from the Tasks table. The response should include all attributes from the selected task record. This feature must build a new request, result, activity, and lambda class. Data Access Object methods should include a get method for the single task record associated. Edge cases include calling the request with a null projectId or taskId returning either a projectIdNotFoundException or taskIdNotFoundException. Calling a non-null projectId or taskId that does not exist in the DB returns projectIdNotFoundException or taskIdNotFoundException, respectively. Include friendly developer messages for each exceptions. Developer must include 80% test coverage on implemented classes/methods. "
+          },
+          "taskStatus": {
+            "S": "In Progress"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "aB3Rt7"
+          },
+          "taskId": {
+            "S": "oi0294pwm5"
+          },
+          "taskAssignedToMemberId": {
+            "S": "aB3cD9eF5g"
+          },
+          "dateTaskCreatedAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "dateTaskLastUpdatedAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "dateTaskDueAt": {
+            "S": "2023-01-01T00:00:00Z"
+          },
+          "taskTitle": {
+            "S": "task-7_Edit-Task_Button"
+          },
+          "taskDescription": {
+            "S": "Implement an edit task button for each task component. This button will include a dropdown menu for updating the status of a task, without having to view the task details/edit page. The dropdown will also include quick access buttons to assign or unassign members associated with the task."
+          },
+          "taskStatus": {
+            "S": "To Do"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "aB3Rt7"
+          },
+          "taskId": {
+            "S": "w9i4k3htjr"
+          },
+          "taskAssignedToMemberId": {
+            "S": "aB3cD9eF5g"
+          },
+          "dateTaskCreatedAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "dateTaskLastUpdatedAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "dateTaskDueAt": {
+            "S": "2023-01-01T00:00:00Z"
+          },
+          "taskTitle": {
+            "S": "task-7.1_Edit-Task_Button_Task-Dropdown-Button-Component"
+          },
+          "taskDescription": {
+            "S": "The dropdown menu will appear in either desktop or mobile mode. The dropdown will appear to the top left of the button in the tasks menu. From top to bottom the dropdown will be 1. Update Status to To do 2. Update Status to In Progress 3. Update Status to Under Review 4. Update Status to Completed 5. Assign Task to Member 6. Unassign Current Member 7. Edit Task"
+          },
+          "taskStatus": {
+            "S": "To Do"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "aB3Rt7"
+          },
+          "taskId": {
+            "S": "ik5uej429cf"
+          },
+          "taskAssignedToMemberId": {
+            "S": "aB3cD9eF5g"
+          },
+          "dateTaskCreatedAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "dateTaskLastUpdatedAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "dateTaskDueAt": {
+            "S": "2023-01-01T00:00:00Z"
+          },
+          "taskTitle": {
+            "S": "task-7.1.1_Verify-Member_Get-Member-Request_Role_Is-Project-Manager"
+          },
+          "taskDescription": {
+            "S": "Check whether the calling user is A) a member on the project B) and whether that member is a Project Manager for the project. If not, then return UserIsNotProjectManagerException."
+          },
+          "taskStatus": {
+            "S": "To Do"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "aB3Rt7"
+          },
+          "taskId": {
+            "S": "neih4g9x2a"
+          },
+          "taskAssignedToMemberId": {
+            "S": "aB3cD9eF5g"
+          },
+          "dateTaskCreatedAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "dateTaskLastUpdatedAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "dateTaskDueAt": {
+            "S": "2023-01-01T00:00:00Z"
+          },
+          "taskTitle": {
+            "S": "task-7.1.2_Verify-Member_Get-Member-Request_Role_Is-Team-Member"
+          },
+          "taskDescription": {
+            "S": "Check whether the calling user is A) a member on the project B) and whether that member is a Team Member for the project. If not, then return UserIsNotTeamMemberException."
+          },
+          "taskStatus": {
+            "S": "To Do"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "aB3Rt7"
+          },
+          "taskId": {
+            "S": "aj79dj3kxi"
+          },
+          "taskAssignedToMemberId": {
+            "S": "aB3cD9eF5g"
+          },
+          "dateTaskCreatedAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "dateTaskLastUpdatedAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "dateTaskDueAt": {
+            "S": "2023-01-01T00:00:00Z"
+          },
+          "taskTitle": {
+            "S": "task-7.2_Edit-Task_Delete-Task-Request"
+          },
+          "taskDescription": {
+            "S": "Create a DELETE Request that retrieves a task by projectId (HASH key) and taskId (RANGE key) from the Tasks table. Tasks may only be deleted by Project Managers and Team Members. Check whether the current requester is authorized to made the deletion, if not, then throw UserNotAuthorizedException. If yes, then response should return friendly message for successful deletion. This feature must build a new request, result, activity, and lambda class. Data Access Object methods should include a remove method for the single task record associated. Edge cases include calling the request with a null projectId or taskId returning either a projectIdNotFoundException or taskIdNotFoundException. Calling a non-null projectId or taskId that does not exist in the DB returns projectIdNotFoundException or taskIdNotFoundException, respectively. Include friendly developer messages for each exceptions. Developer must include 80% test coverage on implemented classes/methods. "
+          },
+          "taskStatus": {
+            "S": "To Do"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "aB3Rt7"
+          },
+          "taskId": {
+            "S": "yuwhp1q194"
+          },
+          "taskAssignedToMemberId": {
+            "S": "aB3cD9eF5g"
+          },
+          "dateTaskCreatedAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "dateTaskLastUpdatedAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "dateTaskDueAt": {
+            "S": "2023-01-01T00:00:00Z"
+          },
+          "taskTitle": {
+            "S": "task-7.3_Edit-Task_Put-Task-Request_Status"
+          },
+          "taskDescription": {
+            "S": "Create a PUT Request that retrieves a task by projectId (HASH key) and taskId (RANGE key) from the Tasks table. Tasks may only be edited by Project Managers and Team Members. Check whether the current requester is authorized to made the edit, if not, then throw UserNotAuthorizedException. If yes, then response should return friendly message for successful task status update. This feature must build a new request, result, activity, and lambda class. Data Access Object methods should include an update status method for the single task record associated. Edge cases include calling the request with a null projectId or taskId returning either a projectIdNotFoundException or taskIdNotFoundException. Calling a non-null projectId or taskId that does not exist in the DB returns projectIdNotFoundException or taskIdNotFoundException, respectively. Include friendly developer messages for each exceptions. Developer must include 80% test coverage on implemented classes/methods."
+          },
+          "taskStatus": {
+            "S": "To Do"
+          }
+        }
+      }
+    }
+  ]
+}

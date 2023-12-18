@@ -1,0 +1,193 @@
+{
+    "users": [
+      {
+        "PutRequest": {
+          "Item": {
+            "userId": {
+              "S": "5f9a8b3c"
+            },
+            "dateUserCreatedAt": {
+              "S": "2023-04-01T00:00:00Z"
+            },
+            "dateUserLastUpdatedAt": {
+              "S": "2023-12-17T00:00:00Z"
+            },
+            "userFirstName": {
+              "S": "Gabe"
+            },
+            "userLastName": {
+              "S": "Guio"
+            },
+            "userCurrentCompany": {
+              "S": "Funemployed"
+            },
+            "userPrimaryEmail": {
+              "S": "gabegoescoding@gmail.com"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "userId": {
+              "S": "7a8gew9q"
+            },
+            "dateUserCreatedAt": {
+              "S": "2023-04-01T00:00:00Z"
+            },
+            "dateUserLastUpdatedAt": {
+              "S": "2023-12-17T00:00:00Z"
+            },
+            "userFirstName": {
+              "S": "Matthew"
+            },
+            "userLastName": {
+              "S": "McMorries"
+            },
+            "userCurrentCompany": {
+              "S": "Z Axis Solution"
+            },
+            "userPrimaryEmail": {
+              "S": "matthew.mcmorries@gmail.com"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "userId": {
+              "S": "8bjg23u4"
+            },
+            "dateUserCreatedAt": {
+              "S": "2023-04-01T00:00:00Z"
+            },
+            "dateUserLastUpdatedAt": {
+              "S": "2023-12-17T00:00:00Z"
+            },
+            "userFirstName": {
+              "S": "Shelby"
+            },
+            "userLastName": {
+              "S": "Robinson"
+            },
+            "userCurrentCompany": {
+              "S": "Slack Technologies"
+            },
+            "userPrimaryEmail": {
+              "S": "sh-robin@outlook.com"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "userId": {
+              "S": "we923it4"
+            },
+            "dateUserCreatedAt": {
+              "S": "2023-04-01T00:00:00Z"
+            },
+            "dateUserLastUpdatedAt": {
+              "S": "2023-12-17T00:00:00Z"
+            },
+            "userFirstName": {
+              "S": "Ed"
+            },
+            "userLastName": {
+              "S": "Pearson"
+            },
+            "userCurrentCompany": {
+              "S": "Lovelytics"
+            },
+            "userPrimaryEmail": {
+              "S": "ed@pearsontn.org"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "userId": {
+              "S": "345kfas3"
+            },
+            "dateUserCreatedAt": {
+              "S": "2023-04-01T00:00:00Z"
+            },
+            "dateUserLastUpdatedAt": {
+              "S": "2023-12-17T00:00:00Z"
+            },
+            "userFirstName": {
+              "S": "Matthew"
+            },
+            "userLastName": {
+              "S": "Kroeger"
+            },
+            "userCurrentCompany": {
+              "S": "OvationCXM"
+            },
+            "userPrimaryEmail": {
+              "S": "matt.kroogz@gmail.com"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "userId": {
+              "S": "asd89w24"
+            },
+            "dateUserCreatedAt": {
+              "S": "2023-04-01T00:00:00Z"
+            },
+            "dateUserLastUpdatedAt": {
+              "S": "2023-12-17T00:00:00Z"
+            },
+            "userFirstName": {
+              "S": "Kate"
+            },
+            "userLastName": {
+              "S": "Rogers"
+            },
+            "userCurrentCompany": {
+              "S": "Nashville Software School"
+            },
+            "userPrimaryEmail": {
+              "S": "careercoachkate@gmail.com"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "userId": {
+              "S": "sa4ds2kj"
+            },
+            "dateUserCreatedAt": {
+              "S": "2023-04-01T00:00:00Z"
+            },
+            "dateUserLastUpdatedAt": {
+              "S": "2023-12-17T00:00:00Z"
+            },
+            "userFirstName": {
+              "S": "Gabriel"
+            },
+            "userLastName": {
+              "S": "Cziprusz"
+            },
+            "userCurrentCompany": {
+              "S": "Nashville Software School"
+            },
+            "userPrimaryEmail": {
+              "S": "gcziprusz@gmail.com"
+            }
+          }
+        }
+      }
+    ]
+}

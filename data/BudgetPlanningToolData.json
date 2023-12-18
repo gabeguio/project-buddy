@@ -1,0 +1,323 @@
+{
+  "projects": [
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "d91ntu"
+          },
+          "projectOwnerByUserId": {
+            "S": "7a8gew9q"
+          },
+          "dateProjectCreatedAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "dateProjectLastUpdatedAt": {
+            "S": "2023-12-19T00:00:00Z"
+          },
+          "dateProjectDueAt": {
+            "S": "2024-01-03T00:00:00Z"
+          },
+          "projectTitle": {
+            "S": "Budget Planning Tool"
+          },
+          "projectDescription": {
+            "S": "A comprehensive financial management tool designed to streamline budget planning for individuals and small businesses. This tool allows users to create, manage, and analyze budgets effortlessly, providing insights into spending habits, savings goals, and financial health."
+          },
+          "totalTasksCompletedOnProject": {
+            "N": "1"
+          },
+          "totalTasksCreatedOnProject": {
+            "N": "6"
+          },
+          "memberIdWithMostCompletedTasksOnProject": {
+            "S": "abcde12345"
+          }
+        }
+      }
+    }
+  ],
+  "members": [
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "d91ntu"
+          },
+          "userId": {
+            "S": "7a8gew9q"
+          },
+          "memberId": {
+            "S": "di38w9sjyn"
+          },
+          "dateJoinedProjectAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "role": {
+            "S": "Project Manager"
+          },
+          "tasksCurrentlyAssignedTo": {
+            "SS": []
+          },
+          "tasksCompleted": {
+            "SS": []
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "d91ntu"
+          },
+          "userId": {
+            "S": "sa4ds2kj"
+          },
+          "memberId": {
+            "S": "ajwieu4k28"
+          },
+          "dateJoinedProjectAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "role": {
+            "S": "Team Member"
+          },
+          "tasksCurrentlyAssignedTo": {
+            "SS": []
+          },
+          "tasksCompleted": {
+            "SS": []
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "d91ntu"
+          },
+          "userId": {
+            "S": "asd89w24"
+          },
+          "memberId": {
+            "S": "iqo1p29eis"
+          },
+          "dateJoinedProjectAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "role": {
+            "S": "Guest"
+          },
+          "tasksCurrentlyAssignedTo": {
+            "SS": []
+          },
+          "tasksCompleted": {
+            "SS": []
+          }
+        }
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "d91ntu"
+          },
+          "taskId": {
+            "S": "au48qpw01k"
+          },
+          "taskAssignedToMemberId": {
+            "S": "di38w9sjyn"
+          },
+          "dateTaskCreatedAt": {
+            "S": "2023-12-18T00:00:00ZZ"
+          },
+          "dateTaskLastUpdatedAt": {
+            "S": "2023-12-18T00:00:00ZZ"
+          },
+          "dateTaskDueAt": {
+            "S": "2023-12-18T00:00:00ZZ"
+          },
+          "taskTitle": {
+            "S": "Develop Budget Calculation Algorithm"
+          },
+          "taskDescription": {
+            "S": "Create an algorithm to calculate budget projections based on income, expenses, and savings goals. Implement error handling for various input scenarios and ensure accurate calculations."
+          },
+          "taskStatus": {
+            "S": "To Do"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "d91ntu"
+          },
+          "taskId": {
+            "S": "oqpwnvzm201"
+          },
+          "taskAssignedToMemberId": {
+            "S": "di38w9sjyn"
+          },
+          "dateTaskCreatedAt": {
+            "S": "2023-12-18T00:00:00ZZ"
+          },
+          "dateTaskLastUpdatedAt": {
+            "S": "2023-12-18T00:00:00ZZ"
+          },
+          "dateTaskDueAt": {
+            "S": "2023-12-18T00:00:00ZZ"
+          },
+          "taskTitle": {
+            "S": "Design User Interface Mockups"
+          },
+          "taskDescription": {
+            "S": "Create UI mockups for the budget planning tool interface. Ensure a user-friendly design that provides easy navigation and clear visualization of financial data."
+          },
+          "taskStatus": {
+            "S": "To Do"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "d91ntu"
+          },
+          "taskId": {
+            "S": "kej3uri68d"
+          },
+          "taskAssignedToMemberId": {
+            "S": "ajwieu4k28"
+          },
+          "dateTaskCreatedAt": {
+            "S": "2023-12-18T00:00:00ZZ"
+          },
+          "dateTaskLastUpdatedAt": {
+            "S": "2023-12-18T00:00:00ZZ"
+          },
+          "dateTaskDueAt": {
+            "S": "2023-12-18T00:00:00ZZ"
+          },
+          "taskTitle": {
+            "S": "Implement Budget Categories"
+          },
+          "taskDescription": {
+            "S": "Develop a feature to categorize expenses and incomes in the budget tool. Allow users to assign transactions to different categories for better analysis."
+          },
+          "taskStatus": {
+            "S": "In Progress"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "d91ntu"
+          },
+          "taskId": {
+            "S": "qpty471092"
+          },
+          "taskAssignedToMemberId": {
+            "S": "ajwieu4k28"
+          },
+          "dateTaskCreatedAt": {
+            "S": "2023-12-18T00:00:00ZZ"
+          },
+          "dateTaskLastUpdatedAt": {
+            "S": "2023-12-18T00:00:00ZZ"
+          },
+          "dateTaskDueAt": {
+            "S": "2023-12-18T00:00:00ZZ"
+          },
+          "taskTitle": {
+            "S": "Implement Savings Goal Tracker"
+          },
+          "taskDescription": {
+            "S": "Develop a feature allowing users to set and track savings goals within the budget tool. Enable progress monitoring and provide visual representations of goal achievements."
+          },
+          "taskStatus": {
+            "S": "Completed"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "d91ntu"
+          },
+          "taskId": {
+            "S": "qmjy23bead"
+          },
+          "taskAssignedToMemberId": {
+            "S": "di38w9sjyn"
+          },
+          "dateTaskCreatedAt": {
+            "S": "2023-12-18T00:00:00ZZ"
+          },
+          "dateTaskLastUpdatedAt": {
+            "S": "2023-12-18T00:00:00ZZ"
+          },
+          "dateTaskDueAt": {
+            "S": "2023-12-18T00:00:00ZZ"
+          },
+          "taskTitle": {
+            "S": "Create Expense Report Generation"
+          },
+          "taskDescription": {
+            "S": "Implement functionality to generate detailed expense reports based on user-defined parameters. Ensure accuracy and ease of access to these reports within the budget tool."
+          },
+          "taskStatus": {
+            "S": "Under Review"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "d91ntu"
+          },
+          "taskId": {
+            "S": "itekqpo394"
+          },
+          "taskAssignedToMemberId": {
+            "S": "di38w9sjyn"
+          },
+          "dateTaskCreatedAt": {
+            "S": "2023-12-18T00:00:00ZZ"
+          },
+          "dateTaskLastUpdatedAt": {
+            "S": "2023-12-18T00:00:00ZZ"
+          },
+          "dateTaskDueAt": {
+            "S": "2023-12-18T00:00:00ZZ"
+          },
+          "taskTitle": {
+            "S": "Implement Notifications for Budget Limits"
+          },
+          "taskDescription": {
+            "S": "Create a notification system to alert users when they are close to or exceed their budget limits in specific categories. Allow customization of alert thresholds."
+          },
+          "taskStatus": {
+            "S": "In Progress"
+          }
+        }
+      }
+    }
+  ]
+}
