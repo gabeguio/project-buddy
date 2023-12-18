@@ -1,0 +1,167 @@
+{
+  "projects": [
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "jx4eu3"
+          },
+          "projectOwnerByUserId": {
+            "S": "5f9a8b3c"
+          },
+          "dateProjectCreatedAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "dateProjectLastUpdatedAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "dateProjectDueAt": {
+            "S": "2024-03-15T00:00:00Z"
+          },
+          "projectTitle": {
+            "S": "Stock Market Tracker"
+          },
+          "projectDescription": {
+            "S": "Develop a comprehensive stock market tracker application that provides real-time data, analysis tools, and portfolio management capabilities. The application aims to assist users in making informed investment decisions."
+          },
+          "totalTasksCompletedOnProject": {
+            "N": "0"
+          },
+          "totalTasksCreatedOnProject": {
+            "N": "3"
+          },
+          "memberIdWithMostCompletedTasksOnProject": {
+            "S": "j9sik312s2"
+          }
+        }
+      }
+    }
+  ],
+  "members": [
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "jx4eu3"
+          },
+          "userId": {
+            "S": "5f9a8b3c"
+          },
+          "memberId": {
+            "S": "j9sik312s2"
+          },
+          "dateJoinedProjectAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "tasksCurrentlyAssignedTo": {
+            "SS": []
+          },
+          "tasksCompleted": {
+            "SS": []
+          }
+        }
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "jx4eu3"
+          },
+          "taskId": {
+            "S": "bd2jsk24l2"
+          },
+          "taskAssignedToMemberId": {
+            "S": "j9sik312s2"
+          },
+          "dateTaskCreatedAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "dateTaskLastUpdatedAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "dateTaskDueAt": {
+            "S": "2024-03-15T00:00:00Z"
+          },
+          "taskTitle": {
+            "S": "Implement Real time Data Fetching"
+          },
+          "taskDescription": {
+            "S": "Develop functionality to fetch and display real-time stock market data from various exchanges. Ensure data accuracy and reliability."
+          },
+          "taskStatus": {
+            "S": "To Do"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "jx4eu3"
+          },
+          "taskId": {
+            "S": "wui238dj4n"
+          },
+          "taskAssignedToMemberId": {
+            "S": "j9sik312s2"
+          },
+          "dateTaskCreatedAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "dateTaskLastUpdatedAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "dateTaskDueAt": {
+            "S": "2024-03-15T00:00:00Z"
+          },
+          "taskTitle": {
+            "S": "Implement User Portfolio Management"
+          },
+          "taskDescription": {
+            "S": "Create tools for users to track and manage their investment portfolios. Include functionalities for adding, editing, and analyzing portfolio holdings."
+          },
+          "taskStatus": {
+            "S": "To Do"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "jx4eu3"
+          },
+          "taskId": {
+            "S": "yqc4jk7903"
+          },
+          "taskAssignedToMemberId": {
+            "S": "j9sik312s2"
+          },
+          "dateTaskCreatedAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "dateTaskLastUpdatedAt": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "dateTaskDueAt": {
+            "S": "2024-03-15T00:00:00Z"
+          },
+          "taskTitle": {
+            "S": "Implement Technical Analysis Tools"
+          },
+          "taskDescription": {
+            "S": "Integrate technical analysis tools (e.g., charts, indicators) to help users analyze stock market trends and make informed decisions."
+          },
+          "taskStatus": {
+            "S": "To Do"
+          }
+        }
+      }
+    }
+  ]
+}
