@@ -1,0 +1,230 @@
+{
+  "projects": [
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "wut6e4"
+          },
+          "projectOwnerByUserId": {
+            "S": "8bjg23u4"
+          },
+          "dateProjectCreatedAt": {
+            "S": "2023-12-03T00:00:00Z"
+          },
+          "dateProjectLastUpdatedAt": {
+            "S": "2023-12-17T00:00:00Z"
+          },
+          "dateProjectDueAt": {
+            "S": "2024-02-05T00:00:00Z"
+          },
+          "projectTitle": {
+            "S": "Web Browser Fighting Game"
+          },
+          "projectDescription": {
+            "S": "Create an immersive fighting game experience playable directly in a web browser. This game will feature multiplayer capabilities, various characters with unique abilities, interactive environments, and engaging gameplay mechanics."
+          },
+          "totalTasksCompletedOnProject": {
+            "N": "1"
+          },
+          "totalTasksCreatedOnProject": {
+            "N": "4"
+          },
+          "memberIdWithMostCompletedTasksOnProject": {
+            "S": "qiwo8h75hd"
+          }
+        }
+      }
+    }
+  ],
+  "members": [
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "wut6e4"
+          },
+          "userId": {
+            "S": "8bjg23u4"
+          },
+          "memberId": {
+            "S": "qiwo8h75hd"
+          },
+          "dateJoinedProjectAt": {
+            "S": "2023-12-03T00:00:00Z"
+          },
+          "role": {
+            "S": "Project Manager"
+          },
+          "tasksCurrentlyAssignedTo": {
+            "SS": []
+          },
+          "tasksCompleted": {
+            "SS": []
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "wut6e4"
+          },
+          "userId": {
+            "S": "8bjg23u4"
+          },
+          "memberId": {
+            "S": "iqo192kej5"
+          },
+          "dateJoinedProjectAt": {
+            "S": "2023-12-04T00:00:00Z"
+          },
+          "role": {
+            "S": "Team Member"
+          },
+          "tasksCurrentlyAssignedTo": {
+            "SS": []
+          },
+          "tasksCompleted": {
+            "SS": []
+          }
+        }
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "wut6e4"
+          },
+          "taskId": {
+            "S": "rj2i9aik"
+          },
+          "taskAssignedToMemberId": {
+            "S": "zpwo8h75hd"
+          },
+          "dateTaskCreatedAt": {
+            "S": "2023-12-03T00:00:00Z"
+          },
+          "dateTaskLastUpdatedAt": {
+            "S": "2023-12-03T00:00:00Z"
+          },
+          "dateTaskDueAt": {
+            "S": "2024-01-07T00:00:00Z"
+          },
+          "taskTitle": {
+            "S": "Character Design and Concept Art"
+          },
+          "taskDescription": {
+            "S": "Create visual designs and concept art for characters in the game. Define their appearance, abilities, and unique traits."
+          },
+          "taskStatus": {
+            "S": "Completed"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "wut6e4"
+          },
+          "taskId": {
+            "S": "jfuwiq0923"
+          },
+          "taskAssignedToMemberId": {
+            "S": "wko192kej5"
+          },
+          "dateTaskCreatedAt": {
+            "S": "2023-12-03T00:00:00Z"
+          },
+          "dateTaskLastUpdatedAt": {
+            "S": "2023-12-03T00:00:00Z"
+          },
+          "dateTaskDueAt": {
+            "S": "2024-01-07T00:00:00Z"
+          },
+          "taskTitle": {
+            "S": "Implement Multiplayer Functionality"
+          },
+          "taskDescription": {
+            "S": "Develop multiplayer features to enable online gameplay. Implement server-client communication and synchronization for real-time multiplayer battles."
+          },
+          "taskStatus": {
+            "S": "To Do"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "wut6e4"
+          },
+          "taskId": {
+            "S": "jfuwiq0923"
+          },
+          "taskAssignedToMemberId": {
+            "S": "wko192kej5"
+          },
+          "dateTaskCreatedAt": {
+            "S": "2023-12-03T00:00:00Z"
+          },
+          "dateTaskLastUpdatedAt": {
+            "S": "2023-12-03T00:00:00Z"
+          },
+          "dateTaskDueAt": {
+            "S": "2024-01-07T00:00:00Z"
+          },
+          "taskTitle": {
+            "S": "Environment Design and Interactivity"
+          },
+          "taskDescription": {
+            "S": "Design and implement interactive environments for the game. Create stages with dynamic elements that impact gameplay."
+          },
+          "taskStatus": {
+            "S": "In Progress"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "wut6e4"
+          },
+          "taskId": {
+            "S": "wui43jk98d"
+          },
+          "taskAssignedToMemberId": {
+            "S": "zpwo8h75hd"
+          },
+          "dateTaskCreatedAt": {
+            "S": "2023-12-03T00:00:00Z"
+          },
+          "dateTaskLastUpdatedAt": {
+            "S": "2023-12-03T00:00:00Z"
+          },
+          "dateTaskDueAt": {
+            "S": "2024-01-07T00:00:00Z"
+          },
+          "taskTitle": {
+            "S": "Implement Combat Mechanics"
+          },
+          "taskDescription": {
+            "S": "Code and integrate combat mechanics for characters in the game. Define attack, defense, and special move functionalities, ensuring a balanced and engaging gameplay experience."
+          },
+          "taskStatus": {
+            "S": "Under Review"
+          }
+        }
+      }
+    }
+  ]
+}
