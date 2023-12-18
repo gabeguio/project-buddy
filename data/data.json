@@ -45,7 +45,7 @@
             "S": "2024-12-17T00:00:00Z"
           },
           "dateProjectDueAt": {
-            "S": "2024-01-01T00:00:00Z"
+            "S": "2023-12-20T00:00:00Z"
           },
           "projectTitle": {
             "S": "Project Buddy"
@@ -112,7 +112,7 @@
             "S": "2023-10-26T00:00:00Z"
           },
           "dateTaskDueAt": {
-            "S": "2024-01-01T00:00:00Z"
+            "S": "2023-12-20T00:00:00Z"
           },
           "taskTitle": {
             "S": "task-1_Projects_Get-Projects-Request"
@@ -145,7 +145,7 @@
             "S": "2023-10-26T00:00:00Z"
           },
           "dateTaskDueAt": {
-            "S": "2024-01-01T00:00:00Z"
+            "S": "2023-12-20T00:00:00Z"
           },
           "taskTitle": {
             "S": "task-2_Project-Dashboard"
@@ -178,7 +178,7 @@
             "S": "2023-10-26T00:00:00Z"
           },
           "dateTaskDueAt": {
-            "S": "2024-01-01T00:00:00Z"
+            "S": "2023-12-20T00:00:00Z"
           },
           "taskTitle": {
             "S": "task-2.1_Project-Dashboard_Navigation-Bar"
@@ -211,7 +211,7 @@
             "S": "2023-10-26T00:00:00Z"
           },
           "dateTaskDueAt": {
-            "S": "2024-01-01T00:00:00Z"
+            "S": "2023-12-20T00:00:00Z"
           },
           "taskTitle": {
             "S": "task-2.2_Project-Dashboard_About-Section"
@@ -244,7 +244,7 @@
             "S": "2023-10-26T00:00:00Z"
           },
           "dateTaskDueAt": {
-            "S": "2024-01-01T00:00:00Z"
+            "S": "2023-12-20T00:00:00Z"
           },
           "taskTitle": {
             "S": "task-2.2.1_Project-Dashboard_About-Section_Get-Project-Activity"
@@ -277,7 +277,7 @@
             "S": "2023-10-26T00:00:00Z"
           },
           "dateTaskDueAt": {
-            "S": "2024-01-01T00:00:00Z"
+            "S": "2023-12-20T00:00:00Z"
           },
           "taskTitle": {
             "S": "task-2.3_Project-Dashboard_Members-Section"
@@ -310,7 +310,7 @@
             "S": "2023-10-26T00:00:00Z"
           },
           "dateTaskDueAt": {
-            "S": "2024-01-01T00:00:00Z"
+            "S": "2023-12-20T00:00:00Z"
           },
           "taskTitle": {
             "S": "task-2.3.1_Project-Dashboard_Members-Section_Get-Members-Request"
@@ -343,7 +343,7 @@
             "S": "2023-10-26T00:00:00Z"
           },
           "dateTaskDueAt": {
-            "S": "2024-01-01T00:00:00Z"
+            "S": "2023-12-20T00:00:00Z"
           },
           "taskTitle": {
             "S": "task-2.4_Project-Dashboard_Tasks-Section"
@@ -376,7 +376,7 @@
             "S": "2023-10-26T00:00:00Z"
           },
           "dateTaskDueAt": {
-            "S": "2024-01-01T00:00:00Z"
+            "S": "2023-12-20T00:00:00Z"
           },
           "taskTitle": {
             "S": "task-2.4.1_Project-Dashboard_Tasks-Section_Get-Tasks-Request"
@@ -409,7 +409,7 @@
             "S": "2023-10-26T00:00:00Z"
           },
           "dateTaskDueAt": {
-            "S": "2024-01-01T00:00:00Z"
+            "S": "2023-12-20T00:00:00Z"
           },
           "taskTitle": {
             "S": "task-3_Implement-Coming-Soon-Alert-Buttons"
@@ -442,7 +442,7 @@
             "S": "2023-10-26T00:00:00Z"
           },
           "dateTaskDueAt": {
-            "S": "2024-01-01T00:00:00Z"
+            "S": "2023-12-20T00:00:00Z"
           },
           "taskTitle": {
             "S": "task-4_Night-And-Light-Mode"
@@ -475,7 +475,7 @@
             "S": "2023-10-26T00:00:00Z"
           },
           "dateTaskDueAt": {
-            "S": "2024-01-01T00:00:00Z"
+            "S": "2023-12-20T00:00:00Z"
           },
           "taskTitle": {
             "S": "task-5_Mobile-Navigation-Menu"
