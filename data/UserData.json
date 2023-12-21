@@ -6,22 +6,22 @@
             "userId": {
               "S": "5f9a8b3c"
             },
-            "dateUserCreatedAt": {
+            "dateCreated": {
               "S": "2023-04-01T00:00:00Z"
             },
-            "dateUserLastUpdatedAt": {
+            "dateLastUpdated": {
               "S": "2023-12-17T00:00:00Z"
             },
-            "userFirstName": {
+            "firstName": {
               "S": "Gabe"
             },
-            "userLastName": {
+            "lastName": {
               "S": "Guio"
             },
-            "userCurrentCompany": {
+            "company": {
               "S": "Geek Squad"
             },
-            "userPrimaryEmail": {
+            "email": {
               "S": "gabegoescoding@gmail.com"
             }
           }
@@ -33,22 +33,22 @@
             "userId": {
               "S": "7a8gew9q"
             },
-            "dateUserCreatedAt": {
+            "dateCreated": {
               "S": "2023-04-01T00:00:00Z"
             },
-            "dateUserLastUpdatedAt": {
+            "dateLastUpdated": {
               "S": "2023-12-17T00:00:00Z"
             },
-            "userFirstName": {
+            "firstName": {
               "S": "Matthew"
             },
-            "userLastName": {
+            "lastName": {
               "S": "McMorries"
             },
-            "userCurrentCompany": {
+            "company": {
               "S": "Z Axis Solution"
             },
-            "userPrimaryEmail": {
+            "email": {
               "S": "matthew.mcmorries@gmail.com"
             }
           }
@@ -60,22 +60,22 @@
             "userId": {
               "S": "8bjg23u4"
             },
-            "dateUserCreatedAt": {
+            "dateCreated": {
               "S": "2023-04-01T00:00:00Z"
             },
-            "dateUserLastUpdatedAt": {
+            "dateLastUpdated": {
               "S": "2023-12-17T00:00:00Z"
             },
-            "userFirstName": {
+            "firstName": {
               "S": "Shelby"
             },
-            "userLastName": {
+            "lastName": {
               "S": "Robinson"
             },
-            "userCurrentCompany": {
+            "company": {
               "S": "Slack Technologies"
             },
-            "userPrimaryEmail": {
+            "email": {
               "S": "sh-robin@outlook.com"
             }
           }
@@ -87,22 +87,22 @@
             "userId": {
               "S": "we923it4"
             },
-            "dateUserCreatedAt": {
+            "dateCreated": {
               "S": "2023-04-01T00:00:00Z"
             },
-            "dateUserLastUpdatedAt": {
+            "dateLastUpdated": {
               "S": "2023-12-17T00:00:00Z"
             },
-            "userFirstName": {
+            "firstName": {
               "S": "Ed"
             },
-            "userLastName": {
+            "lastName": {
               "S": "Pearson"
             },
-            "userCurrentCompany": {
+            "company": {
               "S": "Lovelytics"
             },
-            "userPrimaryEmail": {
+            "email": {
               "S": "ed@pearsontn.org"
             }
           }
@@ -114,22 +114,22 @@
             "userId": {
               "S": "345kfas3"
             },
-            "dateUserCreatedAt": {
+            "dateCreated": {
               "S": "2023-04-01T00:00:00Z"
             },
-            "dateUserLastUpdatedAt": {
+            "dateLastUpdated": {
               "S": "2023-12-17T00:00:00Z"
             },
-            "userFirstName": {
+            "firstName": {
               "S": "Matthew"
             },
-            "userLastName": {
+            "lastName": {
               "S": "Kroeger"
             },
-            "userCurrentCompany": {
+            "company": {
               "S": "OvationCXM"
             },
-            "userPrimaryEmail": {
+            "email": {
               "S": "matt.kroogz@gmail.com"
             }
           }
@@ -141,22 +141,22 @@
             "userId": {
               "S": "asd89w24"
             },
-            "dateUserCreatedAt": {
+            "dateCreated": {
               "S": "2023-04-01T00:00:00Z"
             },
-            "dateUserLastUpdatedAt": {
+            "dateLastUpdated": {
               "S": "2023-12-17T00:00:00Z"
             },
-            "userFirstName": {
+            "firstName": {
               "S": "Kate"
             },
-            "userLastName": {
+            "lastName": {
               "S": "Rogers"
             },
-            "userCurrentCompany": {
+            "company": {
               "S": "Nashville Software School"
             },
-            "userPrimaryEmail": {
+            "email": {
               "S": "careercoachkate@gmail.com"
             }
           }
@@ -168,22 +168,22 @@
             "userId": {
               "S": "sa4ds2kj"
             },
-            "dateUserCreatedAt": {
+            "dateCreated": {
               "S": "2023-04-01T00:00:00Z"
             },
-            "dateUserLastUpdatedAt": {
+            "dateLastUpdated": {
               "S": "2023-12-17T00:00:00Z"
             },
-            "userFirstName": {
+            "firstName": {
               "S": "Gabriel"
             },
-            "userLastName": {
+            "lastName": {
               "S": "Cziprusz"
             },
-            "userCurrentCompany": {
+            "company": {
               "S": "Nashville Software School"
             },
-            "userPrimaryEmail": {
+            "email": {
               "S": "gcziprusz@gmail.com"
             }
           }

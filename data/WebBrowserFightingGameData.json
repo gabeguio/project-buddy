@@ -6,31 +6,31 @@
           "projectId": {
             "S": "wut6e4"
           },
-          "projectOwnerByUserId": {
+          "owner": {
             "S": "8bjg23u4"
           },
-          "dateProjectCreatedAt": {
+          "dateCreated": {
             "S": "2023-12-03T00:00:00Z"
           },
-          "dateProjectLastUpdatedAt": {
+          "dateLastUpdated": {
             "S": "2023-12-17T00:00:00Z"
           },
-          "dateProjectDueAt": {
+          "dateDue": {
             "S": "2024-02-05T00:00:00Z"
           },
-          "projectTitle": {
+          "title": {
             "S": "Web Browser Fighting Game"
           },
-          "projectDescription": {
+          "description": {
             "S": "Create an immersive fighting game experience playable directly in a web browser. This game will feature multiplayer capabilities, various characters with unique abilities, interactive environments, and engaging gameplay mechanics."
           },
-          "totalTasksCompletedOnProject": {
+          "totalCompletedTasks": {
             "N": "1"
           },
-          "totalTasksCreatedOnProject": {
+          "totalTasks": {
             "N": "4"
           },
-          "memberIdWithMostCompletedTasksOnProject": {
+          "topMemberByTasksCompleted": {
             "S": "qiwo8h75hd"
           }
         }
@@ -50,13 +50,13 @@
           "memberId": {
             "S": "qiwo8h75hd"
           },
-          "dateJoinedProjectAt": {
+          "dateJoined": {
             "S": "2023-12-03T00:00:00Z"
           },
           "role": {
             "S": "Project Manager"
           },
-          "tasksCurrentlyAssignedTo": {
+          "currentTasks": {
             "SS": []
           },
           "tasksCompleted": {
@@ -77,13 +77,13 @@
           "memberId": {
             "S": "iqo192kej5"
           },
-          "dateJoinedProjectAt": {
+          "dateJoined": {
             "S": "2023-12-04T00:00:00Z"
           },
           "role": {
             "S": "Team Member"
           },
-          "tasksCurrentlyAssignedTo": {
+          "currentTasks": {
             "SS": []
           },
           "tasksCompleted": {
@@ -103,25 +103,25 @@
           "taskId": {
             "S": "rj2i9aik"
           },
-          "taskAssignedToMemberId": {
+          "memberId": {
             "S": "zpwo8h75hd"
           },
-          "dateTaskCreatedAt": {
+          "dateCreated": {
             "S": "2023-12-03T00:00:00Z"
           },
-          "dateTaskLastUpdatedAt": {
+          "dateLastUpdated": {
             "S": "2023-12-03T00:00:00Z"
           },
-          "dateTaskDueAt": {
+          "dateDue": {
             "S": "2024-01-07T00:00:00Z"
           },
-          "taskTitle": {
+          "title": {
             "S": "Character Design and Concept Art"
           },
-          "taskDescription": {
+          "description": {
             "S": "Create visual designs and concept art for characters in the game. Define their appearance, abilities, and unique traits."
           },
-          "taskStatus": {
+          "status": {
             "S": "Completed"
           }
         }
@@ -136,25 +136,25 @@
           "taskId": {
             "S": "jfuwiq0923"
           },
-          "taskAssignedToMemberId": {
+          "memberId": {
             "S": "wko192kej5"
           },
-          "dateTaskCreatedAt": {
+          "dateCreated": {
             "S": "2023-12-03T00:00:00Z"
           },
-          "dateTaskLastUpdatedAt": {
+          "dateLastUpdated": {
             "S": "2023-12-03T00:00:00Z"
           },
-          "dateTaskDueAt": {
+          "dateDue": {
             "S": "2024-01-07T00:00:00Z"
           },
-          "taskTitle": {
+          "title": {
             "S": "Implement Multiplayer Functionality"
           },
-          "taskDescription": {
+          "description": {
             "S": "Develop multiplayer features to enable online gameplay. Implement server-client communication and synchronization for real-time multiplayer battles."
           },
-          "taskStatus": {
+          "status": {
             "S": "To Do"
           }
         }
@@ -169,25 +169,25 @@
           "taskId": {
             "S": "jfuwiq0923"
           },
-          "taskAssignedToMemberId": {
+          "memberId": {
             "S": "wko192kej5"
           },
-          "dateTaskCreatedAt": {
+          "dateCreated": {
             "S": "2023-12-03T00:00:00Z"
           },
-          "dateTaskLastUpdatedAt": {
+          "dateLastUpdated": {
             "S": "2023-12-03T00:00:00Z"
           },
-          "dateTaskDueAt": {
+          "dateDue": {
             "S": "2024-01-07T00:00:00Z"
           },
-          "taskTitle": {
+          "title": {
             "S": "Environment Design and Interactivity"
           },
-          "taskDescription": {
+          "description": {
             "S": "Design and implement interactive environments for the game. Create stages with dynamic elements that impact gameplay."
           },
-          "taskStatus": {
+          "status": {
             "S": "In Progress"
           }
         }
@@ -202,25 +202,25 @@
           "taskId": {
             "S": "wui43jk98d"
           },
-          "taskAssignedToMemberId": {
+          "memberId": {
             "S": "zpwo8h75hd"
           },
-          "dateTaskCreatedAt": {
+          "dateCreated": {
             "S": "2023-12-03T00:00:00Z"
           },
-          "dateTaskLastUpdatedAt": {
+          "dateLastUpdated": {
             "S": "2023-12-03T00:00:00Z"
           },
-          "dateTaskDueAt": {
+          "dateDue": {
             "S": "2024-01-07T00:00:00Z"
           },
-          "taskTitle": {
+          "title": {
             "S": "Implement Combat Mechanics"
           },
-          "taskDescription": {
+          "description": {
             "S": "Code and integrate combat mechanics for characters in the game. Define attack, defense, and special move functionalities, ensuring a balanced and engaging gameplay experience."
           },
-          "taskStatus": {
+          "status": {
             "S": "Under Review"
           }
         }
