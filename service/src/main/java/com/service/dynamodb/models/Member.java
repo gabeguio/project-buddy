@@ -6,18 +6,19 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @DynamoDBTable(tableName = "members")
 public class Member {
-
     private String projectId;
     private String userId;
-    private String firstName;
-    private String lastName;
+    private String memberId;
+    private String dateJoined;
     private String role;
-    private String company;
-    private String email;
+    private Set<String> currentTasks;
+    private Set<String> tasksCompleted;
 
     @DynamoDBHashKey(attributeName = "projectId")
     public String getProjectId() {
@@ -37,22 +38,22 @@ public class Member {
         this.userId = userId;
     }
 
-    @DynamoDBAttribute(attributeName = "firstName")
-    public String getFirstName() {
-        return firstName;
+    @DynamoDBAttribute(attributeName = "memberId")
+    public String getMemberId() {
+        return memberId;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setMemberId(String memberId) {
+        this.memberId = memberId;
     }
 
-    @DynamoDBAttribute(attributeName = "lastName")
-    public String getLastName() {
-        return lastName;
+    @DynamoDBAttribute(attributeName = "dateJoined")
+    public String getDateJoined() {
+        return dateJoined;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setDateJoined(String dateJoined) {
+        this.dateJoined = dateJoined;
     }
 
     @DynamoDBAttribute(attributeName = "role")
@@ -64,22 +65,42 @@ public class Member {
         this.role = role;
     }
 
-    @DynamoDBAttribute(attributeName = "company")
-    public String getCompany() {
-        return company;
+    @DynamoDBAttribute(attributeName = "currentTasks")
+    public Set<String> getCurrentTasks() {
+        if (null == currentTasks) {
+            return null;
+        }
+
+        return new HashSet<>(currentTasks);
     }
 
-    public void setCompany(String company) {
-        this.company = company;
+    public void setCurrentTasks(Set<String> currentTasks) {
+        if (null == currentTasks) {
+            this.currentTasks = null;
+        } else {
+            this.currentTasks = new HashSet<>(currentTasks);
+        }
+
+        this.currentTasks = currentTasks;
     }
 
-    @DynamoDBAttribute(attributeName = "email")
-    public String getEmail() {
-        return email;
+    @DynamoDBAttribute(attributeName = "tasksCompleted")
+    public Set<String> getTasksCompleted() {
+        if (null == tasksCompleted) {
+            return null;
+        }
+
+        return new HashSet<>(tasksCompleted);
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setTasksCompleted(Set<String> tasksCompleted) {
+        if (null == tasksCompleted) {
+            this.tasksCompleted = null;
+        } else {
+            this.tasksCompleted = new HashSet<>(tasksCompleted);
+        }
+
+        this.tasksCompleted = tasksCompleted;
     }
 
     @Override
@@ -87,12 +108,18 @@ public class Member {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Member member = (Member) o;
-        return Objects.equals(projectId, member.projectId) && Objects.equals(userId, member.userId) && Objects.equals(firstName, member.firstName) && Objects.equals(lastName, member.lastName) && Objects.equals(role, member.role) && Objects.equals(company, member.company) && Objects.equals(email, member.email);
+        return Objects.equals(projectId, member.projectId) 
+            && Objects.equals(userId, member.userId) 
+            && Objects.equals(memberId, member.memberId) 
+            && Objects.equals(dateJoined, member.dateJoined) 
+            && Objects.equals(role, member.role) 
+            && Objects.equals(currentTasks, member.currentTasks) 
+            && Objects.equals(tasksCompleted, member.tasksCompleted);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, userId, firstName, lastName, role, company, email);
+        return Objects.hash(projectId, userId, memberId, dateJoined, role, currentTasks, tasksCompleted);
     }
 }
 

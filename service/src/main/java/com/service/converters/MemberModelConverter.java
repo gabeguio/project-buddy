@@ -17,15 +17,24 @@ public class MemberModelConverter {
      * @return the converted member
      */
     public MemberModel toMemberModel(Member member) {
+        List<String> currentTasks = null;
+        if (member.getCurrentTasks() != null) {
+            currentTasks = new ArrayList<>(member.getCurrentTasks());
+        }
+
+        List<String> tasksCompleted = null;
+        if (member.getTasksCompleted() != null) {
+            tasksCompleted = new ArrayList<>(member.getTasksCompleted());
+        }
 
         return MemberModel.builder()
                 .withProjectId(member.getProjectId())
                 .withUserId(member.getUserId())
-                .withFirstName(member.getFirstName())
-                .withLastName(member.getLastName())
+                .withMemberId(member.getMemberId())
+                .withDateJoined(member.getDateJoined())
                 .withRole(member.getRole())
-                .withCompany(member.getCompany())
-                .withEmail(member.getEmail())
+                .withCurrentTasks(currentTasks)
+                .withTasksCompleted(tasksCompleted)
                 .build();
     }
 
