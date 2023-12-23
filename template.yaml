@@ -224,6 +224,14 @@ Resources:
                 Action: dynamodb:*
                 Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/members"
 
+        - PolicyName: 'AccessUsersTable'
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: dynamodb:*
+                Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/users"
+
   #-----------------------------------------------------
   # Lambda Functions Configuration
   #-----------------------------------------------------
@@ -501,6 +509,18 @@ Resources:
   #-----------------------------------------------------
   # DynamoDB Configuration
   #-----------------------------------------------------
+
+  UsersTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      AttributeDefinitions:
+        - AttributeName: "userId"
+          AttributeType: "S"
+      KeySchema:
+        - AttributeName: "userId"
+          KeyType: "HASH"
+      BillingMode: "PAY_PER_REQUEST"
+      TableName: "users"
 
   ProjectsTable:
     Type: AWS::DynamoDB::Table
