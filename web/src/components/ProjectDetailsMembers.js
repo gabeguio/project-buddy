@@ -5,10 +5,12 @@ function projectDetailsMembers(members) {
         <table class="members__table">
           <thead>
             <tr class="members__table_header-row">
+            <th>Member Id</th>
             <th>Name</th>
             <th>Role</th>
             <th>Company</th>
             <th>Email</th>
+            <th>Date Joined</th
             <th></th>
             </tr>
           </thead>
@@ -17,10 +19,12 @@ function projectDetailsMembers(members) {
               .map(
                 (member) => `
                   <tr>
+                  <td>${member.memberId}</td>
                   <td>${member.firstName} ${member.lastName}</td>
                   <td>${member.role}</td>
                   <td>${member.company}</td>
                   <td>${member.email}</td>
+                  <td>${member.dateJoined.substring(0,10)}</td>
                   <td>
                     <button
                       class="members__table_pen coming-soon">
