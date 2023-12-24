@@ -19,7 +19,7 @@ public interface ServiceComponent {
 
     DeleteTicketActivity provideDeleteTicketActivity();
 
-    DeleteProjectActivity provideDeleteProjectActivity();
+//    DeleteProjectActivity provideDeleteProjectActivity();
     
     GetProjectActivity provideGetProjectActivity();
 
@@ -29,15 +29,15 @@ public interface ServiceComponent {
 
     GetAllTicketsActivity provideGetAllTicketsActivity();
 
-    CreateProjectActivity provideCreateProjectActivity();
+//    CreateProjectActivity provideCreateProjectActivity();
 
     UpdateTicketDetailsActivity provideUpdateTicketActivity();
     
     GetProjectsActivity provideGetProjectsActivity();
     
-    UpdateProjectStatusActivity provideUpdateProjectStatusActivity();
-
-    UpdateProjectDetailsActivity provideUpdateProjectDetailsActivity();
+//    UpdateProjectStatusActivity provideUpdateProjectStatusActivity();
+//
+//    UpdateProjectDetailsActivity provideUpdateProjectDetailsActivity();
 
     UpdateTicketStatusActivity provideUpdateTicketStatusActivity();
 
