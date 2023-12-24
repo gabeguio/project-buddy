@@ -9,11 +9,11 @@ on:
 env:
 
   # STUDENTS: Set these environment variables 
-  API_BASE_URL: https://7sjkq1q83m.execute-api.us-east-2.amazonaws.com/Prod/
-  COGNITO_DOMAIN: music-playlist-service-javascript.auth.us-east-2.amazoncognito.com
-  COGNITO_REDIRECT_SIGNIN: https://d2c0edlydhu9ha.cloudfront.net
-  COGNITO_REDIRECT_SIGNOUT: https://d2c0edlydhu9ha.cloudfront.net
-  
+  API_BASE_URL: https://c02ucfuiwj.execute-api.us-east-2.amazonaws.com/Prod/
+  COGNITO_DOMAIN: project-project-buddy-team-java.auth.us-east-2.amazoncognito.com
+  COGNITO_REDIRECT_SIGNIN: https://d3t4a5rod24s50.cloudfront.net
+  COGNITO_REDIRECT_SIGNOUT: https://d3t4a5rod24s50.cloudfront.net
+
   COGNITO_USER_POOL_ID: ${{ secrets.COGNITO_USER_POOL_ID }}
   COGNITO_USER_POOL_CLIENT_ID: ${{ secrets.COGNITO_USER_POOL_CLIENT_ID }}
 
@@ -24,10 +24,10 @@ env:
   PIPELINE_USER_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   SAM_TEMPLATE: template.yaml
 
-  STACK_NAME: music-playlist-service
-  PIPELINE_EXECUTION_ROLE: arn:aws:iam::223594270925:role/aws-sam-cli-managed-ServiceS-PipelineExecutionRole-1WYJWCOMZ9WVL
-  CLOUDFORMATION_EXECUTION_ROLE: arn:aws:iam::223594270925:role/aws-sam-cli-managed-Servi-CloudFormationExecutionR-DWYDG9MS6E3S
-  ARTIFACTS_BUCKET: aws-sam-cli-managed-servicestage-artifactsbucket-xhucrkge56pj
+  STACK_NAME: project-buddy-cicd-pipeline-stack
+  PIPELINE_EXECUTION_ROLE: arn:aws:iam::742467488038:role/aws-sam-cli-managed-ServiceSt-PipelineExecutionRole-SaTygPgtqDl4
+  CLOUDFORMATION_EXECUTION_ROLE: arn:aws:iam::742467488038:role/aws-sam-cli-managed-Servi-CloudFormationExecutionRo-WP3KzSeuyPJ0
+  ARTIFACTS_BUCKET: aws-sam-cli-managed-servicestage-p-artifactsbucket-fbp3gcedvekj
   REGION: us-east-2
 
 jobs:
@@ -117,7 +117,7 @@ jobs:
 
           echo API_BASE_URL=\"$API_BASE_URL\" >> .env
 
-          echo COGNITO_DOMAIN=\"$COGNITO_DOMAIN\" >> .env
+          echo COGNITO_DOMAIN=\"${COGNITO_DOMAIN}.auth.us-east-2.amazoncognito.com\" >> .env
 
           echo COGNITO_USER_POOL_ID=\"$COGNITO_USER_POOL_ID\" >> .env
           echo COGNITO_USER_POOL_CLIENT_ID=\"$COGNITO_USER_POOL_CLIENT_ID\" >> .env
@@ -167,7 +167,7 @@ jobs:
             --region ${REGION} \
             --s3-bucket ${ARTIFACTS_BUCKET} \
             --no-fail-on-empty-changeset \
-            --parameter-overrides "S3Bucket=${ARTIFACTS_BUCKET}" \
+            --parameter-overrides "S3Bucket=${ARTIFACTS_BUCKET} CognitoDomain=${COGNITO_DOMAIN}" \
             --role-arn ${CLOUDFORMATION_EXECUTION_ROLE}
 
       - name: Download NPM static resources
