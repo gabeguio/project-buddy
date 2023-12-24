@@ -4,7 +4,9 @@ import com.service.activity.requests.GetProjectRequest;
 import com.service.activity.results.GetProjectResult;
 import com.service.converters.ProjectModelConverter;
 import com.service.dynamodb.ProjectDao;
+import com.service.dynamodb.UserDao;
 import com.service.dynamodb.models.Project;
+import com.service.dynamodb.models.User;
 import com.service.models.ProjectModel;
 
 import javax.inject.Inject;
@@ -20,13 +22,16 @@ public class GetProjectActivity {
     private final Logger log = LogManager.getLogger();
 
     private final ProjectDao projectDao;
+    private final UserDao userDao;
+
     /**
      * Instantiating a new GetProjectActivity object.
      * @param projectDao ProjectDao to access the project table.
      */
     @Inject
-    public GetProjectActivity(ProjectDao projectDao){
+    public GetProjectActivity(ProjectDao projectDao, UserDao userDao){
         this.projectDao = projectDao;
+        this.userDao = userDao;
     }
 
     /**
@@ -42,7 +47,9 @@ public class GetProjectActivity {
         log.info("Received GetProjectRequest {}", getProjectRequest);
         String requestedId = getProjectRequest.getProjectId();
         Project project = projectDao.getProject(requestedId);
-        ProjectModel projectModel = new ProjectModelConverter().toProjectModel(project);
+        User owner = userDao.getUser(project.getOwner());
+
+        ProjectModel projectModel = new ProjectModelConverter().toProjectModel(project, owner);
 
         return GetProjectResult.builder().withProject(projectModel).build();
     }

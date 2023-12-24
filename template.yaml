@@ -236,45 +236,45 @@ Resources:
   # Lambda Functions Configuration
   #-----------------------------------------------------
 
-  DeleteTicketLambda:
-    Type: AWS::Serverless::Function
-    Properties:
-      Role: !GetAtt AccessRole.Arn
-      CodeUri: service
-      Handler: com.service.lambda.DeleteTicketLambda::handleRequest
-      Runtime: java11
-      Architectures:
-        - x86_64
-      MemorySize: 512
-      Environment:
-        Variables:
-          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
-      Events:
-        projectmanagementservice:
-          Type: Api
-          Properties:
-            Path: /tickets
-            Method: delete
+#  DeleteTicketLambda:
+#    Type: AWS::Serverless::Function
+#    Properties:
+#      Role: !GetAtt AccessRole.Arn
+#      CodeUri: service
+#      Handler: com.service.lambda.DeleteTicketLambda::handleRequest
+#      Runtime: java11
+#      Architectures:
+#        - x86_64
+#      MemorySize: 512
+#      Environment:
+#        Variables:
+#          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+#      Events:
+#        projectmanagementservice:
+#          Type: Api
+#          Properties:
+#            Path: /tickets
+#            Method: delete
 
-  CreateProjectLambda:
-    Type: AWS::Serverless::Function
-    Properties:
-      Role: !GetAtt AccessRole.Arn
-      CodeUri: service
-      Handler: com.service.lambda.CreateProjectLambda::handleRequest
-      Runtime: java11
-      Architectures:
-        - x86_64
-      MemorySize: 512
-      Environment:
-        Variables:
-          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
-      Events:
-        projectmanagementservice:
-          Type: Api
-          Properties:
-            Path: /projects
-            Method: post
+#  CreateProjectLambda:
+#    Type: AWS::Serverless::Function
+#    Properties:
+#      Role: !GetAtt AccessRole.Arn
+#      CodeUri: service
+#      Handler: com.service.lambda.CreateProjectLambda::handleRequest
+#      Runtime: java11
+#      Architectures:
+#        - x86_64
+#      MemorySize: 512
+#      Environment:
+#        Variables:
+#          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+#      Events:
+#        projectmanagementservice:
+#          Type: Api
+#          Properties:
+#            Path: /projects
+#            Method: post
 
   GetTicketLambda:
     Type: AWS::Serverless::Function
@@ -406,45 +406,45 @@ Resources:
             Auth:
               Authorizer: 'NONE'
 
-  DeleteProjectLambda:
-    Type: AWS::Serverless::Function
-    Properties:
-      Role: !GetAtt AccessRole.Arn
-      CodeUri: service
-      Handler: com.service.lambda.DeleteProjectLambda::handleRequest
-      Runtime: java11
-      Architectures:
-        - x86_64
-      MemorySize: 512
-      Environment:
-        Variables:
-          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
-      Events:
-        projectmanagementservice:
-          Type: Api
-          Properties:
-            Path: /projects
-            Method: delete
+#  DeleteProjectLambda:
+#    Type: AWS::Serverless::Function
+#    Properties:
+#      Role: !GetAtt AccessRole.Arn
+#      CodeUri: service
+#      Handler: com.service.lambda.DeleteProjectLambda::handleRequest
+#      Runtime: java11
+#      Architectures:
+#        - x86_64
+#      MemorySize: 512
+#      Environment:
+#        Variables:
+#          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+#      Events:
+#        projectmanagementservice:
+#          Type: Api
+#          Properties:
+#            Path: /projects
+#            Method: delete
 
-  UpdateProjectStatusLambda:
-    Type: AWS::Serverless::Function
-    Properties:
-      Role: !GetAtt AccessRole.Arn
-      CodeUri: service
-      Handler: com.service.lambda.UpdateProjectStatusLambda::handleRequest
-      Runtime: java11
-      Architectures:
-        - x86_64
-      MemorySize: 512
-      Environment:
-        Variables:
-          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
-      Events:
-        projectmanagementservice:
-          Type: Api
-          Properties:
-            Path: /projectstatus/{projectId}
-            Method: put
+#  UpdateProjectStatusLambda:
+#    Type: AWS::Serverless::Function
+#    Properties:
+#      Role: !GetAtt AccessRole.Arn
+#      CodeUri: service
+#      Handler: com.service.lambda.UpdateProjectStatusLambda::handleRequest
+#      Runtime: java11
+#      Architectures:
+#        - x86_64
+#      MemorySize: 512
+#      Environment:
+#        Variables:
+#          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+#      Events:
+#        projectmanagementservice:
+#          Type: Api
+#          Properties:
+#            Path: /projectstatus/{projectId}
+#            Method: put
 
   UpdateTicketStatusLambda:
     Type: AWS::Serverless::Function
@@ -466,25 +466,25 @@ Resources:
             Path: /projects/{projectId}/ticketstatus/{ticketId}
             Method: put
 
-  UpdateProjectDetailsLambda:
-    Type: AWS::Serverless::Function
-    Properties:
-      Role: !GetAtt AccessRole.Arn
-      CodeUri: service
-      Handler: com.service.lambda.UpdateProjectDetailsLambda::handleRequest
-      Runtime: java11
-      Architectures:
-        - x86_64
-      MemorySize: 512
-      Environment:
-        Variables:
-          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
-      Events:
-        projectmanagementservice:
-          Type: Api
-          Properties:
-            Path: /projects/{projectId}
-            Method: put
+#  UpdateProjectDetailsLambda:
+#    Type: AWS::Serverless::Function
+#    Properties:
+#      Role: !GetAtt AccessRole.Arn
+#      CodeUri: service
+#      Handler: com.service.lambda.UpdateProjectDetailsLambda::handleRequest
+#      Runtime: java11
+#      Architectures:
+#        - x86_64
+#      MemorySize: 512
+#      Environment:
+#        Variables:
+#          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+#      Events:
+#        projectmanagementservice:
+#          Type: Api
+#          Properties:
+#            Path: /projects/{projectId}
+#            Method: put
 
   UpdateTicketDetailsLambda:
     Type: AWS::Serverless::Function

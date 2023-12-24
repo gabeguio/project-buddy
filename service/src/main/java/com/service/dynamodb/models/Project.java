@@ -84,7 +84,7 @@ public class Project {
         this.description = description;
     }
 
-    @DynamoDBAttribute(attributeName = "totaleCompletedTasks")
+    @DynamoDBAttribute(attributeName = "totalCompletedTasks")
     public Integer getTotalCompletedTasks() {
         return totalCompletedTasks;
     }
@@ -102,7 +102,7 @@ public class Project {
         this.totalTasks = totalTasks;
     }
 
-    @DynamoDBAttribute(attributeName = "TopMemberByTasksCompleted")
+    @DynamoDBAttribute(attributeName = "topMemberByTasksCompleted")
     public String getTopMemberByTasksCompleted() {
         return topMemberByTasksCompleted;
     }
