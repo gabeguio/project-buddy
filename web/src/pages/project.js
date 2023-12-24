@@ -30,7 +30,6 @@ class Project extends BindingClass {
     // const project = await this.client.getProjectById()
     // const urlParams = new URLSearchParams(window.location.search);
     // const projectId = urlParams.get("projectId");
-    console.log("hello");
     const project = await this.client.getProject("aB3Rt7");
     const members = await this.client.getMembers("aB3Rt7");
     // const tasks = sampleTasks;
