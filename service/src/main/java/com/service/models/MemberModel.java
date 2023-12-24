@@ -14,9 +14,12 @@ public class MemberModel {
     private final String role;
     private final List<String> currentTasks;
     private final List<String> tasksCompleted;
+    private final String firstName;
+    private final String lastName;
+    private final String company;
+    private final String email;
 
-    public MemberModel(String projectId, String userId, String memberId, String dateJoined, String role, List<String> currentTasks, List<String> tasksCompleted) {
-
+    public MemberModel(String projectId, String userId, String memberId, String dateJoined, String role, List<String> currentTasks, List<String> tasksCompleted, String firstName, String lastName, String company, String email) {
         this.projectId = projectId;
         this.userId = userId;
         this.memberId = memberId;
@@ -24,6 +27,10 @@ public class MemberModel {
         this.role = role;
         this.currentTasks = currentTasks;
         this.tasksCompleted = tasksCompleted;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.company = company;
+        this.email = email;
     }
 
     public String getProjectId() {
@@ -54,6 +61,22 @@ public class MemberModel {
         return tasksCompleted;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -78,6 +101,10 @@ public class MemberModel {
         private String role;
         private List<String> currentTasks;
         private List<String> tasksCompleted;
+        private String firstName;
+        private String lastName;
+        private String company;
+        private String email;
 
         public Builder withProjectId(String projectId) {
             this.projectId = projectId;
@@ -114,9 +141,28 @@ public class MemberModel {
             return this;
         }
 
+        public Builder withFirstName(String firstName) {
+            this.firstName = firstName;
+            return this;
+        }
+
+        public Builder withLastName(String lastName) {
+            this.lastName = lastName;
+            return this;
+        }
+
+        public Builder withCompany(String company) {
+            this.company = company;
+            return this;
+        }
+
+        public Builder withEmail(String email) {
+            this.email = email;
+            return this;
+        }
 
         public MemberModel build() {
-            return new MemberModel(projectId, userId, memberId, dateJoined, role, currentTasks, tasksCompleted);
+            return new MemberModel(projectId, userId, memberId, dateJoined, role, currentTasks, tasksCompleted, firstName, lastName, company, email);
 
         }
     }
