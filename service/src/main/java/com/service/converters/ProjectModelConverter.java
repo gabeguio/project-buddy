@@ -21,16 +21,17 @@ public class ProjectModelConverter{
         public ProjectModel toProjectModel(Project project) {
 
             return ProjectModel.builder()
-                .withProjectId(project.getProjectId())
-                .withOwner(project.getOwner())
-                .withDateCreated(project.getDateCreated())
-                .withTitle(project.getTitle())
-                .withDescription(project.getDescription())
-                .withDueDate(project.getDueDate())
-                .withTasksCompleted(project.getTasksCompleted())
-                .withTotalTasks(project.getTotalTasks())
-                .withTopContributor(project.getTopContributor())
-                .build();
+                    .withProjectId(project.getProjectId())
+                    .withOwner(project.getOwner())
+                    .withDateCreated(project.getDateCreated())
+                    .withDateLastUpdated(project.getDateLastUpdated())
+                    .withDateDue(project.getDateDue())
+                    .withTitle(project.getTitle())
+                    .withDescription(project.getDescription())
+                    .withTotalCompletedTasks(project.getTotalCompletedTasks())
+                    .withTotalTasks(project.getTotalTasks())
+                    .withTopMembersByTasksCompleted(project.getTopMemberByTasksCompleted())
+                    .build();
         }
 
         /**

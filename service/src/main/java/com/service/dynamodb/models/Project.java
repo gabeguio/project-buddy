@@ -12,12 +12,13 @@ public class Project {
     private String projectId;
     private String owner;
     private String dateCreated;
+    private String dateLastUpdated;
+    private String dateDue;
     private String title;
     private String description;
-    private String dueDate;
-    private Integer tasksCompleted;
+    private Integer totalCompletedTasks;
     private Integer totalTasks;
-    private String topContributor;
+    private String topMemberByTasksCompleted;
 
     @DynamoDBHashKey(attributeName = "projectId")
     public String getProjectId() {
@@ -46,11 +47,29 @@ public class Project {
         this.dateCreated = dateCreated;
     }
 
+    @DynamoDBAttribute(attributeName = "dateLastUpdated")
+    public String getDateLastUpdated() {
+        return dateLastUpdated;
+    }
+
+    public void setDateLastUpdated(String dateLastUpdated) {
+        this.dateLastUpdated = dateLastUpdated;
+    }
+
+    @DynamoDBAttribute(attributeName = "dateDue")
+    public String getDateDue() {
+        return dateDue;
+    }
+
+    public void setDateDue(String dateDue) {
+        this.dateDue = dateDue;
+    }
 
     @DynamoDBAttribute(attributeName = "title")
     public String getTitle() {
         return title;
     }
+
 
     public void setTitle(String title) {
         this.title = title;
@@ -65,22 +84,13 @@ public class Project {
         this.description = description;
     }
 
-    @DynamoDBAttribute(attributeName = "dueDate")
-    public String getDueDate() {
-        return dueDate;
+    @DynamoDBAttribute(attributeName = "totaleCompletedTasks")
+    public Integer getTotalCompletedTasks() {
+        return totalCompletedTasks;
     }
 
-    public void setDueDate(String dueDate) {
-        this.dueDate = dueDate;
-    }
-
-    @DynamoDBAttribute(attributeName = "tasksCompleted")
-    public Integer getTasksCompleted() {
-        return tasksCompleted;
-    }
-
-    public void setTasksCompleted(Integer tasksCompleted) {
-        this.tasksCompleted = tasksCompleted;
+    public void setTotalCompletedTasks(Integer totalCompletedTasks) {
+        this.totalCompletedTasks = totalCompletedTasks;
     }
 
     @DynamoDBAttribute(attributeName = "totalTasks")
@@ -92,25 +102,12 @@ public class Project {
         this.totalTasks = totalTasks;
     }
 
-    @DynamoDBAttribute(attributeName = "topContributor")
-    public String getTopContributor() {
-        return topContributor;
+    @DynamoDBAttribute(attributeName = "TopMemberByTasksCompleted")
+    public String getTopMemberByTasksCompleted() {
+        return topMemberByTasksCompleted;
     }
 
-    public void setTopContributor(String topContributor) {
-        this.topContributor = topContributor;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Project project = (Project) o;
-        return Objects.equals(projectId, project.projectId) && Objects.equals(owner, project.owner) && Objects.equals(dateCreated, project.dateCreated) && Objects.equals(title, project.title) && Objects.equals(description, project.description) && Objects.equals(dueDate, project.dueDate) && Objects.equals(tasksCompleted, project.tasksCompleted) && Objects.equals(totalTasks, project.totalTasks) && Objects.equals(topContributor, project.topContributor);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(projectId, owner, dateCreated, title, description, dueDate, tasksCompleted, totalTasks, topContributor);
+    public void setTopMemberByTasksCompleted(String topMemberByTasksCompleted) {
+        this.topMemberByTasksCompleted = topMemberByTasksCompleted;
     }
 }

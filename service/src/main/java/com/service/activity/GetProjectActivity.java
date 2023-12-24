@@ -20,7 +20,6 @@ public class GetProjectActivity {
     private final Logger log = LogManager.getLogger();
 
     private final ProjectDao projectDao;
-
     /**
      * Instantiating a new GetProjectActivity object.
      * @param projectDao ProjectDao to access the project table.
