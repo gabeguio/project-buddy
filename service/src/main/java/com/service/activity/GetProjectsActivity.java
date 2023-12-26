@@ -8,7 +8,6 @@ import com.service.activity.results.GetProjectsResult;
 import com.service.converters.ProjectModelConverter;
 import com.service.dynamodb.ProjectDao;
 import com.service.dynamodb.UserDao;
-import com.service.dynamodb.models.Member;
 import com.service.dynamodb.models.Project;
 import com.service.dynamodb.models.User;
 import com.service.models.ProjectModel;
