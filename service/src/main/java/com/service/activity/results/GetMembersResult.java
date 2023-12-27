@@ -5,11 +5,11 @@ import java.util.List;
 
 import com.service.models.MemberModel;
 
-public class GetMembersByProjectIdResult {
+public class GetMembersResult {
 
     private final List<MemberModel> memberModelList;
 
-    private GetMembersByProjectIdResult(List<MemberModel> memberModelList) {
+    private GetMembersResult(List<MemberModel> memberModelList) {
         this.memberModelList = memberModelList;
     }
 
@@ -19,7 +19,7 @@ public class GetMembersByProjectIdResult {
 
     @Override
     public String toString() {
-        return "GetMembersByProjectIdResult{" +
+        return "GetMembersResult{" +
                 "memberModelList=" + memberModelList +
                 '}';
     }
@@ -37,8 +37,8 @@ public class GetMembersByProjectIdResult {
             return this;
         }
 
-        public GetMembersByProjectIdResult build() {
-            return new GetMembersByProjectIdResult(memberModelList);
+        public GetMembersResult build() {
+            return new GetMembersResult(memberModelList);
         }
     }
 

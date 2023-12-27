@@ -36,10 +36,10 @@ public class GetProjectsActivity {
             users.add(userDao.getUser(project.getOwner()));
         }
 
-        List<ProjectModel> projectModels = modelConverter.toProjectModelList(projects, users);
+        List<ProjectModel> projectModelList = modelConverter.toProjectModelList(projects, users);
 
         return GetProjectsResult.builder()
-            .withProjectList(projectModels)
+            .withProjectModelList(projectModelList)
             .build();
     }
 }

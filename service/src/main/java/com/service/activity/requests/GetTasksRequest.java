@@ -1,9 +1,9 @@
 package com.service.activity.requests;
 
-public class GetAllTicketsRequest {
+public class GetTasksRequest {
     private final String projectId;
 
-    private GetAllTicketsRequest(String projectId) {this.projectId = projectId; }
+    private GetTasksRequest(String projectId) {this.projectId = projectId; }
 
     public String getProjectId() {
         return projectId;
@@ -11,7 +11,7 @@ public class GetAllTicketsRequest {
 
     @Override
     public String toString() {
-        return "GetAllTicketsRequest{" +
+        return "GetTasksRequest{" +
             "projectId='" + projectId + '\'' +
             '}';
     }
@@ -23,13 +23,13 @@ public class GetAllTicketsRequest {
     public static class Builder {
         private String projectId;
 
-        public Builder withId(String projectId) {
+        public Builder withProjectId(String projectId) {
             this.projectId = projectId;
             return this;
         }
 
-        public GetAllTicketsRequest build() {
-            return new GetAllTicketsRequest(projectId);
+        public GetTasksRequest build() {
+            return new GetTasksRequest(projectId);
         }
     }
 }

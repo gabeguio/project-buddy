@@ -2,24 +2,23 @@ package com.service.activity.results;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import com.service.models.ProjectModel;
 
 public class GetProjectsResult {
-    private final List<ProjectModel> projectModels;
+    private final List<ProjectModel> projectModelList;
 
-    private GetProjectsResult(List<ProjectModel> projectModels) {
-        this.projectModels = projectModels;
+    private GetProjectsResult(List<ProjectModel> projectModelList) {
+        this.projectModelList = projectModelList;
     }
 
-    public List<ProjectModel> getProjectList() {
-        return new ArrayList<>(projectModels);
+    public List<ProjectModel> getProjectModelList() {
+        return new ArrayList<>(projectModelList);
     }
 
     @Override
     public String toString() {
-        return "GetAllProjectsResult{" +
-            "projectModels=" + projectModels +
+        return "GetProjectsResult{" +
+            "projectModelList=" + projectModelList +
             '}';
     }
 
@@ -31,7 +30,7 @@ public class GetProjectsResult {
     public static class Builder {
         private List<ProjectModel> projectList;
 
-        public Builder withProjectList(List<ProjectModel> projectList) {
+        public Builder withProjectModelList(List<ProjectModel> projectList) {
             this.projectList = projectList;
             return this;
         }
