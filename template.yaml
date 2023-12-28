@@ -208,13 +208,13 @@ Resources:
                 Action: dynamodb:*
                 Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/projects"
 
-        - PolicyName: 'AccessTicketsTable'
+        - PolicyName: 'AccessTasksTable'
           PolicyDocument:
             Version: '2012-10-17'
             Statement:
             - Effect: Allow
               Action: dynamodb:*
-              Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/tickets"
+              Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/tasks"
 
         - PolicyName: 'AccessMembersTable'
           PolicyDocument:
@@ -235,12 +235,12 @@ Resources:
   #-----------------------------------------------------
   # Lambda Functions Configuration
   #-----------------------------------------------------
-  GetAllTicketsForProjectLambda:
+  GetMembersLambda:
     Type: AWS::Serverless::Function
     Properties:
       Role: !GetAtt AccessRole.Arn
       CodeUri: service
-      Handler: com.service.lambda.GetAllTicketsForProjectLambda::handleRequest
+      Handler: com.service.lambda.GetMembersLambda::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
@@ -249,29 +249,7 @@ Resources:
         Variables:
           JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
       Events:
-        projectmanagementservice:
-          Type: Api
-          Properties:
-            Path: /projects/{projectId}/tickets
-            Method: get
-            Auth:
-              Authorizer: 'NONE'
-
-  GetMembersByProjectIdLambda:
-    Type: AWS::Serverless::Function
-    Properties:
-      Role: !GetAtt AccessRole.Arn
-      CodeUri: service
-      Handler: com.service.lambda.GetMembersByProjectIdLambda::handleRequest
-      Runtime: java11
-      Architectures:
-        - x86_64
-      MemorySize: 512
-      Environment:
-        Variables:
-          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
-      Events:
-        projectmanagementservice:
+        service:
           Type: Api
           Properties:
             Path: /members/{projectId}
@@ -293,7 +271,7 @@ Resources:
         Variables:
           JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
       Events:
-        projectmanagementservice:
+        service:
           Type: Api
           Properties:
             Path: /project/{projectId}
@@ -315,7 +293,7 @@ Resources:
         Variables:
           JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
       Events:
-        projectmanagementservice:
+        service:
           Type: Api
           Properties:
             Path: /projects
@@ -323,22 +301,31 @@ Resources:
             Auth:
               Authorizer: 'NONE'
 
+  GetTasksLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Role: !GetAtt AccessRole.Arn
+      CodeUri: service
+      Handler: com.service.lambda.GetTasksLambda::handleRequest
+      Runtime: java11
+      Architectures:
+        - x86_64
+      MemorySize: 512
+      Environment:
+        Variables:
+          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+      Events:
+        service:
+          Type: Api
+          Properties:
+            Path: /tasks/{projectId}/
+            Method: get
+            Auth:
+              Authorizer: 'NONE'
+
   #-----------------------------------------------------
   # DynamoDB Configuration
   #-----------------------------------------------------
-
-  UsersTable:
-    Type: AWS::DynamoDB::Table
-    Properties:
-      AttributeDefinitions:
-        - AttributeName: "userId"
-          AttributeType: "S"
-      KeySchema:
-        - AttributeName: "userId"
-          KeyType: "HASH"
-      BillingMode: "PAY_PER_REQUEST"
-      TableName: "users"
-
   ProjectsTable:
     Type: AWS::DynamoDB::Table
     Properties:
@@ -351,21 +338,21 @@ Resources:
       BillingMode: "PAY_PER_REQUEST"
       TableName: "projects"
 
-  TicketsTable:
+  TasksTable:
     Type: AWS::DynamoDB::Table
     Properties:
       AttributeDefinitions:
         - AttributeName: "projectId"
           AttributeType: "S"
-        - AttributeName: "ticketId"
+        - AttributeName: "taskId"
           AttributeType: "S"
       KeySchema:
         - AttributeName: "projectId"
           KeyType: "HASH"
-        - AttributeName: "ticketId"
+        - AttributeName: "taskId"
           KeyType: "RANGE"
       BillingMode: "PAY_PER_REQUEST"
-      TableName: "tickets"
+      TableName: "tasks"
 
   MembersTable:
     Type: AWS::DynamoDB::Table
@@ -383,6 +370,17 @@ Resources:
       BillingMode: "PAY_PER_REQUEST"
       TableName: "members"
 
+  UsersTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      AttributeDefinitions:
+        - AttributeName: "userId"
+          AttributeType: "S"
+      KeySchema:
+        - AttributeName: "userId"
+          KeyType: "HASH"
+      BillingMode: "PAY_PER_REQUEST"
+      TableName: "users"
 #-----------------------------------------------------
 # The outputs defined below will be printed
 #  to the screen after a successful deploy

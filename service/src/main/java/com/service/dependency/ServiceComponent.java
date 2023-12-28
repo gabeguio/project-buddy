@@ -1,5 +1,5 @@
 package com.service.dependency;
-import com.service.activity.GetAllTicketsActivity;
+import com.service.activity.GetTasksActivity;
 import com.service.activity.*;
 import dagger.Component;
 
@@ -14,9 +14,9 @@ public interface ServiceComponent {
     
     GetProjectActivity provideGetProjectActivity();
 
-    GetAllTicketsActivity provideGetAllTicketsActivity();
+    GetTasksActivity provideGetTasksActivity();
     
     GetProjectsActivity provideGetProjectsActivity();
 
-    GetMembersByProjectIdActivity provideGetMembersByProjectIdActivity();
+    GetMembersActivity provideGetMembersActivity();
 }

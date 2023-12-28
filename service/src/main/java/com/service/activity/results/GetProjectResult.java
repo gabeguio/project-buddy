@@ -4,20 +4,20 @@ import com.service.models.ProjectModel;
 
 public class GetProjectResult {
 
-    private final ProjectModel project;
+    private final ProjectModel projectModel;
 
 
-    private GetProjectResult(ProjectModel project){
-        this.project = project;
+    private GetProjectResult(ProjectModel projectModel){
+        this.projectModel = projectModel;
     }
 
-    public ProjectModel getProject(){
-        return project;
+    public ProjectModel getProjectModel(){
+        return projectModel;
     }
 
     @Override
     public String toString() {
-        return "GetProjectResult{" + "project=" + project + '}';
+        return "GetProjectResult{" + "projectModel=" + projectModel + '}';
     }
 
     public static Builder builder(){
@@ -25,15 +25,15 @@ public class GetProjectResult {
     }
 
     public static class Builder {
-        private ProjectModel project;
+        private ProjectModel projectModel;
 
-        public Builder withProject(ProjectModel project){
-            this.project = project;
+        public Builder withProject(ProjectModel projectModel){
+            this.projectModel = projectModel;
             return this;
         }
 
         public GetProjectResult build(){
-            return new GetProjectResult(project);
+            return new GetProjectResult(projectModel);
         }
     }
 }

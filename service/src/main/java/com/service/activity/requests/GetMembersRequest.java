@@ -1,9 +1,9 @@
 package com.service.activity.requests;
 
-public class GetMembersByProjectIdRequest {
+public class GetMembersRequest {
     private final String projectId;
 
-    private GetMembersByProjectIdRequest(String projectId) {this.projectId = projectId; }
+    private GetMembersRequest(String projectId) {this.projectId = projectId; }
 
     public String getProjectId() {
         return projectId;
@@ -11,7 +11,7 @@ public class GetMembersByProjectIdRequest {
 
     @Override
     public String toString() {
-        return "GetMembersByProjectIdRequest{" +
+        return "GetMembersRequest{" +
                 "projectId='" + projectId + '\'' +
                 '}';
     }
@@ -28,8 +28,8 @@ public class GetMembersByProjectIdRequest {
             return this;
         }
 
-        public GetMembersByProjectIdRequest build() {
-            return new GetMembersByProjectIdRequest(projectId);
+        public GetMembersRequest build() {
+            return new GetMembersRequest(projectId);
         }
     }
 }
