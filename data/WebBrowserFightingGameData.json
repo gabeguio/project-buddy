@@ -57,10 +57,10 @@
             "S": "Project Manager"
           },
           "currentTasks": {
-            "SS": []
+            "SS": [ "" ]
           },
           "tasksCompleted": {
-            "SS": []
+            "SS": [ "" ]
           }
         }
       }
@@ -72,7 +72,7 @@
             "S": "wut6e4"
           },
           "userId": {
-            "S": "8bjg23u4"
+            "S": "345kfas3"
           },
           "memberId": {
             "S": "iqo192kej5"
@@ -84,10 +84,10 @@
             "S": "Team Member"
           },
           "currentTasks": {
-            "SS": []
+            "SS": [ "" ]
           },
           "tasksCompleted": {
-            "SS": []
+            "SS": [ "" ]
           }
         }
       }
@@ -167,7 +167,7 @@
             "S": "wut6e4"
           },
           "taskId": {
-            "S": "jfuwiq0923"
+            "S": "dsa82oikl2"
           },
           "memberId": {
             "S": "wko192kej5"

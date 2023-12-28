@@ -54,10 +54,10 @@
             "S": "2023-12-18T00:00:00Z"
           },
           "currentTasks": {
-            "SS": []
+            "SS": [ "" ]
           },
           "tasksCompleted": {
-            "SS": []
+            "SS": [ "" ]
           }
         }
       }

@@ -86,7 +86,7 @@
             "SS": ["vwxyz12345"]
           },
           "tasksCompleted": {
-            "SS": []
+            "SS": [ "" ]
           }
         }
       }

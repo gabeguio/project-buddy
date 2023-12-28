@@ -57,10 +57,10 @@
             "S": "Project Manager"
           },
           "currentTasks": {
-            "SS": []
+            "SS": [ "" ]
           },
           "tasksCompleted": {
-            "SS": []
+            "SS": [ "" ]
           }
         }
       }
@@ -84,10 +84,10 @@
             "S": "Team Member"
           },
           "currentTasks": {
-            "SS": []
+            "SS": [ "" ]
           },
           "tasksCompleted": {
-            "SS": []
+            "SS": [ "" ]
           }
         }
       }
@@ -111,10 +111,10 @@
             "S": "Guest"
           },
           "currentTasks": {
-            "SS": []
+            "SS": [ "" ]
           },
           "tasksCompleted": {
-            "SS": []
+            "SS": [ "" ]
           }
         }
       }
