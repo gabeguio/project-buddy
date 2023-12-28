@@ -1,28 +1,39 @@
+// Truncate the description if it exceeds the maximum length
+const truncateDesc = (desc) => {
+  //Set the max description length
+  const maxDescriptionLength = 187;
+
+  //If the current desc is large than maxDesc, then return truncated description
+  if (desc.length > maxDescriptionLength) {
+    desc = desc.slice(0, maxDescriptionLength) + "...";
+  }
+  return desc;
+};
+
+//Format a date from the date model
+const truncateDate = (date) => {
+  return date.substring(0, 10).replaceAll("-", ".");
+};
+
 function projectTemplate(project) {
   const {
     projectId,
-    title,
-    tasksCompleted,
-    totalTasks,
-    dueDate,
     owner,
-    topContributor,
+    dateCreated,
+    dateLastUpdated,
+    dateDue,
+    title,
     description,
+    totalCompletedTasks,
+    totalTasks,
+    topMemberByTasksCompleted,
   } = project;
-
-  // Truncate the description if it exceeds the maximum length
-  const maxDescriptionLength = 237;
-
-  const truncatedDescription =
-    description.length > maxDescriptionLength
-      ? project.description.slice(0, maxDescriptionLength) + "..."
-      : project.description;
 
   return `
       <a href=/project.html?projectId=${projectId} class="projects__link">
         <div href="" class="projects__wrapper">
           <h2 class="projects__title">${title}</h2>
-          <p class="projects__description">${truncatedDescription}</p>
+          <p class="projects__description">${truncateDesc(description)}</p>
           <hr class="projects__attribute-hr" />
           <div class="projects__attribute-container">
             <p class="projects__attribute">
@@ -39,7 +50,7 @@ function projectTemplate(project) {
                     <path fill-rule="evenodd" d="M6.75 2.25A.75.75 0 017.5 3v1.5h9V3A.75.75 0 0118 3v1.5h.75a3 3 0 013 3v11.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V7.5a3 3 0 013-3H6V3a.75.75 0 01.75-.75zm13.5 9a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5z" clip-rule="evenodd" />
                   </svg>
               </button>
-              ${dueDate}
+              ${truncateDate(dateDue)}
             </p>
           </div>
         </div>  
@@ -51,7 +62,6 @@ function renderProjects(projects) {
   const projectsContainer = document.querySelector(".projects__container");
 
   projects.forEach((project) => {
-    console.log(project);
     const projectCard = document.createElement("div");
     projectCard.innerHTML = projectTemplate(project);
     projectsContainer.appendChild(projectCard);

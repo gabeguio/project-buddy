@@ -25,7 +25,6 @@ class Index extends BindingClass {
 
   async displayProjects() {
     const projects = await this.client.getProjects()
-    console.log(projects)
     renderProjects(projects);
   }
 }

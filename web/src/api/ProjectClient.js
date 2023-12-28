@@ -30,13 +30,15 @@ export default class ProjectClient extends BindingClass {
       "updateProjectDetails",
       "updateProjectStatus",
       "deleteProject",
-      //Tickets
+      //Tasks
       "createTicket",
       "getTicket",
-      "getTicketsByProject",
+      "getTasks",
       "updateTicketDetails",
       "updateTicketStatus",
       "deleteTicket",
+      //Members
+      "getMembers"
     ];
     this.bindClassMethods(methodsToBind, this);
 
@@ -173,7 +175,7 @@ export default class ProjectClient extends BindingClass {
     try {
       const response = await this.axiosClient.get(`project/${projectId}`);
       console.log(response);
-      return response.data.project;
+      return response.data.projectModel;
     } catch (error) {
       this.handleError(error, errorCallback);
     }
@@ -187,7 +189,7 @@ export default class ProjectClient extends BindingClass {
   async getProjects(errorCallback) {
     try {
       const response = await this.axiosClient.get(`/projects`);
-      return response.data.projectList;
+      return response.data.projectModelList;
     } catch (error) {
       this.handleError(error, errorCallback);
     }
@@ -350,12 +352,12 @@ export default class ProjectClient extends BindingClass {
    * @param errorCallback (Optional) A function to execute if the call fails.
    * @returns The list of tickets on a project.
    */
-  async getTicketsByProject(projectId, errorCallback) {
+  async getTasks(projectId, errorCallback) {
     try {
       const response = await this.axiosClient.get(
-        `/projects/${projectId}/tickets`
+        `/tasks/${projectId}`
       );
-      return response.data.ticketList;
+      return response.data.taskModelList;
     } catch (error) {
       this.handleError(error, errorCallback);
     }

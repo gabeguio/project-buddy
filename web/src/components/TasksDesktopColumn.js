@@ -6,7 +6,7 @@ function tasksDesktopColumn(tasks) {
   let columnsHTML = "";
 
   tasksByStatus.forEach((tasks, status) => {
-    const tasksHTML = tasks.map(task => tasksDesktopTask(task)).join("");
+    const tasksHTML = tasks.map((task) => tasksDesktopTask(task)).join("");
 
     columnsHTML += `
         <div class="tasks__desktop-column">
