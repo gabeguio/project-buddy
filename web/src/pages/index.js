@@ -23,7 +23,13 @@ class Index extends BindingClass {
   }
 
   async displayProjects() {
-    const projects = await this.client.getProjects()
+    let projects;
+    try {
+      document.querySelector(".loader").style.display = "flex";
+      projects = await this.client.getProjects()
+    } finally {
+      document.querySelector(".loader").style.display = "none";
+    }
     renderProjects(projects);
   }
 }

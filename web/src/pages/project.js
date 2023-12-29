@@ -27,9 +27,16 @@ class Project extends BindingClass {
     // const project = await this.client.getProjectById()
     const urlParams = new URLSearchParams(window.location.search);
     const projectId = urlParams.get("projectId");
-    const project = await this.client.getProject(projectId);
-    const members = await this.client.getMembers(projectId);
-    const tasks = await this.client.getTasks(projectId);
+
+    let project, members, tasks;
+    try {
+      document.querySelector(".loader").style.display = "flex";
+      project = await this.client.getProject(projectId);
+      members = await this.client.getMembers(projectId);
+      tasks = await this.client.getTasks(projectId);
+    } finally {
+      document.querySelector(".loader").style.display = "none"
+    }
 
     // NOTE: Content's of the project are rendered before the header to allow header toggle switch assignment for the projects contents
     renderProject(project, members, tasks);
