@@ -1,4 +1,4 @@
-import { truncateDesc, truncateDate } from "../util/Formatters";
+import { truncateText, truncateDate } from "../util/Formatters";
 
 function tasksMobileTask(task) {
   const { projectId, taskId, memberId, owner, dateCreated, dateLastUpdated, title, description, status } = task;
@@ -8,14 +8,14 @@ function tasksMobileTask(task) {
   return `
       <div href="" class="tasks__task-wrapper coming-soon">
           <div class="tasks__task-header">
-              <h2 class="tasks__task-title">${title}</h2>
+              <h2 class="tasks__task-title">${truncateText(title, 19)}</h2>
               <button class="tasks__edit coming-soon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
                     <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm0 8.625a1.125 1.125 0 100 2.25 1.125 1.125 0 000-2.25zM15.375 12a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0zM7.5 10.875a1.125 1.125 0 100 2.25 1.125 1.125 0 000-2.25z" clip-rule="evenodd" />
                 </svg>
               </button>
           </div>
-          <p class="tasks__task-description">${truncateDesc(description)}</p>
+          <p class="tasks__task-description">${truncateText(description, 70)}</p>
           <hr class="tasks__hr" />
           <div class="tasks__attribute-container">
               <p class="tasks__task-attribute">
