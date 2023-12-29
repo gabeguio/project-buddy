@@ -1,6 +1,7 @@
 package com.service.converters;
 
 import com.service.dynamodb.models.Task;
+import com.service.dynamodb.models.User;
 import com.service.models.TaskModel;
 
 import java.util.ArrayList;
@@ -14,11 +15,12 @@ public class TaskModelConverter {
      * @param task the task to convert to taskModel
      * @return the converted TaskModel
      */
-    public TaskModel toTaskModel(Task task) {
+    public TaskModel toTaskModel(Task task, User user) {
         return TaskModel.builder()
                 .withProjectId(task.getProjectId())
                 .withTaskId(task.getTaskId())
                 .withMemberId(task.getMemberId())
+                .withOwner(user.getFirstName() + " " + user.getLastName())
                 .withDateCreated(task.getDateCreated())
                 .withDateLastUpdated(task.getDateLastUpdated())
                 .withDateDue(task.getDateDue())
@@ -28,15 +30,13 @@ public class TaskModelConverter {
                 .build();
     }
 
-    public List<TaskModel> toTaskModelList(List<Task> tasks) {
+    public List<TaskModel> toTaskModelList(List<Task> tasks, List<User> users) {
         List<TaskModel> taskModels = new ArrayList<>();
 
-        for (Task task : tasks) {
-            taskModels.add(toTaskModel(task));
+        for (int i = 0; i < tasks.size(); i++) {
+            taskModels.add(toTaskModel(tasks.get(i), users.get(i)));
         }
-
         return taskModels;
     }
-
 
 }

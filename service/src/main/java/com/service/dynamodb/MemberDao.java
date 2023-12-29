@@ -69,4 +69,27 @@ public class MemberDao {
 
         return memberList;
     }
+
+    public Member queryProjectForMember(String projectId, String memberId) {
+        HashMap<String, AttributeValue> valueMap = new HashMap<>();
+        valueMap.put(":projectId", new AttributeValue().withS(projectId));
+        valueMap.put(":memberId", new AttributeValue().withS(memberId));
+
+        DynamoDBQueryExpression<Member> queryExpression = new DynamoDBQueryExpression<Member>()
+                .withKeyConditionExpression("projectId = :projectId")
+                .withFilterExpression("memberId = :memberId")
+                .withExpressionAttributeValues(valueMap);
+
+        PaginatedQueryList<Member> memberList = dynamoDBMapper.query(Member.class, queryExpression);
+
+        if(memberList == null) {
+            throw new RuntimeException("Member not found for requested projectId and memberId");
+        }
+
+        if(memberList.size() == 0) {
+            throw new RuntimeException("Member does not exist on this project");
+        }
+
+        return memberList.get(0);
+    }
 }

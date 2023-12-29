@@ -7,7 +7,6 @@ import com.service.dynamodb.models.Project;
 
 import com.service.dynamodb.models.User;
 import com.service.models.ProjectModel;
-import com.service.models.TicketModel;
 
 public class ProjectModelConverter{
     /**

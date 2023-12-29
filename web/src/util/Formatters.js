@@ -1,5 +1,5 @@
 // Truncate the description if it exceeds the maximum length
-const truncateDesc = (desc, maxDescriptionLength = 150) => {
+const truncateText = (desc, maxDescriptionLength = 150) => {
   //Set the max description length
 
   //If the current desc is large than maxDesc, then return truncated description
@@ -18,4 +18,4 @@ const formatDateAndTime = (date) => {
     return date.substring(0, 19).replaceAll("-", ".").replaceAll("T", " @ ");
   };
 
-export { truncateDesc, truncateDate, formatDateAndTime };
+export { truncateText, truncateDate, formatDateAndTime };
