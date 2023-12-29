@@ -1,19 +1,4 @@
-// Truncate the description if it exceeds the maximum length
-const truncateDesc = (desc) => {
-  //Set the max description length
-  const maxDescriptionLength = 187;
-
-  //If the current desc is large than maxDesc, then return truncated description
-  if (desc.length > maxDescriptionLength) {
-    desc = desc.slice(0, maxDescriptionLength) + "...";
-  }
-  return desc;
-};
-
-//Format a date from the date model
-const truncateDate = (date) => {
-  return date.substring(0, 10).replaceAll("-", ".");
-};
+import { truncateDesc, truncateDate } from "../util/Formatters";
 
 function projectTemplate(project) {
   const {
@@ -33,7 +18,7 @@ function projectTemplate(project) {
       <a href=/project.html?projectId=${projectId} class="projects__link">
         <div href="" class="projects__wrapper">
           <h2 class="projects__title">${title}</h2>
-          <p class="projects__description">${truncateDesc(description)}</p>
+          <p class="projects__description">${truncateDesc(description, 150)}</p>
           <hr class="projects__attribute-hr" />
           <div class="projects__attribute-container">
             <p class="projects__attribute">

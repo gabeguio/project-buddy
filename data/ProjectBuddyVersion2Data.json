@@ -61,7 +61,7 @@
             "S": "Create a PUT Request that retrieves a task by projectId (HASH key) and taskId (RANGE key) from the Tasks table. The response should include all attributes from the selected task record. This feature must build a new request, result, activity, and lambda class. Data Access Object methods should include a get method for the single task record associated. Edge cases include calling the request with a null projectId or taskId returning either a projectIdNotFoundException or taskIdNotFoundException. Calling a non-null projectId or taskId that does not exist in the DB returns projectIdNotFoundException or taskIdNotFoundException, respectively. Include friendly developer messages for each exceptions. Developer must include 80% test coverage on implemented classes/methods. "
           },
           "status": {
-            "S": "In Progress"
+            "S": "Under Review"
           }
         }
       }

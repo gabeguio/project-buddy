@@ -1,4 +1,4 @@
-//TODO: Convert buttons to a method that takes in the parameters of the selected button
+import { sortTasksByStatus } from "../util/Sort";
 
 function tasksMobileMenu(tasks) {
   const tasksByStatus = sortTasksByStatus(tasks);
@@ -101,15 +101,9 @@ function configureTasksMobileMenu() {
     todoButton.classList.add("tasks__mobile-btn_selected");
 
     // Toggle unselect for "in-progress", "under-review", and "completed" buttons
-    inProgressButton.classList.remove(
-      "tasks__mobile-btn_selected"
-    );
-    underReviewButton.classList.remove(
-      "tasks__mobile-btn_selected"
-    );
-    completedButton.classList.remove(
-      "tasks__mobile-btn_selected"
-    );
+    inProgressButton.classList.remove("tasks__mobile-btn_selected");
+    underReviewButton.classList.remove("tasks__mobile-btn_selected");
+    completedButton.classList.remove("tasks__mobile-btn_selected");
 
     // Toggle display 'block' for all "to-do" content tasks and todo check
     todoContent.style.display = "block";
@@ -133,12 +127,8 @@ function configureTasksMobileMenu() {
 
     // Toggle unselect for "to-do", "under-review", and "completed" buttons
     todoButton.classList.remove("tasks__mobile-btn_selected");
-    underReviewButton.classList.remove(
-      "tasks__mobile-btn_selected"
-    );
-    completedButton.classList.remove(
-      "tasks__mobile-btn_selected"
-    );
+    underReviewButton.classList.remove("tasks__mobile-btn_selected");
+    completedButton.classList.remove("tasks__mobile-btn_selected");
 
     // Toggle display 'block' for all "in-progress" content tasks
     inProgressContent.style.display = "block";
@@ -162,12 +152,8 @@ function configureTasksMobileMenu() {
 
     // Toggle unselect for "to-do", "in-progress", and "completed" buttons
     todoButton.classList.remove("tasks__mobile-btn_selected");
-    inProgressButton.classList.remove(
-      "tasks__mobile-btn_selected"
-    );
-    completedButton.classList.remove(
-      "tasks__mobile-btn_selected"
-    );
+    inProgressButton.classList.remove("tasks__mobile-btn_selected");
+    completedButton.classList.remove("tasks__mobile-btn_selected");
 
     // Toggle display 'block' for all "under-review" content tasks
     underReviewContent.style.display = "block";
@@ -191,12 +177,8 @@ function configureTasksMobileMenu() {
 
     // Toggle unselect for "to-do", "in-progress", and "under-review" buttons
     todoButton.classList.remove("tasks__mobile-btn_selected");
-    inProgressButton.classList.remove(
-      "tasks__mobile-btn_selected"
-    );
-    underReviewButton.classList.remove(
-      "tasks__mobile-btn_selected"
-    );
+    inProgressButton.classList.remove("tasks__mobile-btn_selected");
+    underReviewButton.classList.remove("tasks__mobile-btn_selected");
 
     // Toggle display 'block' for all "completed" content tasks
     completedContent.style.display = "block";
@@ -212,18 +194,6 @@ function configureTasksMobileMenu() {
     inProgressCheck.style.display = "none";
     underReviewCheck.style.display = "none";
   });
-}
-
-function sortTasksByStatus(tasks) {
-  return tasks.reduce((map, task) => {
-    const { status } = task;
-    if (map.has(status)) {
-      map.get(status).push(task);
-    } else {
-      map.set(status, [task]); // Store as an array for the status
-    }
-    return map;
-  }, new Map());
 }
 
 export { tasksMobileMenu, configureTasksMobileMenu };

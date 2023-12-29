@@ -3,9 +3,6 @@ import Header from "../components/Header";
 import BindingClass from "../util/BindingClass";
 import DataStore from "../util/DataStore";
 import { renderProject } from "../components/ProjectComponent";
-import { sampleProjects } from "../data/sampleProjects";
-import { sampleMembers } from "../data/sampleMembers";
-import { sampleTasks } from "../data/sampleTasks";
 
 
 class Project extends BindingClass {

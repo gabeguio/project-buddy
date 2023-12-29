@@ -172,6 +172,9 @@
   .tasks__mobile-column {
     display: none;
   }
+  .tasks__mobile-container {
+    display: none;
+  }
 
   /* Remove tasks status attribute */
   .tasks_task-attribute_progress {
