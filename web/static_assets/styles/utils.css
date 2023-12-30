@@ -24,10 +24,10 @@
 }
 
 .spinner {
-  height: 120px;
-  width: 120px;
+  height: 60px;
+  width: 60px;
   border: 6px solid;
-  border-color: var(--clr-secondary) transparent var(--clr-secondary) transparent;
+  border-color: var(--clr-primary) transparent var(--clr-secondary) transparent;
   border-radius: 50%;
   animation: spin 1.3s linear infinite;
 }
