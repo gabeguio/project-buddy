@@ -28,10 +28,10 @@
             "N": "1"
           },
           "totalTasks": {
-            "N": "4"
+            "N": "18"
           },
           "topMemberByTasksCompleted": {
-            "S": "qiwo8h75hd"
+            "S": "Matthew Kroeger"
           }
         }
       }
@@ -57,10 +57,10 @@
             "S": "Project Manager"
           },
           "currentTasks": {
-            "SS": [ "" ]
+            "SS": [""]
           },
           "tasksCompleted": {
-            "SS": [ "" ]
+            "SS": [""]
           }
         }
       }
@@ -84,10 +84,10 @@
             "S": "Team Member"
           },
           "currentTasks": {
-            "SS": [ "" ]
+            "SS": [""]
           },
           "tasksCompleted": {
-            "SS": [ "" ]
+            "SS": [""]
           }
         }
       }
@@ -222,6 +222,468 @@
           },
           "status": {
             "S": "Under Review"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "wut6e4"
+          },
+          "taskId": {
+            "S": "qiwej21osd"
+          },
+          "memberId": {
+            "S": "zpwo8h75hd"
+          },
+          "dateCreated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateLastUpdated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateDue": {
+            "S": "2024-01-07T00:00:00Z"
+          },
+          "title": {
+            "S": "Music Composition and Sound Design"
+          },
+          "description": {
+            "S": "Compose original music tracks and design immersive sound effects for various game events and environments."
+          },
+          "status": {
+            "S": "In Progress"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "wut6e4"
+          },
+          "taskId": {
+            "S": "zkfji329s"
+          },
+          "memberId": {
+            "S": "qiwo8h75hd"
+          },
+          "dateCreated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateLastUpdated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateDue": {
+            "S": "2024-01-07T00:00:00Z"
+          },
+          "title": {
+            "S": "User Interface Enhancement"
+          },
+          "description": {
+            "S": "Revamp the user interface design to improve accessibility, aesthetics, and user interaction within the game."
+          },
+          "status": {
+            "S": "To Do"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "wut6e4"
+          },
+          "taskId": {
+            "S": "osdjo2eiq"
+          },
+          "memberId": {
+            "S": "zpwo8h75hd"
+          },
+          "dateCreated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateLastUpdated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateDue": {
+            "S": "2024-01-07T00:00:00Z"
+          },
+          "title": {
+            "S": "Narrative Scriptwriting"
+          },
+          "description": {
+            "S": "Craft a captivating storyline with engaging dialogues and plot twists for the game's narrative."
+          },
+          "status": {
+            "S": "Under Review"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "wut6e4"
+          },
+          "taskId": {
+            "S": "sdjoiw234r"
+          },
+          "memberId": {
+            "S": "qiwo8h75hd"
+          },
+          "dateCreated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateLastUpdated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateDue": {
+            "S": "2024-01-07T00:00:00Z"
+          },
+          "title": {
+            "S": "Testing and Bug Fixing"
+          },
+          "description": {
+            "S": "Conduct rigorous testing, identify bugs, and implement fixes to ensure a seamless gaming experience."
+          },
+          "status": {
+            "S": "In Progress"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "wut6e4"
+          },
+          "taskId": {
+            "S": "dkfj294g7s"
+          },
+          "memberId": {
+            "S": "qiwo8h75hd"
+          },
+          "dateCreated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateLastUpdated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateDue": {
+            "S": "2024-01-07T00:00:00Z"
+          },
+          "title": {
+            "S": "Marketing Strategy and Promotion"
+          },
+          "description": {
+            "S": "Devise a comprehensive marketing plan and promotional strategies to create buzz and attract players to the game."
+          },
+          "status": {
+            "S": "To Do"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "wut6e4"
+          },
+          "taskId": {
+            "S": "lksdjfoei4"
+          },
+          "memberId": {
+            "S": "zpwo8h75hd"
+          },
+          "dateCreated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateLastUpdated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateDue": {
+            "S": "2024-01-07T00:00:00Z"
+          },
+          "title": {
+            "S": "Quality Assurance and Player Feedback"
+          },
+          "description": {
+            "S": "Gather player feedback, analyze it, and implement necessary changes to enhance game quality and player satisfaction."
+          },
+          "status": {
+            "S": "Under Review"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "wut6e4"
+          },
+          "taskId": {
+            "S": "wej23oij3"
+          },
+          "memberId": {
+            "S": "zpwo8h75hd"
+          },
+          "dateCreated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateLastUpdated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateDue": {
+            "S": "2024-01-07T00:00:00Z"
+          },
+          "title": {
+            "S": "Monetization Strategy and In-Game Purchases"
+          },
+          "description": {
+            "S": "Develop a monetization model, plan in-game purchases, and integrate payment systems for revenue generation."
+          },
+          "status": {
+            "S": "In Progress"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "wut6e4"
+          },
+          "taskId": {
+            "S": "kdjw329we"
+          },
+          "memberId": {
+            "S": "qiwo8h75hd"
+          },
+          "dateCreated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateLastUpdated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateDue": {
+            "S": "2024-01-07T00:00:00Z"
+          },
+          "title": {
+            "S": "Performance Optimization and Testing"
+          },
+          "description": {
+            "S": "Optimize game performance for various devices, conduct stress tests, and refine resource management for efficiency."
+          },
+          "status": {
+            "S": "To Do"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "wut6e4"
+          },
+          "taskId": {
+            "S": "fj2o3i4jw"
+          },
+          "memberId": {
+            "S": "zpwo8h75hd"
+          },
+          "dateCreated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateLastUpdated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateDue": {
+            "S": "2024-01-07T00:00:00Z"
+          },
+          "title": {
+            "S": "Localization and Language Support"
+          },
+          "description": {
+            "S": "Implement language localization for the game, enabling support for multiple languages to expand the player base."
+          },
+          "status": {
+            "S": "Under Review"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "wut6e4"
+          },
+          "taskId": {
+            "S": "rjwo32ijf"
+          },
+          "memberId": {
+            "S": "qiwo8h75hd"
+          },
+          "dateCreated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateLastUpdated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateDue": {
+            "S": "2024-01-07T00:00:00Z"
+          },
+          "title": {
+            "S": "Player Progression System"
+          },
+          "description": {
+            "S": "Design and implement a rewarding progression system for players, integrating achievements and rewards."
+          },
+          "status": {
+            "S": "In Progress"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "wut6e4"
+          },
+          "taskId": {
+            "S": "oqiwjeo21"
+          },
+          "memberId": {
+            "S": "zpwo8h75hd"
+          },
+          "dateCreated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateLastUpdated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateDue": {
+            "S": "2024-01-07T00:00:00Z"
+          },
+          "title": {
+            "S": "Community Engagement and Events"
+          },
+          "description": {
+            "S": "Plan and organize community events to engage players, encourage interaction, and build a strong gaming community."
+          },
+          "status": {
+            "S": "To Do"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "wut6e4"
+          },
+          "taskId": {
+            "S": "qwiemc923"
+          },
+          "memberId": {
+            "S": "qiwo8h75hd"
+          },
+          "dateCreated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateLastUpdated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateDue": {
+            "S": "2024-01-07T00:00:00Z"
+          },
+          "title": {
+            "S": "Game Balancing and Tuning"
+          },
+          "description": {
+            "S": "Fine-tune game mechanics, adjust difficulty levels, and balance gameplay for an enjoyable player experience."
+          },
+          "status": {
+            "S": "In Progress"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "wut6e4"
+          },
+          "taskId": {
+            "S": "zjfkwe23s"
+          },
+          "memberId": {
+            "S": "zpwo8h75hd"
+          },
+          "dateCreated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateLastUpdated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateDue": {
+            "S": "2024-01-07T00:00:00Z"
+          },
+          "title": {
+            "S": "Artificial Intelligence Integration"
+          },
+          "description": {
+            "S": "Implement AI functionalities for non-player characters (NPCs) to enhance the game's realism and interactions."
+          },
+          "status": {
+            "S": "Under Review"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "wut6e4"
+          },
+          "taskId": {
+            "S": "oiwe329ds"
+          },
+          "memberId": {
+            "S": "qiwo8h75hd"
+          },
+          "dateCreated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateLastUpdated": {
+            "S": "2023-12-31T00:00:00Z"
+          },
+          "dateDue": {
+            "S": "2024-01-07T00:00:00Z"
+          },
+          "title": {
+            "S": "Data Analytics and Player Behavior Study"
+          },
+          "description": {
+            "S": "Analyze player data to understand behavior patterns, preferences, and optimize game elements accordingly."
+          },
+          "status": {
+            "S": "To Do"
           }
         }
       }

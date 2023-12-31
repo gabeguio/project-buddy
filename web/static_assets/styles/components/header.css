@@ -20,7 +20,22 @@
 }
 
 .header__emblem-wrapper {
+  position: relative;
+}
+.header__emblem-wrapper::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  height: 93%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: background-color 0.2s;
+}
+.header__emblem-wrapper:hover::after {
+  background-color: rgb(37, 99, 235, 0.1);
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .header__emblem-mini {

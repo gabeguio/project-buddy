@@ -18,4 +18,12 @@ const formatDateAndTime = (date) => {
     return date.substring(0, 19).replaceAll("-", ".").replaceAll("T", " @ ");
   };
 
-export { truncateText, truncateDate, formatDateAndTime };
+//Format owner text
+function abbreviateLastName(string) {
+  let words = string.split(' ');
+  words[1] = words[1][0] + '.';
+  return words.join(' ');
+}
+
+
+export { truncateText, truncateDate, formatDateAndTime, abbreviateLastName };

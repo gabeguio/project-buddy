@@ -31,7 +31,7 @@
             "N": "11"
           },
           "topMemberByTasksCompleted": {
-            "S": "j9sik312s2"
+            "S": "Gabe Guio"
           }
         }
       }
@@ -55,6 +55,33 @@
           },
           "role": {
             "S": "Project Manager"
+          },
+          "currentTasks": {
+            "SS": [""]
+          },
+          "tasksCompleted": {
+            "SS": [""]
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "jx4eu3"
+          },
+          "userId": {
+            "S": "we923it4"
+          },
+          "memberId": {
+            "S": "a28dj2k1"
+          },
+          "dateJoined": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "role": {
+            "S": "Guest"
           },
           "currentTasks": {
             "SS": [""]
@@ -194,7 +221,7 @@
             "S": "Enhance algorithms and optimize data retrieval mechanisms to swiftly fetch stock market data, improving application performance and responsiveness."
           },
           "status": {
-            "S": "To Do"
+            "S": "Under Review"
           }
         }
       }
