@@ -14,7 +14,7 @@ class Project extends BindingClass {
     // Create a new datastore with an initial "empty" state.
     this.dataStore = new DataStore();
     this.header = new Header(this.dataStore);
-    console.log("Project constructor");
+    console.log("Loading A Project...");
   }
 
   mount() {

@@ -26,8 +26,9 @@ module.exports = {
     usedExports: true,
   },
   entry: {
-    project: path.resolve(__dirname, "src", "pages", "project.js"),
     index: path.resolve(__dirname, "src", "pages", "index.js"),
+    projects: path.resolve(__dirname, "src", "pages", "projects.js"),
+    project: path.resolve(__dirname, "src", "pages", "project.js"),
   },
   output: {
     path: path.resolve(__dirname, "build", "assets"),

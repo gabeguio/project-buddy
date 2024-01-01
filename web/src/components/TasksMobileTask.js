@@ -13,9 +13,6 @@ function tasksMobileTask(task) {
     status,
   } = task;
 
-  console.log("task" + JSON.stringify(task));
-  console.log("task owner" + owner);
-
   return `
       <div href="" class="tasks__task-wrapper coming-soon">
           <div class="tasks__task-header">

@@ -1,37 +1,31 @@
 import ProjectClient from "../api/ProjectClient";
 import Header from "../components/Header";
+import { renderHero } from "../components/Hero";
 import BindingClass from "../util/BindingClass";
 import DataStore from "../util/DataStore";
-import { renderProjects } from "../components/Projects";
 
 class Index extends BindingClass {
   constructor() {
     super();
 
-    this.bindClassMethods(["mount", "displayProjects"], this);
+    this.bindClassMethods(["mount", "heroSection"], this);
 
     // Create a new datastore with an initial "empty" state.
     this.dataStore = new DataStore();
     this.header = new Header(this.dataStore);
-    console.log("Projects constructor");
+    console.log("Loading Home Page...");
   }
 
   mount() {
     this.header.header();
     this.client = new ProjectClient();
-    this.displayProjects();
+    this.heroSection();
   }
 
-  async displayProjects() {
-    let projects;
-    try {
-      document.querySelector(".loader").style.display = "flex";
-      projects = await this.client.getProjects()
-    } finally {
-      document.querySelector(".loader").style.display = "none";
-    }
-    renderProjects(projects);
+  heroSection() {
+    renderHero();
   }
+
 }
 
 const main = async () => {
