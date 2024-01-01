@@ -26,8 +26,9 @@ module.exports = {
     usedExports: true,
   },
   entry: {
-    project: path.resolve(__dirname, "src", "pages", "project.js"),
     index: path.resolve(__dirname, "src", "pages", "index.js"),
+    projects: path.resolve(__dirname, "src", "pages", "projects.js"),
+    project: path.resolve(__dirname, "src", "pages", "project.js"),
   },
   output: {
     path: path.resolve(__dirname, "build", "assets"),
@@ -43,5 +44,21 @@ module.exports = {
       // overlay shows a full-screen overlay in the browser when there are js compiler errors or warnings
       overlay: true,
     },
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images/', // Output path for images after bundling
+            },
+          },
+        ],
+      },
+    ],
   },
 };

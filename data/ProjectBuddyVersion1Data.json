@@ -13,7 +13,7 @@
             "S": "2023-04-01T00:00:00Z"
           },
           "dateLastUpdated": {
-            "S": "2024-12-17T00:00:00Z"
+            "S": "2024-12-17T09:01:12Z"
           },
           "dateDue": {
             "S": "2023-12-20T00:00:00Z"
@@ -31,7 +31,7 @@
             "N": "42"
           },
           "topMemberByTasksCompleted": {
-            "S": "abcde12345"
+            "S": "Gabe Guio"
           }
         }
       }

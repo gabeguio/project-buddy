@@ -24,13 +24,17 @@ export default class Header extends BindingClass {
 
   async header() {
     let headerHTML = `
+    <a href="index.html">
+      <div class="header__emblem-wrapper">
+        <img class="header__emblem-mini">
+        <img class="header__emblem-small">
+        <img class="header__emblem-large">
+      </div>
+    </a>
     <nav>
       <ul class="header__menu">
         <li>
-          <a href="index.html" class="header__link">Projects</a>
-        </li>
-        <li>
-          <a href="#" class="header__link">Profile</a>
+          <a href="projects.html" class="header__link">Projects</a>
         </li>
         <li class="header__line"></li>
         <li>

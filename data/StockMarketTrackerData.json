@@ -13,7 +13,7 @@
             "S": "2023-12-18T00:00:00Z"
           },
           "dateLastUpdated": {
-            "S": "2023-12-18T00:00:00Z"
+            "S": "2023-12-18T15:45:23Z"
           },
           "dateDue": {
             "S": "2024-03-15T00:00:00Z"
@@ -25,13 +25,13 @@
             "S": "Develop a comprehensive stock market tracker application that provides real-time data, analysis tools, and portfolio management capabilities. The application aims to assist users in making informed investment decisions."
           },
           "totalCompletedTasks": {
-            "N": "0"
+            "N": "2"
           },
           "totalTasks": {
-            "N": "3"
+            "N": "11"
           },
           "topMemberByTasksCompleted": {
-            "S": "j9sik312s2"
+            "S": "Gabe Guio"
           }
         }
       }
@@ -53,11 +53,41 @@
           "dateJoined": {
             "S": "2023-12-18T00:00:00Z"
           },
+          "role": {
+            "S": "Project Manager"
+          },
           "currentTasks": {
-            "SS": [ "" ]
+            "SS": [""]
           },
           "tasksCompleted": {
-            "SS": [ "" ]
+            "SS": [""]
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "jx4eu3"
+          },
+          "userId": {
+            "S": "we923it4"
+          },
+          "memberId": {
+            "S": "a28dj2k1"
+          },
+          "dateJoined": {
+            "S": "2023-12-18T00:00:00Z"
+          },
+          "role": {
+            "S": "Guest"
+          },
+          "currentTasks": {
+            "SS": [""]
+          },
+          "tasksCompleted": {
+            "SS": [""]
           }
         }
       }
@@ -92,7 +122,7 @@
             "S": "Develop functionality to fetch and display real-time stock market data from various exchanges. Ensure data accuracy and reliability."
           },
           "status": {
-            "S": "To Do"
+            "S": "Completed"
           }
         }
       }
@@ -125,7 +155,7 @@
             "S": "Create tools for users to track and manage their investment portfolios. Include functionalities for adding, editing, and analyzing portfolio holdings."
           },
           "status": {
-            "S": "To Do"
+            "S": "Completed"
           }
         }
       }
@@ -156,6 +186,270 @@
           },
           "description": {
             "S": "Integrate technical analysis tools (e.g., charts, indicators) to help users analyze stock market trends and make informed decisions."
+          },
+          "status": {
+            "S": "To Do"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "jx4eu3"
+          },
+          "taskId": {
+            "S": "klmno54321"
+          },
+          "memberId": {
+            "S": "j9sik312s2"
+          },
+          "dateCreated": {
+            "S": "2024-01-03T00:00:00Z"
+          },
+          "dateLastUpdated": {
+            "S": "2024-01-03T00:00:00Z"
+          },
+          "dateDue": {
+            "S": "2024-03-15T00:00:00Z"
+          },
+          "title": {
+            "S": "Optimize Data Retrieval Speed"
+          },
+          "description": {
+            "S": "Enhance algorithms and optimize data retrieval mechanisms to swiftly fetch stock market data, improving application performance and responsiveness."
+          },
+          "status": {
+            "S": "Under Review"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "jx4eu3"
+          },
+          "taskId": {
+            "S": "pqrs56789"
+          },
+          "memberId": {
+            "S": "j9sik312s2"
+          },
+          "dateCreated": {
+            "S": "2024-01-04T00:00:00Z"
+          },
+          "dateLastUpdated": {
+            "S": "2024-01-04T00:00:00Z"
+          },
+          "dateDue": {
+            "S": "2024-03-15T00:00:00Z"
+          },
+          "title": {
+            "S": "Implement Watchlist Feature"
+          },
+          "description": {
+            "S": "Develop a personalized watchlist feature allowing users to add, manage, and track their preferred stocks conveniently."
+          },
+          "status": {
+            "S": "To Do"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "jx4eu3"
+          },
+          "taskId": {
+            "S": "tuvw12345"
+          },
+          "memberId": {
+            "S": "j9sik312s2"
+          },
+          "dateCreated": {
+            "S": "2024-01-05T00:00:00Z"
+          },
+          "dateLastUpdated": {
+            "S": "2024-01-05T00:00:00Z"
+          },
+          "dateDue": {
+            "S": "2024-03-15T00:00:00Z"
+          },
+          "title": {
+            "S": "Create Alert Notifications"
+          },
+          "description": {
+            "S": "Develop a notification system for timely alerts on price fluctuations and notable market changes, enhancing user engagement and decision-making."
+          },
+          "status": {
+            "S": "To Do"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "jx4eu3"
+          },
+          "taskId": {
+            "S": "xyz98765ab"
+          },
+          "memberId": {
+            "S": "j9sik312s2"
+          },
+          "dateCreated": {
+            "S": "2024-01-06T00:00:00Z"
+          },
+          "dateLastUpdated": {
+            "S": "2024-01-06T00:00:00Z"
+          },
+          "dateDue": {
+            "S": "2024-03-15T00:00:00Z"
+          },
+          "title": {
+            "S": "Implement Portfolio Tracking"
+          },
+          "description": {
+            "S": "Develop tools allowing users to effectively track, manage, and analyze their investment portfolios within the application."
+          },
+          "status": {
+            "S": "In Progress"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "jx4eu3"
+          },
+          "taskId": {
+            "S": "lmnop54321qr"
+          },
+          "memberId": {
+            "S": "j9sik312s2"
+          },
+          "dateCreated": {
+            "S": "2024-01-07T00:00:00Z"
+          },
+          "dateLastUpdated": {
+            "S": "2024-01-07T00:00:00Z"
+          },
+          "dateDue": {
+            "S": "2024-03-15T00:00:00Z"
+          },
+          "title": {
+            "S": "Improve User Authentication"
+          },
+          "description": {
+            "S": "Enhance user authentication and data privacy features to fortify the application's security measures."
+          },
+          "status": {
+            "S": "To Do"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "jx4eu3"
+          },
+          "taskId": {
+            "S": "efghi54321jk"
+          },
+          "memberId": {
+            "S": "j9sik312s2"
+          },
+          "dateCreated": {
+            "S": "2024-01-08T00:00:00Z"
+          },
+          "dateLastUpdated": {
+            "S": "2024-01-08T00:00:00Z"
+          },
+          "dateDue": {
+            "S": "2024-03-15T00:00:00Z"
+          },
+          "title": {
+            "S": "Implement Data Visualization"
+          },
+          "description": {
+            "S": "Create visual representations like graphs and charts for effective display and analysis of stock market data."
+          },
+          "status": {
+            "S": "To Do"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "jx4eu3"
+          },
+          "taskId": {
+            "S": "mnopq12345rs"
+          },
+          "memberId": {
+            "S": "j9sik312s2"
+          },
+          "dateCreated": {
+            "S": "2024-01-09T00:00:00Z"
+          },
+          "dateLastUpdated": {
+            "S": "2024-01-09T00:00:00Z"
+          },
+          "dateDue": {
+            "S": "2024-03-15T00:00:00Z"
+          },
+          "title": {
+            "S": "Test and Debug Application"
+          },
+          "description": {
+            "S": "Conduct rigorous testing and debugging procedures to ensure the application's reliability and functionality."
+          },
+          "status": {
+            "S": "To Do"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "projectId": {
+            "S": "jx4eu3"
+          },
+          "taskId": {
+            "S": "stuvw67890xy"
+          },
+          "memberId": {
+            "S": "j9sik312s2"
+          },
+          "dateCreated": {
+            "S": "2024-01-10T00:00:00Z"
+          },
+          "dateLastUpdated": {
+            "S": "2024-01-10T00:00:00Z"
+          },
+          "dateDue": {
+            "S": "2024-03-15T00:00:00Z"
+          },
+          "title": {
+            "S": "Prepare Documentation"
+          },
+          "description": {
+            "S": "Create comprehensive and user-friendly documentation covering the application's features, functionalities, and usage guidelines."
           },
           "status": {
             "S": "To Do"

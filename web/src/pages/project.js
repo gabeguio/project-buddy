@@ -3,9 +3,6 @@ import Header from "../components/Header";
 import BindingClass from "../util/BindingClass";
 import DataStore from "../util/DataStore";
 import { renderProject } from "../components/ProjectComponent";
-import { sampleProjects } from "../data/sampleProjects";
-import { sampleMembers } from "../data/sampleMembers";
-import { sampleTasks } from "../data/sampleTasks";
 
 
 class Project extends BindingClass {
@@ -17,7 +14,7 @@ class Project extends BindingClass {
     // Create a new datastore with an initial "empty" state.
     this.dataStore = new DataStore();
     this.header = new Header(this.dataStore);
-    console.log("Project constructor");
+    console.log("Loading A Project...");
   }
 
   mount() {
@@ -28,14 +25,21 @@ class Project extends BindingClass {
 
   async displayProject() {
     // const project = await this.client.getProjectById()
-    // const urlParams = new URLSearchParams(window.location.search);
-    // const projectId = urlParams.get("projectId");
-    const project = await this.client.getProject("aB3Rt7");
-    const members = await this.client.getMembers("aB3Rt7");
-    // const tasks = sampleTasks;
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectId = urlParams.get("projectId");
+
+    let project, members, tasks;
+    try {
+      document.querySelector(".loader").style.display = "flex";
+      project = await this.client.getProject(projectId);
+      members = await this.client.getMembers(projectId);
+      tasks = await this.client.getTasks(projectId);
+    } finally {
+      document.querySelector(".loader").style.display = "none"
+    }
 
     // NOTE: Content's of the project are rendered before the header to allow header toggle switch assignment for the projects contents
-    renderProject(project, members, sampleTasks);
+    renderProject(project, members, tasks);
   }
 }
 

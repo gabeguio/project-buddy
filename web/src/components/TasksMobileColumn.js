@@ -1,4 +1,5 @@
 import { tasksMobileTask } from "./TasksMobileTask";
+import { sortTasksByStatus } from "../util/Sort";
 
 function tasksMobileColumn(tasks) {
   const tasksByStatus = sortTasksByStatus(tasks);
@@ -17,18 +18,6 @@ function tasksMobileColumn(tasks) {
       `;
   });
   return columnsHTML;
-}
-
-function sortTasksByStatus(tasks) {
-  return tasks.reduce((map, task) => {
-    const { status } = task;
-    if (map.has(status)) {
-      map.get(status).push(task);
-    } else {
-      map.set(status, [task]); // Store as an array for the status
-    }
-    return map;
-  }, new Map());
 }
 
 function cssFormat(status) {
