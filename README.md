@@ -76,7 +76,7 @@ Ensure you have all the prerequisites installed and set up correctly before proc
 ### Deployments
 
 All deployments require an AWS account and IAM user to provision cloud services.
-If you do now have an AWS account or a configured IAM user, please visit [Creating AWS Account and IAM User](resources/readme-setup-instructions/CREATING-AWS-ACCOUNT-AND-IAM-USER.md)
+If you do not have an AWS account or a configured IAM user, please visit [Creating AWS Account and IAM User](resources/readme-setup-instructions/CREATING-AWS-ACCOUNT-AND-IAM-USER.md)
 
 **Developer Deployments**
 
