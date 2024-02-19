@@ -63,7 +63,7 @@ Environment should be hosted on Linux or WSL configured for Windows.
 
 ### Prerequisites
 
-Before you begin setting up and running this project, ensure you have the following prerequisites are in place:
+Ensure you have all the prerequisites installed and set up correctly before proceeding with the setup and deployment of Project Buddy.
 
 - **AWS Account**: You'll need an active AWS account to deploy and manage resources on the AWS platform. [Sign up for AWS](https://aws.amazon.com/free/)
 - **Docker**: Containerization platform. [Download Docker Desktop](https://www.docker.com/products/docker-desktop)
@@ -72,8 +72,6 @@ Before you begin setting up and running this project, ensure you have the follow
 - **Gradle**: Build automation tool for Java projects. [Gradle Installation](https://gradle.org/install/)
 - **AWS CLI (Command Line Interface)**: Command-line tool for interacting with AWS services. [AWS CLI Installation](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
 - **Amazon Corretto JDK 11**: Distribution of the Open Java Development Kit (OpenJDK) with long-term support from Amazon. [Download Amazon Corretto JDK 11](https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html)
-
-Ensure you have all the prerequisites installed and set up correctly before proceeding with the setup and deployment of your project.
 
 ### Deployments
 
