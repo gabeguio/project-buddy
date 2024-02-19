@@ -20,44 +20,44 @@ Project Buddy is built with a client-serverless architecture utilizing cloud ser
 
 ### Front-end
 
-- JavaScript, HTML, CSS
-- Webpack
-- Axios
-- Amazon S3
-- AWS Cloudfront
-- AWS Cognito
-- Json
+<img src="https://icon.icepanel.io/Technology/svg/JavaScript.svg" width="20" height="20"> JavaScript, <img src="https://icon.icepanel.io/Technology/svg/HTML5.svg" width="20" height="20"> HTML, <img src="https://icon.icepanel.io/Technology/svg/CSS3.svg" width="20" height="20"> CSS
+<img src="https://icon.icepanel.io/Technology/svg/Webpack.svg" width="20" height="20"> Webpack
+<img src="https://icon.icepanel.io/Technology/svg/Azios.svg" width="20" height="20"> Axios
+<img src="https://icon.icepanel.io/AWS/svg/Storage/Simple-Storage-Service.svg" width="20" height="20"> Amazon S3
+<img src="https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/CloudFront.svg" width="20" height="20"> AWS Cloudfront
+<img src="https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/Cognito.svg" width="20" height="20"> AWS Cognito
+<img src="https://icon.icepanel.io/Technology/png-shadow-512/JSON.png" width="20" height="20"> JSON
 
 ### Back-end
 
-- Java
-- AWS DynamoDB
-- AWS Lambda
-- Gradle
-- Dagger
+<img src="https://icon.icepanel.io/Technology/svg/Java.svg" width="20" height="20"> Java
+<img src="https://icon.icepanel.io/AWS/svg/Database/DynamoDB.svg" width="20" height="20"> AWS DynamoDB
+<img src="https://icon.icepanel.io/AWS/svg/Compute/Lambda.svg" width="20" height="20"> AWS Lambda
+<img src="https://icon.icepanel.io/Technology/png-shadow-512/Gradle.png" width="20" height="20"> Gradle
+<span style="display: inline-block; width: 20px; height: 20px; line-height: 20px; text-align: center;">&not;</span> Dagger
 
 ### Testing and Logging
 
-- JUnit
-- Mockito
-- Log4J
-- AWS Cloudwatch
+<img src="https://icon.icepanel.io/Technology/svg/JUnit.svg" width="20" height="20"> JUnit
+<span style="display: inline-block; width: 20px; height: 20px; line-height: 20px; text-align: center; color: #087515;  font-weight: 700">m</span> Mockito
+<img src="resources/readme-images/tech-stack-icons/log4j.jpg" width="20" height="20"> Log4J
+<img src="https://icon.icepanel.io/AWS/svg/Management-Governance/CloudWatch.svg" width="20" height="20"> AWS Cloudwatch
 
 ### Version Control and Diagramming
 
-- Git, Github
-- PlantUML
+<img src="https://icon.icepanel.io/Technology/svg/Git.svg" width="20" height="20"> Git, <img src="https://icon.icepanel.io/Technology/png-shadow-512/GitHub.png" width="20" height="20"> Github
+<img src="https://icon.icepanel.io/Technology/svg/Unified-Modelling-Language-%28UML%29.svg" width="20" height="20"> PlantUML
 
 ### DevOps
 
-- AWS Cloudformation
-- AWS IAM
-- AWS SAM
-- Docker
-- Github Actions
-- YAML
+<img src="https://icon.icepanel.io/AWS/svg/Management-Governance/CloudFormation.svg" width="20" height="20"> AWS Cloudformation
+<img src="https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/IAM-Identity-Center.svg" width="20" height="20"> AWS IAM
+<img src="resources/readme-images/tech-stack-icons/sam.svg" width="20" height="20"> AWS SAM
+<img src="https://icon.icepanel.io/Technology/svg/Docker.svg" width="20" height="20"> Docker
+<img src="https://icon.icepanel.io/Technology/svg/GitHub-Actions.svg" width="20" height="20"> Github Actions
+<img src="https://icon.icepanel.io/Technology/png-shadow-512/YAML.png" width="20" height="20"> YAML
 
-## Setup (WSL2/Linux OS)
+## Setup
 
 Environment should be hosted on Linux or WSL configured for Windows.
 
