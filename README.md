@@ -39,13 +39,13 @@ Project Buddy is built with a client-serverless architecture utilizing cloud ser
 ### Testing and Logging
 
 - <img src="https://icon.icepanel.io/Technology/svg/JUnit.svg" width="20" height="20"> JUnit
-- <span style="display: inline-block; width: 20px; height: 20px; line-height: 20px; text-align: center; color: #087515;  font-weight: 700">m</span> Mockito
+- <span style="display: inline-block; width: 20px; height: 20px; line-height: 20px; text-align: center; color: #087515; font-weight: 700">m</span> Mockito
 - <img src="resources/readme-images/tech-stack-icons/log4j.jpg" width="20" height="20"> Log4J
 - <img src="https://icon.icepanel.io/AWS/svg/Management-Governance/CloudWatch.svg" width="20" height="20"> AWS Cloudwatch
 
 ### Version Control and Diagramming
 
-- <img src="https://icon.icepanel.io/Technology/svg/Git.svg" width="20" height="20"> Git, - <img src="https://icon.icepanel.io/Technology/png-shadow-512/GitHub.png" width="20" height="20"> Github
+- <img src="https://icon.icepanel.io/Technology/svg/Git.svg" width="20" height="20"> Git, <img src="https://icon.icepanel.io/Technology/png-shadow-512/GitHub.png" width="20" height="20"> Github
 - <img src="https://icon.icepanel.io/Technology/svg/Unified-Modelling-Language-%28UML%29.svg" width="20" height="20"> PlantUML
 
 ### DevOps
