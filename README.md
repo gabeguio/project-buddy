@@ -80,13 +80,13 @@ If you do not have an AWS account or a configured IAM user, please visit [Creati
 
 **Developer Deployments**
 
-- [Deployment 1: Local Backend and Local Frontend](resources/readme-setup-instructions/DEV-DEPLOYMENT-1-LOCAL-BACKEND-AND-LOCAL-FRONTEND.md)
-- [Deployment 2: Remote Backend and Local Frontend](resources/readme-setup-instructions/DEV-DEPLOYMENT-2-REMOTE-BACKEND-AND-LOCAL-FRONTEND.md)
+- [Developer Deployment 1: Local Backend and Local Frontend](resources/readme-setup-instructions/DEV-DEPLOYMENT-1-LOCAL-BACKEND-AND-LOCAL-FRONTEND.md)
+- [Developer Deployment 2: Remote Backend and Local Frontend](resources/readme-setup-instructions/DEV-DEPLOYMENT-2-REMOTE-BACKEND-AND-LOCAL-FRONTEND.md)
 
 **Production Deployments**
 
-- [Deployment 3: Manual AWS Setup, Remote Backend and Remote Frontend](resources/readme-setup-instructions/PROD-DEPLOYMENT-3-MANUAL.md)
-- [Deployment 4: CICD Setup With GitHub Actions and AWS, Remote Backend and Remote Frontend](resources/readme-setup-instructions/PROD-DEPLOYMENT-4-CICD.md)
+- [Production Deployment 1: Manual AWS Deployment, Remote Backend and Remote Frontend](resources/readme-setup-instructions/PROD-DEPLOYMENT-3-MANUAL.md)
+- [Production Deployment 2: CICD Deployment with GitHub Actions and AWS, Remote Backend and Remote Frontend](resources/readme-setup-instructions/PROD-DEPLOYMENT-4-CICD.md)
 
 ## Usage
 

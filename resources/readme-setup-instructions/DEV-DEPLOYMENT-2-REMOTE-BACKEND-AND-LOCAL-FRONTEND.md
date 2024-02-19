@@ -1,4 +1,4 @@
-# Scenario 2: Remote Backend, Local Frontend
+# Developer Deployment 2: Remote Backend and Local Frontend
 
 In this scenario you will deploy the backend to AWS and run the frontend locally on your computer. The instructions appear identical to Scenario 1, the main difference is that the web client executes a `.env.remote`  file and not a `.env.local` file.
 

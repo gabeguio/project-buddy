@@ -1,4 +1,4 @@
-# Scenario 3: Manual AWS Deployment for Remote Backend and Local Frontend
+# Production Deployment 1: Manual AWS Deployment, Remote Backend and Remote Frontend
 
 In this scenario you will deploy both the backend and the frontend from your computer to AWS.
 

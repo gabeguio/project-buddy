@@ -1,4 +1,4 @@
-# Scenario 1: Local Backend, Local Frontend
+# Developer Deployment 1: Local Backend and Local Frontend
 
 In this scenario you will run both the backend and frontend locally on your laptop. Even though we'll be running the backend locally, we need some DynamoDB tables created in AWS so the setup for this involves some remote AWS configuration.
 

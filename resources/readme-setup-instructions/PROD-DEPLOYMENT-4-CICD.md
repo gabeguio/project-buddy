@@ -1,3 +1,3 @@
-# Scenario 4: CICD Deployment for Remote Backend and Local Frontend
+# Production Deployment 2: CICD Deployment with GitHub Actions and AWS, Remote Backend and Remote Frontend
 
 Coming Soon...
