@@ -20,13 +20,13 @@ Project Buddy is built with a client-serverless architecture utilizing cloud ser
 
 ### Front-end
 
-<img src="https://icon.icepanel.io/Technology/svg/JavaScript.svg" width="20" height="20"> JavaScript, <img src="https://icon.icepanel.io/Technology/svg/HTML5.svg" width="20" height="20"> HTML, <img src="https://icon.icepanel.io/Technology/svg/CSS3.svg" width="20" height="20"> CSS
-<img src="https://icon.icepanel.io/Technology/svg/Webpack.svg" width="20" height="20"> Webpack
-<img src="https://icon.icepanel.io/Technology/svg/Azios.svg" width="20" height="20"> Axios
-<img src="https://icon.icepanel.io/AWS/svg/Storage/Simple-Storage-Service.svg" width="20" height="20"> Amazon S3
-<img src="https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/CloudFront.svg" width="20" height="20"> AWS Cloudfront
-<img src="https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/Cognito.svg" width="20" height="20"> AWS Cognito
-<img src="https://icon.icepanel.io/Technology/png-shadow-512/JSON.png" width="20" height="20"> JSON
+ <img src="https://icon.icepanel.io/Technology/svg/JavaScript.svg" width="20" height="20"> JavaScript, <img src="https://icon.icepanel.io/Technology/svg/HTML5.svg" width="20" height="20"> HTML, <img src="https://icon.icepanel.io/Technology/svg/CSS3.svg" width="20" height="20"> CSS
+ <img src="https://icon.icepanel.io/Technology/svg/Webpack.svg" width="20" height="20"> Webpack
+ <img src="https://icon.icepanel.io/Technology/svg/Azios.svg" width="20" height="20"> Axios
+ <img src="https://icon.icepanel.io/AWS/svg/Storage/Simple-Storage-Service.svg" width="20" height="20"> Amazon S3
+ <img src="https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/CloudFront.svg" width="20" height="20"> AWS Cloudfront
+ <img src="https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/Cognito.svg" width="20" height="20"> AWS Cognito
+ <img src="https://icon.icepanel.io/Technology/png-shadow-512/JSON.png" width="20" height="20"> JSON
 
 ### Back-end
 
