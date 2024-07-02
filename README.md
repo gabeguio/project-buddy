@@ -88,18 +88,4 @@ If you do not have an AWS account or a configured IAM user, please visit [Creati
 - [Production Deployment 1: Manual AWS Deployment, Remote Backend and Remote Frontend](resources/readme-setup-instructions/PROD-DEPLOYMENT-1-MANUAL.md)
 - [Production Deployment 2: CICD Deployment with GitHub Actions and AWS, Remote Backend and Remote Frontend](resources/readme-setup-instructions/PROD-DEPLOYMENT-2-CICD.md)
 
-## Usage
-
-Intended use-cases coming soon ...
-
-## Testing
-
-Testing methodologies coming soon ...
-
-## API Documentation
-
-API Documentation coming soon ...
-
-## Monitoring and Logging
-
 Cloudwatch metrics and logging details coming soon ...
