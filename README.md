@@ -16,6 +16,37 @@ Project Buddy is built with a client-serverless architecture utilizing cloud ser
 - The middleware contains RESTful APIs built with Amazon API Gateway, AWS Lambda, and AWS Java SDK.
 - The database was provided by AWS DynamoDB with NoSQL structure.
 
+## Setup
+
+Environment should be hosted on Linux or WSL configured for Windows.
+
+### Prerequisites
+
+Ensure you have all the prerequisites installed and set up correctly before proceeding with the setup and deployment of Project Buddy.
+
+- **AWS Account**: You'll need an active AWS account to deploy and manage resources on the AWS platform. [Sign up for AWS](https://aws.amazon.com/free/)
+- **Docker**: Containerization platform. [Download Docker Desktop](https://www.docker.com/products/docker-desktop)
+- **AWS SAM (Serverless Application Model)**: Framework for building serverless applications. [Installation Guide](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
+- **NPM (Node Package Manager)**: Package manager for JavaScript and Node.js. [Download Node.js and npm](https://nodejs.org/en/download/)
+- **Gradle**: Build automation tool for Java projects. [Gradle Installation](https://gradle.org/install/)
+- **AWS CLI (Command Line Interface)**: Command-line tool for interacting with AWS services. [AWS CLI Installation](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
+- **Amazon Corretto JDK 11**: Distribution of the Open Java Development Kit (OpenJDK) with long-term support from Amazon. [Download Amazon Corretto JDK 11](https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html)
+
+### Deployments
+
+All deployments require an AWS account and IAM user to provision cloud services.
+If you do not have an AWS account or a configured IAM user, please visit [Creating AWS Account and IAM User](resources/readme-setup-instructions/CREATING-AWS-ACCOUNT-AND-IAM-USER.md)
+
+**Developer Deployments**
+
+- [Developer Deployment 1: Local Backend and Local Frontend](resources/readme-setup-instructions/DEV-DEPLOYMENT-1-LOCAL-BACKEND-AND-LOCAL-FRONTEND.md)
+- [Developer Deployment 2: Remote Backend and Local Frontend](resources/readme-setup-instructions/DEV-DEPLOYMENT-2-REMOTE-BACKEND-AND-LOCAL-FRONTEND.md)
+
+**Production Deployments**
+
+- [Production Deployment 1: Manual AWS Deployment, Remote Backend and Remote Frontend](resources/readme-setup-instructions/PROD-DEPLOYMENT-1-MANUAL.md)
+- [Production Deployment 2: CICD Deployment with GitHub Actions and AWS, Remote Backend and Remote Frontend](resources/readme-setup-instructions/PROD-DEPLOYMENT-2-CICD.md)
+
 ## Technologies Used
 
 ### Front-end
@@ -56,36 +87,3 @@ Project Buddy is built with a client-serverless architecture utilizing cloud ser
 - <img src="https://icon.icepanel.io/Technology/svg/Docker.svg" width="20" height="20"> Docker
 - <img src="https://icon.icepanel.io/Technology/svg/GitHub-Actions.svg" width="20" height="20"> Github Actions
 - <img src="https://icon.icepanel.io/Technology/png-shadow-512/YAML.png" width="20" height="20"> YAML
-
-## Setup
-
-Environment should be hosted on Linux or WSL configured for Windows.
-
-### Prerequisites
-
-Ensure you have all the prerequisites installed and set up correctly before proceeding with the setup and deployment of Project Buddy.
-
-- **AWS Account**: You'll need an active AWS account to deploy and manage resources on the AWS platform. [Sign up for AWS](https://aws.amazon.com/free/)
-- **Docker**: Containerization platform. [Download Docker Desktop](https://www.docker.com/products/docker-desktop)
-- **AWS SAM (Serverless Application Model)**: Framework for building serverless applications. [Installation Guide](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
-- **NPM (Node Package Manager)**: Package manager for JavaScript and Node.js. [Download Node.js and npm](https://nodejs.org/en/download/)
-- **Gradle**: Build automation tool for Java projects. [Gradle Installation](https://gradle.org/install/)
-- **AWS CLI (Command Line Interface)**: Command-line tool for interacting with AWS services. [AWS CLI Installation](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
-- **Amazon Corretto JDK 11**: Distribution of the Open Java Development Kit (OpenJDK) with long-term support from Amazon. [Download Amazon Corretto JDK 11](https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html)
-
-### Deployments
-
-All deployments require an AWS account and IAM user to provision cloud services.
-If you do not have an AWS account or a configured IAM user, please visit [Creating AWS Account and IAM User](resources/readme-setup-instructions/CREATING-AWS-ACCOUNT-AND-IAM-USER.md)
-
-**Developer Deployments**
-
-- [Developer Deployment 1: Local Backend and Local Frontend](resources/readme-setup-instructions/DEV-DEPLOYMENT-1-LOCAL-BACKEND-AND-LOCAL-FRONTEND.md)
-- [Developer Deployment 2: Remote Backend and Local Frontend](resources/readme-setup-instructions/DEV-DEPLOYMENT-2-REMOTE-BACKEND-AND-LOCAL-FRONTEND.md)
-
-**Production Deployments**
-
-- [Production Deployment 1: Manual AWS Deployment, Remote Backend and Remote Frontend](resources/readme-setup-instructions/PROD-DEPLOYMENT-1-MANUAL.md)
-- [Production Deployment 2: CICD Deployment with GitHub Actions and AWS, Remote Backend and Remote Frontend](resources/readme-setup-instructions/PROD-DEPLOYMENT-2-CICD.md)
-
-Cloudwatch metrics and logging details coming soon ...
